@@ -188,15 +188,15 @@
   },
   {
    "id": "mmc",
-   "n": "Marsh McLennan",
-   "tk": "MMC",
+   "n": "Marsh (ehem. Marsh McLennan)",
+   "tk": "MRSH",
    "bx": "NYSE",
    "grp": "Makler",
    "mcap": 89.9,
    "st": "2026-09-01",
    "akt": "marsh",
    "s": "Größter Makler weltweit; Ratenindizes als Zyklusindikator",
-   "y": "https://finance.yahoo.com/quote/MMC"
+   "y": "https://finance.yahoo.com/quote/MRSH"
   },
   {
    "id": "aon",
