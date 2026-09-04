@@ -376,35 +376,40 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .grp td.rk{font-family:var(--mono); font-size:.78rem; color:var(--ink-3); width:34px; text-align:right}
 .grp .anchors{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 4px}
 
-/* ---------- Schaubild Marktstruktur (Liniengrafik) ---------- */
-.sch{position:relative; margin:0 -22px 26px; padding:26px 22px 22px; background:var(--navy); color:var(--navy-ink); overflow:hidden; border-top:1px solid var(--navy-rule); border-bottom:1px solid var(--navy-rule)}
-.sch::before{content:""; position:absolute; inset:0; background-image:linear-gradient(var(--navy-rule) 1px, transparent 1px), linear-gradient(90deg, var(--navy-rule) 1px, transparent 1px); background-size:48px 48px; opacity:.45}
+/* ---------- Schaubild Marktstruktur ---------- */
+.sch{position:relative; margin:0 -22px 26px; padding:30px 22px 26px; color:var(--navy-ink); overflow:hidden;
+  background:radial-gradient(900px 420px at 18% -10%, rgba(27,124,126,.35), transparent 60%), radial-gradient(700px 400px at 95% 110%, rgba(92,196,198,.18), transparent 60%), linear-gradient(180deg,#0F1B2D 0%,#0B1320 100%)}
 .sch .in{position:relative; max-width:1200px; margin:0 auto}
-.sch .head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:10px}
+.sch .head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:14px}
 .sch .head .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--navy-accent)}
 .sch .head .hint{font-family:var(--mono); font-size:.68rem; color:var(--navy-ink-2)}
 .sch svg{width:100%; height:auto; display:block; overflow:visible}
-.sch .rail{stroke:var(--navy-accent); stroke-width:1; opacity:.7}
-.sch .tick{stroke:var(--navy-accent); stroke-width:1; stroke-dasharray:3 4; opacity:.55}
-.sch .node{fill:rgba(255,255,255,.03); stroke:var(--navy-accent); stroke-width:1.2}
-.sch .node.risk{stroke:var(--navy-ink-2); stroke-dasharray:4 4; fill:transparent}
-.sch a:hover .node{fill:rgba(92,196,198,.12)}
-.sch .flowl{stroke:var(--navy-ink-2); stroke-width:1; opacity:.8}
-.sch .arr{fill:var(--navy-ink-2)}
-.sch .sq{fill:var(--navy); stroke:var(--navy-accent); stroke-width:1.2}
+.sch .panel{fill:#16243A; stroke:rgba(255,255,255,.16); stroke-width:1}
+.sch a:hover .panel{fill:#1C3448; stroke:rgba(92,196,198,.8)}
+.sch .panel.risk{fill:#101C2E; stroke:rgba(255,255,255,.24); stroke-dasharray:5 5}
+.sch .sw{height:6px}
+.sch .rib1{fill:url(#rib1)}
+.sch .rib2{fill:url(#rib2)}
+.sch .chip{fill:rgba(255,255,255,.07); stroke:rgba(255,255,255,.16); stroke-width:1}
+.sch a:hover .chip{fill:rgba(92,196,198,.18); stroke:rgba(92,196,198,.7)}
+.sch .band{stroke:rgba(255,255,255,.12); stroke-width:1}
 .sch text{fill:var(--navy-ink)}
-.sch .t{font-family:var(--display); font-size:21px; font-weight:600}
+.sch .t{font-family:var(--display); font-size:22px; font-weight:600}
+.sch .t.sm{font-family:var(--sans); font-size:17px; font-weight:500}
 .sch .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; fill:var(--navy-accent)}
-.sch .c{font-family:var(--mono); font-size:11px; fill:var(--navy-ink-2)}
+.sch .k.dim{fill:var(--navy-ink-2)}
+.sch .num{font-family:var(--mono); font-size:40px; font-weight:500; fill:#8FD5E2}
+.sch .unit{font-family:var(--mono); font-size:11px; fill:var(--navy-ink-2)}
 .sch .n{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink-2)}
-.sch .fl{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; fill:var(--navy-ink-2)}
-.sch .rl{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; fill:var(--navy-ink)}
-.sch .rn{font-family:var(--sans); font-size:12px; fill:var(--navy-ink-2)}
-.sch .go{font-family:var(--mono); font-size:10.5px; fill:var(--navy-accent)}
+.sch .ct{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink)}
+.sch .fl{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase}
+.sch .fl.p{fill:#8FD5E2}
+.sch .fl.c{fill:#F0C77A}
+.sch .go{font-family:var(--mono); font-size:11px; fill:var(--navy-accent)}
 .sch a{cursor:pointer; text-decoration:none}
 .sch a:hover .t{fill:var(--navy-accent)}
 .sch .mobile{display:none}
-@media (max-width:700px){ .sch svg{display:none} .sch .mobile{display:grid; gap:8px} .sch .mobile a{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:10px 12px; border:1px solid var(--navy-accent); color:var(--navy-ink); text-decoration:none} .sch .mobile a.risk{border-style:dashed; border-color:var(--navy-ink-2)} .sch .mobile .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--navy-accent)} .sch .mobile b{font-family:var(--display); font-weight:600; font-size:1rem} .sch .mobile .c{font-family:var(--mono); font-size:.7rem; color:var(--navy-ink-2)} .sch .mobile .arrow{text-align:center; color:var(--navy-accent)} }
+@media (max-width:700px){ .sch svg{display:none} .sch .mobile{display:grid; gap:8px} .sch .mobile a{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:12px 14px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); border-radius:10px; color:var(--navy-ink); text-decoration:none} .sch .mobile a.risk{border-style:dashed; background:transparent} .sch .mobile .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--navy-accent)} .sch .mobile b{font-family:var(--display); font-weight:600; font-size:1rem} .sch .mobile .c{font-family:var(--mono); font-size:.8rem; color:#8FD5E2} .sch .mobile .arrow{text-align:center; color:var(--navy-accent)} }
 
 /* ---------- Börse ---------- */
 .bcards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px}
@@ -672,33 +677,44 @@ function pageAkteure(p){
   const G = Object.fromEntries(GRUPPEN.map(g=>[g.id,g]));
   const top = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i).join(" · ");
   const G3 = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i);
-  const node = (x,id,k,title,names,count,cls="") => `<a href="#g-${id}"><rect class="node ${cls}" x="${x-120}" y="150" width="240" height="132"/><rect class="sq" x="${x-120-5}" y="${150-5}" width="10" height="10" transform="rotate(45 ${x-120} 150)"/><text class="k" x="${x-104}" y="176">${k}</text><text class="t" x="${x-104}" y="204">${esc(title)}</text><text class="c" x="${x-104}" y="226">${count}</text><text class="n" x="${x-104}" y="250">${esc(names[0]||"")}</text><text class="n" x="${x-104}" y="268">${esc(names.slice(1).join(" · "))}</text></a>`;
-  const flow = (x1,x2) => `<line class="flowl" x1="${x1}" y1="196" x2="${x2-8}" y2="196"/><path class="arr" d="M${x2-8} 191 L${x2} 196 L${x2-8} 201 Z"/><line class="flowl" x1="${x2}" y1="236" x2="${x1+8}" y2="236"/><path class="arr" d="M${x1+8} 231 L${x1} 236 L${x1+8} 241 Z"/>`;
-  const X=[150,450,750,1050];
-  const svg = `<svg viewBox="0 0 1200 430" role="img" aria-label="Schaubild der Marktstruktur">
-    <line class="rail" x1="30" y1="48" x2="1170" y2="48"/>
-    <text class="rl" x="30" y="36">${esc(G.inst.n)}</text><text class="rn" x="30" y="70">${esc(G3(G.inst).join(" · "))} — Regulierung, Aufsicht und Statistik wirken auf alle Ebenen</text>
-    <a href="#g-inst"><text class="go" x="1170" y="36" text-anchor="end">${G.inst.ids.length} Akteure ↓</text></a>
-    ${[450,750,1050].map(x=>`<rect class="sq" x="${x-5}" y="43" width="10" height="10" transform="rotate(45 ${x} 48)"/><line class="tick" x1="${x}" y1="56" x2="${x}" y2="150"/>`).join("")}
-    <text class="fl" x="${(X[0]+X[1])/2}" y="186" text-anchor="middle">Risiko</text><text class="fl" x="${(X[0]+X[1])/2}" y="254" text-anchor="middle">Deckung</text>
-    <text class="fl" x="${(X[1]+X[2])/2}" y="186" text-anchor="middle">Prämie · Risiko</text><text class="fl" x="${(X[1]+X[2])/2}" y="254" text-anchor="middle">Kapazität</text>
-    <text class="fl" x="${(X[2]+X[3])/2}" y="186" text-anchor="middle">Spitzenrisiko</text><text class="fl" x="${(X[2]+X[3])/2}" y="254" text-anchor="middle">Rückdeckung · ILS</text>
-    ${flow(270,330)}${flow(570,630)}${flow(870,930)}
-    <g><rect class="node risk" x="30" y="150" width="240" height="132"/><text class="k" x="46" y="176" style="fill:var(--navy-ink-2)">Ausgangspunkt</text><text class="t" x="46" y="204" style="font-family:var(--sans);font-size:16px">Unternehmen</text><text class="c" x="46" y="226">Versicherungsnehmer</text><text class="n" x="46" y="250">Konzern bis Handwerksbetrieb;</text><text class="n" x="46" y="268">NIS2 und DORA erzeugen Nachfrage</text></g>
-    ${node(450,"vertrieb","Platzierung","Vertrieb",G3(G.vertrieb),G.vertrieb.ids.length+" Akteure · Makler, MGAs, Plattformen")}
-    ${node(750,"erst","Risikoträger","Erstversicherer",G3(G.erst),G.erst.ids.length+" Akteure")}
-    ${node(1050,"rueck","Spitzenrisiko &amp; Kapital","Rückversicherer",G3(G.rueck),G.rueck.ids.length+" Akteure · inkl. Lloyd's, ILS")}
-    ${[450,750].map(x=>`<line class="tick" x1="${x}" y1="282" x2="${x}" y2="378"/><rect class="sq" x="${x-5}" y="381" width="10" height="10" transform="rotate(45 ${x} 386)"/>`).join("")}
-    <line class="rail" x1="30" y1="386" x2="1170" y2="386"/>
-    <text class="rl" x="30" y="410">${esc(G.oeko.n)}</text><text class="rn" x="30" y="426">${esc(G3(G.oeko).join(" · "))} — Prävention und Rating vor der Zeichnung, Incident Response im Schadenfall</text>
-    <a href="#g-oeko"><text class="go" x="1170" y="410" text-anchor="end">${G.oeko.ids.length} Akteure ↓</text></a>
+  const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("The Geneva Association","Geneva Association").replace("Bundesamt für Cybersicherheit","BACS");
+  const chips = (g, y, dir) => { let x = 40; const out=[]; for(const id of g.ids){ const a=A[id]; if(!a) continue; const label=short(a.n); const w=Math.round(label.length*7.2+26); if(x+w>1000) break; out.push(`<a href="#/akteure/${id}"><rect class="chip" x="${x}" y="${y-15}" width="${w}" height="30" rx="15"/><text class="ct" x="${x+w/2}" y="${y+4}" text-anchor="middle">${esc(label)}</text></a>`); x+=w+8; } return out.join(""); };
+  const NW=200, NH=196, NY=176, X=[150,450,750,1050];
+  const node = (x,id,k,title,count,names) => `<a href="#g-${id}"><rect class="panel" x="${x-NW/2}" y="${NY}" width="${NW}" height="${NH}" rx="16"/>
+      <text class="k" x="${x-NW/2+20}" y="${NY+30}">${k}</text><text class="t" x="${x-NW/2+20}" y="${NY+62}">${esc(title)}</text>
+      <text class="num" x="${x-NW/2+20}" y="${NY+112}">${count}</text><text class="unit" x="${x-NW/2+20+String(count).length*24+6}" y="${NY+112}">Akteure</text>
+      <text class="n" x="${x-NW/2+20}" y="${NY+146}">${esc(short(names[0]||""))}</text><text class="n" x="${x-NW/2+20}" y="${NY+166}">${esc(names.slice(1,3).map(short).join(" · "))}</text></a>`;
+  const rib = (y,h,cls,left,right) => `<path class="${cls}" d="M${left} ${y-h/2} L${right-18} ${y-h/2} L${right} ${y} L${right-18} ${y+h/2} L${left} ${y+h/2} Z"/>`;
+  const ribL = (y,h,cls,left,right) => `<path class="${cls}" d="M${right} ${y-h/2} L${left+18} ${y-h/2} L${left} ${y} L${left+18} ${y+h/2} L${right} ${y+h/2} Z"/>`;
+  const svg = `<svg viewBox="0 0 1200 560" role="img" aria-label="Schaubild der Marktstruktur">
+    <defs><linearGradient id="rib1" x1="0" x2="1"><stop offset="0" stop-color="#1B7C7E" stop-opacity=".25"/><stop offset="1" stop-color="#5CC4C6" stop-opacity=".55"/></linearGradient>
+      <linearGradient id="rib2" x1="1" x2="0"><stop offset="0" stop-color="#E9B25B" stop-opacity=".18"/><stop offset="1" stop-color="#E9B25B" stop-opacity=".5"/></linearGradient></defs>
+    <text class="k dim" x="40" y="42">${esc(G.inst.n)}</text><text class="n" x="40" y="60">Regulierung, Aufsicht und Statistik wirken auf alle Ebenen</text>
+    <a href="#g-inst"><text class="go" x="1160" y="42" text-anchor="end">${G.inst.ids.length} Akteure →</text></a>
+    ${chips(G.inst, 96, 1)}
+    <line class="band" x1="40" y1="130" x2="1160" y2="130"/>
+    ${rib(NY+72, 24, "rib1", 36, 1168)}
+    ${ribL(NY+128, 24, "rib2", 32, 1164)}
+    <rect x="40" y="${NY+NH+22}" width="26" height="6" rx="3" fill="#5CC4C6" opacity=".8"/><text class="fl p" x="74" y="${NY+NH+29}">Prämie und Risiko fließen nach rechts</text>
+    <rect x="400" y="${NY+NH+22}" width="26" height="6" rx="3" fill="#E9B25B" opacity=".8"/><text class="fl c" x="434" y="${NY+NH+29}">Kapazität und Deckung fließen nach links</text>
+    <a href="#g-vertrieb"><rect class="panel risk" x="${X[0]-NW/2}" y="${NY}" width="${NW}" height="${NH}" rx="16"/>
+      <text class="k dim" x="${X[0]-NW/2+20}" y="${NY+30}">Ausgangspunkt</text><text class="t sm" x="${X[0]-NW/2+20}" y="${NY+60}">Unternehmen</text>
+      <text class="n" x="${X[0]-NW/2+20}" y="${NY+96}">Versicherungsnehmer,</text><text class="n" x="${X[0]-NW/2+20}" y="${NY+114}">vom Konzern bis zum</text><text class="n" x="${X[0]-NW/2+20}" y="${NY+132}">Handwerksbetrieb.</text>
+      <text class="n" x="${X[0]-NW/2+20}" y="${NY+158}">NIS2 und DORA</text><text class="n" x="${X[0]-NW/2+20}" y="${NY+176}">erzeugen Nachfrage.</text></a>
+    ${node(X[1],"vertrieb","Platzierung","Vertrieb",G.vertrieb.ids.length,G3(G.vertrieb))}
+    ${node(X[2],"erst","Risikoträger","Erstversicherer",G.erst.ids.length,G3(G.erst))}
+    ${node(X[3],"rueck","Spitzenrisiko &amp; Kapital","Rückversicherer",G.rueck.ids.length,G3(G.rueck))}
+    <line class="band" x1="40" y1="436" x2="1160" y2="436"/>
+    <text class="k dim" x="40" y="464">${esc(G.oeko.n)}</text><text class="n" x="40" y="482">Prävention und Rating vor der Zeichnung, Incident Response im Schadenfall</text>
+    <a href="#g-oeko"><text class="go" x="1160" y="464" text-anchor="end">${G.oeko.ids.length} Akteure →</text></a>
+    ${chips(G.oeko, 518, -1)}
   </svg>`;
   const mobile = `<div class="mobile">
     <a class="risk" href="#g-vertrieb"><span class="k">Ausgangspunkt</span><b>Unternehmen</b><span class="c">Nachfrage</span></a><div class="arrow">↓</div>
     ${GRUPPEN.filter(g=>["vertrieb","erst","rueck"].includes(g.id)).map((g,i)=>`<a href="#g-${g.id}"><span class="k">${["Platzierung","Risikoträger","Spitzenrisiko"][i]}</span><b>${esc(g.n)}</b><span class="c">${g.ids.length}</span></a>${i<2?'<div class="arrow">↓</div>':''}`).join("")}
     <a href="#g-inst"><span class="k">Rahmen</span><b>${esc(G.inst.n)}</b><span class="c">${G.inst.ids.length}</span></a>
     <a href="#g-oeko"><span class="k">Unterbau</span><b>${esc(G.oeko.n)}</b><span class="c">${G.oeko.ids.length}</span></a></div>`;
-  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Marktstruktur · Cyberversicherung DACH</span><span class="hint">Prämie und Risiko fließen nach rechts, Kapazität nach links — Kasten anklicken für die Gruppe</span></div>${svg}${mobile}</div></section>`;
+  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Marktstruktur · Cyberversicherung DACH</span><span class="hint">Panel anklicken → Gruppe</span></div>${svg}${mobile}</div></section>`;
   const anchors = `<div class="anchors">${GRUPPEN.map(g=>`<a class="chip" href="#g-${g.id}">${esc(g.n)}</a>`).join("")}</div>`;
   const hit = a => !q || (a.n+" "+a.b+" "+a.rollen.join(" ")+" "+(BED[a.id]||"")).toLowerCase().includes(q);
   const groups = GRUPPEN.map(g=>{
