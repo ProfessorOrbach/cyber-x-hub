@@ -62,10 +62,10 @@ p{margin:0 0 12px; max-width:70ch}
 .brand small{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:400; margin-left:4px}
 .nav{display:flex; gap:2px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
-.nav a{font-size:.9rem; font-weight:500; color:var(--ink-2); text-decoration:none; padding:19px 11px 17px; border-bottom:2px solid transparent; white-space:nowrap}
+.nav a{font-size:.86rem; font-weight:500; color:var(--ink-2); text-decoration:none; padding:19px 8px 17px; border-bottom:2px solid transparent; white-space:nowrap}
 .nav a:hover{color:var(--ink)}
 .nav a.on{color:var(--accent-2); border-bottom-color:var(--accent-solid)}
-.search{display:flex; align-items:center; gap:8px; background:var(--surface-2); border:1px solid var(--rule); border-radius:4px; padding:6px 10px; min-width:220px}
+.search{display:flex; align-items:center; gap:8px; background:var(--surface-2); border:1px solid var(--rule); border-radius:4px; padding:6px 10px; min-width:170px; max-width:220px}
 .search input{border:0; background:transparent; font:inherit; font-size:.875rem; color:var(--ink); width:100%; outline:none}
 .search input::placeholder{color:var(--ink-3)}
 .search kbd{font-family:var(--mono); font-size:.66rem; color:var(--ink-3); border:1px solid var(--rule); border-radius:3px; padding:0 4px}
@@ -397,6 +397,36 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .sch .mobile{display:none}
 @media (max-width:700px){ .sch svg{display:none} .sch .mobile{display:grid; gap:8px} .sch .mobile a{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:12px 14px; border:1px solid var(--rule); background:var(--surface-2); border-radius:10px; color:var(--ink); text-decoration:none} .sch .mobile a.risk{border-style:dashed; background:transparent} .sch .mobile .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2)} .sch .mobile b{font-family:var(--display); font-weight:600; font-size:1rem} .sch .mobile .c{font-family:var(--mono); font-size:.8rem; color:var(--accent-2)} .sch .mobile .arrow{text-align:center; color:var(--accent)} }
 
+/* ---------- Schadenfälle ---------- */
+.kostleg{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:8px 16px; margin-bottom:16px}
+.shr{display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:8px; align-items:center; font-size:.8rem; color:var(--ink-2)}
+.shr .n{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.shr .v{font-family:var(--mono); font-size:.78rem; color:var(--ink); font-variant-numeric:tabular-nums}
+.sw{display:inline-block; width:12px; height:12px; border-radius:3px}
+.bars{display:flex; flex-direction:column; gap:8px}
+.brow{display:grid; grid-template-columns:210px 1fr 96px; gap:12px; align-items:center}
+.brow .lbl{display:flex; flex-direction:column; text-decoration:none; color:var(--ink); line-height:1.25}
+.brow .lbl b{font-weight:600; font-size:.85rem}
+.brow .lbl span{font-size:.72rem; color:var(--ink-3)}
+.brow .lbl:hover b{color:var(--accent-2)}
+.track{position:relative; height:22px; background:var(--surface-2); border-radius:4px; overflow:hidden}
+.seg{position:absolute; top:0; height:100%; border-radius:2px; display:block; transition:filter .15s}
+a.seg:hover{filter:brightness(1.12)}
+.brow .tot{font-family:var(--mono); font-size:.8rem; text-align:right; font-variant-numeric:tabular-nums}
+@media (max-width:640px){ .brow{grid-template-columns:1fr 70px} .brow .lbl{grid-column:1/-1} }
+.kgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px 20px}
+.kart{display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start; font-size:.85rem}
+.kart .sw{margin-top:4px}
+.kart b{display:block; font-weight:600; margin-bottom:2px}
+.kart span{color:var(--ink-2)}
+.falls{display:flex; flex-direction:column}
+.fall{display:grid; grid-template-columns:1fr auto; gap:4px 16px; padding:10px 0; border-bottom:1px solid var(--rule-soft); text-decoration:none; color:var(--ink)}
+.fall:last-child{border-bottom:none}
+.fall .k{font-family:var(--mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); grid-column:1}
+.fall b{font-weight:500; font-size:.925rem; grid-column:1}
+.fall .v{font-family:var(--mono); font-size:.8rem; grid-column:2; grid-row:1/3; align-self:center; font-variant-numeric:tabular-nums}
+.fall:hover b{color:var(--accent-2)}
+
 /* ---------- Börse ---------- */
 .bcards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px}
 .bcard{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:13px 15px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:5px; min-width:0}
@@ -422,6 +452,7 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
       <a href="#/markt" data-r="markt">Markt &amp; Kapital</a>
       <a href="#/akteure" data-r="akteure">Akteure</a>
       <a href="#/regulierung" data-r="regulierung">Regulierung</a>
+      <a href="#/schaeden" data-r="schaeden">Schadenfälle</a>
       <a href="#/meldungen" data-r="meldungen">Alle Meldungen</a>
       <a href="#/themen" data-r="themen">Themen</a>
       <a href="#/referenz" data-r="referenz">Referenz</a>
@@ -719,7 +750,8 @@ function pageAkteure(p){
     <a href="#g-inst" class="fu" style="animation-delay:1.2s"><rect class="panel" x="38" y="118" width="212" height="360" rx="12"/>${ico.bank}
       <text class="tt" x="144" y="258" text-anchor="middle">Institutionen</text><text class="tt" x="144" y="282" text-anchor="middle">und Aufsicht</text>
       ${bullets(58,320,["Gesetze & Regulierung","Standards & Normen","Aufsicht & Compliance","Resilienz & Vertrauen"],26)}
-      <text class="subz" x="144" y="452" text-anchor="middle">NIS2 · DSGVO · DORA</text></a>
+      <text class="subz" x="144" y="436" text-anchor="middle" style="font-weight:600;fill:var(--ink-2)">BSI · BaFin · EIOPA · GDV</text>
+      <text class="subz" x="144" y="458" text-anchor="middle">NIS2 · DSGVO · DORA</text></a>
     ${mini(356,195,ico.doc(356,195),1.35)}${mini(283,490,ico.gavel(283,490),1.45)}${mini(231,612,`<g class="ico2" stroke="var(--cU)" transform="translate(219,598)"><path d="M12 0 L24 5 V14 C24 22 18 27 12 29 C6 27 0 22 0 14 V5 Z"/><path d="M6 14 L10 18 L18 10"/></g>`,1.55)}
     <a href="#/themen/ki" class="fu" style="animation-delay:1.25s"><rect class="panel" x="1286" y="118" width="212" height="360" rx="12"/>${ico.hacker}
       <text class="tt" x="1392" y="270" text-anchor="middle" fill="var(--cH)">Hacker und KI</text>
@@ -863,6 +895,54 @@ function pageThema(id){
     </aside></div>`;
 }
 
+
+/* ---------- Schadenfälle ---------- */
+const SCH = {open:null};
+function fmtEur(v){ return v.toLocaleString("de-DE")+" €"; }
+function pageSchaeden(p){
+  const KA=SCHAEDEN.kostenarten, KAI=Object.fromEntries(KA.map(k=>[k.id,k]));
+  const sum=f=>Object.values(f.kosten).reduce((a,b)=>a+b,0);
+  const faelle=SCHAEDEN.faelle.slice().sort((a,b)=>sum(b)-sum(a));
+  const max=Math.max(...faelle.map(sum));
+  const tiles=["angriffe-gdv","schaden-bitkom","ransom-refuse","ransom-demand"].filter(i=>K[i]).map(i=>tile(K[i])).join("");
+  // Summe je Kostenart über alle Beispiele
+  const tot={}; faelle.forEach(f=>Object.entries(f.kosten).forEach(([k,v])=>tot[k]=(tot[k]||0)+v)); const totAll=Object.values(tot).reduce((a,b)=>a+b,0);
+  const share=KA.map(k=>`<div class="shr"><span class="sw" style="background:${k.c}"></span><span class="n">${esc(k.n)}</span><span class="v">${Math.round((tot[k.id]||0)/totAll*100)} %</span></div>`).join("");
+  const bars=faelle.map(f=>{ const s=sum(f); let x=0; const segs=KA.filter(k=>f.kosten[k.id]).map(k=>{ const w=f.kosten[k.id]/max*100; const seg=`<a class="seg" href="#/schaeden/${f.id}" style="left:${x.toFixed(2)}%;width:calc(${w.toFixed(2)}% - 2px);background:${k.c}" data-tip="${esc(k.n)}: ${fmtEur(f.kosten[k.id])}"></a>`; x+=w; return seg; }).join("");
+    return `<div class="brow${SCH.open===f.id?" on":""}"><a class="lbl" href="#/schaeden/${f.id}"><b>${esc(f.branche)}</b><span>${esc(f.art)}</span></a><div class="track">${segs}</div><span class="tot">${fmtEur(s)}</span></div>`; }).join("");
+  const arten=SCHAEDEN.arten.map(a=>`<div class="card"><h3>${esc(a.n)}</h3><p style="font-size:.875rem;color:var(--ink-2);margin:0 0 8px">${esc(a.s)}</p>${pill("acc",a.anteil)}</div>`).join("");
+  const kost=KA.map(k=>`<div class="kart"><span class="sw" style="background:${k.c}"></span><div><b>${esc(k.n)}</b><span>${esc(k.s)}</span></div></div>`).join("");
+  const list=faelle.map(f=>`<a class="fall" href="#/schaeden/${f.id}"><span class="k">${esc(f.art)} · ${esc(f.branche)}</span><b>${esc(f.t)}</b><span class="v">${fmtEur(sum(f))}</span></a>`).join("");
+  return `<div class="pagehead"><div><h1>Schadenfälle</h1><p>Was bei einem Cyberschaden tatsächlich Geld kostet — in wenigen Worten erklärt, mit Statistik und konstruierten Beispielen aus typischen Fallmustern.</p></div><span class="stamp">${faelle.length} Beispiele · ${pill("ind","illustrativ")}</span></div>
+    <div class="grid g6">${tiles}</div>
+    <div class="sect"><h2>Woraus ein Cyberschaden besteht <span class="eyebrow">Beispiele, sortiert nach Gesamtaufwand</span></h2>
+      <div class="card"><div class="kostleg">${share}</div><div class="bars">${bars}</div>
+      <div class="srcfoot">Anteile: Summe der Kostenarten über alle neun Beispiele. ${esc(SCHAEDEN.hinweis)} Balken anklicken öffnet den Fall.</div></div></div>
+    <div class="sect"><h2>Sechs Kostenarten <span class="eyebrow">so gliedern Versicherer den Aufwand</span></h2><div class="card"><div class="kgrid">${kost}</div></div></div>
+    <div class="sect"><h2>Schadenarten in wenigen Worten</h2><div class="grid g3">${arten}</div></div>
+    <div class="sect"><h2>Die Beispiele <span class="eyebrow">konstruiert, an typische Muster angelehnt</span></h2><div class="card"><div class="falls">${list}</div></div></div>`
+    + newsBlock("Meldungen zu Schäden und Vorfällen","Claims-Reports, Ransomware, Vorfälle",m=>m.dom==="D3"||/ransom|schaden|vorfall|claims/i.test(m.t),"#/meldungen?dom=D3");
+}
+function pageFall(id){
+  const f=SCHAEDEN.faelle.find(x=>x.id===id); if(!f) return notFound();
+  const KA=SCHAEDEN.kostenarten; const sum=Object.values(f.kosten).reduce((a,b)=>a+b,0);
+  const rows=KA.filter(k=>f.kosten[k.id]).map(k=>`<tr><td><span class="sw" style="background:${k.c};display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px;vertical-align:-1px"></span>${esc(k.n)}</td><td class="num">${fmtEur(f.kosten[k.id])}</td><td class="num">${Math.round(f.kosten[k.id]/sum*100)} %</td></tr>`).join("");
+  let x=0; const segs=KA.filter(k=>f.kosten[k.id]).map(k=>{ const w=f.kosten[k.id]/sum*100; const seg=`<span class="seg" style="left:${x.toFixed(2)}%;width:calc(${w.toFixed(2)}% - 2px);background:${k.c}"></span>`; x+=w; return seg; }).join("");
+  const others=SCHAEDEN.faelle.filter(o=>o.id!==id&&o.art===f.art);
+  return `<a class="back" href="#/schaeden">← Schadenfälle</a>
+    <div class="detail"><div>
+      <div class="pagehead"><div><span class="eyebrow">${esc(f.art)} · ${esc(f.branche)}</span><h1>${esc(f.t)}</h1></div>${pill("ind","konstruiertes Beispiel")}</div>
+      <div class="card"><p style="font-size:1rem">${esc(f.s)}</p><div class="einordnung"><b>Was der Fall lehrt</b>${esc(f.lehre)}</div>
+        <div class="track" style="margin-top:14px">${segs}</div>
+        <div class="tablewrap" style="margin-top:12px;box-shadow:none"><table style="min-width:0"><thead><tr><th>Kostenart</th><th class="num">Betrag</th><th class="num">Anteil</th></tr></thead><tbody>${rows}<tr><td><b>Gesamt</b></td><td class="num"><b>${fmtEur(sum)}</b></td><td class="num">100 %</td></tr></tbody></table></div>
+        <div class="srcfoot">${esc(SCHAEDEN.hinweis)}</div></div>
+    </div><aside>
+      <div class="card"><h3>Schadenart</h3><p style="font-size:.875rem;color:var(--ink-2)">${esc((SCHAEDEN.arten.find(a=>a.n===f.art)||{}).s||"")}</p></div>
+      ${others.length?`<div class="card" style="margin-top:12px"><h3>Weitere Fälle dieser Art</h3><div class="rel">${others.map(o=>`<a href="#/schaeden/${o.id}"><span class="k">${esc(o.branche)}</span>${esc(o.t)}</a>`).join("")}</div></div>`:""}
+      <div class="card" style="margin-top:12px"><h3>Zum Weiterlesen</h3><div class="rel"><a href="#/themen/cx-schadenfall"><span class="k">Dossier</span>Kundenerlebnis im Schadenfall</a><a href="#/radar"><span class="k">Karte</span>Vorfälle in Deutschland</a><a href="#/markt/kennzahl/ransom-refuse"><span class="k">Kennzahl</span>Anteil verweigerter Lösegeldzahlungen</a></div></div>
+    </aside></div>`;
+}
+
 /* ---------- Referenz ---------- */
 function pageReferenz(){
   const src = Object.entries(QUELLEN).map(([k,s])=>`<li>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)} — ${esc(s.h)}<br><span class="mono">${esc(k)} · ${esc(s.typ)} · Lizenz: ${esc(s.liz)}</span></li>`).join("");
@@ -893,7 +973,8 @@ function pageSuche(p){
   const gl=GLOSSAR.filter(g=>hit(g.t)||hit(g.d));
   const th=THEMEN.filter(t=>hit(t.t)||hit(t.teaser)||t.text.some(hit));
   const vf=VORFAELLE.filter(v=>hit(v.t)||hit(v.org)||hit(v.ort));
-  const n=ak.length+ra.length+me.length+kz.length+gl.length+th.length+vf.length;
+  const sf=SCHAEDEN.faelle.filter(f=>hit(f.t)||hit(f.s)||hit(f.branche)||hit(f.art));
+  const n=ak.length+ra.length+me.length+kz.length+gl.length+th.length+vf.length+sf.length;
   const sec=(t,arr,f)=>arr.length?`<div class="srch-res"><h3>${t} · ${arr.length}</h3><div class="rel">${arr.map(f).join("")}</div></div>`:"";
   return `<div class="pagehead"><div><h1>Suche</h1><p>„${esc(p.get("q"))}" — ${n} Treffer</p></div></div><div class="card">
     ${sec("Themen",th,t=>`<a href="#/themen/${t.id}"><span class="k">${esc(t.rub)}</span>${esc(t.t)}</a>`)}
@@ -901,6 +982,7 @@ function pageSuche(p){
     ${sec("Rechtsakte",ra,r=>`<a href="#/regulierung/${r.id}"><span class="k">${esc(r.jur)}</span>${esc(r.n)}</a>`)}
     ${sec("Kennzahlen",kz,k=>`<a href="#/markt/kennzahl/${k.id}"><span class="k">${esc(k.reg)}</span>${esc(k.n)}</a>`)}
     ${sec("Meldungen",me,m=>`<a href="#/meldungen/${m.id}"><span class="k">${fd(m.d)}</span>${esc(m.t)}</a>`)}
+    ${sec("Schadenfälle",sf,f=>`<a href="#/schaeden/${f.id}"><span class="k">${esc(f.art)}</span>${esc(f.t)}</a>`)}
     ${sec("Vorfälle",vf,v=>`<a href="${esc(v.q)}" target="_blank" rel="noopener"><span class="k">${fd(v.d)}</span>${esc(v.ort)}: ${esc(v.t)}</a>`)}
     ${sec("Glossar",gl,g=>`<a href="#/referenz#glossar"><span class="k">Begriff</span>${esc(g.t)}</a>`)}
     ${n?"":'<div class="empty">Nichts gefunden.</div>'}</div>`;
@@ -917,6 +999,7 @@ function route(){
   else if(r==="akteure") html=parts[1]?pageAkteur(parts[1]):pageAkteure(p);
   else if(r==="regulierung") html=parts[1]?pageRechtsakt(parts[1]):pageRegulierung(p);
   else if(r==="meldungen") html=parts[1]?pageMeldung(parts[1]):pageMeldungen(p);
+  else if(r==="schaeden") html=parts[1]?pageFall(parts[1]):pageSchaeden(p);
   else if(r==="themen") html=parts[1]?pageThema(parts[1]):pageThemen();
   else if(r==="referenz") html=pageReferenz();
   else if(r==="suche") html=pageSuche(p);
@@ -924,7 +1007,7 @@ function route(){
   $("#app").innerHTML=html+`<footer class="site"><span>Cyber-X-Hub · Prototyp</span><span>Herausgeber: ${esc(HERAUSGEBER.name)}</span><span>Keine Anlage- oder Versicherungsberatung</span><span>Stand ${fd(STAND)}</span></footer>`;
   document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===r||(r==="suche"&&false)));
   document.title = "Cyber-X-Hub";
-  wireCharts(); wireMap(); wireBoerse(); wireZsp();
+  wireCharts(); wireMap(); wireBoerse(); wireZsp(); document.querySelectorAll(".bars .seg").forEach(sg=>{ sg.title=sg.dataset.tip; });
   document.querySelectorAll("tr.rowlink").forEach(tr=>tr.addEventListener("click",e=>{ if(e.target.closest("a")) return; location.hash=tr.dataset.href; }));
   document.querySelectorAll("th[data-sort]").forEach(th=>th.addEventListener("click",()=>{ const k=th.dataset.sort; if(AK.sort===k) AK.asc=!AK.asc; else {AK.sort=k;AK.asc=true;} route(); }));
   const fl=$("#f-land"); if(fl) fl.addEventListener("change",()=>{ p.set("land",fl.value); if(!fl.value) p.delete("land"); location.hash="#/akteure?"+p.toString(); });

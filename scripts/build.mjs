@@ -26,6 +26,7 @@ const D = {
 const vf = rd("data/vorfaelle.json"); D.VORFAELLE = vf.vorfaelle; D.VORFALL_STAT = vf.stat;
 const bx = rd("data/boerse.json"); D.BOERSE = bx.titel; D.BOERSE_Q = bx.quellen;
 const gr = rd("data/gruppen.json"); D.GRUPPEN = gr.gruppen; D.BED = gr.bedeutung;
+D.SCHAEDEN = rd("data/schaeden.json");
 
 // Kursdaten (optional, von scripts/kurse.mjs erzeugt) an Börsentitel hängen
 for (const b of D.BOERSE) {
@@ -55,6 +56,7 @@ for (const a of D.AKTEURE) {
   for (const r of a.rel || []) if (!D.AKTEURE.find(x => x.id === r.z)) errors.push(`Akteur ${a.id}: Beziehung zu unbekanntem ${r.z}`);
 }
 for (const r of D.RECHTSAKTE) { if (!r.q || !r.q.length) errors.push(`Rechtsakt ${r.id}: keine Quelle`); if (!r.fristen || !r.fristen.length) errors.push(`Rechtsakt ${r.id}: keine Fristen`); }
+for (const f of D.SCHAEDEN.faelle) { if (!f.kosten || !Object.keys(f.kosten).length) errors.push(`Schadenfall ${f.id}: keine Kosten`); for (const k of Object.keys(f.kosten)) if (!D.SCHAEDEN.kostenarten.find(x => x.id === k)) errors.push(`Schadenfall ${f.id}: Kostenart ${k} unbekannt`); }
 for (const v of D.VORFAELLE) { if (!v.q) errors.push(`Vorfall ${v.id}: keine Quelle`); if (typeof v.lat !== "number" || typeof v.lon !== "number") errors.push(`Vorfall ${v.id}: keine Koordinaten`); }
 for (const g of D.GRUPPEN) for (const id of g.ids) if (!D.AKTEURE.find(x => x.id === id)) errors.push(`Gruppe ${g.id}: Akteur ${id} unbekannt`);
 if (errors.length) { console.error("Validierung fehlgeschlagen:\n- " + errors.join("\n- ")); process.exit(1); }

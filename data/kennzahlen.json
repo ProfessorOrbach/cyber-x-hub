@@ -238,5 +238,39 @@
   "delta": "Raten seit 2024 rückläufig, Kapazität reichlich",
   "dir": "down",
   "pos": 74
+ },
+ {
+  "id": "angriffe-gdv",
+  "n": "Gemeldete Hackerangriffe bei Cyberversicherern (DE)",
+  "v": "≈ 4.000",
+  "e": "",
+  "per": "2023",
+  "st": "2024-09-30",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "gdvschaden"
+  ],
+  "def": "Zahl der von GDV-Mitgliedsunternehmen im Jahr gemeldeten Cyberangriffe auf versicherte Unternehmen.",
+  "basis": "Verbandsangabe in Pressemitteilung; Vorjahresvergleich +18,7 %",
+  "delta": "+18,7 % ggü. 2022",
+  "dir": "up"
+ },
+ {
+  "id": "schaden-bitkom",
+  "n": "Gesamtschaden der deutschen Wirtschaft durch Cyberangriffe",
+  "v": 289,
+  "e": "Mrd. EUR",
+  "per": "2025 (12 Monate)",
+  "st": "2025-08-31",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "bitkom25"
+  ],
+  "def": "Vom Verband geschätzter jährlicher Gesamtschaden durch Datendiebstahl, Spionage und Sabotage, digital und analog.",
+  "basis": "Befragung von rund 1.000 Unternehmen, Hochrechnung; nicht auf versicherte Schäden beschränkt",
+  "delta": "vs. ≈ 267 Mrd. EUR Vorjahr",
+  "dir": "up"
  }
 ]

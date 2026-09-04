@@ -1,0 +1,194 @@
+{
+ "hinweis": "Alle Beispiele sind konstruiert und an typische Fallmuster angelehnt. Beträge sind illustrativ, keine realen Schadenzahlungen.",
+ "kostenarten": [
+  {
+   "id": "forensik",
+   "n": "Soforthilfe & Forensik",
+   "s": "Notfallhotline, Ursachenermittlung, Eindämmung in den ersten Stunden",
+   "c": "#2F6DB5"
+  },
+  {
+   "id": "wieder",
+   "n": "Wiederherstellung",
+   "s": "Systeme und Daten neu aufsetzen, Sicherheitslücken schließen",
+   "c": "#1B7C7E"
+  },
+  {
+   "id": "bu",
+   "n": "Betriebsunterbrechung",
+   "s": "Entgangener Ertrag und Mehrkosten nach Ablauf der Zeitfranchise",
+   "c": "#E9B25B"
+  },
+  {
+   "id": "komm",
+   "n": "Kommunikation & Monitoring",
+   "s": "Benachrichtigung Betroffener, Call-Center, Kreditkarten-Monitoring, PR",
+   "c": "#5FB8AE"
+  },
+  {
+   "id": "dritt",
+   "n": "Drittschaden",
+   "s": "Schadenersatzansprüche Dritter, Abwehr unberechtigter Ansprüche",
+   "c": "#6C5DA8"
+  },
+  {
+   "id": "vermoegen",
+   "n": "Vermögensschaden",
+   "s": "Fehlgeleitete Zahlungen, Lösegeld (soweit versichert)",
+   "c": "#D46A6A"
+  }
+ ],
+ "arten": [
+  {
+   "n": "Ransomware",
+   "s": "Verschlüsselung von Systemen, meist kombiniert mit Datendiebstahl und Erpressung. Größter Kostentreiber durch Stillstand.",
+   "anteil": "häufigste Großschadenursache"
+  },
+  {
+   "n": "Überweisungsbetrug",
+   "s": "Gefälschte Anweisungen von Chef oder Lieferant führen zu Zahlungen auf fremde Konten. Häufigster Einzelfall, meist kleinere Beträge.",
+   "anteil": "häufigster Schadenfall nach Anzahl"
+  },
+  {
+   "n": "Datenabfluss",
+   "s": "Kunden-, Patienten- oder Kartendaten werden abgegriffen. Kosten entstehen durch Meldepflichten, Benachrichtigung und Haftung.",
+   "anteil": "treibt Kommunikations- und Drittschadenkosten"
+  },
+  {
+   "n": "Betriebsunterbrechung",
+   "s": "Kein eigener Angriffstyp, sondern die Folge: Jeder Tag Stillstand kostet mehr als die Technik.",
+   "anteil": "größter Kostenblock je Fall"
+  },
+  {
+   "n": "Bedienfehler & Ausfall",
+   "s": "Fehlklick, missglücktes Update, Hardwareverlust. Kein Angreifer nötig, trotzdem versichert, wenn die Police es vorsieht.",
+   "anteil": "unterschätzt, häufig"
+  },
+  {
+   "n": "Angriff über Dritte",
+   "s": "Dienstleister, Cloud oder Software des Lieferanten sind der Einstieg. Trifft viele gleichzeitig und ist damit das Kumulrisiko der Versicherer.",
+   "anteil": "wachsend, systemrelevant"
+  }
+ ],
+ "faelle": [
+  {
+   "id": "maschinenbau-ransomware",
+   "branche": "Maschinenbau, 120 Beschäftigte",
+   "art": "Ransomware",
+   "t": "Sechs Tage Stillstand nach Verschlüsselung über eine veraltete VPN-Software",
+   "s": "Die Angreifer nutzten eine bekannte Schwachstelle im Fernzugang, für die das Update seit Monaten bereitlag. Nachts wurden Auftrags- und Produktionsdaten verschlüsselt; die Fertigung stand, bis Systeme aus Sicherungen neu aufgesetzt waren. Das Lösegeld wurde nicht gezahlt.",
+   "lehre": "Patch-Management ist die günstigste Versicherung. Die Zeitfranchise entscheidet, wie viel vom Stillstand gedeckt ist.",
+   "kosten": {
+    "forensik": 18000,
+    "wieder": 42000,
+    "bu": 95000,
+    "komm": 6000
+   }
+  },
+  {
+   "id": "kanzlei-ceo-fraud",
+   "branche": "Steuerberatungskanzlei",
+   "art": "Überweisungsbetrug",
+   "t": "Gefälschte Chef-Mail löst Zahlung ins Ausland aus",
+   "s": "Eine täuschend echte Nachricht im Namen des Kanzleiinhabers bat die Buchhaltung um eine eilige Überweisung für einen angeblichen Mandantenauftrag. Ein Teil des Betrags konnte über die Bank zurückgeholt werden, der Rest blieb verloren.",
+   "lehre": "Vier-Augen-Prinzip bei Zahlungen ab einer festen Schwelle; Rückruf unter bekannter Nummer.",
+   "kosten": {
+    "vermoegen": 34500,
+    "forensik": 3000,
+    "komm": 1200
+   }
+  },
+  {
+   "id": "praxis-phishing",
+   "branche": "Zahnarztpraxis",
+   "art": "Datenabfluss",
+   "t": "Phishing-Login öffnet den Zugang zu 1.800 Patientenakten",
+   "s": "Eine Mitarbeiterin gab ihre Zugangsdaten auf einer nachgebauten Anmeldeseite des Praxissystems ein. Die Angreifer luden Patientendaten herunter. Es folgten die Meldung an die Datenschutzaufsicht, die Benachrichtigung aller Betroffenen und anwaltliche Begleitung.",
+   "lehre": "Zwei-Faktor-Anmeldung hätte den gestohlenen Zugang wertlos gemacht.",
+   "kosten": {
+    "forensik": 9000,
+    "komm": 12000,
+    "dritt": 7000
+   }
+  },
+  {
+   "id": "fitness-kassensystem",
+   "branche": "Fitnessstudio-Kette",
+   "art": "Datenabfluss",
+   "t": "Schadsoftware im Kassensystem liest 14 Monate lang Kartendaten aus",
+   "s": "Ein manipuliertes Update des Kassenanbieters brachte ein Programm mit, das Zahlungsdaten der Mitglieder abgriff. Aufgefallen ist es erst, als eine Bank auffällige Umsätze zurückverfolgte. Betroffene Karten mussten überwacht, Ansprüche reguliert werden.",
+   "lehre": "Angriff über den Dienstleister: Lieferkette in die Sicherheitsprüfung einbeziehen.",
+   "kosten": {
+    "forensik": 6000,
+    "wieder": 11000,
+    "komm": 15000,
+    "dritt": 8000
+   }
+  },
+  {
+   "id": "spedition-bedienfehler",
+   "branche": "Spedition",
+   "art": "Bedienfehler & Ausfall",
+   "t": "Fehlgeschlagenes Update löscht die Tourenplanung",
+   "s": "Ein Mitarbeiter startete ein Software-Update während des laufenden Betriebs; die Datenbank der Disposition wurde beschädigt. Zwei Tage lang wurden Touren von Hand geplant, mit Überstunden und Verspätungen.",
+   "lehre": "Kein Angreifer, trotzdem ein Cyberschaden. Sicherung vor jedem Update, Änderungen außerhalb der Betriebszeit.",
+   "kosten": {
+    "forensik": 2500,
+    "wieder": 6000,
+    "bu": 7000
+   }
+  },
+  {
+   "id": "architektur-anhang",
+   "branche": "Architekturbüro",
+   "art": "Ransomware",
+   "t": "Makro im Bewerbungsanhang verschlüsselt Pläne und lässt sie abfließen",
+   "s": "Ein vermeintliches Bewerbungsschreiben enthielt ein Dokument mit aktiven Inhalten. Die Schadsoftware verschlüsselte Projektdaten und übertrug vorher Baupläne eines Bauherrn nach außen. Die Erpressung wurde ignoriert; der Bauherr machte Ansprüche wegen Verzug und Vertraulichkeit geltend.",
+   "lehre": "Makros standardmäßig sperren; Vertraulichkeitsklauseln mit Kunden prüfen, sie bestimmen den Drittschaden.",
+   "kosten": {
+    "forensik": 12000,
+    "bu": 9000,
+    "komm": 3000,
+    "dritt": 25000
+   }
+  },
+  {
+   "id": "ingenieur-laptop",
+   "branche": "Ingenieurdienstleister",
+   "art": "Bedienfehler & Ausfall",
+   "t": "Unverschlüsselter Laptop aus dem Zug gestohlen, Projektzugang offen",
+   "s": "Auf dem Gerät waren Zugangsdaten gespeichert; bis zur Sperrung wurde nachweislich auf Projektordner zugegriffen. Das Netzwerk musste neu abgesichert werden, Kunden wurden informiert.",
+   "lehre": "Geräteverschlüsselung und Fernlöschung kosten fast nichts und hätten den Fall auf einen Sachschaden reduziert.",
+   "kosten": {
+    "forensik": 8000,
+    "bu": 22000,
+    "komm": 4000
+   }
+  },
+  {
+   "id": "makler-social",
+   "branche": "Immobilienmakler",
+   "art": "Datenabfluss",
+   "t": "Schadsoftware über eine Nachricht im sozialen Netzwerk kapert Konten",
+   "s": "Ein Video-Link von einem vermeintlichen Bekannten installierte ein Programm, das Passwörter und Kontakte auslas. Kunden erhielten anschließend Betrugsnachrichten im Namen des Maklers. Der Aufwand lag weniger in der Technik als in der Wiederherstellung des Vertrauens.",
+   "lehre": "Berufliche und private Nutzung trennen; Passwortmanager statt gespeicherter Browser-Logins.",
+   "kosten": {
+    "forensik": 4000,
+    "komm": 3000
+   }
+  },
+  {
+   "id": "hotel-zutritt",
+   "branche": "Boutique-Hotel",
+   "art": "Angriff über Dritte",
+   "t": "Manipuliertes Zutrittssystem sperrt Gäste aus den Zimmern aus",
+   "s": "Über ein schlecht gesichertes Gateway des Gebäudetechnik-Anbieters gelangten Angreifer auf den Rechner, der die elektronischen Schlösser steuert, und forderten Lösegeld. Das Hotel wechselte auf Notschlüssel, verlegte Gäste um und zahlte nicht.",
+   "lehre": "Vernetzte Gebäudetechnik gehört ins Sicherheitskonzept und in die Deckungsprüfung.",
+   "kosten": {
+    "forensik": 5000,
+    "bu": 8000,
+    "dritt": 6000
+   }
+  }
+ ]
+}

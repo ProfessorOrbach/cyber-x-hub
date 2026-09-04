@@ -96,5 +96,26 @@
   "u": "",
   "typ": "Primär (Unternehmen)",
   "liz": "Zitat"
+ },
+ "gdvschaden": {
+  "t": "Mehr Cyberschäden – Prävention wichtiger denn je",
+  "h": "GDV Medieninformation",
+  "u": "https://www.gdv.de/gdv/medien/medieninformationen/mehr-cyberschaeden-praevention-wichtiger-denn-je-181946",
+  "typ": "Primär (Pressemitteilung)",
+  "liz": "Zitat"
+ },
+ "bitkom25": {
+  "t": "Wirtschaftsschutz 2025 – Schäden durch Datendiebstahl, Spionage und Sabotage",
+  "h": "Bitkom",
+  "u": "https://www.bitkom.org/Presse/Presseinformation/Wirtschaftsschutz-2025",
+  "typ": "Sekundär (Verbandsstudie)",
+  "liz": "Zitat"
+ },
+ "eigene": {
+  "t": "Konstruierte Schadenbeispiele des Herausgebers",
+  "h": "Cyber-X-Hub",
+  "u": "",
+  "typ": "Eigenerhebung (illustrativ)",
+  "liz": "—"
  }
 }
