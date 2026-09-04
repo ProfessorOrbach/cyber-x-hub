@@ -84,19 +84,41 @@
    "Bruttoprämie (GWP)"
   ],
   "n": "Beitragseinnahmen Cyber Deutschland",
-  "v": null,
+  "v": 330,
   "e": "Mio. EUR",
-  "per": "2025",
-  "st": "—",
+  "per": "2024",
+  "st": "2025-09-17",
   "reg": "DE",
-  "qual": "ind",
+  "qual": "abg",
   "q": [
-   "gdvcyber"
+   "gdvtb25"
   ],
   "def": "Gebuchte Bruttobeiträge der GDV-Mitgliedsunternehmen in der Cyberrisikoversicherung.",
-  "basis": "Verbandsstatistik; Lizenzanfrage offen (O-3), Wert wird nach Klärung eingepflegt",
-  "delta": "Wachstum zuletzt einstellig, nach Jahren mit +50 %",
-  "dir": ""
+  "basis": "GDV-Verbandsstatistik, Tabelle 85 (inländisches Direktgeschäft); 52 meldende Unternehmen",
+  "delta": "+8,7 % ggü. 2023, nach +24,5 % im Vorjahr",
+  "dir": "up",
+  "reihe": [
+   [
+    "2020",
+    106
+   ],
+   [
+    "2021",
+    178
+   ],
+   [
+    "2022",
+    249
+   ],
+   [
+    "2023",
+    309
+   ],
+   [
+    "2024",
+    330
+   ]
+  ]
  },
  {
   "id": "cr-de",
@@ -104,19 +126,41 @@
    "Schaden-Kosten-Quote"
   ],
   "n": "Schaden-Kosten-Quote Cyber Deutschland",
-  "v": null,
+  "v": 80.7,
   "e": "%",
-  "per": "2025",
-  "st": "—",
+  "per": "2024",
+  "st": "2025-09-17",
   "reg": "DE",
-  "qual": "ind",
+  "qual": "abg",
   "q": [
-   "gdvpm"
+   "gdvtb25"
   ],
   "def": "Kombinierte Quote aus Schäden und Kosten im Verhältnis zu den verdienten Beiträgen.",
-  "basis": "Verbandsangabe; Rückkehr in die Gewinnzone nach Verlustjahr 2023 gemeldet",
-  "delta": "2023: Schäden verzehrten Beiträge weitgehend",
-  "dir": ""
+  "basis": "GDV-Verbandsstatistik, Tabelle 85; 2021 mit 123,7 % erstes Verlustjahr",
+  "delta": "nach 97,0 % (2023)",
+  "dir": "down",
+  "reihe": [
+   [
+    "2020",
+    64.7
+   ],
+   [
+    "2021",
+    123.7
+   ],
+   [
+    "2022",
+    77.7
+   ],
+   [
+    "2023",
+    97.0
+   ],
+   [
+    "2024",
+    80.7
+   ]
+  ]
  },
  {
   "id": "ils-cyber",
@@ -272,5 +316,292 @@
   "basis": "Befragung von rund 1.000 Unternehmen, Hochrechnung; nicht auf versicherte Schäden beschränkt",
   "delta": "vs. ≈ 267 Mrd. EUR Vorjahr",
   "dir": "up"
+ },
+ {
+  "id": "gdv-beitraege",
+  "n": "Beitragseinnahmen Cyberversicherung Deutschland",
+  "v": 330,
+  "e": "Mio. EUR",
+  "per": "2024",
+  "st": "2025-09-17",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "gdvtb25",
+   "gdvschaden"
+  ],
+  "def": "Gebuchte Bruttobeiträge des inländischen Direktgeschäfts der Cyberrisikoversicherung (GDV-Mitglieder).",
+  "basis": "GDV-Verbandsstatistik (Tabelle 85, inländisches Direktgeschäft, gebuchte Bruttobeiträge ohne Versicherungsteuer); Einzelwerte zitiert",
+  "delta": "+8,7 % ggü. 2023",
+  "dir": "up",
+  "reihe": [
+   [
+    "2020",
+    106
+   ],
+   [
+    "2021",
+    178
+   ],
+   [
+    "2022",
+    249
+   ],
+   [
+    "2023",
+    309
+   ],
+   [
+    "2024",
+    330
+   ]
+  ]
+ },
+ {
+  "id": "gdv-leistungen",
+  "n": "Schadenaufwand Cyberversicherung Deutschland",
+  "v": 150,
+  "e": "Mio. EUR",
+  "per": "2024",
+  "st": "2025-09-17",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "gdvtb25",
+   "gdvschaden"
+  ],
+  "def": "Leistungen (Schadenaufwand) des inländischen Direktgeschäfts der Cyberrisikoversicherung.",
+  "basis": "GDV-Verbandsstatistik (Tabelle 85): Brutto-Aufwendungen für im Geschäftsjahr gemeldete Versicherungsfälle; Einzelwerte zitiert",
+  "delta": "−15,9 % ggü. 2023",
+  "dir": "down",
+  "reihe": [
+   [
+    "2020",
+    37
+   ],
+   [
+    "2021",
+    137
+   ],
+   [
+    "2022",
+    121
+   ],
+   [
+    "2023",
+    180
+   ],
+   [
+    "2024",
+    150
+   ]
+  ]
+ },
+ {
+  "id": "gdv-cr",
+  "n": "Schaden-Kosten-Quote Cyberversicherung Deutschland",
+  "v": 80.7,
+  "e": "%",
+  "per": "2024",
+  "st": "2025-09-17",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "gdvtb25",
+   "gdvschaden"
+  ],
+  "def": "Combined Ratio: Schaden- und Kostenaufwand im Verhältnis zu den verdienten Beiträgen; über 100 % bedeutet versicherungstechnischen Verlust.",
+  "basis": "GDV-Verbandsstatistik (Tabelle 85); Schadenquote 2024: 45,5 %",
+  "delta": "nach 97,0 % im Jahr 2023",
+  "dir": "down",
+  "reihe": [
+   [
+    "2020",
+    64.7
+   ],
+   [
+    "2021",
+    123.7
+   ],
+   [
+    "2022",
+    77.7
+   ],
+   [
+    "2023",
+    97.0
+   ],
+   [
+    "2024",
+    80.7
+   ]
+  ]
+ },
+ {
+  "id": "gdv-schadenhoehe",
+  "n": "Durchschnittlicher Cyberschaden Deutschland",
+  "v": 45370,
+  "e": "EUR",
+  "per": "2023",
+  "st": "2024-09-05",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "gdvschaden",
+   "gdv23"
+  ],
+  "def": "Durchschnittlicher Schadenaufwand je gemeldetem Schadenfall.",
+  "basis": "GDV-Pressemitteilungen 2023/2024",
+  "delta": "+8,3 % ggü. 2022",
+  "dir": "up",
+  "reihe": [
+   [
+    "2021",
+    37000
+   ],
+   [
+    "2022",
+    41900
+   ],
+   [
+    "2023",
+    45370
+   ]
+  ]
+ },
+ {
+  "id": "ransom-zahlungen",
+  "n": "Ransomware-Zahlungen weltweit (on-chain)",
+  "v": 0.82,
+  "e": "Mrd. USD",
+  "per": "2025 (vorläufig)",
+  "st": "2026-02-26",
+  "reg": "Global",
+  "qual": "abg",
+  "q": [
+   "chain26",
+   "chain25"
+  ],
+  "def": "Auf der Blockchain nachvollziehbare Lösegeldzahlungen an Ransomware-Gruppen je Kalenderjahr.",
+  "basis": "Chainalysis; Werte werden nachträglich nach oben revidiert (2024 zunächst 0,81, später 0,89 Mrd. USD); Jahre vor 2023 aus früheren Berichten",
+  "delta": "−8 % ggü. 2024, 2023 Rekord 1,25 Mrd.",
+  "dir": "down",
+  "reihe": [
+   [
+    "2020",
+    0.91
+   ],
+   [
+    "2021",
+    0.98
+   ],
+   [
+    "2022",
+    0.57
+   ],
+   [
+    "2023",
+    1.25
+   ],
+   [
+    "2024",
+    0.89
+   ],
+   [
+    "2025",
+    0.82
+   ]
+  ]
+ },
+ {
+  "id": "ransom-quote",
+  "n": "Zahlungsquote bei Ransomware-Fällen",
+  "v": 20,
+  "e": "%",
+  "per": "Q4 2025",
+  "st": "2026-01-31",
+  "reg": "Global (IR-Fälle)",
+  "qual": "abg",
+  "q": [
+   "coveware",
+   "chain26"
+  ],
+  "def": "Anteil der von einem Incident-Response-Anbieter begleiteten Opfer, die Lösegeld zahlten; jeweils Wert des vierten Quartals.",
+  "basis": "Coveware-Quartalsberichte; Fälle mit Schwerpunkt größere Unternehmen, nicht marktrepräsentativ; Chainalysis nennt für 2025 eine Quote von 28 %",
+  "delta": "von rund 76 % (2019) auf 20 %",
+  "dir": "down",
+  "reihe": [
+   [
+    "2019",
+    76
+   ],
+   [
+    "2020",
+    70
+   ],
+   [
+    "2021",
+    46
+   ],
+   [
+    "2022",
+    37
+   ],
+   [
+    "2023",
+    29
+   ],
+   [
+    "2024",
+    25
+   ],
+   [
+    "2025",
+    20
+   ]
+  ]
+ },
+ {
+  "id": "ransom-recovery",
+  "n": "Durchschnittliche Wiederherstellungskosten nach Ransomware",
+  "v": 1.7,
+  "e": "Mio. USD",
+  "per": "Berichtsjahr 2026",
+  "st": "2026-06-30",
+  "reg": "Global (Befragung)",
+  "qual": "abg",
+  "q": [
+   "sophos26"
+  ],
+  "def": "Mittlere Kosten der Wiederherstellung ohne Lösegeld (Ausfall, Personal, Geräte, Netzwerk, entgangene Geschäfte) laut jährlicher Befragung von IT-Verantwortlichen.",
+  "basis": "Sophos State of Ransomware, Befragung; Berichtsjahr bezieht sich auf das Vorjahr",
+  "delta": "+11 % ggü. Vorjahr",
+  "dir": "up",
+  "reihe": [
+   [
+    "2021",
+    1.85
+   ],
+   [
+    "2022",
+    1.4
+   ],
+   [
+    "2023",
+    1.82
+   ],
+   [
+    "2024",
+    2.73
+   ],
+   [
+    "2025",
+    1.53
+   ],
+   [
+    "2026",
+    1.7
+   ]
+  ]
  }
 ]

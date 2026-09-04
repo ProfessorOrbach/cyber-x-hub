@@ -117,5 +117,47 @@
   "u": "",
   "typ": "Eigenerhebung (illustrativ)",
   "liz": "—"
+ },
+ "gdv23": {
+  "t": "Cyberversicherer kehren in die Gewinnzone zurück – Markt wächst weiter (Zahlen 2020–2022)",
+  "h": "GDV Medieninformation, 19.09.2023",
+  "u": "https://www.gdv.de/gdv/medien/medieninformationen/cyberversicherer-kehren-in-die-gewinnzone-zurueck-markt-waechst-weiter--147652",
+  "typ": "Primär (Pressemitteilung)",
+  "liz": "Zitat"
+ },
+ "chain26": {
+  "t": "Crypto Ransomware: 2026 Crypto Crime Report",
+  "h": "Chainalysis, 26.02.2026",
+  "u": "https://www.chainalysis.com/blog/crypto-ransomware-2026/",
+  "typ": "Sekundär (Blockchain-Analyse)",
+  "liz": "Zitat"
+ },
+ "chain25": {
+  "t": "Crypto Ransomware 2025: 35 % Rückgang der Zahlungen",
+  "h": "Chainalysis, Februar 2025",
+  "u": "https://www.chainalysis.com/blog/crypto-crime-ransomware-victim-extortion-2025/",
+  "typ": "Sekundär (Blockchain-Analyse)",
+  "liz": "Zitat"
+ },
+ "coveware": {
+  "t": "Ransomware Quarterly Reports",
+  "h": "Coveware by Veeam",
+  "u": "https://coveware.com/category/quarterly-report/",
+  "typ": "Sekundär (Incident-Response-Fälle)",
+  "liz": "Zitat"
+ },
+ "sophos26": {
+  "t": "The State of Ransomware 2026",
+  "h": "Sophos",
+  "u": "https://www.sophos.com/en-us/blog/sophos-state-of-ransomware-2026",
+  "typ": "Sekundär (Befragung)",
+  "liz": "Zitat"
+ },
+ "gdvtb25": {
+  "t": "Statistiken zur deutschen Versicherungswirtschaft 2025, Tabelle 85: Geschäftsentwicklung in der Cyberrisikoversicherung",
+  "h": "GDV",
+  "u": "https://www.gdv.de/resource/blob/152652/dd6bd3e5c32eb6fbd132dc654673d16c/statistiken-zur-deutschen-versicherungswirtschaft-taschenbuch-data.pdf",
+  "typ": "Primär (Verbandsstatistik, Taschenbuch)",
+  "liz": "Einzelwerte zitiert; Tabelle nicht übernommen"
  }
 }

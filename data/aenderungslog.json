@@ -1,6 +1,14 @@
 [
  {
   "d": "2026-09-04",
+  "t": "GDV-Werte 2024 aus Tabelle 85 des Statistik-Taschenbuchs ergänzt (Beiträge 330 Mio., Schadenaufwand 150 Mio., Combined Ratio 80,7 %); die bisher leeren Kennzahlen „Beitragseinnahmen Cyber Deutschland“ und „Schaden-Kosten-Quote Cyber Deutschland“ sind damit gefüllt."
+ },
+ {
+  "d": "2026-09-04",
+  "t": "Schadenfälle: Zeitreihen ergänzt (GDV Beiträge, Schadenaufwand, Combined Ratio, Ø Schaden 2020–2023; Chainalysis Ransomware-Zahlungen 2020–2025; Coveware Zahlungsquote 2019–2025; Sophos Wiederherstellungskosten 2021–2026)."
+ },
+ {
+  "d": "2026-09-04",
   "t": "Rubrik „Schadenfälle“ angelegt: sechs Schadenarten, sechs Kostenarten, neun konstruierte Beispiele mit illustrativen Beträgen; Kennzahlen GDV-Angriffsmeldungen und Bitkom-Gesamtschaden ergänzt."
  },
  {
