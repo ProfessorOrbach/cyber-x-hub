@@ -348,81 +348,47 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .toggle button{font-size:.75rem; font-family:var(--mono); padding:4px 10px; color:var(--ink-2); background:var(--surface)}
 .toggle button.on{background:var(--accent-solid); color:var(--on-accent)}
 
-/* ---------- Schaubild Marktstruktur ---------- */
-.schema{display:grid; gap:10px; margin-bottom:8px}
-.schema .band, .schema .box{border:1px solid var(--rule); border-radius:4px; background:var(--surface); padding:12px 14px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow); position:relative; min-width:0}
-.schema a.band:hover, .schema a.box:hover{border-color:var(--accent)}
-.schema .band{display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center}
-.schema .band.inst{border-top:3px solid var(--ink-3)}
-.schema .band.oeko{border-top:3px solid var(--signal)}
-.schema .row{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:26px; position:relative}
-@media (max-width:760px){ .schema .row{grid-template-columns:1fr 1fr; gap:14px} }
-.schema .box{border-top:3px solid var(--accent-solid); display:flex; flex-direction:column; gap:5px; min-height:130px}
-.schema .box.risk{border-top-color:var(--rule); background:var(--surface-2); box-shadow:none}
-.schema .row .box:not(:last-child)::after{content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--accent); font-size:1.1rem; font-weight:600}
-@media (max-width:760px){ .schema .row .box::after{display:none!important} }
-.schema .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3)}
-.schema h3{font-family:var(--display); font-size:1.05rem; font-weight:600; margin:0; line-height:1.2}
-.schema .box.risk h3{font-family:var(--sans); font-size:.95rem}
-.schema .c{font-family:var(--mono); font-size:.7rem; color:var(--accent-2)}
-.schema .top{font-size:.78rem; color:var(--ink-2); line-height:1.35}
-.schema .flow{font-size:.72rem; color:var(--ink-3); font-family:var(--mono); text-align:center}
-.schema .band .lbl{font-size:.78rem; color:var(--ink-2)}
-.grp{margin-top:30px; scroll-margin-top:80px}
-.grp > h2{font-family:var(--display); font-size:1.25rem; font-weight:600; margin-bottom:4px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
-.grp > h2 .c{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); font-weight:400}
-.grp > p{font-size:.875rem; color:var(--ink-2); margin-bottom:10px}
-.grp thead th{cursor:default}
-.grp td.rk{font-family:var(--mono); font-size:.78rem; color:var(--ink-3); width:34px; text-align:right}
-.grp .anchors{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 4px}
-
-/* ---------- Schaubild Marktstruktur ---------- */
-.sch{position:relative; margin:0 -22px 26px; padding:30px 22px 26px; color:var(--navy-ink); overflow:hidden;
-  background:radial-gradient(900px 420px at 18% -10%, rgba(27,124,126,.35), transparent 60%), radial-gradient(700px 400px at 95% 110%, rgba(92,196,198,.18), transparent 60%), linear-gradient(180deg,#0F1B2D 0%,#0B1320 100%)}
-.sch .in{position:relative; max-width:1200px; margin:0 auto}
-.sch .head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:14px}
-.sch .head .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--navy-accent)}
-.sch .head .hint{font-family:var(--mono); font-size:.68rem; color:var(--navy-ink-2)}
-.sch svg{width:100%; height:auto; display:block; overflow:visible}
-.sch .panel{fill:#16243A; stroke:rgba(255,255,255,.16); stroke-width:1}
-.sch a:hover .panel{fill:#1C3448; stroke:rgba(92,196,198,.8)}
-.sch .panel.risk{fill:#101C2E; stroke:rgba(255,255,255,.24); stroke-dasharray:5 5}
-.sch .sw{height:6px}
-.sch .rib1{fill:url(#rib1)}
-.sch .rib2{fill:url(#rib2)}
-.sch .chip{fill:rgba(255,255,255,.07); stroke:rgba(255,255,255,.16); stroke-width:1}
-.sch a:hover .chip{fill:rgba(92,196,198,.18); stroke:rgba(92,196,198,.7)}
-.sch .band{stroke:rgba(255,255,255,.12); stroke-width:1}
-.sch text{fill:var(--navy-ink)}
-.sch .t{font-family:var(--display); font-size:22px; font-weight:600}
-.sch .t.sm{font-family:var(--sans); font-size:17px; font-weight:500}
-.sch .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; fill:var(--navy-accent)}
-.sch .k.dim{fill:var(--navy-ink-2)}
-.sch .num{font-family:var(--mono); font-size:40px; font-weight:500; fill:#8FD5E2}
-.sch .unit{font-family:var(--mono); font-size:11px; fill:var(--navy-ink-2)}
-.sch .n{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink-2)}
-.sch .ct{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink)}
-.sch .fl{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase}
-.sch .fl.p{fill:#8FD5E2}
-.sch .fl.c{fill:#F0C77A}
-.sch .go{font-family:var(--mono); font-size:11px; fill:var(--navy-accent)}
-.sch .edge{stroke:#5CC4C6; stroke-width:16; stroke-linecap:round; opacity:.28; fill:none}
-.sch .edgel{stroke:#5CC4C6; stroke-width:1.2; opacity:.9; fill:none}
-.sch .lab{fill:#0F1B2D; stroke:rgba(92,196,198,.7); stroke-width:1}
-.sch .labt{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; fill:var(--navy-ink)}
-.sch .sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; fill:#8FD5E2}
-.sch .subn{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink-2)}
-.sch a:hover .subn{fill:var(--navy-ink)}
-.sch .threat{fill:rgba(224,122,122,.10); stroke:rgba(224,122,122,.45); stroke-width:1}
-.sch a:hover .threat{fill:rgba(224,122,122,.22)}
-.sch .tk{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; fill:#E28A8A}
-.sch .tarrow{stroke:#E28A8A; stroke-width:1.4; opacity:.7; fill:none}
-.sch .tarrowh{fill:#E28A8A; opacity:.8}
-.sch .frame{fill:none; stroke:rgba(255,255,255,.12); stroke-width:1; stroke-dasharray:3 6}
+/* ---------- Zusammenspiel-Grafik (nach Vorlage) ---------- */
+.sch{position:relative; margin:0 0 26px; padding:18px 18px 10px; background:var(--surface); border:1px solid var(--rule); border-radius:6px; box-shadow:var(--shadow)}
+.sch .head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px}
+.sch .head .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-2)}
+.sch .head .hint{font-family:var(--mono); font-size:.68rem; color:var(--ink-3)}
+.sch svg{width:100%; height:auto; display:block; overflow:visible; --cU:#2F6DB5; --cU2:#7FB3EE; --cS:#1B7C7E; --cS2:#5FB8AE; --cV:#6C5DA8; --cV2:#A99BDD; --cH:#7A4FA0}
+.sch text{font-family:var(--sans); fill:var(--ink)}
+.sch .tt{font-size:22px; font-weight:600; fill:var(--ink)}
+.sch .ti{font-size:17px; fill:var(--ink-2)}
+.sch .bl{font-size:16.5px; fill:var(--ink-2)}
+.sch .pillt{font-size:21px; font-weight:600; fill:#fff}
+.sch .pilln{font-size:15px; font-weight:600; fill:#fff}
+.sch .arc{fill:none; stroke:var(--ink-3); stroke-width:1.6; stroke-dasharray:7 8; opacity:.6}
+.sch .arcl{font-size:21px; font-weight:600; fill:var(--ink)}
+.sch .panel{fill:var(--surface-2); stroke:var(--rule); stroke-width:1.5}
+.sch .box{fill:var(--surface-2); stroke:var(--rule); stroke-width:1.5; transition:stroke .15s, fill .15s}
+.sch a:hover .box, .sch .box.on{fill:var(--surface); stroke:var(--accent)}
+.sch a:hover .panel{stroke:var(--accent)}
+.sch .brk{fill:none; stroke:var(--ink-3); stroke-width:1.4; opacity:.7}
+.sch .dash{fill:none; stroke:var(--ink-2); stroke-width:1.6; stroke-dasharray:6 6; opacity:.8}
+.sch .edge{fill:none; stroke-width:20; stroke-linecap:round; opacity:.9; transition:opacity .2s}
+.sch .edgelbl{font-size:15.5px; font-weight:500; fill:var(--ink)}
+.sch .node{transition:filter .2s}
+.sch a:hover .node{filter:brightness(1.08)}
+.sch .ctr{fill:var(--surface); stroke:var(--rule); stroke-width:1.5}
+.sch .ctrt{font-size:21px; font-weight:600; fill:var(--ink)}
+.sch .ico{fill:none; stroke:#fff; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round}
+.sch .ico2{fill:none; stroke-width:3; stroke-linecap:round; stroke-linejoin:round}
+.sch .mini{fill:var(--surface-2); stroke:var(--rule); stroke-width:1.2}
+.sch .sub{font-size:16px; font-weight:600}
+.sch .subt{font-size:17px; font-weight:600; fill:var(--ink)}
+.sch .subz{font-size:15px; fill:var(--ink-3)}
+.sch .bx .bl{font-size:14.5px}
 .sch a{cursor:pointer; text-decoration:none}
-.sch a:hover .t{fill:var(--navy-accent)}
+.sch svg.hl-s .edge:not(.e-us):not(.e-sv), .sch svg.hl-v .edge:not(.e-uv):not(.e-sv), .sch svg.hl-u .edge:not(.e-us):not(.e-uv){opacity:.25}
+.sch svg.hl-s .g-s .box, .sch svg.hl-v .g-v .box{stroke:var(--accent); fill:var(--surface)}
+.sch .draw{stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 1.4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){ .sch .draw{animation:none; stroke-dashoffset:0} }
 .sch .mobile{display:none}
-@media (max-width:700px){ .sch svg{display:none} .sch .mobile{display:grid; gap:8px} .sch .mobile a{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:12px 14px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); border-radius:10px; color:var(--navy-ink); text-decoration:none} .sch .mobile a.risk{border-style:dashed; background:transparent} .sch .mobile .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--navy-accent)} .sch .mobile b{font-family:var(--display); font-weight:600; font-size:1rem} .sch .mobile .c{font-family:var(--mono); font-size:.8rem; color:#8FD5E2} .sch .mobile .arrow{text-align:center; color:var(--navy-accent)} }
+@media (max-width:700px){ .sch svg{display:none} .sch .mobile{display:grid; gap:8px} .sch .mobile a{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:12px 14px; border:1px solid var(--rule); background:var(--surface-2); border-radius:10px; color:var(--ink); text-decoration:none} .sch .mobile a.risk{border-style:dashed; background:transparent} .sch .mobile .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2)} .sch .mobile b{font-family:var(--display); font-weight:600; font-size:1rem} .sch .mobile .c{font-family:var(--mono); font-size:.8rem; color:var(--accent-2)} .sch .mobile .arrow{text-align:center; color:var(--accent)} }
 
 /* ---------- Börse ---------- */
 .bcards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px}
@@ -607,6 +573,8 @@ function newsBlock(title, sub, fn, href, n=6){
   return `<div class="sect"><h2>${title} <span class="eyebrow">${esc(sub)}</span><a class="more" href="${href}">Alle Meldungen →</a></h2><div class="card"><div class="list">${rows.map(m=>meldung(m,"mid")).join("")||'<div class="empty">Noch keine Meldungen.</div>'}</div></div></div>`;
 }
 
+function wireZsp(){ const z=$("#zsp"); if(!z) return; z.querySelectorAll("a[data-n]").forEach(a=>{ a.addEventListener("mouseenter",()=>{ z.classList.add("hl-"+a.dataset.n); }); a.addEventListener("mouseleave",()=>{ z.classList.remove("hl-"+a.dataset.n); }); }); }
+
 /* ---------- Seiten ---------- */
 function heroKn(id){ const k=K[id]; return `<a class="kn" href="#/markt/kennzahl/${id}"><span class="v">${k.v==null?"n. v.":esc(fmtNum(k.v))}${k.e?`<small>${esc(k.e)}</small>`:""}</span><span class="l">${esc(k.n)} · ${esc(k.per)}</span></a>`; }
 function featCard(t){ return `<a href="#/themen/${t.id}"><span class="rub">${esc(t.rub)}</span><h3>${esc(t.t)}</h3><p>${esc(t.teaser)}</p><span class="m">aktualisiert ${fd(t.u)}</span></a>`; }
@@ -689,44 +657,81 @@ function pageAkteure(p){
   const q=(p.get("q")||"").toLowerCase();
   const G = Object.fromEntries(GRUPPEN.map(g=>[g.id,g]));
   const top = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i).join(" · ");
-  const G3 = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i);
-  const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("The Geneva Association","Geneva Association").replace("Bundesamt für Cybersicherheit","BACS").replace("Amazon Web Services","AWS").replace("Allianz Commercial","Allianz");
-  const chips = (items, y, x0=40, cls="chip", tcls="ct") => { let x=x0; const out=[]; for(const it of items){ const label=it.n; const w=Math.round(label.length*7.2+26); if(x+w>1160) break; out.push(`<a href="${it.h}"><rect class="${cls}" x="${x}" y="${y-15}" width="${w}" height="30" rx="15"/><text class="${tcls}" x="${x+w/2}" y="${y+4}" text-anchor="middle">${esc(label)}</text></a>`); x+=w+8; } return out.join(""); };
-  const names = (gid,n=3) => G[gid].ids.slice(0,n).map(i=>A[i]?short(A[i].n):i).join(" · ");
-  const row = (x,y,sub,gid,label) => `<a href="#g-${gid}"><text class="sub" x="${x}" y="${y}">${sub} · ${esc(label)}</text><text class="subn" x="${x}" y="${y+17}">${esc(names(gid))}</text></a>`;
-  const label = (cx,cy,t) => { const w=Math.round(t.length*7.4+28); return `<rect class="lab" x="${cx-w/2}" y="${cy-13}" width="${w}" height="26" rx="13"/><text class="labt" x="${cx}" y="${cy+4}" text-anchor="middle">${esc(t)}</text>`; };
-  // Eckpunkte des Dreiecks
-  const U={x:600,y:150,w:300,h:104}, S={x:70,y:395,w:390,h:150}, V={x:740,y:395,w:390,h:206};
-  const svg = `<svg viewBox="0 0 1200 785" role="img" aria-label="Zusammenspiel der Marktteilnehmer">
-    <rect class="frame" x="28" y="24" width="1144" height="745" rx="22"/>
-    <text class="k dim" x="52" y="54">Handlungsrahmen · Institutionen &amp; Aufsicht</text>
-    <a href="#g-inst"><text class="go" x="1148" y="54" text-anchor="end">${G.inst.ids.length} Akteure →</text></a>
-    ${chips(G.inst.ids.map(i=>({n:short(A[i].n),h:"#/akteure/"+i})), 90, 52)}
-    <path class="edge" d="M${U.x-40} ${U.y+U.h} L${S.x+S.w/2+60} ${S.y}"/><path class="edgel" d="M${U.x-40} ${U.y+U.h} L${S.x+S.w/2+60} ${S.y}"/>
-    <path class="edge" d="M${U.x+40} ${U.y+U.h} L${V.x+V.w/2-60} ${V.y}"/><path class="edgel" d="M${U.x+40} ${U.y+U.h} L${V.x+V.w/2-60} ${V.y}"/>
-    <path class="edge" d="M${S.x+S.w} ${S.y+S.h/2} L${V.x} ${S.y+S.h/2}"/><path class="edgel" d="M${S.x+S.w} ${S.y+S.h/2} L${V.x} ${S.y+S.h/2}"/>
-    ${label((U.x-40+S.x+S.w/2+60)/2-70,(U.y+U.h+S.y)/2,"Schutz · Monitoring · Incident Response")}
-    ${label((U.x+40+V.x+V.w/2-60)/2+70,(U.y+U.h+V.y)/2,"Prämie ↔ Deckung · Schadenhilfe")}
-    ${label((S.x+S.w+V.x)/2,S.y+S.h/2,"Daten · Panels · Prävention")}
-    <a href="#/akteure?q=Unternehmen"><rect class="panel risk" x="${U.x-U.w/2}" y="${U.y}" width="${U.w}" height="${U.h}" rx="16"/>
-      <text class="k dim" x="${U.x}" y="${U.y+30}" text-anchor="middle">1 · Ausgangspunkt</text><text class="t" x="${U.x}" y="${U.y+62}" text-anchor="middle">Unternehmen</text>
-      <text class="n" x="${U.x}" y="${U.y+86}" text-anchor="middle">Versicherungsnehmer — vom Konzern bis zum Handwerksbetrieb</text></a>
-    <a href="#g-sec"><rect class="panel" x="${S.x}" y="${S.y}" width="${S.w}" height="${S.h}" rx="16"/>
-      <text class="k" x="${S.x+22}" y="${S.y+30}">2 · Schutz</text><text class="t" x="${S.x+22}" y="${S.y+60}">Sicherheitsanbieter</text>
-      <text class="num" x="${S.x+S.w-22}" y="${S.y+62}" text-anchor="end" style="font-size:30px">${G.sec.ids.length+G.cloud.ids.length}</text></a>
-    ${row(S.x+22,S.y+92,"2a",  "sec","Reine Sicherheitsanbieter")}
-    ${row(S.x+22,S.y+128,"2b","cloud","Cloud- und Plattformanbieter")}
-    <a href="#g-erst"><rect class="panel" x="${V.x}" y="${V.y}" width="${V.w}" height="${V.h}" rx="16"/>
-      <text class="k" x="${V.x+22}" y="${V.y+30}">3 · Risikotransfer</text><text class="t" x="${V.x+22}" y="${V.y+60}">Cyber-Versicherung</text>
-      <text class="num" x="${V.x+V.w-22}" y="${V.y+62}" text-anchor="end" style="font-size:30px">${G.erst.ids.length+G.vertrieb.ids.length+G.mga.ids.length+G.rueck.ids.length}</text></a>
-    ${row(V.x+22,V.y+92,"3a","erst","Versicherer")}
-    ${row(V.x+22+190,V.y+92,"3b","vertrieb","Vertrieb")}
-    ${row(V.x+22,V.y+150,"3c","mga","MGAs")}
-    ${row(V.x+22+190,V.y+150,"3d","rueck","Rückversicherer")}
-    ${[220,600,980].map(x=>`<path class="tarrow" d="M${x} 690 L${x} 632"/><path class="tarrowh" d="M${x-5} 636 L${x} 626 L${x+5} 636 Z"/>`).join("")}
-    <text class="tk" x="52" y="712">Handlungsrahmen · Hacker &amp; KI</text>
-    <a href="#/themen/ki"><text class="go" x="1148" y="712" text-anchor="end" style="fill:#E28A8A">Dossier KI →</text></a>
-    ${chips([{n:"Ransomware-Gruppen: Qilin, Akira, SafePay",h:"#/radar"},{n:"Staatliche Akteure",h:"#/regulierung/lloyds-war"},{n:"KI-gestütztes Phishing & Deepfakes",h:"#/themen/ki"},{n:"KI in der Abwehr",h:"#/themen/ki"},{n:"Lieferketten-Angriffe",h:"#/themen/kumulrisiko"}], 745, 52, "threat", "ct")}
+  const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("Amazon Web Services","AWS").replace("Allianz Commercial","Allianz").replace("Google Cloud","Google");
+  const zb = (gid,n=2) => G[gid].ids.slice(0,n).map(i=>A[i]?short(A[i].n):i).join(", ");
+  const bullets = (x,y,items,dy=22) => items.map((t,i)=>`<circle cx="${x}" cy="${y+i*dy-5}" r="2.6" fill="var(--ink-2)"/><text class="bl" x="${x+12}" y="${y+i*dy}">${esc(t)}</text>`).join("");
+  const pill = (cx,y,w,color,num,title) => `<rect x="${cx-w/2}" y="${y}" width="${w}" height="${num?58:40}" rx="8" fill="${color}"/>${num?`<text class="pilln" x="${cx}" y="${y+22}" text-anchor="middle">${num}</text>`:""}<text class="pillt" x="${cx}" y="${y+(num?48:28)}" text-anchor="middle">${esc(title)}</text>`;
+  const node = (cx,cy,r,c1,c2,id,icon) => `<defs><radialGradient id="ng-${id}" cx="35%" cy="30%"><stop offset="0" stop-color="${c2}"/><stop offset="1" stop-color="${c1}"/></radialGradient></defs><circle class="node" cx="${cx}" cy="${cy}" r="${r}" fill="url(#ng-${id})"/>${icon}`;
+  const box = (x,y,w,h,gid,sub,color,title,items,ex) => `<a href="#g-${gid}" class="bx"><rect class="box" x="${x}" y="${y}" width="${w}" height="${h}" rx="12"/>
+      <text class="sub" x="${x+w/2}" y="${y+28}" text-anchor="middle" fill="${color}">${sub}</text><text class="subt" x="${x+w/2}" y="${y+52}" text-anchor="middle">${esc(title)}</text>
+      <text class="subz" x="${x+w/2}" y="${y+72}" text-anchor="middle">(z. B. ${esc(ex)})</text>${bullets(x+18,y+100,items,22)}</a>`;
+  // Geometrie nach Vorlage (1536 × 1024)
+  const U={x:768,y:160,r:84}, S={x:438,y:640,r:82}, V={x:1094,y:640,r:82};
+  const ico = {
+    building:`<g class="ico" transform="translate(${U.x-26},${U.y-42})"><rect x="0" y="6" width="52" height="66" rx="3"/><path d="M20 72 V54 H32 V72"/>${[0,1,2].map(r=>[0,1,2].map(c=>`<rect x="${8+c*13}" y="${16+r*12}" width="6" height="6" fill="#fff" stroke="none"/>`).join("")).join("")}</g>`,
+    shield:`<g class="ico" transform="translate(${S.x-30},${S.y-40})"><path d="M30 2 L58 12 V36 C58 58 44 72 30 78 C16 72 2 58 2 36 V12 Z"/><rect x="20" y="36" width="20" height="16" rx="3" fill="#fff" stroke="none"/><path d="M24 36 V30 a6 6 0 0 1 12 0 V36"/></g>`,
+    umbrella:`<g class="ico" transform="translate(${V.x-32},${V.y-36})"><path d="M2 36 A30 30 0 0 1 62 36 Z" fill="#fff" stroke="none"/><path d="M32 36 V64 a8 8 0 0 1 -16 0"/><path d="M32 2 V8"/></g>`,
+    check:`<g class="ico2" stroke="var(--cU)" transform="translate(${768-28},${485-58})"><path d="M28 2 L54 12 V34 C54 54 41 68 28 74 C15 68 2 54 2 34 V12 Z"/><path d="M16 38 L25 47 L41 29"/></g>`,
+    bank:`<g class="ico2" stroke="var(--cU)" transform="translate(101,148)"><path d="M0 22 L36 4 L72 22 Z"/><rect x="4" y="22" width="64" height="6"/>${[10,26,42,58].map(x=>`<rect x="${x}" y="30" width="6" height="26"/>`).join("")}<rect x="0" y="58" width="72" height="8"/></g>`,
+    hacker:`<g class="ico2" stroke="var(--cH)" transform="translate(1368,150)"><path d="M18 42 C10 20 22 4 36 4 C50 4 62 20 54 42"/><circle cx="36" cy="30" r="10"/><path d="M10 66 C14 50 24 44 36 44 C48 44 58 50 62 66 Z"/><rect x="6" y="66" width="60" height="12" rx="2"/></g>`,
+    doc:(x,y)=>`<g class="ico2" stroke="var(--cU)" transform="translate(${x-12},${y-14})"><rect x="0" y="0" width="24" height="28" rx="3"/><path d="M6 8 H18 M6 14 H18 M6 20 H12"/></g>`,
+    gavel:(x,y)=>`<g class="ico2" stroke="var(--cU)" transform="translate(${x-14},${y-14})"><path d="M4 12 L14 2 L24 12 L14 22 Z"/><path d="M12 18 L2 28"/><path d="M14 30 H28"/></g>`,
+    laptop:(x,y)=>`<g class="ico2" stroke="var(--cH)" transform="translate(${x-14},${y-12})"><rect x="2" y="0" width="24" height="16" rx="2"/><path d="M0 22 H28"/><circle cx="14" cy="8" r="4"/></g>`,
+    brain:(x,y)=>`<g class="ico2" stroke="var(--cH)" transform="translate(${x-14},${y-14})"><path d="M12 4 C4 4 2 12 6 16 C2 20 6 28 12 26 V4 Z"/><path d="M16 4 C24 4 26 12 22 16 C26 20 22 28 16 26 V4 Z"/></g>`,
+    chip:(x,y)=>`<g class="ico2" stroke="var(--cH)" transform="translate(${x-14},${y-14})"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 0 V6 M18 0 V6 M10 22 V28 M18 22 V28 M0 10 H6 M0 18 H6 M22 10 H28 M22 18 H28"/></g>`
+  };
+  const mini = (x,y,glyph) => `<circle class="mini" cx="${x}" cy="${y}" r="36"/>${glyph}`;
+  const edgeLabel = (x1,y1,x2,y2,t1,t2,side) => { const cx=(x1+x2)/2, cy=(y1+y2)/2; const ang=Math.atan2(y2-y1,x2-x1)*180/Math.PI; const off=side*22; return `<g transform="translate(${cx},${cy}) rotate(${ang})"><text class="edgelbl" x="0" y="${off-2}" text-anchor="middle">${esc(t1)}</text><text class="edgelbl" x="0" y="${off+18}" text-anchor="middle">${esc(t2)}</text></g>`; };
+  const svg = `<svg id="zsp" viewBox="0 0 1536 1024" role="img" aria-label="Zusammenspiel der Marktteilnehmer für Cyber-Resilienz">
+    <defs>
+      <linearGradient id="g-us" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--cU2)"/><stop offset="1" stop-color="var(--cS2)"/></linearGradient>
+      <linearGradient id="g-uv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--cU2)"/><stop offset="1" stop-color="var(--cV2)"/></linearGradient>
+      <linearGradient id="g-sv" x1="0" x2="1"><stop offset="0" stop-color="var(--cS2)"/><stop offset="1" stop-color="var(--cV2)"/></linearGradient>
+      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1F3B63" flood-opacity=".12"/></filter>
+    </defs>
+    <path class="arc" d="M222 548 A560 560 0 0 1 700 34"/><path class="arc" d="M836 34 A560 560 0 0 1 1314 548"/>
+    <text class="arcl" x="768" y="40" text-anchor="middle">Handlungsrahmen</text>
+    <path class="dash" d="M238 314 H336"/><path d="M336 308 L346 314 L336 320 Z" fill="var(--ink-2)"/>
+    <path class="dash" d="M1300 314 H1202"/><path d="M1202 308 L1192 314 L1202 320 Z" fill="var(--ink-2)"/>
+    <path class="dash" d="M1300 486 C1330 490 1320 530 1314 548"/>
+    <!-- Kanten -->
+    <path class="edge e-us draw" stroke="url(#g-us)" d="M${U.x-44} ${U.y+72} L${S.x+44} ${S.y-70}"/>
+    <path class="edge e-uv draw" stroke="url(#g-uv)" d="M${U.x+44} ${U.y+72} L${V.x-44} ${V.y-70}"/>
+    <path class="edge e-sv draw" stroke="url(#g-sv)" d="M${S.x+88} ${S.y} L${V.x-88} ${V.y}"/>
+    ${edgeLabel(U.x-44,U.y+72,S.x+44,S.y-70,"Sicherheit stärken","Risiken reduzieren",-1)}
+    ${edgeLabel(U.x+44,U.y+72,V.x-44,V.y-70,"Risiken transferieren","Finanzielle Absicherung",-1)}
+    <text class="edgelbl" x="768" y="690" text-anchor="middle">Zusammenarbeit</text><text class="edgelbl" x="768" y="710" text-anchor="middle">&amp; Integration</text>
+    <path class="dash" x1="0" d="M640 698 H690"/><path d="M640 692 L630 698 L640 704 Z" fill="var(--ink-2)"/><path class="dash" d="M846 698 H896"/><path d="M896 692 L906 698 L896 704 Z" fill="var(--ink-2)"/>
+    <!-- Mitte -->
+    <circle class="ctr" cx="768" cy="485" r="122" filter="url(#soft)"/>${ico.check}
+    <text class="ctrt" x="768" y="522" text-anchor="middle">Gemeinsam für</text><text class="ctrt" x="768" y="546" text-anchor="middle">mehr Cyber-Resilienz</text>
+    <!-- Knoten -->
+    <a href="${LEITTHEMA.links[0].h}" data-n="u">${node(U.x,U.y,U.r,"var(--cU)","var(--cU2)","u",ico.building)}${pill(U.x,U.y+22,156,"#1F4E8C","1","Unternehmen")}
+      <text class="ti" x="${U.x}" y="${U.y+112}" text-anchor="middle">Schutz von Geschäft,</text><text class="ti" x="${U.x}" y="${U.y+134}" text-anchor="middle">Daten und Reputation</text></a>
+    <a href="#g-sec" data-n="s">${node(S.x,S.y,S.r,"var(--cS)","var(--cS2)","s",ico.shield)}${pill(S.x,S.y+34,194,"#156366","2","Sicherheitsanbieter")}
+      <text class="ti" x="${S.x}" y="${S.y+124}" text-anchor="middle">Technologie, Services</text><text class="ti" x="${S.x}" y="${S.y+146}" text-anchor="middle">und Expertise</text></a>
+    <a href="#g-erst" data-n="v">${node(V.x,V.y,V.r,"var(--cV)","var(--cV2)","v",ico.umbrella)}${pill(V.x,V.y+34,206,"#5B4C96","3","Cyber-Versicherung")}
+      <text class="ti" x="${V.x}" y="${V.y+124}" text-anchor="middle">Risikotransfer und</text><text class="ti" x="${V.x}" y="${V.y+146}" text-anchor="middle">finanzielle Absicherung</text></a>
+    <!-- Rahmen links: Institutionen -->
+    <a href="#g-inst"><rect class="panel" x="38" y="118" width="198" height="374" rx="12"/>${ico.bank}
+      <text class="tt" x="137" y="258" text-anchor="middle">Institutionen</text><text class="tt" x="137" y="284" text-anchor="middle">und Aufsicht</text>
+      ${bullets(56,318,["Gesetze & Regulierung","(z. B. NIS2, DSGVO, DORA)","Standards & Normen","Aufsicht & Compliance","Förderung von Resilienz","& Vertrauen"],25).replace(/<circle cx="56" cy="(338|438)" r="2.6"[^>]*\/>/g,"")}
+      <text class="subz" x="137" y="478" text-anchor="middle">${esc(zb("inst",3))}</text></a>
+    ${mini(356,195,ico.doc(356,195))}${mini(283,490,ico.gavel(283,490))}${mini(231,612,`<g class="ico2" stroke="var(--cU)" transform="translate(219,598)"><path d="M12 0 L24 5 V14 C24 22 18 27 12 29 C6 27 0 22 0 14 V5 Z"/><path d="M6 14 L10 18 L18 10"/></g>`)}
+    <!-- Rahmen rechts: Hacker & KI -->
+    <a href="#/themen/ki"><rect class="panel" x="1305" y="118" width="196" height="368" rx="12"/>${ico.hacker}
+      <text class="tt" x="1403" y="268" text-anchor="middle" fill="var(--cH)">Hacker und KI</text>
+      ${bullets(1322,318,["Zunehmende Bedrohungen","KI-gestützte Angriffe","Automatisierung","von Attacken","Dynamisches Risiko-","umfeld"],25).replace(/<circle cx="1322" cy="(388|438)" r="2.6"[^>]*\/>/g,"")}</a>
+    ${mini(1190,195,ico.laptop(1190,195))}${mini(1260,490,ico.brain(1260,490))}${mini(1313,612,ico.chip(1313,612))}
+    <!-- Klammern -->
+    <path class="brk" d="M${S.x} ${S.y+152} V800 M300 800 H505 M300 800 V823 M505 800 V823" stroke="var(--cS)"/>
+    <path class="brk" d="M${V.x} ${V.y+152} V800 M797 800 H1364 M797 800 V823 M985 800 V823 M1174 800 V823 M1364 800 V823" stroke="var(--cV)"/>
+    <g class="g-s">${box(210,823,184,182,"sec","2a","var(--cS)","Reine Sicherheitsanbieter",["Threat Intelligence","Security Services","Incident Response","Beratung"],"Perseus, CrowdStrike")}
+    ${box(415,823,184,182,"cloud","2b","var(--cS)","Cloud-Anbieter",["Cloud-Sicherheit","Infrastruktur","Identitäts- & Zugriffs-","management","Plattform-Services"],zb("cloud",2))}</g>
+    <g class="g-v">${box(715,823,164,182,"erst","3a","var(--cV)","Versicherer",["Produktentwicklung","Risikoprüfung","Schadenmanagement","Präventionsservices"],"AXA")}
+    ${box(903,823,164,182,"vertrieb","3b","var(--cV)","Vertrieb",["Beratung","Vermittlung","Kundenbetreuung","Portfoliomanagement"],zb("vertrieb",1))}
+    ${box(1092,823,164,182,"mga","3c","var(--cV)","MGAs",["Produktgestaltung","Zeichnungsbefugnis","Underwriting","Marktverbindung"],zb("mga",1))}
+    ${box(1281,823,166,182,"rueck","3d","var(--cV)","Rückversicherer",["Risikokapazität","Know-how-Transfer","Aggregations-","management","Stabilität"],zb("rueck",1))}</g>
   </svg>`;
   const mobile = `<div class="mobile">
     <a href="#g-inst"><span class="k">Rahmen</span><b>${esc(G.inst.n)}</b><span class="c">${G.inst.ids.length}</span></a>
@@ -735,7 +740,7 @@ function pageAkteure(p){
     <a href="#g-cloud"><span class="k">2b · Schutz</span><b>${esc(G.cloud.n)}</b><span class="c">${G.cloud.ids.length}</span></a><div class="arrow">↕</div>
     ${["erst","vertrieb","mga","rueck"].map((g,i)=>`<a href="#g-${g}"><span class="k">3${"abcd"[i]} · Risikotransfer</span><b>${esc(G[g].n)}</b><span class="c">${G[g].ids.length}</span></a>`).join("")}
     <a href="#/themen/ki" style="border-color:rgba(224,122,122,.5)"><span class="k" style="color:#E28A8A">Rahmen</span><b>Hacker &amp; KI</b><span class="c">→</span></a></div>`;
-  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Zusammenspiel · Cyberversicherung DACH</span><span class="hint">Panels und Zeilen anklicken → Gruppe oder Profil</span></div>${svg}${mobile}</div></section>`;
+  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Zusammenspiel · Cyberversicherung DACH</span><span class="hint">Knoten und Kästen anklicken → Gruppe · Überfahren hebt Verbindungen hervor</span></div>${svg}${mobile}</div></section>`;
   const anchors = `<div class="anchors">${GRUPPEN.map(g=>`<a class="chip" href="#g-${g.id}">${esc(g.n)}</a>`).join("")}</div>`;
   const hit = a => !q || (a.n+" "+a.b+" "+a.rollen.join(" ")+" "+(BED[a.id]||"")).toLowerCase().includes(q);
   const groups = GRUPPEN.map(g=>{
@@ -918,7 +923,7 @@ function route(){
   $("#app").innerHTML=html+`<footer class="site"><span>Cyber-X-Hub · Prototyp</span><span>Herausgeber: ${esc(HERAUSGEBER.name)}</span><span>Keine Anlage- oder Versicherungsberatung</span><span>Stand ${fd(STAND)}</span></footer>`;
   document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===r||(r==="suche"&&false)));
   document.title = "Cyber-X-Hub";
-  wireCharts(); wireMap(); wireBoerse();
+  wireCharts(); wireMap(); wireBoerse(); wireZsp();
   document.querySelectorAll("tr.rowlink").forEach(tr=>tr.addEventListener("click",e=>{ if(e.target.closest("a")) return; location.hash=tr.dataset.href; }));
   document.querySelectorAll("th[data-sort]").forEach(th=>th.addEventListener("click",()=>{ const k=th.dataset.sort; if(AK.sort===k) AK.asc=!AK.asc; else {AK.sort=k;AK.asc=true;} route(); }));
   const fl=$("#f-land"); if(fl) fl.addEventListener("change",()=>{ p.set("land",fl.value); if(!fl.value) p.delete("land"); location.hash="#/akteure?"+p.toString(); });
