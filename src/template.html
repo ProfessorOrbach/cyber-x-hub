@@ -354,11 +354,18 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .sch .head .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-2)}
 .sch .head .hint{font-family:var(--mono); font-size:.68rem; color:var(--ink-3)}
 .sch svg{width:100%; height:auto; display:block; overflow:visible; --cU:#2F6DB5; --cU2:#7FB3EE; --cS:#1B7C7E; --cS2:#5FB8AE; --cV:#6C5DA8; --cV2:#A99BDD; --cH:#7A4FA0}
-.sch text{font-family:var(--sans); fill:var(--ink)}
-.sch .tt{font-size:22px; font-weight:600; fill:var(--ink)}
-.sch .ti{font-size:17px; fill:var(--ink-2)}
-.sch .bl{font-size:16.5px; fill:var(--ink-2)}
-.sch .pillt{font-size:21px; font-weight:600; fill:#fff}
+.sch text{font-family:var(--sans); fill:var(--ink); text-rendering:geometricPrecision}
+.sch .an{transform-box:fill-box; transform-origin:center; animation:pop .7s cubic-bezier(.2,.8,.2,1) both}
+.sch .fu{animation:fadeup .7s cubic-bezier(.2,.8,.2,1) both}
+.sch .ring{fill:none; stroke:var(--cU); stroke-width:2; transform-box:fill-box; transform-origin:center; animation:ring 3.2s ease-out infinite; animation-delay:1.6s; opacity:0}
+@keyframes pop{0%{opacity:0; transform:scale(.6)} 100%{opacity:1; transform:scale(1)}}
+@keyframes fadeup{0%{opacity:0; transform:translateY(14px)} 100%{opacity:1; transform:translateY(0)}}
+@keyframes ring{0%{opacity:.55; transform:scale(1)} 100%{opacity:0; transform:scale(1.55)}}
+@media (prefers-reduced-motion: reduce){ .sch .an, .sch .fu{animation:none; opacity:1; transform:none} .sch .ring{animation:none; opacity:0} }
+.sch .tt{font-size:20px; font-weight:600; fill:var(--ink)}
+.sch .ti{font-size:16px; fill:var(--ink-2)}
+.sch .bl{font-size:15.5px; fill:var(--ink-2)}
+.sch .pillt{font-size:20px; font-weight:600; fill:#fff; letter-spacing:.01em}
 .sch .pilln{font-size:15px; font-weight:600; fill:#fff}
 .sch .arc{fill:none; stroke:var(--ink-3); stroke-width:1.6; stroke-dasharray:7 8; opacity:.6}
 .sch .arcl{font-size:21px; font-weight:600; fill:var(--ink)}
@@ -369,7 +376,7 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .sch .brk{fill:none; stroke:var(--ink-3); stroke-width:1.4; opacity:.7}
 .sch .dash{fill:none; stroke:var(--ink-2); stroke-width:1.6; stroke-dasharray:6 6; opacity:.8}
 .sch .edge{fill:none; stroke-width:20; stroke-linecap:round; opacity:.9; transition:opacity .2s}
-.sch .edgelbl{font-size:15.5px; font-weight:500; fill:var(--ink)}
+.sch .edgelbl{font-size:15px; font-weight:500; fill:var(--ink)}
 .sch .node{transition:filter .2s}
 .sch a:hover .node{filter:brightness(1.08)}
 .sch .ctr{fill:var(--surface); stroke:var(--rule); stroke-width:1.5}
@@ -378,8 +385,8 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .sch .ico2{fill:none; stroke-width:3; stroke-linecap:round; stroke-linejoin:round}
 .sch .mini{fill:var(--surface-2); stroke:var(--rule); stroke-width:1.2}
 .sch .sub{font-size:16px; font-weight:600}
-.sch .subt{font-size:17px; font-weight:600; fill:var(--ink)}
-.sch .subz{font-size:15px; fill:var(--ink-3)}
+.sch .subt{font-size:16.5px; font-weight:600; fill:var(--ink)}
+.sch .subz{font-size:14px; fill:var(--ink-3)}
 .sch .bx .bl{font-size:14.5px}
 .sch a{cursor:pointer; text-decoration:none}
 .sch svg.hl-s .edge:not(.e-us):not(.e-sv), .sch svg.hl-v .edge:not(.e-uv):not(.e-sv), .sch svg.hl-u .edge:not(.e-us):not(.e-uv){opacity:.25}
@@ -660,12 +667,12 @@ function pageAkteure(p){
   const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("Amazon Web Services","AWS").replace("Allianz Commercial","Allianz").replace("Google Cloud","Google");
   const zb = (gid,n=2) => G[gid].ids.slice(0,n).map(i=>A[i]?short(A[i].n):i).join(", ");
   const bullets = (x,y,items,dy=22) => items.map((t,i)=>`<circle cx="${x}" cy="${y+i*dy-5}" r="2.6" fill="var(--ink-2)"/><text class="bl" x="${x+12}" y="${y+i*dy}">${esc(t)}</text>`).join("");
-  const pill = (cx,y,w,color,num,title) => `<rect x="${cx-w/2}" y="${y}" width="${w}" height="${num?58:40}" rx="8" fill="${color}"/>${num?`<text class="pilln" x="${cx}" y="${y+22}" text-anchor="middle">${num}</text>`:""}<text class="pillt" x="${cx}" y="${y+(num?48:28)}" text-anchor="middle">${esc(title)}</text>`;
+  const pill = (cx,y,w,color,title) => `<rect x="${cx-w/2}" y="${y}" width="${w}" height="42" rx="8" fill="${color}"/><text class="pillt" x="${cx}" y="${y+28}" text-anchor="middle">${esc(title)}</text>`;
   const node = (cx,cy,r,c1,c2,id,icon) => `<defs><radialGradient id="ng-${id}" cx="35%" cy="30%"><stop offset="0" stop-color="${c2}"/><stop offset="1" stop-color="${c1}"/></radialGradient></defs><circle class="node" cx="${cx}" cy="${cy}" r="${r}" fill="url(#ng-${id})"/>${icon}`;
-  const box = (x,y,w,h,gid,sub,color,title,items,ex) => `<a href="#g-${gid}" class="bx"><rect class="box" x="${x}" y="${y}" width="${w}" height="${h}" rx="12"/>
-      <text class="sub" x="${x+w/2}" y="${y+28}" text-anchor="middle" fill="${color}">${sub}</text><text class="subt" x="${x+w/2}" y="${y+52}" text-anchor="middle">${esc(title)}</text>
-      <text class="subz" x="${x+w/2}" y="${y+72}" text-anchor="middle">(z. B. ${esc(ex)})</text>${bullets(x+18,y+100,items,22)}</a>`;
-  // Geometrie nach Vorlage (1536 × 1024)
+  let bi=0;
+  const box = (x,y,w,h,gid,color,title,items,ex) => `<a href="#g-${gid}" class="bx fu" style="animation-delay:${(1.15+(bi++)*0.09).toFixed(2)}s"><rect class="box" x="${x}" y="${y}" width="${w}" height="${h}" rx="12"/>
+      <rect x="${x+16}" y="${y+18}" width="26" height="3" rx="1.5" fill="${color}"/><text class="subt" x="${x+16}" y="${y+44}">${esc(title)}</text>
+      <text class="subz" x="${x+16}" y="${y+64}">z. B. ${esc(ex)}</text>${bullets(x+20,y+94,items,22)}</a>`;
   const U={x:768,y:160,r:84}, S={x:438,y:640,r:82}, V={x:1094,y:640,r:82};
   const ico = {
     building:`<g class="ico" transform="translate(${U.x-26},${U.y-42})"><rect x="0" y="6" width="52" height="66" rx="3"/><path d="M20 72 V54 H32 V72"/>${[0,1,2].map(r=>[0,1,2].map(c=>`<rect x="${8+c*13}" y="${16+r*12}" width="6" height="6" fill="#fff" stroke="none"/>`).join("")).join("")}</g>`,
@@ -680,8 +687,8 @@ function pageAkteure(p){
     brain:(x,y)=>`<g class="ico2" stroke="var(--cH)" transform="translate(${x-14},${y-14})"><path d="M12 4 C4 4 2 12 6 16 C2 20 6 28 12 26 V4 Z"/><path d="M16 4 C24 4 26 12 22 16 C26 20 22 28 16 26 V4 Z"/></g>`,
     chip:(x,y)=>`<g class="ico2" stroke="var(--cH)" transform="translate(${x-14},${y-14})"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 0 V6 M18 0 V6 M10 22 V28 M18 22 V28 M0 10 H6 M0 18 H6 M22 10 H28 M22 18 H28"/></g>`
   };
-  const mini = (x,y,glyph) => `<circle class="mini" cx="${x}" cy="${y}" r="36"/>${glyph}`;
-  const edgeLabel = (x1,y1,x2,y2,t1,t2,side) => { const cx=(x1+x2)/2, cy=(y1+y2)/2; const ang=Math.atan2(y2-y1,x2-x1)*180/Math.PI; const off=side*22; return `<g transform="translate(${cx},${cy}) rotate(${ang})"><text class="edgelbl" x="0" y="${off-2}" text-anchor="middle">${esc(t1)}</text><text class="edgelbl" x="0" y="${off+18}" text-anchor="middle">${esc(t2)}</text></g>`; };
+  const mini = (x,y,glyph,d) => `<g class="an" style="animation-delay:${d}s"><circle class="mini" cx="${x}" cy="${y}" r="36"/>${glyph}</g>`;
+  const edgeLabel = (x1,y1,x2,y2,t,side,d) => { const cx=(x1+x2)/2, cy=(y1+y2)/2; const ang=Math.atan2(y2-y1,x2-x1)*180/Math.PI; return `<g transform="translate(${cx},${cy}) rotate(${ang})"><g class="fu" style="animation-delay:${d}s"><text class="edgelbl" x="0" y="${side*22}" text-anchor="middle">${esc(t)}</text></g></g>`; };
   const svg = `<svg id="zsp" viewBox="0 0 1536 1024" role="img" aria-label="Zusammenspiel der Marktteilnehmer für Cyber-Resilienz">
     <defs>
       <linearGradient id="g-us" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--cU2)"/><stop offset="1" stop-color="var(--cS2)"/></linearGradient>
@@ -689,56 +696,50 @@ function pageAkteure(p){
       <linearGradient id="g-sv" x1="0" x2="1"><stop offset="0" stop-color="var(--cS2)"/><stop offset="1" stop-color="var(--cV2)"/></linearGradient>
       <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1F3B63" flood-opacity=".12"/></filter>
     </defs>
-    <path class="arc" d="M222 548 A560 560 0 0 1 700 34"/><path class="arc" d="M836 34 A560 560 0 0 1 1314 548"/>
+    <g class="fu" style="animation-delay:1.3s"><path class="arc" d="M222 548 A560 560 0 0 1 700 34"/><path class="arc" d="M836 34 A560 560 0 0 1 1314 548"/>
     <text class="arcl" x="768" y="40" text-anchor="middle">Handlungsrahmen</text>
-    <path class="dash" d="M238 314 H336"/><path d="M336 308 L346 314 L336 320 Z" fill="var(--ink-2)"/>
-    <path class="dash" d="M1300 314 H1202"/><path d="M1202 308 L1192 314 L1202 320 Z" fill="var(--ink-2)"/>
-    <path class="dash" d="M1300 486 C1330 490 1320 530 1314 548"/>
-    <!-- Kanten -->
-    <path class="edge e-us draw" stroke="url(#g-us)" d="M${U.x-44} ${U.y+72} L${S.x+44} ${S.y-70}"/>
-    <path class="edge e-uv draw" stroke="url(#g-uv)" d="M${U.x+44} ${U.y+72} L${V.x-44} ${V.y-70}"/>
-    <path class="edge e-sv draw" stroke="url(#g-sv)" d="M${S.x+88} ${S.y} L${V.x-88} ${V.y}"/>
-    ${edgeLabel(U.x-44,U.y+72,S.x+44,S.y-70,"Sicherheit stärken","Risiken reduzieren",-1)}
-    ${edgeLabel(U.x+44,U.y+72,V.x-44,V.y-70,"Risiken transferieren","Finanzielle Absicherung",-1)}
-    <text class="edgelbl" x="768" y="690" text-anchor="middle">Zusammenarbeit</text><text class="edgelbl" x="768" y="710" text-anchor="middle">&amp; Integration</text>
-    <path class="dash" x1="0" d="M640 698 H690"/><path d="M640 692 L630 698 L640 704 Z" fill="var(--ink-2)"/><path class="dash" d="M846 698 H896"/><path d="M896 692 L906 698 L896 704 Z" fill="var(--ink-2)"/>
-    <!-- Mitte -->
-    <circle class="ctr" cx="768" cy="485" r="122" filter="url(#soft)"/>${ico.check}
-    <text class="ctrt" x="768" y="522" text-anchor="middle">Gemeinsam für</text><text class="ctrt" x="768" y="546" text-anchor="middle">mehr Cyber-Resilienz</text>
-    <!-- Knoten -->
-    <a href="${LEITTHEMA.links[0].h}" data-n="u">${node(U.x,U.y,U.r,"var(--cU)","var(--cU2)","u",ico.building)}${pill(U.x,U.y+22,156,"#1F4E8C","1","Unternehmen")}
-      <text class="ti" x="${U.x}" y="${U.y+112}" text-anchor="middle">Schutz von Geschäft,</text><text class="ti" x="${U.x}" y="${U.y+134}" text-anchor="middle">Daten und Reputation</text></a>
-    <a href="#g-sec" data-n="s">${node(S.x,S.y,S.r,"var(--cS)","var(--cS2)","s",ico.shield)}${pill(S.x,S.y+34,194,"#156366","2","Sicherheitsanbieter")}
-      <text class="ti" x="${S.x}" y="${S.y+124}" text-anchor="middle">Technologie, Services</text><text class="ti" x="${S.x}" y="${S.y+146}" text-anchor="middle">und Expertise</text></a>
-    <a href="#g-erst" data-n="v">${node(V.x,V.y,V.r,"var(--cV)","var(--cV2)","v",ico.umbrella)}${pill(V.x,V.y+34,206,"#5B4C96","3","Cyber-Versicherung")}
-      <text class="ti" x="${V.x}" y="${V.y+124}" text-anchor="middle">Risikotransfer und</text><text class="ti" x="${V.x}" y="${V.y+146}" text-anchor="middle">finanzielle Absicherung</text></a>
-    <!-- Rahmen links: Institutionen -->
-    <a href="#g-inst"><rect class="panel" x="38" y="118" width="198" height="374" rx="12"/>${ico.bank}
-      <text class="tt" x="137" y="258" text-anchor="middle">Institutionen</text><text class="tt" x="137" y="284" text-anchor="middle">und Aufsicht</text>
-      ${bullets(56,318,["Gesetze & Regulierung","(z. B. NIS2, DSGVO, DORA)","Standards & Normen","Aufsicht & Compliance","Förderung von Resilienz","& Vertrauen"],25).replace(/<circle cx="56" cy="(338|438)" r="2.6"[^>]*\/>/g,"")}
-      <text class="subz" x="137" y="478" text-anchor="middle">${esc(zb("inst",3))}</text></a>
-    ${mini(356,195,ico.doc(356,195))}${mini(283,490,ico.gavel(283,490))}${mini(231,612,`<g class="ico2" stroke="var(--cU)" transform="translate(219,598)"><path d="M12 0 L24 5 V14 C24 22 18 27 12 29 C6 27 0 22 0 14 V5 Z"/><path d="M6 14 L10 18 L18 10"/></g>`)}
-    <!-- Rahmen rechts: Hacker & KI -->
-    <a href="#/themen/ki"><rect class="panel" x="1305" y="118" width="196" height="368" rx="12"/>${ico.hacker}
-      <text class="tt" x="1403" y="268" text-anchor="middle" fill="var(--cH)">Hacker und KI</text>
-      ${bullets(1322,318,["Zunehmende Bedrohungen","KI-gestützte Angriffe","Automatisierung","von Attacken","Dynamisches Risiko-","umfeld"],25).replace(/<circle cx="1322" cy="(388|438)" r="2.6"[^>]*\/>/g,"")}</a>
-    ${mini(1190,195,ico.laptop(1190,195))}${mini(1260,490,ico.brain(1260,490))}${mini(1313,612,ico.chip(1313,612))}
-    <!-- Klammern -->
-    <path class="brk" d="M${S.x} ${S.y+152} V800 M300 800 H505 M300 800 V823 M505 800 V823" stroke="var(--cS)"/>
-    <path class="brk" d="M${V.x} ${V.y+152} V800 M797 800 H1364 M797 800 V823 M985 800 V823 M1174 800 V823 M1364 800 V823" stroke="var(--cV)"/>
-    <g class="g-s">${box(210,823,184,182,"sec","2a","var(--cS)","Reine Sicherheitsanbieter",["Threat Intelligence","Security Services","Incident Response","Beratung"],"Perseus, CrowdStrike")}
-    ${box(415,823,184,182,"cloud","2b","var(--cS)","Cloud-Anbieter",["Cloud-Sicherheit","Infrastruktur","Identitäts- & Zugriffs-","management","Plattform-Services"],zb("cloud",2))}</g>
-    <g class="g-v">${box(715,823,164,182,"erst","3a","var(--cV)","Versicherer",["Produktentwicklung","Risikoprüfung","Schadenmanagement","Präventionsservices"],"AXA")}
-    ${box(903,823,164,182,"vertrieb","3b","var(--cV)","Vertrieb",["Beratung","Vermittlung","Kundenbetreuung","Portfoliomanagement"],zb("vertrieb",1))}
-    ${box(1092,823,164,182,"mga","3c","var(--cV)","MGAs",["Produktgestaltung","Zeichnungsbefugnis","Underwriting","Marktverbindung"],zb("mga",1))}
-    ${box(1281,823,166,182,"rueck","3d","var(--cV)","Rückversicherer",["Risikokapazität","Know-how-Transfer","Aggregations-","management","Stabilität"],zb("rueck",1))}</g>
+    <path class="dash" d="M250 314 H336"/><path d="M336 308 L346 314 L336 320 Z" fill="var(--ink-2)"/>
+    <path class="dash" d="M1288 314 H1202"/><path d="M1202 308 L1192 314 L1202 320 Z" fill="var(--ink-2)"/></g>
+    <path class="edge e-us draw" style="animation-delay:.35s" stroke="url(#g-us)" d="M${U.x-44} ${U.y+72} L${S.x+44} ${S.y-70}"/>
+    <path class="edge e-uv draw" style="animation-delay:.55s" stroke="url(#g-uv)" d="M${U.x+44} ${U.y+72} L${V.x-44} ${V.y-70}"/>
+    <path class="edge e-sv draw" style="animation-delay:.85s" stroke="url(#g-sv)" d="M${S.x+88} ${S.y} L${V.x-88} ${V.y}"/>
+    ${edgeLabel(U.x-44,U.y+72,S.x+44,S.y-70,"Sicherheit stärken · Risiken reduzieren",-1,.9)}
+    ${edgeLabel(U.x+44,U.y+72,V.x-44,V.y-70,"Risiken transferieren · Absicherung",-1,1.0)}
+    <g class="fu" style="animation-delay:1.1s"><text class="edgelbl" x="768" y="702" text-anchor="middle">Zusammenarbeit &amp; Integration</text>
+    <path class="dash" d="M600 698 H650"/><path d="M600 692 L590 698 L600 704 Z" fill="var(--ink-2)"/><path class="dash" d="M886 698 H936"/><path d="M936 692 L946 698 L936 704 Z" fill="var(--ink-2)"/></g>
+    <circle class="ring" cx="768" cy="485" r="122"/>
+    <g class="an" style="animation-delay:.95s"><circle class="ctr" cx="768" cy="485" r="122" filter="url(#soft)"/>${ico.check}
+    <text class="ctrt" x="768" y="522" text-anchor="middle">Gemeinsam für</text><text class="ctrt" x="768" y="546" text-anchor="middle">mehr Cyber-Resilienz</text></g>
+    <a href="${LEITTHEMA.links[0].h}" data-n="u" class="an" style="animation-delay:.1s">${node(U.x,U.y,U.r,"var(--cU)","var(--cU2)","u",ico.building)}${pill(U.x,U.y+36,168,"#1F4E8C","Unternehmen")}
+      <text class="ti" x="${U.x}" y="${U.y+108}" text-anchor="middle">Schutz von Geschäft,</text><text class="ti" x="${U.x}" y="${U.y+129}" text-anchor="middle">Daten und Reputation</text></a>
+    <a href="#g-sec" data-n="s" class="an" style="animation-delay:.5s">${node(S.x,S.y,S.r,"var(--cS)","var(--cS2)","s",ico.shield)}${pill(S.x,S.y+40,224,"#156366","Sicherheitsanbieter")}
+      <text class="ti" x="${S.x}" y="${S.y+112}" text-anchor="middle">Technologie, Services</text><text class="ti" x="${S.x}" y="${S.y+133}" text-anchor="middle">und Expertise</text></a>
+    <a href="#g-erst" data-n="v" class="an" style="animation-delay:.7s">${node(V.x,V.y,V.r,"var(--cV)","var(--cV2)","v",ico.umbrella)}${pill(V.x,V.y+40,224,"#5B4C96","Cyber-Versicherung")}
+      <text class="ti" x="${V.x}" y="${V.y+112}" text-anchor="middle">Risikotransfer und</text><text class="ti" x="${V.x}" y="${V.y+133}" text-anchor="middle">finanzielle Absicherung</text></a>
+    <a href="#g-inst" class="fu" style="animation-delay:1.2s"><rect class="panel" x="38" y="118" width="212" height="360" rx="12"/>${ico.bank}
+      <text class="tt" x="144" y="258" text-anchor="middle">Institutionen</text><text class="tt" x="144" y="282" text-anchor="middle">und Aufsicht</text>
+      ${bullets(58,320,["Gesetze & Regulierung","Standards & Normen","Aufsicht & Compliance","Resilienz & Vertrauen"],26)}
+      <text class="subz" x="144" y="452" text-anchor="middle">NIS2 · DSGVO · DORA</text></a>
+    ${mini(356,195,ico.doc(356,195),1.35)}${mini(283,490,ico.gavel(283,490),1.45)}${mini(231,612,`<g class="ico2" stroke="var(--cU)" transform="translate(219,598)"><path d="M12 0 L24 5 V14 C24 22 18 27 12 29 C6 27 0 22 0 14 V5 Z"/><path d="M6 14 L10 18 L18 10"/></g>`,1.55)}
+    <a href="#/themen/ki" class="fu" style="animation-delay:1.25s"><rect class="panel" x="1286" y="118" width="212" height="360" rx="12"/>${ico.hacker}
+      <text class="tt" x="1392" y="270" text-anchor="middle" fill="var(--cH)">Hacker und KI</text>
+      ${bullets(1306,320,["Zunehmende Bedrohungen","KI-gestützte Angriffe","Automatisierte Attacken","Dynamisches Risikoumfeld"],26)}</a>
+    ${mini(1190,195,ico.laptop(1190,195),1.4)}${mini(1260,490,ico.brain(1260,490),1.5)}${mini(1313,612,ico.chip(1313,612),1.6)}
+    <g class="fu" style="animation-delay:1.1s"><path class="brk" d="M${S.x} ${S.y+140} V800 M300 800 H505 M300 800 V823 M505 800 V823" stroke="var(--cS)"/>
+    <path class="brk" d="M${V.x} ${V.y+140} V800 M797 800 H1364 M797 800 V823 M985 800 V823 M1174 800 V823 M1364 800 V823" stroke="var(--cV)"/></g>
+    <g class="g-s">${box(210,823,184,170,"sec","var(--cS)","Sicherheitsanbieter",["Threat Intelligence","Security Services","Incident Response"],"Perseus, CrowdStrike")}
+    ${box(415,823,184,170,"cloud","var(--cS)","Cloud-Anbieter",["Cloud-Sicherheit","Infrastruktur","Identitätsmanagement"],zb("cloud",2))}</g>
+    <g class="g-v">${box(715,823,164,170,"erst","var(--cV)","Versicherer",["Produktentwicklung","Risikoprüfung","Schadenmanagement"],"AXA")}
+    ${box(903,823,164,170,"vertrieb","var(--cV)","Vertrieb",["Beratung","Vermittlung","Portfoliosteuerung"],zb("vertrieb",1))}
+    ${box(1092,823,164,170,"mga","var(--cV)","MGAs",["Produktgestaltung","Zeichnungsbefugnis","Underwriting"],zb("mga",1))}
+    ${box(1281,823,166,170,"rueck","var(--cV)","Rückversicherer",["Risikokapazität","Know-how-Transfer","Kumulsteuerung"],zb("rueck",1))}</g>
   </svg>`;
   const mobile = `<div class="mobile">
     <a href="#g-inst"><span class="k">Rahmen</span><b>${esc(G.inst.n)}</b><span class="c">${G.inst.ids.length}</span></a>
-    <a class="risk" href="#/akteure?q=Unternehmen"><span class="k">1 · Ausgangspunkt</span><b>Unternehmen</b><span class="c">—</span></a><div class="arrow">↕</div>
-    <a href="#g-sec"><span class="k">2a · Schutz</span><b>Sicherheitsanbieter</b><span class="c">${G.sec.ids.length}</span></a>
-    <a href="#g-cloud"><span class="k">2b · Schutz</span><b>${esc(G.cloud.n)}</b><span class="c">${G.cloud.ids.length}</span></a><div class="arrow">↕</div>
-    ${["erst","vertrieb","mga","rueck"].map((g,i)=>`<a href="#g-${g}"><span class="k">3${"abcd"[i]} · Risikotransfer</span><b>${esc(G[g].n)}</b><span class="c">${G[g].ids.length}</span></a>`).join("")}
+    <a class="risk" href="#/akteure?q=Unternehmen"><span class="k">Ausgangspunkt</span><b>Unternehmen</b><span class="c">—</span></a><div class="arrow">↕</div>
+    <a href="#g-sec"><span class="k">Schutz</span><b>Sicherheitsanbieter</b><span class="c">${G.sec.ids.length}</span></a>
+    <a href="#g-cloud"><span class="k">Schutz</span><b>${esc(G.cloud.n)}</b><span class="c">${G.cloud.ids.length}</span></a><div class="arrow">↕</div>
+    ${["erst","vertrieb","mga","rueck"].map((g,i)=>`<a href="#g-${g}"><span class="k">Risikotransfer</span><b>${esc(G[g].n)}</b><span class="c">${G[g].ids.length}</span></a>`).join("")}
     <a href="#/themen/ki" style="border-color:rgba(224,122,122,.5)"><span class="k" style="color:#E28A8A">Rahmen</span><b>Hacker &amp; KI</b><span class="c">→</span></a></div>`;
   const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Zusammenspiel · Cyberversicherung DACH</span><span class="hint">Knoten und Kästen anklicken → Gruppe · Überfahren hebt Verbindungen hervor</span></div>${svg}${mobile}</div></section>`;
   const anchors = `<div class="anchors">${GRUPPEN.map(g=>`<a class="chip" href="#g-${g.id}">${esc(g.n)}</a>`).join("")}</div>`;
