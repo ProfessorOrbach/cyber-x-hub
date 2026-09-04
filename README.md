@@ -26,7 +26,7 @@ src/template.html      Seite (HTML, CSS, JS) mit Platzhaltern für Daten und Bil
 scripts/build.mjs      validiert die Daten und erzeugt dist/index.html
 scripts/feeds.mjs      holt RSS-Quellen und schreibt Vorschläge nach data/eingang/
 scripts/kurse.mjs      holt Wochenschlusskurse (Yahoo Finance, ohne Schlüssel) nach data/kurse/
-.github/workflows/     Build & Deploy bei Push, nächtliche Feeds & Kurse
+workflows-vorlage/     GitHub-Actions-Workflows (Build & Deploy, nächtliche Feeds & Kurse) – nach .github/workflows/ verschieben, sobald das Token das Recht „workflow“ hat
 ```
 
 ## Arbeiten mit der Datenbasis
@@ -49,7 +49,7 @@ Der Build bricht ab, wenn eine Regel des Fachkonzepts verletzt ist: jede Kennzah
 
 ## Veröffentlichung
 
-`build.yml` baut bei jedem Push auf `main` und veröffentlicht `dist/` über GitHub Pages (in den Repository-Einstellungen unter *Pages* die Quelle „GitHub Actions“ wählen). Für EU-Hosting mit Auftragsverarbeitung kann derselbe `dist/`-Ordner auf Cloudflare Pages oder einen deutschen Anbieter (z. B. Hetzner) gelegt werden.
+`workflows-vorlage/build.yml` (nach `.github/workflows/` verschieben) baut bei jedem Push auf `main` und veröffentlicht `dist/` über GitHub Pages (in den Repository-Einstellungen unter *Pages* die Quelle „GitHub Actions“ wählen). Für EU-Hosting mit Auftragsverarbeitung kann derselbe `dist/`-Ordner auf Cloudflare Pages oder einen deutschen Anbieter (z. B. Hetzner) gelegt werden.
 
 ## Datenherkunft und Lizenzen
 
