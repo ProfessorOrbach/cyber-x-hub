@@ -49,7 +49,13 @@ Der Build bricht ab, wenn eine Regel des Fachkonzepts verletzt ist: jede Kennzah
 
 ## Veröffentlichung
 
-`workflows-vorlage/build.yml` (nach `.github/workflows/` verschieben) baut bei jedem Push auf `main` und veröffentlicht `dist/` über GitHub Pages (in den Repository-Einstellungen unter *Pages* die Quelle „GitHub Actions“ wählen). Für EU-Hosting mit Auftragsverarbeitung kann derselbe `dist/`-Ordner auf Cloudflare Pages oder einen deutschen Anbieter (z. B. Hetzner) gelegt werden.
+Live: **https://professororbach.github.io/cyber-x-hub/** — GitHub Pages liefert den Zweig `gh-pages` aus.
+
+```bash
+bash scripts/deploy-pages.sh    # Build + Push von dist/ nach gh-pages
+```
+
+Sobald das Token das Recht „workflow“ hat (`gh auth refresh -h github.com -s workflow`), die Dateien aus `workflows-vorlage/` nach `.github/workflows/` verschieben: Dann baut GitHub bei jedem Push auf `main` automatisch und holt nächtlich Feeds und Kurse. Für EU-Hosting mit Auftragsverarbeitung kann derselbe `dist/`-Ordner auf Cloudflare Pages oder einen deutschen Anbieter (z. B. Hetzner) gelegt werden.
 
 ## Datenherkunft und Lizenzen
 

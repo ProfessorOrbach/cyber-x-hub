@@ -9,6 +9,7 @@
     "build:artifact": "node scripts/build.mjs --inline-assets",
     "feeds": "node scripts/feeds.mjs",
     "kurse": "node scripts/kurse.mjs",
+    "deploy": "bash scripts/deploy-pages.sh",
     "serve": "python3 -m http.server 8080 -d dist"
   },
   "engines": { "node": ">=20" }
