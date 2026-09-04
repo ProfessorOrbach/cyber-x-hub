@@ -1,0 +1,32 @@
+{
+ "D1": {
+  "k": "D1",
+  "n": "Risikoträger",
+  "s": "Wer trägt das Risiko"
+ },
+ "D2": {
+  "k": "D2",
+  "n": "Intermediäre",
+  "s": "Wer vermittelt und zeichnet im Auftrag"
+ },
+ "D3": {
+  "k": "D3",
+  "n": "Sicherheitsökosystem",
+  "s": "Wer Risiko bewertet und Schäden bearbeitet"
+ },
+ "D4": {
+  "k": "D4",
+  "n": "Institutionen",
+  "s": "Wer beaufsichtigt und erhebt"
+ },
+ "D5": {
+  "k": "D5",
+  "n": "Regulierung",
+  "s": "Welche Regeln den Markt treiben"
+ },
+ "D6": {
+  "k": "D6",
+  "n": "Markt & Kapital",
+  "s": "Wie viel Geld sich wie bewegt"
+ }
+}

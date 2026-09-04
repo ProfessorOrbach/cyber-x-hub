@@ -1,0 +1,228 @@
+[
+ {
+  "id": "nis2",
+  "n": "NIS2-Richtlinie",
+  "amt": "Richtlinie (EU) 2022/2555",
+  "jur": "EU",
+  "art": "Richtlinie",
+  "status": "in Kraft",
+  "fristen": [
+   {
+    "d": "2023-01-16",
+    "t": "Inkrafttreten",
+    "s": "inkraft"
+   },
+   {
+    "d": "2024-10-17",
+    "t": "Umsetzungsfrist der Mitgliedstaaten",
+    "s": "frist"
+   }
+  ],
+  "betr": "Wesentliche und wichtige Einrichtungen in 18 Sektoren",
+  "sank": "bis 10 Mio. EUR oder 2 % Umsatz (wesentliche Einrichtungen)",
+  "rel": "Treibt Nachfrage nach Cyber-Deckungen im Mittelstand; Nachweispflichten liefern Underwriting-Daten. Geschäftsleiterhaftung erhöht D&O-Berührung.",
+  "b": "Zweite EU-Richtlinie zur Netz- und Informationssicherheit. Erweitert den Kreis regulierter Unternehmen erheblich und führt Registrierungs-, Risikomanagement- und Meldepflichten ein.",
+  "q": [
+   "eurlex"
+  ],
+  "akteure": [
+   "enisa",
+   "bsi"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "nis2umsucg",
+  "n": "NIS2-Umsetzungsgesetz (DE)",
+  "amt": "NIS-2-Umsetzungs- und Cybersicherheitsstärkungsgesetz",
+  "jur": "DE",
+  "art": "Gesetz",
+  "status": "in Kraft",
+  "fristen": [
+   {
+    "d": "2025-12-05",
+    "t": "Verkündung im Bundesgesetzblatt",
+    "s": "inkraft"
+   },
+   {
+    "d": "2026-03-06",
+    "t": "Ende der Registrierungsfrist beim BSI",
+    "s": "frist"
+   },
+   {
+    "d": "2026-06-30",
+    "t": "Erster Compliance-Nachweis (verschoben von 31.12.2025)",
+    "s": "frist"
+   }
+  ],
+  "betr": "rund 29.500 Unternehmen in 18 Sektoren (Schätzung)",
+  "sank": "gestaffelt bis 10 Mio. EUR / 2 % Umsatz",
+  "rel": "Konkretisiert Betroffenenkreis und Nachweise für den deutschen Markt. Registrierung beim BSI wird zum Underwriting-Merkmal; verspätete Registrierung bleibt möglich.",
+  "b": "Nationale Umsetzung der NIS2-Richtlinie, deutlich nach der EU-Frist. Betrifft einen Großteil der deutschen Wirtschaft mit Pflichten zu Risikomanagement, Vorfallmeldung und Registrierung.",
+  "q": [
+   "openkritis",
+   "bgbl"
+  ],
+  "akteure": [
+   "bsi"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "kritisdachg",
+  "n": "KRITIS-Dachgesetz",
+  "amt": "Gesetz zur Stärkung der Resilienz kritischer Anlagen",
+  "jur": "DE",
+  "art": "Gesetz",
+  "status": "in Kraft",
+  "fristen": [
+   {
+    "d": "2026-01-29",
+    "t": "Beschluss im Bundestag",
+    "s": "verfahren"
+   },
+   {
+    "d": "2026-03-17",
+    "t": "Inkrafttreten",
+    "s": "inkraft"
+   }
+  ],
+  "betr": "Betreiber kritischer Anlagen (physische Resilienz)",
+  "sank": "Bußgeldrahmen gemäß Gesetz",
+  "rel": "Ergänzt NIS2 um physische Resilienz (Naturgefahren, Sabotage, hybride Bedrohungen). Für Betreiber gilt beides nebeneinander — relevant für Sach-Cyber-Schnittstellen und Betriebsunterbrechung.",
+  "b": "Umsetzung der EU-CER-Richtlinie. Reguliert Resilienz kritischer Infrastrukturen gegen nicht-digitale Gefahren, parallel zum Cybersicherheitsregime der NIS2.",
+  "q": [
+   "btkritis",
+   "openkritis"
+  ],
+  "akteure": [
+   "bsi"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "dora",
+  "n": "DORA",
+  "amt": "Verordnung (EU) 2022/2554",
+  "jur": "EU",
+  "art": "Verordnung",
+  "status": "in Kraft",
+  "fristen": [
+   {
+    "d": "2023-01-16",
+    "t": "Inkrafttreten",
+    "s": "inkraft"
+   },
+   {
+    "d": "2025-01-17",
+    "t": "Geltungsbeginn",
+    "s": "inkraft"
+   }
+  ],
+  "betr": "Finanzunternehmen inkl. Versicherer, IKT-Drittdienstleister",
+  "sank": "aufsichtliche Maßnahmen, Zwangsgelder für kritische IKT-Dienstleister",
+  "rel": "Trifft Versicherer doppelt: als regulierte Finanzunternehmen (eigene IKT-Resilienz) und als Zeichner von Risiken bei Finanzkunden. Auslagerungs- und Registerpflichten erzeugen Daten über Konzentrationsrisiken.",
+  "b": "Digital Operational Resilience Act. Einheitlicher Rahmen für IKT-Risikomanagement, Vorfallmeldung, Resilienztests und Drittparteienrisiko im Finanzsektor.",
+  "q": [
+   "eurlex"
+  ],
+  "akteure": [
+   "bafin",
+   "eiopa"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "cra",
+  "n": "Cyber Resilience Act",
+  "amt": "Verordnung (EU) 2024/2847",
+  "jur": "EU",
+  "art": "Verordnung",
+  "status": "Übergangsfrist",
+  "fristen": [
+   {
+    "d": "2024-12-10",
+    "t": "Inkrafttreten",
+    "s": "inkraft"
+   },
+   {
+    "d": "2026-09-11",
+    "t": "Meldepflichten für aktiv ausgenutzte Schwachstellen",
+    "s": "kommend"
+   },
+   {
+    "d": "2027-12-11",
+    "t": "Volle Anwendung",
+    "s": "kommend"
+   }
+  ],
+  "betr": "Hersteller, Importeure und Händler von Produkten mit digitalen Elementen",
+  "sank": "bis 15 Mio. EUR oder 2,5 % Umsatz",
+  "rel": "Verschiebt Haftung in Richtung Hersteller — Bedeutung für Produkthaftpflicht und Rückrufdeckungen; Schwachstellenmeldungen als neue Datenquelle.",
+  "b": "Sicherheitsanforderungen über den gesamten Lebenszyklus vernetzter Produkte und Software, inklusive Meldepflichten für Schwachstellen.",
+  "q": [
+   "eurlex"
+  ],
+  "akteure": [
+   "enisa"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "dsgvo",
+  "n": "DSGVO",
+  "amt": "Verordnung (EU) 2016/679",
+  "jur": "EU",
+  "art": "Verordnung",
+  "status": "in Kraft",
+  "fristen": [
+   {
+    "d": "2018-05-25",
+    "t": "Geltungsbeginn",
+    "s": "inkraft"
+   }
+  ],
+  "betr": "Alle Verantwortlichen und Auftragsverarbeiter",
+  "sank": "bis 20 Mio. EUR oder 4 % Umsatz",
+  "rel": "Meldepflicht binnen 72 Stunden prägt die Schadenabwicklung; Bußgelder sind je nach Wording und Jurisdiktion nur eingeschränkt versicherbar.",
+  "b": "Datenschutz-Grundverordnung; Grundlage für Benachrichtigungspflichten und Bußgeldrisiken nach Datenpannen.",
+  "q": [
+   "eurlex"
+  ],
+  "akteure": [],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "lloyds-war",
+  "n": "Lloyd's Kriegsausschluss-Anforderung",
+  "amt": "Market Bulletin Y5381",
+  "jur": "Markt",
+  "art": "Marktstandard",
+  "status": "in Kraft",
+  "fristen": [
+   {
+    "d": "2022-08-16",
+    "t": "Bulletin veröffentlicht",
+    "s": "inkraft"
+   },
+   {
+    "d": "2023-03-31",
+    "t": "Verbindlich für neue und verlängerte Cyber-Policen",
+    "s": "frist"
+   }
+  ],
+  "betr": "Alle Lloyd's-Syndikate mit eigenständigen Cyber-Deckungen",
+  "sank": "—",
+  "rel": "Verpflichtet zu Ausschlüssen für staatlich zurechenbare Angriffe; prägt seither die Wording-Landschaft weit über Lloyd's hinaus und ist Kern der Debatte um Deckungssicherheit.",
+  "b": "Anforderung des Lloyd's-Marktes, dass Cyber-Policen Kriegs- und staatlich zurechenbare Cyberoperationen ausschließen; Referenzklauseln der Lloyd's Market Association.",
+  "q": [
+   "gb"
+  ],
+  "akteure": [
+   "lloyds",
+   "beazley",
+   "hiscox"
+  ],
+  "pr": "2026-05-20"
+ }
+]

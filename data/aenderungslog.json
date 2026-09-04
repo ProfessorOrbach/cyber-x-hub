@@ -1,0 +1,22 @@
+[
+ {
+  "d": "2026-09-04",
+  "t": "Hero mit Bild (Kölner Skyline, Schutzschild) und Markenaussage „Cyber-X-Hub. Fokus Versicherung.“; Leitthema als Leiste unter dem Hero; Meldungsblöcke je Rubrik; Schaubild Marktstruktur als Liniengrafik."
+ },
+ {
+  "d": "2026-09-04",
+  "t": "Vorfallkarte Deutschland (19 Vorfälle, 60 Tage), Akteursgruppen mit Schaubild, Börsenübersicht (19 Titel) ergänzt; Helvetia → Helvetia Baloise; AIG und SCOR aufgenommen."
+ },
+ {
+  "d": "2026-09-02",
+  "t": "Prototyp mit Beispieldaten angelegt: 38 Akteure, 7 Rechtsakte, 9 Kennzahlen, 13 Meldungen, 10 Glossarbegriffe."
+ },
+ {
+  "d": "2026-09-02",
+  "t": "Kennzahlen gwp-de und cr-de ohne Wert angelegt — Lizenzanfrage GDV offen (O-3)."
+ },
+ {
+  "d": "2026-09-02",
+  "t": "Regel eingeführt: Meldungen ohne Verknüpfung zu Akteur oder Rechtsakt werden nicht angezeigt."
+ }
+]

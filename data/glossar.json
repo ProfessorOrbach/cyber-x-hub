@@ -1,0 +1,52 @@
+[
+ {
+  "t": "Bruttoprämie (GWP)",
+  "d": "Gebuchte Beiträge vor Abzug von Rückversicherung. Marktgrößenangaben beziehen sich fast immer auf GWP; die Abgrenzung eigenständiger Cyber-Policen von Paketdeckungen variiert je Quelle.",
+  "en": "Gross Written Premium"
+ },
+ {
+  "t": "Schaden-Kosten-Quote",
+  "d": "Summe aus Schadenaufwand und Kosten im Verhältnis zu den verdienten Beiträgen. Über 100 % bedeutet versicherungstechnischen Verlust.",
+  "en": "Combined Ratio"
+ },
+ {
+  "t": "MGA / Assekuradeur",
+  "d": "Zeichnet Risiken im Namen und für Rechnung eines oder mehrerer Risikoträger, ohne selbst Risiko zu tragen. Cyber-MGAs verbinden Zeichnung oft mit Sicherheits-Monitoring.",
+  "en": "Managing General Agent"
+ },
+ {
+  "t": "Cyber-ILS / Katastrophenanleihe",
+  "d": "Verbriefung von Cyber-Risiko an Kapitalmarktinvestoren; Rückzahlung entfällt ganz oder teilweise bei definierten Großereignissen.",
+  "en": "Cyber cat bond, insurance-linked securities"
+ },
+ {
+  "t": "Kumulrisiko",
+  "d": "Gefahr, dass ein Ereignis (Cloud-Ausfall, Software-Schwachstelle) gleichzeitig viele Versicherte trifft. Zentrale Grenze der Versicherbarkeit.",
+  "en": "Accumulation / systemic risk"
+ },
+ {
+  "t": "Kriegsausschluss",
+  "d": "Klausel, die Schäden aus Krieg und — seit 2023 im Lloyd's-Markt verpflichtend — aus staatlich zurechenbaren Cyberoperationen ausschließt.",
+  "en": "War exclusion"
+ },
+ {
+  "t": "Harter / weicher Markt",
+  "d": "Zyklusphasen: Im harten Markt steigen Raten und Kapazität ist knapp; im weichen Markt fallen Raten bei reichlich Kapazität.",
+  "en": "Hard / soft market"
+ },
+ {
+  "t": "Retrozession",
+  "d": "Rückversicherung von Rückversicherern; im Cyber-Segment zunehmend über ILS-Strukturen dargestellt.",
+  "en": "Retrocession"
+ },
+ {
+  "t": "Silent Cyber",
+  "d": "Unbeabsichtigte Cyber-Deckung in klassischen Sparten (Sach, Haftpflicht), weil Cyber weder ein- noch ausgeschlossen ist.",
+  "en": "Non-affirmative cyber"
+ },
+ {
+  "t": "Incident Response",
+  "d": "Sofortmaßnahmen nach einem Sicherheitsvorfall: Eindämmung, Forensik, Wiederherstellung. Versicherer stellen dafür Dienstleister-Panels.",
+  "en": "Incident Response"
+ }
+]

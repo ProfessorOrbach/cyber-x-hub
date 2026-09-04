@@ -1,0 +1,242 @@
+[
+ {
+  "id": "gwp-global",
+  "gl": [
+   "Bruttoprämie (GWP)",
+   "Harter / weicher Markt"
+  ],
+  "n": "Globales Cyber-Prämienvolumen",
+  "v": 16.6,
+  "e": "Mrd. USD",
+  "per": "2026 (Schätzung)",
+  "st": "2026-01-31",
+  "reg": "Global",
+  "qual": "abg",
+  "q": [
+   "mre26"
+  ],
+  "def": "Gebuchte Bruttoprämie aller eigenständigen Cyber-Deckungen weltweit, Schätzung des Rückversicherers.",
+  "basis": "Rückversicherer-Schätzung; Abgrenzung zu Paket- und Silent-Cyber-Deckungen uneinheitlich",
+  "delta": "+8 % ggü. 2025",
+  "dir": "up",
+  "reihe": [
+   [
+    "2020",
+    7
+   ],
+   [
+    "2021",
+    9.2
+   ],
+   [
+    "2022",
+    11.9
+   ],
+   [
+    "2023",
+    14
+   ],
+   [
+    "2024",
+    15.3
+   ],
+   [
+    "2025",
+    15.3
+   ],
+   [
+    "2026e",
+    16.6
+   ],
+   [
+    "2028e",
+    22
+   ],
+   [
+    "2030e",
+    28
+   ]
+  ]
+ },
+ {
+  "id": "cagr-global",
+  "gl": [
+   "Bruttoprämie (GWP)"
+  ],
+  "n": "Erwartetes Wachstum p. a. bis 2030",
+  "v": "10–15",
+  "e": "%",
+  "per": "2025–2030",
+  "st": "2026-01-31",
+  "reg": "Global",
+  "qual": "abg",
+  "q": [
+   "mre26"
+  ],
+  "def": "Durchschnittliche jährliche Wachstumsrate des globalen Prämienvolumens laut Rückversicherer-Prognose.",
+  "basis": "Prognosewert; Bandbreite je nach Bericht",
+  "delta": "Zielwert 2030: ≈ 28 Mrd. USD",
+  "dir": ""
+ },
+ {
+  "id": "gwp-de",
+  "gl": [
+   "Bruttoprämie (GWP)"
+  ],
+  "n": "Beitragseinnahmen Cyber Deutschland",
+  "v": null,
+  "e": "Mio. EUR",
+  "per": "2025",
+  "st": "—",
+  "reg": "DE",
+  "qual": "ind",
+  "q": [
+   "gdvcyber"
+  ],
+  "def": "Gebuchte Bruttobeiträge der GDV-Mitgliedsunternehmen in der Cyberrisikoversicherung.",
+  "basis": "Verbandsstatistik; Lizenzanfrage offen (O-3), Wert wird nach Klärung eingepflegt",
+  "delta": "Wachstum zuletzt einstellig, nach Jahren mit +50 %",
+  "dir": ""
+ },
+ {
+  "id": "cr-de",
+  "gl": [
+   "Schaden-Kosten-Quote"
+  ],
+  "n": "Schaden-Kosten-Quote Cyber Deutschland",
+  "v": null,
+  "e": "%",
+  "per": "2025",
+  "st": "—",
+  "reg": "DE",
+  "qual": "ind",
+  "q": [
+   "gdvpm"
+  ],
+  "def": "Kombinierte Quote aus Schäden und Kosten im Verhältnis zu den verdienten Beiträgen.",
+  "basis": "Verbandsangabe; Rückkehr in die Gewinnzone nach Verlustjahr 2023 gemeldet",
+  "delta": "2023: Schäden verzehrten Beiträge weitgehend",
+  "dir": ""
+ },
+ {
+  "id": "ils-cyber",
+  "gl": [
+   "Cyber-ILS / Katastrophenanleihe",
+   "Retrozession"
+  ],
+  "n": "Cyber-ILS-Emissionsvolumen",
+  "v": 1.5,
+  "e": "Mrd. USD",
+  "per": "2026 (Prognose)",
+  "st": "2026-06-30",
+  "reg": "Global",
+  "qual": "abg",
+  "q": [
+   "artemis",
+   "geneva"
+  ],
+  "def": "Jährliches Emissionsvolumen von Cyber-Katastrophenanleihen und privaten Cyber-ILS-Transaktionen.",
+  "basis": "Fachmedien-Aggregation; 2023 ≈ 0,4 Mrd. USD",
+  "delta": "vs. ≈ 0,4 Mrd. USD 2023",
+  "dir": "up",
+  "reihe": [
+   [
+    "2023",
+    0.415
+   ],
+   [
+    "2024",
+    0.8
+   ],
+   [
+    "2025",
+    1.1
+   ],
+   [
+    "2026e",
+    1.5
+   ]
+  ]
+ },
+ {
+  "id": "ransom-demand",
+  "gl": [
+   "Incident Response"
+  ],
+  "n": "Durchschnittliche Erst-Lösegeldforderung",
+  "v": "> 1,0",
+  "e": "Mio. USD",
+  "per": "2025",
+  "st": "2026-04-30",
+  "reg": "Global (MGA-Portfolio)",
+  "qual": "abg",
+  "q": [
+   "coalclaims"
+  ],
+  "def": "Mittlere erste Forderung bei Ransomware-Vorfällen im Portfolio eines großen Cyber-MGA.",
+  "basis": "Portfolio eines Anbieters, nicht marktrepräsentativ",
+  "delta": "+47 % ggü. Vorjahr",
+  "dir": "up"
+ },
+ {
+  "id": "ransom-refuse",
+  "gl": [
+   "Incident Response"
+  ],
+  "n": "Anteil verweigerter Lösegeldzahlungen",
+  "v": 86,
+  "e": "%",
+  "per": "2025",
+  "st": "2026-04-30",
+  "reg": "Global (MGA-Portfolio)",
+  "qual": "abg",
+  "q": [
+   "coalclaims"
+  ],
+  "def": "Anteil der betroffenen Versicherungsnehmer, die kein Lösegeld zahlten.",
+  "basis": "Portfolio eines Anbieters; Rekordwert",
+  "delta": "Höchststand",
+  "dir": "up"
+ },
+ {
+  "id": "nis2-betr",
+  "gl": [],
+  "n": "NIS2-betroffene Unternehmen Deutschland",
+  "v": "≈ 29.500",
+  "e": "",
+  "per": "2026",
+  "st": "2026-03-06",
+  "reg": "DE",
+  "qual": "abg",
+  "q": [
+   "openkritis"
+  ],
+  "def": "Geschätzte Zahl der registrierungspflichtigen Einrichtungen nach dem NIS2-Umsetzungsgesetz.",
+  "basis": "Schätzung aus Fachportal, Behördenschätzung liegt in ähnlicher Größenordnung",
+  "delta": "18 Sektoren",
+  "dir": ""
+ },
+ {
+  "id": "zyklus",
+  "gl": [
+   "Harter / weicher Markt",
+   "MGA / Assekuradeur"
+  ],
+  "n": "Ratenzyklus Cyber",
+  "v": "weich",
+  "e": "",
+  "per": "Q2 2026",
+  "st": "2026-06-30",
+  "reg": "Global / DACH",
+  "qual": "abg",
+  "q": [
+   "mre26",
+   "ctacq"
+  ],
+  "def": "Qualitative Einordnung der Ratenentwicklung: hart (steigend, knappe Kapazität) bis weich (fallend, reichlich Kapazität).",
+  "basis": "Redaktionelle Einordnung aus Makler- und Rückversichererberichten",
+  "delta": "Raten seit 2024 rückläufig, Kapazität reichlich",
+  "dir": "down",
+  "pos": 74
+ }
+]

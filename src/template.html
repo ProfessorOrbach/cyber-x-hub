@@ -1,0 +1,906 @@
+<title>Cyber-X-Hub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F5F4F1; --surface:#FFFFFF; --surface-2:#EDEBE6; --surface-3:#E0DDD6;
+  --ink:#141A22; --ink-2:#3E4854; --ink-3:#5F6A76;
+  --rule:#D8D4CC; --rule-soft:#E7E4DE;
+  --accent:#1B7C7E; --accent-2:#156366; --accent-soft:#DDEFEF; --accent-fill:rgba(27,124,126,.12); --accent-solid:#1B7C7E; --on-accent:#FFFFFF;
+  --navy:#0F1B2D; --navy-2:#16253C; --navy-ink:#EEF2F7; --navy-ink-2:#B7C2D1; --navy-rule:rgba(255,255,255,.10); --navy-accent:#5CC4C6;
+  --map-bg:#0F1B2D; --map-land:#243650; --map-line:rgba(255,255,255,.16); --map-dot:#5CC4C6; --map-neu:#E9B25B;
+  --signal:#8F5306; --signal-soft:#F6EBDA;
+  --ok:#25634A; --ok-soft:#DEEEE5;
+  --crit:#963030; --crit-soft:#F4E1E1;
+  --shadow:0 1px 2px rgba(20,26,34,.05), 0 8px 24px -16px rgba(20,26,34,.22);
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1320; --surface:#111C2C; --surface-2:#182538; --surface-3:#213048;
+    --ink:#E8ECF1; --ink-2:#B6BFCB; --ink-3:#8C97A6;
+    --rule:#27364B; --rule-soft:#1E2B3D;
+    --accent:#5CC4C6; --accent-2:#86D6D7; --accent-soft:#0F3436; --accent-fill:rgba(92,196,198,.14); --accent-solid:#1B7C7E; --on-accent:#FFFFFF;
+    --navy:#0B1320; --navy-2:#111C2C; --navy-ink:#E8ECF1; --navy-ink-2:#B6BFCB; --navy-rule:rgba(255,255,255,.10); --navy-accent:#5CC4C6;
+    --map-bg:#070D17; --map-land:#1E2D44; --map-line:rgba(255,255,255,.14); --map-dot:#5CC4C6; --map-neu:#E9B25B;
+    --signal:#DBA04E; --signal-soft:#2E2417;
+    --ok:#6BC094; --ok-soft:#16281F;
+    --crit:#E28A8A; --crit-soft:#2B1A1A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1320; --surface:#111C2C; --surface-2:#182538; --surface-3:#213048;
+  --ink:#E8ECF1; --ink-2:#B6BFCB; --ink-3:#8C97A6;
+  --rule:#27364B; --rule-soft:#1E2B3D;
+  --accent:#5CC4C6; --accent-2:#86D6D7; --accent-soft:#0F3436; --accent-fill:rgba(92,196,198,.14); --accent-solid:#1B7C7E; --on-accent:#FFFFFF;
+  --navy:#0B1320; --navy-2:#111C2C; --navy-ink:#E8ECF1; --navy-ink-2:#B6BFCB; --navy-rule:rgba(255,255,255,.10); --navy-accent:#5CC4C6;
+  --map-bg:#070D17; --map-land:#1E2D44; --map-line:rgba(255,255,255,.14); --map-dot:#5CC4C6; --map-neu:#E9B25B;
+  --signal:#DBA04E; --signal-soft:#2E2417;
+  --ok:#6BC094; --ok-soft:#16281F;
+  --crit:#E28A8A; --crit-soft:#2B1A1A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+html{font-size:100%}
+body{background:var(--ground); color:var(--ink); font-family:var(--sans); font-size:.9375rem; line-height:1.55; -webkit-font-smoothing:antialiased}
+a{color:var(--accent-2); text-underline-offset:3px; text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+h1,h2,h3,h4{margin:0; text-wrap:balance}
+p{margin:0 0 12px; max-width:70ch}
+.skip{position:absolute; left:-999px; top:8px; background:var(--accent-solid); color:var(--on-accent); padding:8px 12px; border-radius:4px; z-index:50; text-decoration:none}
+.skip:focus{left:8px}
+
+/* ---------- App bar ---------- */
+.appbar{background:var(--surface); border-bottom:1px solid var(--rule); position:sticky; top:0; z-index:20}
+.appbar .in{max-width:1200px; margin:0 auto; padding:0 22px; display:flex; align-items:center; gap:18px; min-height:60px; flex-wrap:wrap}
+.brand{font-family:var(--display); font-weight:700; font-size:1.35rem; letter-spacing:-.01em; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:8px; white-space:nowrap}
+.brand .x{display:inline-grid; place-items:center; width:1.35em; height:1.35em; border:2px solid var(--accent-solid); color:var(--accent-solid); font-family:var(--mono); font-weight:500; font-size:.72em; line-height:1; border-radius:2px; transform:translateY(-1px)}
+.brand small{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:400; margin-left:4px}
+.nav{display:flex; gap:2px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-size:.9rem; font-weight:500; color:var(--ink-2); text-decoration:none; padding:19px 11px 17px; border-bottom:2px solid transparent; white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--accent-2); border-bottom-color:var(--accent-solid)}
+.search{display:flex; align-items:center; gap:8px; background:var(--surface-2); border:1px solid var(--rule); border-radius:4px; padding:6px 10px; min-width:220px}
+.search input{border:0; background:transparent; font:inherit; font-size:.875rem; color:var(--ink); width:100%; outline:none}
+.search input::placeholder{color:var(--ink-3)}
+.search kbd{font-family:var(--mono); font-size:.66rem; color:var(--ink-3); border:1px solid var(--rule); border-radius:3px; padding:0 4px}
+.theme{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); border:1px solid var(--rule); border-radius:4px; padding:6px 9px; white-space:nowrap}
+.theme:hover{border-color:var(--accent); color:var(--ink)}
+.theme svg{width:14px; height:14px}
+@media (max-width:760px){ .appbar .in{padding:10px 16px; gap:10px} .nav{order:3; width:100%} .nav a{padding:10px 9px 9px} .search{flex:1; min-width:0} .brand small{display:none} }
+
+.banner{background:var(--signal-soft); color:var(--ink-2); font-size:.8125rem; border-bottom:1px solid color-mix(in srgb, var(--signal) 25%, transparent)}
+.banner .in{max-width:1200px; margin:0 auto; padding:7px 22px; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.banner b{font-family:var(--mono); font-size:.66rem; letter-spacing:.11em; text-transform:uppercase; color:var(--signal); font-weight:500}
+
+/* ---------- Hero (Bild, Markenaussage) ---------- */
+.hero{position:relative; margin:-26px -22px 0; padding:0 22px; min-height:440px; display:flex; align-items:stretch; color:#0F1B2D; overflow:hidden; border-bottom:1px solid var(--rule);
+  background:#DCE7F1 url("/*__HERO__*/") center right / cover no-repeat}
+.hero::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(244,247,250,.94) 0%, rgba(244,247,250,.86) 34%, rgba(244,247,250,.35) 58%, rgba(244,247,250,0) 78%); pointer-events:none}
+.hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:rgba(15,27,45,.12)}
+.hero .in{position:relative; max-width:1200px; width:100%; margin:0 auto; padding:46px 0 40px; display:grid; grid-template-columns:minmax(0,58%) 1fr; gap:24px; align-items:center}
+@media (max-width:860px){ .hero{min-height:0; background-position:72% center} .hero::before{background:linear-gradient(180deg, rgba(244,247,250,.94) 0%, rgba(244,247,250,.88) 70%, rgba(244,247,250,.55) 100%)} .hero .in{grid-template-columns:1fr; padding:30px 0 26px} }
+.hero .tag{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#156366; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.hero .tag .sep{width:24px; height:1px; background:#156366; display:inline-block}
+.hero h1{font-family:var(--display); font-weight:700; font-size:clamp(2rem,4.2vw,3.3rem); line-height:1.06; letter-spacing:-.015em; color:#0F1B2D; margin:14px 0 0; max-width:16ch}
+.hero h1 em{font-style:normal; color:#1B7C7E}
+.hero .dek{font-size:1.08rem; color:#2E3A47; margin:16px 0 20px; max-width:52ch; line-height:1.55}
+.hero .meta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+.hero .cta{display:inline-flex; align-items:center; gap:8px; background:#1B7C7E; color:#fff; font-weight:500; font-size:.875rem; padding:10px 15px; border-radius:3px; text-decoration:none}
+.hero .cta:hover{background:#156366; color:#fff}
+.hero .cta.ghost{background:rgba(255,255,255,.55); border:1px solid rgba(15,27,45,.25); color:#0F1B2D; backdrop-filter:blur(2px)}
+.hero .cta.ghost:hover{border-color:#1B7C7E; color:#156366}
+.hero .kns{display:flex; gap:0; margin-top:26px; border-top:1px solid rgba(15,27,45,.15); padding-top:14px; flex-wrap:wrap}
+.hero .kn{display:flex; flex-direction:column; gap:2px; text-decoration:none; color:#0F1B2D; padding:0 22px 0 0; margin-right:22px; border-right:1px solid rgba(15,27,45,.15)}
+.hero .kn:last-child{border-right:0}
+.hero .kn .v{font-family:var(--mono); font-size:1.3rem; font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap}
+.hero .kn .v small{font-size:.72rem; color:#3E4854; margin-left:3px}
+.hero .kn .l{font-size:.75rem; color:#3E4854; line-height:1.3; max-width:18ch}
+.hero .kn:hover .l{color:#156366}
+.hero .credit{position:absolute; right:22px; bottom:8px; font-family:var(--mono); font-size:.6rem; color:rgba(15,27,45,.55); letter-spacing:.06em}
+
+/* ---------- Leitthema-Leiste ---------- */
+.leit{display:grid; grid-template-columns:auto 1fr auto; gap:18px; align-items:center; background:var(--navy); color:var(--navy-ink); margin:0 -22px 24px; padding:14px 22px; border-bottom:1px solid var(--navy-rule)}
+.leit .k{font-family:var(--mono); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--navy-accent); white-space:nowrap}
+.leit .t{font-family:var(--display); font-weight:600; font-size:1.05rem; line-height:1.3; text-wrap:balance}
+.leit .t a{color:inherit; text-decoration:none}
+.leit .t a:hover{color:var(--navy-accent)}
+.leit .d{font-size:.85rem; color:var(--navy-ink-2); margin-top:3px; max-width:90ch}
+.leit .m{font-family:var(--mono); font-size:.66rem; color:var(--navy-ink-2); white-space:nowrap; text-align:right; line-height:1.6}
+.leit .m a{color:var(--navy-accent); text-decoration:none}
+@media (max-width:760px){ .leit{grid-template-columns:1fr} .leit .m{text-align:left} }
+
+/* ---------- Page ---------- */
+.page{max-width:1200px; margin:0 auto; padding:26px 22px 80px}
+.pagehead{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:18px}
+.pagehead h1{font-family:var(--display); font-size:1.85rem; font-weight:600; letter-spacing:-.01em; line-height:1.15}
+.pagehead p{color:var(--ink-2); margin:4px 0 0; font-size:.925rem}
+.stamp{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); letter-spacing:.04em; white-space:nowrap}
+.eyebrow{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:500}
+.sect{margin-top:30px}
+.sect > h2{font-family:var(--display); font-size:1.2rem; font-weight:600; margin-bottom:12px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.sect > h2 .eyebrow{font-weight:400}
+.sect > h2 a.more{font-family:var(--sans); font-size:.8rem; font-weight:400; margin-left:auto}
+
+.grid{display:grid; gap:12px}
+.g6{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+@media (max-width:560px){ .g6{grid-template-columns:repeat(2,1fr)} }
+.card{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:16px 18px; box-shadow:var(--shadow); min-width:0}
+.card h3{font-size:.9rem; font-weight:600; margin-bottom:8px}
+
+/* ---------- Redaktionsempfehlung ---------- */
+.feat{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px}
+.feat a{display:flex; flex-direction:column; gap:8px; background:var(--surface); border:1px solid var(--rule); border-top:3px solid var(--accent-solid); border-radius:4px; padding:16px 18px 16px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow); min-width:0}
+.feat a:hover{border-color:var(--accent); border-top-color:var(--accent-solid)}
+.feat .rub{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2); font-weight:500}
+.feat h3{font-family:var(--display); font-size:1.15rem; font-weight:600; line-height:1.25; margin:0}
+.feat p{font-size:.875rem; color:var(--ink-2); margin:0; max-width:none}
+.feat .m{font-family:var(--mono); font-size:.68rem; color:var(--ink-3); margin-top:auto; padding-top:6px}
+
+/* ---------- Herausgeber ---------- */
+.pub{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start}
+.pub .av{width:52px; height:52px; border-radius:3px; background:var(--navy); color:var(--navy-accent); display:grid; place-items:center; font-family:var(--display); font-weight:700; font-size:1.2rem}
+.pub h3{font-size:1rem; margin-bottom:2px}
+.pub .r{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px}
+.pub p{font-size:.875rem; color:var(--ink-2); margin:0 0 8px; max-width:none}
+.pub .t{display:flex; gap:6px; flex-wrap:wrap}
+
+/* ---------- Kennzahl-Kachel ---------- */
+.tile{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:13px 15px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:4px; text-decoration:none; color:inherit; min-width:0}
+.tile:hover{border-color:var(--accent)}
+.tile .lbl{font-size:.8rem; color:var(--ink-2); line-height:1.3}
+.tile .val{font-family:var(--mono); font-size:1.5rem; font-weight:500; letter-spacing:-.01em; font-variant-numeric:tabular-nums; line-height:1.1; color:var(--ink); margin-top:2px}
+.tile .val small{font-size:.8rem; color:var(--ink-2); font-weight:400; margin-left:3px}
+.tile .delta{font-size:.75rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
+.tile .delta.up::before{content:"▲ "; color:var(--ok); font-size:.55rem}
+.tile .delta.down::before{content:"▼ "; color:var(--crit); font-size:.55rem}
+.tile .foot{display:flex; gap:8px; align-items:center; margin-top:6px; font-family:var(--mono); font-size:.66rem; color:var(--ink-3); flex-wrap:wrap}
+.tile svg.spark{width:100%; height:26px; margin-top:4px}
+
+.pill{display:inline-block; font-family:var(--mono); font-size:.64rem; letter-spacing:.07em; text-transform:uppercase; padding:1px 6px; border-radius:2px; white-space:nowrap; font-weight:500; vertical-align:middle}
+.pill.ok{background:var(--ok-soft); color:var(--ok)}
+.pill.abg{background:var(--signal-soft); color:var(--signal)}
+.pill.ind{background:var(--surface-3); color:var(--ink-2)}
+.pill.acc{background:var(--accent-soft); color:var(--accent-2)}
+.pill.crit{background:var(--crit-soft); color:var(--crit)}
+.pill.d{background:var(--surface-2); color:var(--ink-2); border:1px solid var(--rule)}
+
+/* ---------- Listen ---------- */
+.list{display:flex; flex-direction:column}
+.item{display:grid; grid-template-columns:86px 1fr; gap:14px; padding:11px 0; border-bottom:1px solid var(--rule-soft); align-items:start}
+.item:last-child{border-bottom:none}
+.item .date{font-family:var(--mono); font-size:.72rem; color:var(--ink-3); padding-top:3px; font-variant-numeric:tabular-nums}
+.item .date small{display:block; color:var(--ink-3); font-size:.62rem; margin-top:2px}
+.item .t{font-weight:500; font-size:.925rem; line-height:1.35}
+.item .t a{color:var(--ink); text-decoration:none}
+.item .t a:hover{color:var(--accent-2)}
+.item .s{font-size:.85rem; color:var(--ink-2); margin-top:2px; max-width:80ch}
+.item .e{font-size:.8125rem; color:var(--ink-2); margin-top:5px; padding-left:10px; border-left:2px solid var(--signal); max-width:80ch}
+.item .e b{font-family:var(--mono); font-size:.62rem; letter-spacing:.09em; text-transform:uppercase; color:var(--signal); margin-right:6px; font-weight:500}
+.item .m{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; align-items:center; font-size:.75rem; color:var(--ink-3)}
+.item .m a{font-size:.75rem}
+@media (max-width:600px){ .item{grid-template-columns:1fr; gap:3px} }
+
+/* ---------- Filter ---------- */
+.filters{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:14px}
+.chip{font-size:.8rem; font-weight:500; padding:5px 11px; border:1px solid var(--rule); border-radius:999px; background:var(--surface); color:var(--ink-2); text-decoration:none}
+.chip:hover{border-color:var(--accent); color:var(--ink)}
+.chip.on{background:var(--accent-solid); border-color:var(--accent-solid); color:var(--on-accent)}
+.filters select,.filters input[type=text]{font:inherit; font-size:.8125rem; padding:5px 8px; border:1px solid var(--rule); border-radius:4px; background:var(--surface); color:var(--ink)}
+.filters .count{margin-left:auto; font-family:var(--mono); font-size:.72rem; color:var(--ink-3)}
+.filters .sep{width:1px; height:18px; background:var(--rule)}
+
+/* ---------- Tabellen ---------- */
+.tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:4px; background:var(--surface); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:.85rem; min-width:640px}
+th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+thead th{font-family:var(--mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:500; background:var(--surface-2); border-bottom:1px solid var(--rule); white-space:nowrap; cursor:pointer; user-select:none}
+thead th.sorted::after{content:" ↓"; color:var(--accent-2)}
+thead th.sorted.asc::after{content:" ↑"}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.rowlink{cursor:pointer}
+tbody tr.rowlink:hover td{background:var(--surface-2)}
+td.num{font-family:var(--mono); font-size:.78rem; font-variant-numeric:tabular-nums; white-space:nowrap; text-align:right}
+th.num{text-align:right}
+td.mono{font-family:var(--mono); font-size:.75rem; white-space:nowrap; color:var(--ink-2)}
+td .name{font-weight:500; color:var(--ink)}
+td .sub{display:block; font-size:.75rem; color:var(--ink-3)}
+
+/* ---------- Detail ---------- */
+.detail{display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:22px; align-items:start}
+@media (max-width:860px){ .detail{grid-template-columns:1fr} }
+.back{font-size:.8125rem; color:var(--ink-3); text-decoration:none; display:inline-block; margin-bottom:12px}
+.back:hover{color:var(--accent-2)}
+.facts{display:grid; grid-template-columns:1fr; gap:0; margin:0}
+.facts div{display:grid; grid-template-columns:120px 1fr; gap:10px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.85rem}
+.facts div:last-child{border-bottom:none}
+.facts dt{font-family:var(--mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); padding-top:3px}
+.facts dd{margin:0}
+.rel{display:flex; flex-direction:column; gap:6px}
+.rel a{display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:baseline; font-size:.85rem; text-decoration:none; color:var(--ink); padding:6px 0; border-bottom:1px solid var(--rule-soft)}
+.rel a:last-child{border-bottom:none}
+.rel a:hover{color:var(--accent-2)}
+.rel .k{font-family:var(--mono); font-size:.66rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); white-space:nowrap}
+.einordnung{border-left:2px solid var(--signal); padding:2px 0 2px 12px; font-size:.875rem; color:var(--ink-2); margin:12px 0}
+.einordnung b{font-family:var(--mono); font-size:.62rem; letter-spacing:.09em; text-transform:uppercase; color:var(--signal); display:block; margin-bottom:2px; font-weight:500}
+.srcfoot{font-size:.75rem; color:var(--ink-3); border-top:1px solid var(--rule-soft); margin-top:14px; padding-top:10px; font-family:var(--mono); line-height:1.7}
+.byline{display:flex; gap:12px; flex-wrap:wrap; align-items:center; font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-top:6px}
+.byline b{font-weight:500; color:var(--ink-2)}
+.prose{font-size:1rem; line-height:1.65}
+.prose p{max-width:66ch}
+.prose h2{font-family:var(--display); font-size:1.25rem; font-weight:600; margin:22px 0 8px}
+
+/* ---------- Zeitachse ---------- */
+.tl{position:relative; padding-left:26px}
+.tl::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:1px; background:var(--rule)}
+.tl .yr{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); letter-spacing:.1em; margin:18px 0 6px; position:relative}
+.tl .yr::before{content:""; position:absolute; left:-22px; top:6px; width:9px; height:1px; background:var(--rule)}
+.tl .ev{position:relative; padding:9px 0 9px 4px; border-bottom:1px solid var(--rule-soft); display:grid; grid-template-columns:92px 1fr auto; gap:12px; align-items:start}
+.tl .ev::before{content:""; position:absolute; left:-22px; top:16px; width:9px; height:9px; border-radius:50%; background:var(--surface); border:2px solid var(--ink-3)}
+.tl .ev.inkraft::before{background:var(--ok); border-color:var(--ok)}
+.tl .ev.frist::before{background:var(--signal); border-color:var(--signal)}
+.tl .ev.kommend::before{background:var(--surface); border-color:var(--accent)}
+.tl .ev.verfahren::before{background:var(--surface); border-color:var(--ink-3); border-style:dashed}
+.tl .ev .d{font-family:var(--mono); font-size:.72rem; color:var(--ink-3); padding-top:2px; font-variant-numeric:tabular-nums}
+.tl .ev .t{font-size:.875rem; line-height:1.35}
+.tl .ev .t a{font-weight:500; color:var(--ink); text-decoration:none}
+.tl .ev .t a:hover{color:var(--accent-2)}
+.tl .ev .t span{color:var(--ink-2)}
+.tl .ev.today{border-bottom:none; padding:4px 0 4px 4px}
+.tl .ev.today::before{display:none}
+.tl .ev.today .d{color:var(--accent-2); font-weight:500}
+.tl .ev.today .t{color:var(--accent-2); font-family:var(--mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; border-top:1px dashed var(--accent); padding-top:3px}
+@media (max-width:600px){ .tl .ev{grid-template-columns:1fr} }
+.legend{display:flex; gap:14px; flex-wrap:wrap; font-size:.75rem; color:var(--ink-2); margin-bottom:10px}
+.legend span::before{content:""; display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:-1px; border:2px solid var(--ink-3); background:var(--surface)}
+.legend .inkraft::before{background:var(--ok); border-color:var(--ok)}
+.legend .frist::before{background:var(--signal); border-color:var(--signal)}
+.legend .kommend::before{border-color:var(--accent)}
+.legend .verfahren::before{border-style:dashed}
+
+/* ---------- Chart ---------- */
+.chart{position:relative}
+.chart svg{width:100%; height:auto; display:block; overflow:visible}
+.chart .gridl{stroke:var(--rule-soft); stroke-width:1}
+.chart .axis{fill:var(--ink-3); font-family:var(--mono); font-size:11px}
+.chart .line{fill:none; stroke:var(--accent); stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.chart .line.fc{stroke-dasharray:4 5}
+.chart .area{fill:var(--accent-fill)}
+.chart .pt{fill:var(--accent); stroke:var(--surface); stroke-width:2}
+.chart .pt.fc{fill:var(--surface); stroke:var(--accent)}
+.chart .endlbl{fill:var(--ink); font-family:var(--mono); font-size:11.5px; font-weight:500}
+.chart .cross{stroke:var(--ink-3); stroke-width:1; stroke-dasharray:2 3; display:none}
+.chart .hit{fill:transparent; cursor:crosshair}
+.tip{position:absolute; pointer-events:none; background:var(--ink); color:var(--ground); font-family:var(--mono); font-size:.72rem; padding:6px 9px; border-radius:3px; display:none; white-space:nowrap; z-index:5; box-shadow:var(--shadow)}
+.tip b{font-weight:500; display:block}
+.chartfoot{display:flex; gap:14px; align-items:center; margin-top:8px; font-size:.75rem; color:var(--ink-3); flex-wrap:wrap}
+.chartfoot .lg{display:inline-flex; align-items:center; gap:6px}
+.chartfoot .lg i{display:inline-block; width:18px; height:0; border-top:2px solid var(--accent)}
+.chartfoot .lg i.fc{border-top-style:dashed}
+.chartfoot button{font-size:.75rem; color:var(--accent-2); text-decoration:underline; text-underline-offset:3px; margin-left:auto}
+
+
+/* ---------- Referenz ---------- */
+.gl dt{font-weight:600; margin-top:12px}
+.gl dd{margin:2px 0 0; color:var(--ink-2); font-size:.875rem; max-width:70ch}
+.gl dd em{font-style:normal; color:var(--ink-3); font-size:.78rem}
+.sources li{margin-bottom:6px; font-size:.85rem}
+.sources .mono{font-family:var(--mono); font-size:.7rem; color:var(--ink-3)}
+.zyklus{display:grid; grid-template-columns:1fr; gap:8px}
+.zyklus .bar{position:relative; height:8px; border-radius:4px; background:linear-gradient(90deg, var(--ok-soft), var(--surface-3), var(--crit-soft))}
+.zyklus .bar i{position:absolute; top:-5px; width:18px; height:18px; border-radius:50%; background:var(--accent-solid); border:3px solid var(--surface); transform:translateX(-50%); box-shadow:var(--shadow)}
+.zyklus .lbls{display:flex; justify-content:space-between; font-family:var(--mono); font-size:.66rem; color:var(--ink-3); letter-spacing:.06em; text-transform:uppercase}
+.empty{padding:26px; text-align:center; color:var(--ink-3); font-size:.875rem}
+.domlink{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--rule-soft); text-decoration:none; color:var(--ink)}
+.domlink:last-child{border-bottom:none}
+.domlink:hover .n{color:var(--accent-2)}
+.domlink .k{font-family:var(--mono); font-size:.66rem; color:var(--accent-2); letter-spacing:.07em}
+.domlink .n{font-weight:500; font-size:.875rem}
+.domlink .c{font-family:var(--mono); font-size:.72rem; color:var(--ink-3)}
+.srch-res h3{font-size:.75rem; font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:18px 0 6px; font-weight:500}
+footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px; font-size:.78rem; color:var(--ink-3); display:flex; gap:18px; flex-wrap:wrap}
+/* ---------- Vorfallkarte ---------- */
+.karte{display:grid; grid-template-columns:minmax(280px,440px) minmax(0,1fr); gap:22px; align-items:start}
+@media (max-width:860px){ .karte{grid-template-columns:1fr} }
+.mapwrap{position:relative; background:var(--map-bg); border-radius:4px; padding:8px 10px 6px; background-image:linear-gradient(var(--map-line) 1px, transparent 1px), linear-gradient(90deg, var(--map-line) 1px, transparent 1px); background-size:40px 40px; background-position:center}
+.mapwrap svg{width:100%; height:auto; display:block; overflow:visible}
+.mapwrap .land{fill:var(--map-land); stroke:var(--map-line); stroke-width:.9; stroke-linejoin:round}
+.mapwrap .dot{fill:var(--map-dot); stroke:var(--map-bg); stroke-width:1.5; cursor:pointer; transition:r .15s}
+.mapwrap .dot.unb{fill:var(--map-bg); stroke:var(--map-dot); stroke-width:2}
+.mapwrap .dot:hover, .mapwrap .dot.hl{r:8}
+.mapwrap .dot.neu{fill:var(--map-neu); stroke:var(--map-bg)}
+.mapwrap .pulse{fill:none; stroke:var(--map-neu); stroke-width:1.5; opacity:.9; transform-box:fill-box; transform-origin:center; animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+@media (prefers-reduced-motion: reduce){ .mapwrap .pulse{animation:none; transform:scale(1.8); opacity:.5} }
+.mapwrap .lead{stroke:var(--map-neu); stroke-width:1.2; fill:none}
+.callout{position:absolute; width:250px; max-width:100%; background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--map-neu); border-radius:3px; padding:9px 11px; box-shadow:var(--shadow); font-size:.8rem; line-height:1.35; z-index:3}
+.callout .d{font-family:var(--mono); font-size:.64rem; color:var(--signal); letter-spacing:.08em; text-transform:uppercase; display:block; margin-bottom:3px}
+.callout b{font-weight:600; display:block; color:var(--ink)}
+.callout span.o{color:var(--ink-3); font-size:.72rem}
+.maptip{position:absolute; pointer-events:none; background:var(--ink); color:var(--ground); font-size:.75rem; padding:7px 10px; border-radius:3px; display:none; max-width:240px; line-height:1.35; z-index:6; box-shadow:var(--shadow)}
+.maptip b{display:block; font-weight:600}
+.maptip i{display:block; font-style:normal; font-family:var(--mono); font-size:.64rem; opacity:.75; margin-top:3px}
+.maplegend{display:flex; gap:14px; flex-wrap:wrap; font-size:.72rem; color:var(--ink-2); margin-top:8px; align-items:center}
+.maplegend span::before{content:""; display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:-1px; background:var(--map-dot); border:1px solid var(--map-bg)}
+.maplegend .unb::before{background:var(--map-bg); border:2px solid var(--map-dot); width:7px; height:7px}
+.maplegend .neu::before{background:var(--map-neu)}
+.maplegend .src{margin-left:auto; font-family:var(--mono); font-size:.64rem; color:var(--ink-3)}
+.vlist{display:flex; flex-direction:column; max-height:560px; overflow:auto; padding-right:4px}
+.vlist .v{display:grid; grid-template-columns:78px 1fr; gap:10px; padding:8px 6px; border-bottom:1px solid var(--rule-soft); border-radius:3px; cursor:default}
+.vlist .v:hover, .vlist .v.hl{background:var(--surface-2)}
+.vlist .v .d{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); padding-top:2px; font-variant-numeric:tabular-nums}
+.vlist .v .t{font-size:.85rem; font-weight:500; line-height:1.3}
+.vlist .v .o{font-size:.75rem; color:var(--ink-3); margin-top:2px; display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+.vlist .v .o a{font-size:.72rem}
+.vstat{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:3px; overflow:hidden; margin-bottom:12px}
+.vstat div{background:var(--surface); padding:9px 12px}
+.vstat .n{font-family:var(--mono); font-size:1.3rem; font-weight:500; font-variant-numeric:tabular-nums; line-height:1.1}
+.vstat .l{font-size:.72rem; color:var(--ink-3); margin-top:2px; line-height:1.3}
+@media (max-width:560px){ .vstat{grid-template-columns:1fr 1fr} .vstat div:last-child{grid-column:1/-1} }
+.toggle{display:inline-flex; border:1px solid var(--rule); border-radius:4px; overflow:hidden}
+.toggle button{font-size:.75rem; font-family:var(--mono); padding:4px 10px; color:var(--ink-2); background:var(--surface)}
+.toggle button.on{background:var(--accent-solid); color:var(--on-accent)}
+
+/* ---------- Schaubild Marktstruktur ---------- */
+.schema{display:grid; gap:10px; margin-bottom:8px}
+.schema .band, .schema .box{border:1px solid var(--rule); border-radius:4px; background:var(--surface); padding:12px 14px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow); position:relative; min-width:0}
+.schema a.band:hover, .schema a.box:hover{border-color:var(--accent)}
+.schema .band{display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center}
+.schema .band.inst{border-top:3px solid var(--ink-3)}
+.schema .band.oeko{border-top:3px solid var(--signal)}
+.schema .row{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:26px; position:relative}
+@media (max-width:760px){ .schema .row{grid-template-columns:1fr 1fr; gap:14px} }
+.schema .box{border-top:3px solid var(--accent-solid); display:flex; flex-direction:column; gap:5px; min-height:130px}
+.schema .box.risk{border-top-color:var(--rule); background:var(--surface-2); box-shadow:none}
+.schema .row .box:not(:last-child)::after{content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--accent); font-size:1.1rem; font-weight:600}
+@media (max-width:760px){ .schema .row .box::after{display:none!important} }
+.schema .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3)}
+.schema h3{font-family:var(--display); font-size:1.05rem; font-weight:600; margin:0; line-height:1.2}
+.schema .box.risk h3{font-family:var(--sans); font-size:.95rem}
+.schema .c{font-family:var(--mono); font-size:.7rem; color:var(--accent-2)}
+.schema .top{font-size:.78rem; color:var(--ink-2); line-height:1.35}
+.schema .flow{font-size:.72rem; color:var(--ink-3); font-family:var(--mono); text-align:center}
+.schema .band .lbl{font-size:.78rem; color:var(--ink-2)}
+.grp{margin-top:30px; scroll-margin-top:80px}
+.grp > h2{font-family:var(--display); font-size:1.25rem; font-weight:600; margin-bottom:4px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.grp > h2 .c{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); font-weight:400}
+.grp > p{font-size:.875rem; color:var(--ink-2); margin-bottom:10px}
+.grp thead th{cursor:default}
+.grp td.rk{font-family:var(--mono); font-size:.78rem; color:var(--ink-3); width:34px; text-align:right}
+.grp .anchors{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 4px}
+
+/* ---------- Schaubild Marktstruktur (Liniengrafik) ---------- */
+.sch{position:relative; margin:0 -22px 26px; padding:26px 22px 22px; background:var(--navy); color:var(--navy-ink); overflow:hidden; border-top:1px solid var(--navy-rule); border-bottom:1px solid var(--navy-rule)}
+.sch::before{content:""; position:absolute; inset:0; background-image:linear-gradient(var(--navy-rule) 1px, transparent 1px), linear-gradient(90deg, var(--navy-rule) 1px, transparent 1px); background-size:48px 48px; opacity:.45}
+.sch .in{position:relative; max-width:1200px; margin:0 auto}
+.sch .head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:10px}
+.sch .head .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--navy-accent)}
+.sch .head .hint{font-family:var(--mono); font-size:.68rem; color:var(--navy-ink-2)}
+.sch svg{width:100%; height:auto; display:block; overflow:visible}
+.sch .rail{stroke:var(--navy-accent); stroke-width:1; opacity:.7}
+.sch .tick{stroke:var(--navy-accent); stroke-width:1; stroke-dasharray:3 4; opacity:.55}
+.sch .node{fill:rgba(255,255,255,.03); stroke:var(--navy-accent); stroke-width:1.2}
+.sch .node.risk{stroke:var(--navy-ink-2); stroke-dasharray:4 4; fill:transparent}
+.sch a:hover .node{fill:rgba(92,196,198,.12)}
+.sch .flowl{stroke:var(--navy-ink-2); stroke-width:1; opacity:.8}
+.sch .arr{fill:var(--navy-ink-2)}
+.sch .sq{fill:var(--navy); stroke:var(--navy-accent); stroke-width:1.2}
+.sch text{fill:var(--navy-ink)}
+.sch .t{font-family:var(--display); font-size:21px; font-weight:600}
+.sch .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; fill:var(--navy-accent)}
+.sch .c{font-family:var(--mono); font-size:11px; fill:var(--navy-ink-2)}
+.sch .n{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink-2)}
+.sch .fl{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; fill:var(--navy-ink-2)}
+.sch .rl{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; fill:var(--navy-ink)}
+.sch .rn{font-family:var(--sans); font-size:12px; fill:var(--navy-ink-2)}
+.sch .go{font-family:var(--mono); font-size:10.5px; fill:var(--navy-accent)}
+.sch a{cursor:pointer; text-decoration:none}
+.sch a:hover .t{fill:var(--navy-accent)}
+.sch .mobile{display:none}
+@media (max-width:700px){ .sch svg{display:none} .sch .mobile{display:grid; gap:8px} .sch .mobile a{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:10px 12px; border:1px solid var(--navy-accent); color:var(--navy-ink); text-decoration:none} .sch .mobile a.risk{border-style:dashed; border-color:var(--navy-ink-2)} .sch .mobile .k{font-family:var(--mono); font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:var(--navy-accent)} .sch .mobile b{font-family:var(--display); font-weight:600; font-size:1rem} .sch .mobile .c{font-family:var(--mono); font-size:.7rem; color:var(--navy-ink-2)} .sch .mobile .arrow{text-align:center; color:var(--navy-accent)} }
+
+/* ---------- Börse ---------- */
+.bcards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px}
+.bcard{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:13px 15px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:5px; min-width:0}
+.bcard .h{display:flex; justify-content:space-between; gap:8px; align-items:baseline}
+.bcard .n{font-weight:600; font-size:.95rem}
+.bcard .tk{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); white-space:nowrap}
+.bcard .mc{font-family:var(--mono); font-size:1.25rem; font-weight:500; font-variant-numeric:tabular-nums; line-height:1.1}
+.bcard .mc small{font-size:.7rem; color:var(--ink-3); font-weight:400; margin-left:4px}
+.bcard .s{font-size:.78rem; color:var(--ink-2); line-height:1.35}
+.bcard svg{width:100%; height:38px; margin-top:4px}
+.bcard .f{display:flex; justify-content:space-between; gap:8px; align-items:center; font-family:var(--mono); font-size:.64rem; color:var(--ink-3); margin-top:4px; flex-wrap:wrap}
+.bcard .f a{font-family:var(--sans); font-size:.78rem}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+
+<a class="skip" href="#app">Zum Inhalt springen</a>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="#/radar">Cyber<span class="x" aria-hidden="true">X</span>Hub <small>DACH · Prototyp</small></a>
+    <nav class="nav" id="nav" aria-label="Rubriken">
+      <a href="#/radar" data-r="radar">Radar</a>
+      <a href="#/markt" data-r="markt">Markt &amp; Kapital</a>
+      <a href="#/akteure" data-r="akteure">Akteure</a>
+      <a href="#/regulierung" data-r="regulierung">Regulierung</a>
+      <a href="#/meldungen" data-r="meldungen">Alle Meldungen</a>
+      <a href="#/themen" data-r="themen">Themen</a>
+      <a href="#/referenz" data-r="referenz">Referenz</a>
+    </nav>
+    <form class="search" role="search" id="searchform"><input id="q" type="search" placeholder="Akteur, Rechtsakt, Begriff …" aria-label="Suche" autocomplete="off"><kbd>/</kbd></form>
+    <button class="theme" id="themebtn" type="button" aria-label="Farbschema wechseln"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 2v12A6 6 0 0 0 8 2z" fill="currentColor" stroke="none"/></svg><span id="themelbl">Auto</span></button>
+  </div>
+</header>
+<div class="banner"><div class="in"><b>Prototyp</b><span>Erster Entwurf mit Beispieldaten. Zahlen und Daten sind aus der Vorrecherche übernommen und vor Übernahme in die Datenbasis zu verifizieren.</span></div></div>
+
+<main class="page" id="app" aria-live="polite"></main>
+
+<script>
+/*__DATA__*/
+</script>
+
+<script>
+/* ===================================================================== APP */
+const $ = (s,el=document)=>el.querySelector(s);
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fd = iso => iso && iso!=="—" ? iso.slice(8,10)+"."+iso.slice(5,7)+"."+iso.slice(0,4) : "—";
+const A = Object.fromEntries(AKTEURE.map(a=>[a.id,a]));
+const R = Object.fromEntries(RECHTSAKTE.map(r=>[r.id,r]));
+const K = Object.fromEntries(KENNZAHLEN.map(k=>[k.id,k]));
+const QUAL = {ok:["ok","geprüft"],abg:["abg","abgeleitet"],ind:["ind","indikativ"]};
+const pill = (cls,txt)=>`<span class="pill ${cls}">${esc(txt)}</span>`;
+const qpill = q => pill(QUAL[q][0],QUAL[q][1]);
+const dpill = d => `<a class="pill d" href="#/akteure?dom=${d}" title="${esc(DOM[d].n)}">${d}</a>`;
+const LAND = {DE:"Deutschland",AT:"Österreich",CH:"Schweiz",EU:"EU",UK:"Vereinigtes Königreich",US:"USA",FR:"Frankreich",IE:"Irland"};
+const alink = id => A[id] ? `<a href="#/akteure/${id}">${esc(A[id].n)}</a>` : esc(id);
+const rlink = id => R[id] ? `<a href="#/regulierung/${id}">${esc(R[id].n)}</a>` : esc(id);
+const fmtNum = v => typeof v==="number" ? v.toLocaleString("de-DE",{maximumFractionDigits:1}) : v;
+const srcList = ids => (ids||[]).map(i=>QUELLEN[i]).filter(Boolean).map(s=>`${esc(s.h)}: ${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)}`).join(" · ");
+
+/* ---------- Diagramm ---------- */
+function lineChart(reihe, unit, id){
+  const W=640,H=230,L=46,Rr=58,T=16,B=30;
+  const pts = reihe.map(([lbl,v])=>({lbl,v,x:parseInt(lbl,10),fc:/e$/.test(lbl)}));
+  const xs=pts.map(p=>p.x), x0=Math.min(...xs), x1=Math.max(...xs);
+  const raw=Math.max(...pts.map(p=>p.v))*1.1/4, pow10=Math.pow(10,Math.floor(Math.log10(raw))), step=[1,2,2.5,5,10].map(c=>c*pow10).find(c=>c>=raw), vmax=step*4;
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-Rr), Y=v=>T+(1-v/vmax)*(H-T-B);
+  const ticks=4, grid=[], ax=[];
+  for(let i=0;i<=ticks;i++){ const v=vmax/ticks*i, y=Y(v); grid.push(`<line class="gridl" x1="${L}" x2="${W-Rr}" y1="${y}" y2="${y}"/>`); ax.push(`<text class="axis" x="${L-8}" y="${y+4}" text-anchor="end">${fmtNum(Math.round(v*100)/100)}</text>`); }
+  const xl = pts.map(p=>`<text class="axis" x="${X(p.x)}" y="${H-8}" text-anchor="middle">${esc(p.lbl)}</text>`).join("");
+  const firstFc = pts.findIndex(p=>p.fc);
+  const solid = firstFc<0 ? pts : pts.slice(0, firstFc+1);
+  const dashed = firstFc<0 ? [] : pts.slice(Math.max(firstFc-1,0));
+  const path = arr => arr.map((p,i)=>(i?"L":"M")+X(p.x)+" "+Y(p.v)).join(" ");
+  const area = solid.length ? `M${X(solid[0].x)} ${Y(0)} `+solid.map(p=>`L${X(p.x)} ${Y(p.v)}`).join(" ")+` L${X(solid[solid.length-1].x)} ${Y(0)} Z` : "";
+  const last = solid[solid.length-1], end = pts[pts.length-1];
+  const dots = pts.map((p,i)=>`<circle class="pt${p.fc?" fc":""}" data-i="${i}" cx="${X(p.x)}" cy="${Y(p.v)}" r="${(p===last||p===end)?4.5:3}"/>`).join("");
+  const lbls = `<text class="endlbl" x="${X(last.x)}" y="${Y(last.v)-11}" text-anchor="middle">${fmtNum(last.v)}</text>`+(end!==last?`<text class="endlbl" x="${X(end.x)+9}" y="${Y(end.v)+4}">${fmtNum(end.v)}</text>`:"");
+  const hits = pts.map((p,i)=>{ const xa=i?(X(pts[i-1].x)+X(p.x))/2:L, xb=i<pts.length-1?(X(pts[i+1].x)+X(p.x))/2:W-Rr; return `<rect class="hit" data-i="${i}" x="${xa}" y="${T}" width="${xb-xa}" height="${H-T-B}"/>`; }).join("");
+  return `<div class="chart" data-chart="${id}" data-unit="${esc(unit)}">
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Zeitreihe">${grid.join("")}${ax.join("")}${xl}
+      <path class="area" d="${area}"/><path class="line" d="${path(solid)}"/><path class="line fc" d="${path(dashed)}"/>
+      <line class="cross" y1="${T}" y2="${H-B}"/>${dots}${lbls}${hits}</svg>
+    <div class="tip"></div></div>`;
+}
+function wireCharts(){
+  document.querySelectorAll(".chart").forEach(ch=>{
+    const k = K[ch.dataset.chart]; if(!k) return;
+    const tip = $(".tip",ch), cross=$(".cross",ch), svg=$("svg",ch);
+    ch.addEventListener("mousemove",e=>{
+      const t=e.target.closest("[data-i]"); if(!t){ return; }
+      const i=+t.dataset.i, p=k.reihe[i], dot=svg.querySelectorAll(".pt")[i];
+      cross.setAttribute("x1",dot.getAttribute("cx")); cross.setAttribute("x2",dot.getAttribute("cx")); cross.style.display="block";
+      tip.innerHTML=`<b>${esc(p[0])}${/e$/.test(p[0])?" (Prognose)":""}</b>${fmtNum(p[1])} ${esc(k.e)}`;
+      tip.style.display="block";
+      const r=ch.getBoundingClientRect(); let x=e.clientX-r.left+14, y=e.clientY-r.top-10;
+      if(x+tip.offsetWidth>r.width) x-=tip.offsetWidth+28; tip.style.left=x+"px"; tip.style.top=y+"px";
+    });
+    ch.addEventListener("mouseleave",()=>{ tip.style.display="none"; cross.style.display="none"; });
+  });
+  document.querySelectorAll("[data-toggle]").forEach(b=>b.addEventListener("click",()=>{ const t=$(b.dataset.toggle); t.hidden=!t.hidden; b.textContent=t.hidden?b.dataset.on:b.dataset.off; }));
+}
+function spark(reihe){
+  const W=120,H=26, xs=reihe.map((_,i)=>i), vs=reihe.map(r=>r[1]), vmax=Math.max(...vs), vmin=Math.min(...vs);
+  const X=i=>i/(xs.length-1)*(W-4)+2, Y=v=>H-3-(v-vmin)/((vmax-vmin)||1)*(H-6);
+  const d=reihe.map((r,i)=>(i?"L":"M")+X(i)+" "+Y(r[1])).join(" ");
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" aria-hidden="true"><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="${X(xs.length-1)}" cy="${Y(vs[vs.length-1])}" r="2.5" fill="var(--accent)"/></svg>`;
+}
+function tile(k){
+  const val = k.v==null ? `<span style="color:var(--ink-3)">n. v.</span>` : `${esc(fmtNum(k.v))}${k.e?`<small>${esc(k.e)}</small>`:""}`;
+  const zyk = k.id==="zyklus" ? `<div class="zyklus" style="margin-top:8px"><div class="bar"><i style="left:${k.pos}%"></i></div><div class="lbls"><span>hart</span><span>weich</span></div></div>` : "";
+  return `<a class="tile" href="#/markt/kennzahl/${k.id}">
+    <span class="lbl">${esc(k.n)}</span><span class="val">${val}</span>
+    ${k.delta?`<span class="delta ${k.dir}">${esc(k.delta)}</span>`:""}
+    ${k.reihe?spark(k.reihe):zyk}
+    <span class="foot">${qpill(k.qual)}<span>${esc(k.per)}</span></span></a>`;
+}
+
+
+/* ---------- Vorfallkarte ---------- */
+const MAP = {tage:60};
+function mapP(lon,lat){ return [ (lon*DE_MAP.k-DE_MAP.minx)*DE_MAP.s, (DE_MAP.maxy-lat)*DE_MAP.s ]; }
+function daysAgo(iso){ return Math.round((new Date(STAND)-new Date(iso))/864e5); }
+function vorfaelle(){ return VORFAELLE.filter(v=>daysAgo(v.d)<=MAP.tage).sort((a,b)=>b.d<a.d?-1:1); }
+function karte(){
+  const vs = vorfaelle(); const neu = vs[0];
+  const W=DE_MAP.w, H=DE_MAP.h;
+  const land = DE_MAP.laender.map(l=>`<path class="land" d="${l.d}"><title>${esc(l.n)}</title></path>`).join("");
+  const dots = vs.slice().reverse().map(v=>{ const [x,y]=mapP(v.lon,v.lat); const isNeu=v===neu; return (isNeu?`<circle class="pulse" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/>`:"")+`<circle class="dot${v.best?"":" unb"}${isNeu?" neu":""}" data-v="${v.id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${isNeu?7:5.5}" tabindex="0" role="img" aria-label="${esc(v.ort)}: ${esc(v.t)}"/>`; }).join("");
+  const TOP=150, Y2=-34; let lead="", callout="";
+  if(neu){ const [x,y]=mapP(neu.lon,neu.lat); const dir = x>W*0.5?-1:1; const x2=x+dir*36;
+    lead=`<path class="lead" d="M${x.toFixed(1)} ${y.toFixed(1)} L${x2.toFixed(1)} ${Y2}"/><circle cx="${x2.toFixed(1)}" cy="${Y2}" r="2.2" fill="var(--map-neu)"/>`;
+    callout=`<a class="callout" href="${esc(neu.q)}" target="_blank" rel="noopener" style="left:clamp(0px, calc(${(x2/W*100).toFixed(1)}% - 125px), calc(100% - 250px));top:${((TOP+Y2)/(H+TOP)*100).toFixed(2)}%;transform:translateY(-100%)"><span class="d">Neuester Vorfall · ${fd(neu.d)}</span><b>${esc(neu.t)}</b><span class="o">${esc(neu.org)} · ${esc(neu.ort)} · ${esc(neu.qh)} ↗</span></a>`; }
+  const kommunen = vs.filter(v=>v.sek==="Kommune"||v.sek==="IT-Dienstleister").length, best=vs.filter(v=>v.best).length;
+  const list = vs.map(v=>`<div class="v" data-v="${v.id}"><span class="d">${fd(v.d)}</span><div><div class="t">${esc(v.t)}</div><div class="o">${pill("d",v.sek)}${v.best?"":pill("ind","unbestätigt")}<span>${esc(v.ort)}</span><a href="${esc(v.q)}" target="_blank" rel="noopener">${esc(v.qh)} ↗</a></div></div></div>`).join("");
+  return `<div class="sect" style="margin-top:0"><h2>Vorfälle in Deutschland <span class="eyebrow">Presse- und Leak-Meldungen, letzte ${MAP.tage} Tage</span>
+      <span class="toggle" style="margin-left:auto" role="group" aria-label="Zeitraum"><button type="button" data-tage="30"${MAP.tage===30?' class="on"':''}>30 Tage</button><button type="button" data-tage="60"${MAP.tage===60?' class="on"':''}>60 Tage</button></span></h2>
+    <div class="card"><div class="karte">
+      <div><div class="mapwrap" id="map"><svg viewBox="0 -${TOP} ${W} ${H+TOP}" role="img" aria-label="Deutschlandkarte mit Cybervorfällen">${land}${lead}${dots}</svg>${callout}<div class="maptip" id="maptip"></div></div>
+        <div class="maplegend"><span>bestätigt</span><span class="unb">Leak-Listung, unbestätigt</span><span class="neu">neuester Vorfall</span><span class="src">Grenzen: © GeoBasis-DE / BKG</span></div></div>
+      <div><div class="vstat"><div><div class="n">${vs.length}</div><div class="l">Vorfälle in ${MAP.tage} Tagen</div></div><div><div class="n">${kommunen}</div><div class="l">Kommunen und kommunale IT</div></div><div><div class="n">${best}</div><div class="l">von der Organisation bestätigt</div></div></div>
+        <div class="vlist" id="vlist">${list||'<div class="empty">Keine Vorfälle im Zeitraum.</div>'}</div>
+        <div class="srcfoot">${esc(VORFALL_STAT.t)} — <a href="${esc(VORFALL_STAT.q)}" target="_blank" rel="noopener">${esc(VORFALL_STAT.s)}</a>. Vorfälle: Presseberichte und Leak-Seiten-Tracker; „unbestätigt" = nur Listung durch die Tätergruppe.</div></div>
+    </div></div></div>`;
+}
+function wireMap(){
+  const map=$("#map"); if(!map) return;
+  const tip=$("#maptip"), V=Object.fromEntries(VORFAELLE.map(v=>[v.id,v]));
+  const show=(v,x,y)=>{ tip.innerHTML=`<b>${esc(v.t)}</b>${esc(v.org)} · ${esc(v.ort)}<i>${fd(v.d)} · ${esc(v.typ)}${v.best?"":" · unbestätigt"}</i>`; tip.style.display="block"; const r=map.getBoundingClientRect(); let l=x-r.left+12, t=y-r.top+12; if(l+250>r.width) l=Math.max(0,l-264); tip.style.left=l+"px"; tip.style.top=t+"px"; };
+  map.addEventListener("mousemove",e=>{ const d=e.target.closest(".dot"); if(!d){ tip.style.display="none"; return; } show(V[d.dataset.v],e.clientX,e.clientY); });
+  map.addEventListener("mouseleave",()=>{ tip.style.display="none"; });
+  map.addEventListener("click",e=>{ const d=e.target.closest(".dot"); if(!d) return; const row=document.querySelector(`.vlist .v[data-v="${d.dataset.v}"]`); if(row){ row.scrollIntoView({block:"nearest"}); row.classList.add("hl"); setTimeout(()=>row.classList.remove("hl"),1200); } });
+  map.addEventListener("focusin",e=>{ const d=e.target.closest(".dot"); if(d){ const r=d.getBoundingClientRect(); show(V[d.dataset.v],r.left+r.width/2,r.top+r.height/2); } });
+  map.addEventListener("focusout",()=>{ tip.style.display="none"; });
+  document.querySelectorAll(".vlist .v").forEach(row=>{ row.addEventListener("mouseenter",()=>{ const d=map.querySelector(`.dot[data-v="${row.dataset.v}"]`); if(d) d.classList.add("hl"); }); row.addEventListener("mouseleave",()=>{ const d=map.querySelector(`.dot[data-v="${row.dataset.v}"]`); if(d) d.classList.remove("hl"); }); });
+  document.querySelectorAll("[data-tage]").forEach(b=>b.addEventListener("click",()=>{ MAP.tage=+b.dataset.tage; route(); }));
+}
+
+/* ---------- Börse ---------- */
+function seeded(str){ let h=2166136261; for(const c of str){ h^=c.charCodeAt(0); h=Math.imul(h,16777619); } return ()=>{ h^=h<<13; h^=h>>>17; h^=h<<5; return ((h>>>0)%10000)/10000; }; }
+function fakeSeries(tk){ const r=seeded(tk); let v=100; const out=[]; for(let i=0;i<52;i++){ v=v*(1+(r()-0.48)*0.06); out.push(Math.round(v*10)/10); } return out; }
+function bSpark(vals){ const W=200,H=38, mn=Math.min(...vals), mx=Math.max(...vals); const X=i=>i/(vals.length-1)*(W-4)+2, Y=v=>H-3-(v-mn)/((mx-mn)||1)*(H-8); const d=vals.map((v,i)=>(i?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1)).join(" "); const up=vals[vals.length-1]>=vals[0]; return `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true"><path d="${d} L${X(vals.length-1).toFixed(1)} ${H} L2 ${H} Z" fill="var(--accent-fill)" stroke="none"/><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="${X(vals.length-1).toFixed(1)}" cy="${Y(vals[vals.length-1]).toFixed(1)}" r="2.5" fill="${up?"var(--ok)":"var(--crit)"}"/></svg>`; }
+const BX = {grp:""};
+function boerse(){
+  const grps=["Security","Versicherer","Rückversicherer","Makler"];
+  const rows=BOERSE.filter(b=>!BX.grp||b.grp===BX.grp).sort((a,b)=>(b.mcap||0)-(a.mcap||0));
+  const chips=[["","Alle"],...grps.map(g=>[g,g])].map(([v,l])=>`<button type="button" class="chip${BX.grp===v?" on":""}" data-bgrp="${v}">${l}</button>`).join("");
+  const cards=rows.map(b=>{ const real=!!(b.kurse&&b.kurse.idx&&b.kurse.idx.length>10); const vals=real?b.kurse.idx:fakeSeries(b.tk); const chg=Math.round((vals[vals.length-1]/vals[0]-1)*100);
+    return `<div class="bcard"><div class="h"><span class="n">${b.akt&&A[b.akt]?`<a href="#/akteure/${b.akt}" style="color:inherit;text-decoration:none">${esc(b.n)}</a>`:esc(b.n)}</span><span class="tk">${esc(b.tk)} · ${esc(b.bx)}</span></div>
+      <div class="mc">${b.mcap==null?'<span style="color:var(--ink-3)">n. v.</span>':esc(fmtNum(b.mcap))}<small>Mrd. USD Marktkap.</small></div>
+      <div class="s">${esc(b.s)}</div>${bSpark(vals)}
+      <div class="f"><span>${real?pill("ok","52 W · Schluss "+fd(b.kurse.stand)):pill("ind","Beispielverlauf 52 W")} ${chg>=0?"+":""}${chg} %</span><a href="${esc(b.y)}" target="_blank" rel="noopener">Kurs ansehen ↗</a></div></div>`; }).join("");
+  return `<div class="sect"><h2>Börsennotierte Marktteilnehmer <span class="eyebrow">${rows.length} Titel · Marktkapitalisierung indikativ</span></h2>
+    <div class="filters">${chips}<span class="count">${pill("abg","abgeleitet")}</span></div>
+    <div class="bcards">${cards}</div>
+    <div class="srcfoot" style="border-top:0;margin-top:10px">Marktkapitalisierung: ${Object.entries(BOERSE_Q).map(([g,q])=>`${g}: ${esc(q)}`).join(" · ")}. Kursverläufe: indexierte 52-Wochen-Reihe aus Wochenschlusskursen (Yahoo Finance, ohne Echtzeit) — Titel ohne Kursdaten zeigen einen als solchen markierten <b>Beispielverlauf</b>. Keine Anlageempfehlung.</div></div>`;
+}
+function wireBoerse(){ document.querySelectorAll("[data-bgrp]").forEach(b=>b.addEventListener("click",()=>{ BX.grp=b.dataset.bgrp; route(); })); }
+
+function newsBlock(title, sub, fn, href, n=6){
+  const rows=MELDUNGEN.filter(fn).sort((a,b)=>b.d<a.d?-1:1).slice(0,n);
+  return `<div class="sect"><h2>${title} <span class="eyebrow">${esc(sub)}</span><a class="more" href="${href}">Alle Meldungen →</a></h2><div class="card"><div class="list">${rows.map(m=>meldung(m,"mid")).join("")||'<div class="empty">Noch keine Meldungen.</div>'}</div></div></div>`;
+}
+
+/* ---------- Seiten ---------- */
+function heroKn(id){ const k=K[id]; return `<a class="kn" href="#/markt/kennzahl/${id}"><span class="v">${k.v==null?"n. v.":esc(fmtNum(k.v))}${k.e?`<small>${esc(k.e)}</small>`:""}</span><span class="l">${esc(k.n)} · ${esc(k.per)}</span></a>`; }
+function featCard(t){ return `<a href="#/themen/${t.id}"><span class="rub">${esc(t.rub)}</span><h3>${esc(t.t)}</h3><p>${esc(t.teaser)}</p><span class="m">aktualisiert ${fd(t.u)}</span></a>`; }
+function pubBox(){ const h=HERAUSGEBER; return `<div class="card pub"><div class="av" aria-hidden="true">${esc(h.name.split(" ").map(w=>w[0]).join(""))}</div><div><h3>${esc(h.name)}</h3><div class="r">${esc(h.rolle)} · Praxis &amp; Wissenschaft</div><p>${esc(h.kurz)}</p><p style="color:var(--ink-3);font-size:.8rem">${esc(h.grundsatz)}</p><div class="t">${h.themen.map(t=>pill("acc",t)).join("")}</div></div></div>`; }
+function pageRadar(){
+  const L=LEITTHEMA;
+  const hero = `<section class="hero" aria-label="Cyber-X-Hub"><div class="in"><div>
+      <div class="tag"><span>Informationsportal</span><span class="sep"></span><span>DACH · kuratiert</span></div>
+      <h1>Cyber-X-Hub. <em>Fokus Versicherung.</em></h1>
+      <p class="dek">Der Cyberversicherungsmarkt in Deutschland, Österreich und der Schweiz auf einer Seite: Wer trägt das Risiko, wer vermittelt, wer reguliert, wohin fließt Kapital. Für Versicherer, Makler und Investoren — jede Zahl mit Quelle und Stand.</p>
+      <div class="meta"><a class="cta" href="#/akteure">Zur Marktstruktur →</a><a class="cta ghost" href="#/markt">Kennzahlen &amp; Kapital</a></div>
+      <div class="kns">${L.kennzahlen.map(heroKn).join("")}</div>
+    </div><div aria-hidden="true"></div></div><span class="credit">Bild: Cyber-X-Hub</span></section>
+    <div class="leit"><span class="k">${esc(L.tag)}</span><div><div class="t"><a href="${L.links[0].h}">${esc(L.t)}</a></div><div class="d">${esc(L.dek)}</div></div><div class="m">${fd(L.d)} · akt. ${fd(L.u)}<br><a href="${L.links[0].h}">${esc(L.links[0].t)} →</a> · <a href="${L.links[1].h}">${esc(L.links[1].t)}</a></div></div>`;
+  const tiles = ["gwp-global","cagr-global","ils-cyber","ransom-demand","nis2-betr","zyklus"].map(i=>tile(K[i])).join("");
+  const news = MELDUNGEN.filter(m=>m.d<=STAND).sort((a,b)=>b.d<a.d?-1:1).slice(0,4).map(m=>meldung(m,false)).join("");
+  const ev = allEvents().filter(e=>e.d>=STAND).slice(0,4).map(e=>`<div class="item"><span class="date">${fd(e.d)}</span><div><div class="t">${rlink(e.ra)}</div><div class="s">${esc(e.t)}</div></div></div>`).join("");
+  const doms = Object.values(DOM).map(d=>{ const c = d.k==="D5"?RECHTSAKTE.length:AKTEURE.filter(a=>a.dom.includes(d.k)).length; const href = d.k==="D5"?"#/regulierung":(d.k==="D6"?"#/markt":`#/akteure?dom=${d.k}`); return `<a class="domlink" href="${href}"><span class="k">${d.k}</span><span><span class="n">${esc(d.n)}</span><br><span style="font-size:.78rem;color:var(--ink-3)">${esc(d.s)}</span></span><span class="c">${c} ${d.k==="D5"?"Rechtsakte":d.k==="D6"?"Tracker":"Akteure"}</span></a>`; }).join("");
+  return hero+karte()+`
+    <div class="sect"><h2>Lage in Zahlen <span class="eyebrow">Stand ${fd(STAND)}</span><a class="more" href="#/markt">Alle Kennzahlen →</a></h2><div class="grid g6">${tiles}</div></div>
+    <div class="sect"><h2>Redaktionsempfehlung <span class="eyebrow">Kernthemen des Herausgebers</span><a class="more" href="#/themen">Alle Themen →</a></h2><div class="feat">${THEMEN.map(featCard).join("")}</div></div>
+    <div class="grid g3 sect">
+      <div class="card"><h3>Aktuelle Meldungen <a class="more" href="#/meldungen" style="font-weight:400;font-size:.78rem;margin-left:8px">alle →</a></h3><div class="list">${news}</div></div>
+      <div class="card"><h3>Nächste Fristen <a class="more" href="#/regulierung" style="font-weight:400;font-size:.78rem;margin-left:8px">Zeitachse →</a></h3><div class="list">${ev||'<div class="empty">Keine anstehenden Fristen erfasst.</div>'}</div></div>
+      <div class="card"><h3>Sechs Domänen</h3>${doms}</div>
+    </div>
+    <div class="sect"><h2>Wer hinter dem Hub steht</h2>${pubBox()}</div>`;
+}
+function meldung(m, full){
+  const fut = m.d>STAND;
+  return `<div class="item"><span class="date">${fd(m.d)}${m.u?`<small>akt. ${fd(m.u)}</small>`:""}</span><div>
+    <div class="t"><a href="#/meldungen/${m.id}">${esc(m.t)}</a></div>
+    ${full===true?`<div class="s">${esc(m.s)}</div><div class="e"><b>Einordnung</b>${esc(m.e)}</div>`:full==="mid"?`<div class="s">${esc(m.s)}</div>`:""}
+    <div class="m">${dpill(m.dom)}${m.typ==="Transaktion"?pill("acc",m.tt):fut?pill("ind","angekündigt"):""}${m.vol?`<span class="pill ind">${esc(m.vol)}</span>`:""}${m.akt.map(alink).join(", ")}${m.ra.length?(m.akt.length?" · ":"")+m.ra.map(rlink).join(", "):""}</div>
+  </div></div>`;
+}
+function pageMarkt(){
+  const k = K["gwp-global"];
+  const rows = KENNZAHLEN.map(x=>`<tr class="rowlink" data-href="#/markt/kennzahl/${x.id}"><td><span class="name">${esc(x.n)}</span><span class="sub">${esc(x.reg)}</span></td><td class="num">${x.v==null?"n. v.":esc(fmtNum(x.v))+(x.e?" "+esc(x.e):"")}</td><td class="mono">${esc(x.per)}</td><td class="mono">${fd(x.st)}</td><td>${qpill(x.qual)}</td><td class="mono">${x.q.map(i=>esc(QUELLEN[i].h)).join(", ")}</td></tr>`).join("");
+  const csv = "Kennzahl;Wert;Einheit;Periode;Stichtag;Region;Qualität;Quelle\n"+KENNZAHLEN.map(x=>[x.n,x.v==null?"":x.v,x.e,x.per,x.st,x.reg,QUAL[x.qual][1],x.q.map(i=>QUELLEN[i].h).join("|")].join(";")).join("\n");
+  const tx = MELDUNGEN.filter(m=>m.typ==="Transaktion").sort((a,b)=>b.d<a.d?-1:1).map(m=>`<tr class="rowlink" data-href="#/meldungen/${m.id}"><td class="mono">${fd(m.d)}</td><td>${pill("acc",m.tt)}</td><td><span class="name">${esc(m.t)}</span></td><td class="num">${esc(m.vol||"—")}</td><td>${m.akt.map(alink).join(", ")||"—"}</td><td class="mono">${m.q.map(i=>esc(QUELLEN[i].h)).join(", ")}</td></tr>`).join("");
+  const tableAlt = `<table><thead><tr><th>Jahr</th><th class="num">Wert (${esc(k.e)})</th></tr></thead><tbody>${k.reihe.map(r=>`<tr><td class="mono">${esc(r[0])}</td><td class="num">${fmtNum(r[1])}</td></tr>`).join("")}</tbody></table>`;
+  return `<div class="pagehead"><div><h1>Markt &amp; Kapital</h1><p>Kennzahlen mit Quelle und Stichtag, Kapital-Tracker für Transaktionen im Cyber-Segment.</p></div><span class="stamp">Stand ${fd(STAND)}</span></div>
+    <div class="grid g6">${["gwp-global","cagr-global","ils-cyber","zyklus"].map(i=>tile(K[i])).join("")}</div>
+    <div class="sect card"><h3>${esc(k.n)} <span class="eyebrow" style="margin-left:8px">${esc(k.e)} · Prognosewerte gestrichelt</span></h3>
+      ${lineChart(k.reihe,k.e,k.id)}
+      <div class="chartfoot"><span class="lg"><i></i> Ist</span><span class="lg"><i class="fc"></i> Prognose</span><span>Quelle: ${srcList(k.q)}</span><button data-toggle="#tbl-gwp" data-on="Als Tabelle" data-off="Tabelle ausblenden">Als Tabelle</button></div>
+      <div id="tbl-gwp" hidden style="margin-top:10px;max-width:320px" class="tablewrap">${tableAlt.replace("<table>","<table style=\"min-width:0\">")}</div>
+    </div>
+    `+boerse()+`
+    <div class="sect"><h2>Kennzahlen <span class="eyebrow">${KENNZAHLEN.length} Einträge</span><button class="more" data-toggle="#csv-k" data-on="CSV anzeigen" data-off="CSV ausblenden" style="margin-left:auto;font-size:0.7812rem;color:var(--accent);text-decoration:underline">CSV anzeigen</button></h2>
+      <div class="tablewrap"><table><thead><tr><th>Kennzahl</th><th class="num">Wert</th><th>Periode</th><th>Stichtag</th><th>Qualität</th><th>Quelle</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <textarea id="csv-k" hidden readonly style="width:100%;height:140px;margin-top:10px;font:12px var(--mono);background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:4px;padding:8px">${esc(csv)}</textarea></div>
+    <div class="sect"><h2>Kapital-Tracker <span class="eyebrow">M&amp;A · Finanzierungsrunden · ILS-Emissionen</span></h2>
+      <div class="tablewrap"><table><thead><tr><th>Datum</th><th>Typ</th><th>Transaktion</th><th class="num">Volumen</th><th>Beteiligte</th><th>Quelle</th></tr></thead><tbody>${tx}</tbody></table></div></div>`
+    + newsBlock("Meldungen Markt &amp; Kapital","Prämien, Zyklus, Kapitalmarkt",m=>m.dom==="D6","#/meldungen?dom=D6");
+}
+function pageKennzahl(id){
+  const k=K[id]; if(!k) return notFound();
+  const cite = `Cyber-X-Hub (${fd(STAND)}): ${k.n}, ${k.v==null?"n. v.":fmtNum(k.v)+" "+k.e}, ${k.per}. Quelle: ${k.q.map(i=>QUELLEN[i].h+", "+QUELLEN[i].t).join("; ")}. Qualitätsstufe: ${QUAL[k.qual][1]}.`;
+  return `<a class="back" href="#/markt">← Markt &amp; Kapital</a>
+    <div class="detail"><div>
+      <div class="pagehead"><div><span class="eyebrow">Kennzahl</span><h1>${esc(k.n)}</h1></div>${qpill(k.qual)}</div>
+      <div class="card"><div class="val" style="font-family:var(--mono);font-size:2.375rem;font-weight:500;letter-spacing:-.01em">${k.v==null?'<span style="color:var(--ink-3)">n. v.</span>':esc(fmtNum(k.v))} <span style="font-size:1rem;color:var(--ink-2);font-family:var(--sans)">${esc(k.e)}</span></div>
+        ${k.delta?`<div class="delta ${k.dir}" style="font-size:0.8125rem;color:var(--ink-2);margin-top:4px">${esc(k.delta)}</div>`:""}
+        ${k.reihe?`<div style="margin-top:14px">${lineChart(k.reihe,k.e,k.id)}</div>`:""}
+        ${k.id==="zyklus"?`<div class="zyklus" style="margin-top:14px;max-width:420px"><div class="bar"><i style="left:${k.pos}%"></i></div><div class="lbls"><span>hart</span><span>weich</span></div></div>`:""}
+      </div>
+      <div class="sect card"><h3>Definition</h3><p>${esc(k.def)}</p><h3 style="margin-top:14px">Erhebungsbasis</h3><p>${esc(k.basis)}</p></div>
+      <div class="sect card"><h3>Zitiervorschlag</h3><p style="font-family:var(--mono);font-size:0.7812rem;color:var(--ink-2)">${esc(cite)}</p></div>
+    </div><aside>
+      <div class="card"><dl class="facts"><div><dt>Periode</dt><dd>${esc(k.per)}</dd></div><div><dt>Stichtag</dt><dd>${fd(k.st)}</dd></div><div><dt>Region</dt><dd>${esc(k.reg)}</dd></div><div><dt>Qualität</dt><dd>${qpill(k.qual)}</dd></div></dl>
+        <div class="srcfoot">Quelle: ${srcList(k.q)}</div></div>
+      <div class="card" style="margin-top:12px"><h3>Erläutert in</h3><div class="rel">${(k.gl||[]).map(t=>`<a href="#/referenz"><span class="k">Glossar</span>${esc(t)}</a>`).join("")||'<span style="font-size:0.8125rem;color:var(--ink-3)">—</span>'}</div></div>
+    </aside></div>`;
+}
+
+/* ---------- Akteure ---------- */
+const AK = {sort:"n",asc:true};
+function pageAkteure(p){
+  const q=(p.get("q")||"").toLowerCase();
+  const G = Object.fromEntries(GRUPPEN.map(g=>[g.id,g]));
+  const top = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i).join(" · ");
+  const G3 = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i);
+  const node = (x,id,k,title,names,count,cls="") => `<a href="#g-${id}"><rect class="node ${cls}" x="${x-120}" y="150" width="240" height="132"/><rect class="sq" x="${x-120-5}" y="${150-5}" width="10" height="10" transform="rotate(45 ${x-120} 150)"/><text class="k" x="${x-104}" y="176">${k}</text><text class="t" x="${x-104}" y="204">${esc(title)}</text><text class="c" x="${x-104}" y="226">${count}</text><text class="n" x="${x-104}" y="250">${esc(names[0]||"")}</text><text class="n" x="${x-104}" y="268">${esc(names.slice(1).join(" · "))}</text></a>`;
+  const flow = (x1,x2) => `<line class="flowl" x1="${x1}" y1="196" x2="${x2-8}" y2="196"/><path class="arr" d="M${x2-8} 191 L${x2} 196 L${x2-8} 201 Z"/><line class="flowl" x1="${x2}" y1="236" x2="${x1+8}" y2="236"/><path class="arr" d="M${x1+8} 231 L${x1} 236 L${x1+8} 241 Z"/>`;
+  const X=[150,450,750,1050];
+  const svg = `<svg viewBox="0 0 1200 430" role="img" aria-label="Schaubild der Marktstruktur">
+    <line class="rail" x1="30" y1="48" x2="1170" y2="48"/>
+    <text class="rl" x="30" y="36">${esc(G.inst.n)}</text><text class="rn" x="30" y="70">${esc(G3(G.inst).join(" · "))} — Regulierung, Aufsicht und Statistik wirken auf alle Ebenen</text>
+    <a href="#g-inst"><text class="go" x="1170" y="36" text-anchor="end">${G.inst.ids.length} Akteure ↓</text></a>
+    ${[450,750,1050].map(x=>`<rect class="sq" x="${x-5}" y="43" width="10" height="10" transform="rotate(45 ${x} 48)"/><line class="tick" x1="${x}" y1="56" x2="${x}" y2="150"/>`).join("")}
+    <text class="fl" x="${(X[0]+X[1])/2}" y="186" text-anchor="middle">Risiko</text><text class="fl" x="${(X[0]+X[1])/2}" y="254" text-anchor="middle">Deckung</text>
+    <text class="fl" x="${(X[1]+X[2])/2}" y="186" text-anchor="middle">Prämie · Risiko</text><text class="fl" x="${(X[1]+X[2])/2}" y="254" text-anchor="middle">Kapazität</text>
+    <text class="fl" x="${(X[2]+X[3])/2}" y="186" text-anchor="middle">Spitzenrisiko</text><text class="fl" x="${(X[2]+X[3])/2}" y="254" text-anchor="middle">Rückdeckung · ILS</text>
+    ${flow(270,330)}${flow(570,630)}${flow(870,930)}
+    <g><rect class="node risk" x="30" y="150" width="240" height="132"/><text class="k" x="46" y="176" style="fill:var(--navy-ink-2)">Ausgangspunkt</text><text class="t" x="46" y="204" style="font-family:var(--sans);font-size:16px">Unternehmen</text><text class="c" x="46" y="226">Versicherungsnehmer</text><text class="n" x="46" y="250">Konzern bis Handwerksbetrieb;</text><text class="n" x="46" y="268">NIS2 und DORA erzeugen Nachfrage</text></g>
+    ${node(450,"vertrieb","Platzierung","Vertrieb",G3(G.vertrieb),G.vertrieb.ids.length+" Akteure · Makler, MGAs, Plattformen")}
+    ${node(750,"erst","Risikoträger","Erstversicherer",G3(G.erst),G.erst.ids.length+" Akteure")}
+    ${node(1050,"rueck","Spitzenrisiko &amp; Kapital","Rückversicherer",G3(G.rueck),G.rueck.ids.length+" Akteure · inkl. Lloyd's, ILS")}
+    ${[450,750].map(x=>`<line class="tick" x1="${x}" y1="282" x2="${x}" y2="378"/><rect class="sq" x="${x-5}" y="381" width="10" height="10" transform="rotate(45 ${x} 386)"/>`).join("")}
+    <line class="rail" x1="30" y1="386" x2="1170" y2="386"/>
+    <text class="rl" x="30" y="410">${esc(G.oeko.n)}</text><text class="rn" x="30" y="426">${esc(G3(G.oeko).join(" · "))} — Prävention und Rating vor der Zeichnung, Incident Response im Schadenfall</text>
+    <a href="#g-oeko"><text class="go" x="1170" y="410" text-anchor="end">${G.oeko.ids.length} Akteure ↓</text></a>
+  </svg>`;
+  const mobile = `<div class="mobile">
+    <a class="risk" href="#g-vertrieb"><span class="k">Ausgangspunkt</span><b>Unternehmen</b><span class="c">Nachfrage</span></a><div class="arrow">↓</div>
+    ${GRUPPEN.filter(g=>["vertrieb","erst","rueck"].includes(g.id)).map((g,i)=>`<a href="#g-${g.id}"><span class="k">${["Platzierung","Risikoträger","Spitzenrisiko"][i]}</span><b>${esc(g.n)}</b><span class="c">${g.ids.length}</span></a>${i<2?'<div class="arrow">↓</div>':''}`).join("")}
+    <a href="#g-inst"><span class="k">Rahmen</span><b>${esc(G.inst.n)}</b><span class="c">${G.inst.ids.length}</span></a>
+    <a href="#g-oeko"><span class="k">Unterbau</span><b>${esc(G.oeko.n)}</b><span class="c">${G.oeko.ids.length}</span></a></div>`;
+  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Marktstruktur · Cyberversicherung DACH</span><span class="hint">Prämie und Risiko fließen nach rechts, Kapazität nach links — Kasten anklicken für die Gruppe</span></div>${svg}${mobile}</div></section>`;
+  const anchors = `<div class="anchors">${GRUPPEN.map(g=>`<a class="chip" href="#g-${g.id}">${esc(g.n)}</a>`).join("")}</div>`;
+  const hit = a => !q || (a.n+" "+a.b+" "+a.rollen.join(" ")+" "+(BED[a.id]||"")).toLowerCase().includes(q);
+  const groups = GRUPPEN.map(g=>{
+    const rows = g.ids.map((id,i)=>({a:A[id],i})).filter(x=>x.a&&hit(x.a));
+    const tr = rows.map(({a,i})=>`<tr class="rowlink" data-href="#/akteure/${a.id}"><td class="rk">${i+1}</td><td><span class="name">${esc(a.n)}</span><span class="sub">${esc(a.rollen.join(", "))}</span></td><td>${esc(BED[a.id]||"")}</td><td class="mono">${esc(LAND[a.land]||a.land)}</td><td class="mono">${a.boerse?esc(a.boerse):"—"}</td></tr>`).join("");
+    return `<section class="grp" id="g-${g.id}"><h2>${esc(g.n)} <span class="c">${rows.length} von ${g.ids.length}</span></h2><p>${esc(g.s)}</p>
+      <div class="tablewrap"><table><thead><tr><th class="rk">#</th><th>Akteur</th><th>Bedeutung im DACH-Cyber-Markt</th><th>Sitz</th><th>Börse</th></tr></thead><tbody>${tr||`<tr><td colspan="5"><div class="empty">Kein Treffer in dieser Gruppe.</div></td></tr>`}</tbody></table></div></section>`;
+  }).join("");
+  return `<div class="pagehead"><div><h1>Akteure</h1><p>Wer ist wer im Cyberversicherungsmarkt — vom Versicherungsnehmer über Vertrieb und Risikoträger bis zum Kapitalmarkt. Reihenfolge in den Gruppen: redaktionelle Einschätzung der Bedeutung, ${pill("abg","indikativ")}.</p></div><span class="stamp">${AKTEURE.length} Profile · ${GRUPPEN.length} Gruppen</span></div>
+    ${schema}<div class="sect" style="margin-top:0"><h2>Gruppen im Detail <span class="eyebrow">Reihenfolge = Bedeutung, redaktionell</span></h2></div>${anchors}
+    <div class="filters" style="margin-top:14px"><input type="text" id="f-q" placeholder="In allen Gruppen filtern" value="${esc(p.get("q")||"")}" aria-label="Filter" style="min-width:240px"><span class="count">${q?"Filter aktiv":"alle Akteure"}</span></div>
+    ${groups}`
+    + newsBlock("Meldungen zu Akteuren","Übernahmen, Kooperationen, Kapitalmarkt, Ergebnisse",m=>m.akt.length>0&&m.dom!=="D5","#/meldungen?typ=Transaktion",8);
+}
+function pageAkteur(id){
+  const a=A[id]; if(!a) return notFound();
+  const rev = AKTEURE.filter(o=>o.rel.some(r=>r.z===id)&&!a.rel.some(r=>r.z===o.id)).map(o=>({k:o.rel.find(r=>r.z===id).k,z:o.id}));
+  const rels = [...a.rel,...rev].filter(r=>A[r.z]).map(r=>`<a href="#/akteure/${r.z}"><span class="k">${esc(r.k)}</span>${esc(A[r.z].n)}</a>`).join("");
+  const news = MELDUNGEN.filter(m=>m.akt.includes(id)).sort((x,y)=>y.d<x.d?-1:1).map(m=>meldung(m,false)).join("");
+  const ras = RECHTSAKTE.filter(r=>r.akteure.includes(id)).map(r=>`<a href="#/regulierung/${r.id}"><span class="k">${esc(r.jur)}</span>${esc(r.n)}</a>`).join("");
+  return `<a class="back" href="#/akteure">← Akteure</a>
+    <div class="detail"><div>
+      <div class="pagehead"><div><span class="eyebrow">${a.dom.map(d=>DOM[d].n).join(" · ")}</span><h1>${esc(a.n)}</h1><p>${a.rollen.map(r=>pill("acc",r)).join(" ")}</p></div><span class="stamp">geprüft ${fd(a.pr)}</span></div>
+      <div class="card"><p style="font-size:0.9375rem">${esc(a.b)}</p><div class="srcfoot">Quellen: ${srcList(a.q)}</div></div>
+      <div class="sect card"><h3>Meldungen</h3><div class="list">${news||'<div class="empty">Noch keine Meldung verknüpft.</div>'}</div></div>
+    </div><aside>
+      <div class="card"><dl class="facts">
+        <div><dt>Sitz</dt><dd>${esc(LAND[a.land]||a.land)}</dd></div>
+        <div><dt>Konzern</dt><dd>${esc(a.konz)}</dd></div>
+        <div><dt>Börse</dt><dd>${a.boerse?esc(a.boerse):"nicht notiert"}</dd></div>
+        <div><dt>Segmente</dt><dd>${esc(a.seg)}</dd></div>
+        <div><dt>Domänen</dt><dd>${a.dom.map(dpill).join(" ")}</dd></div>
+        <div><dt>Status</dt><dd>${pill("ok",a.status)}</dd></div></dl></div>
+      <div class="card" style="margin-top:12px"><h3>Beziehungen</h3><div class="rel">${rels||'<span style="font-size:0.8125rem;color:var(--ink-3)">Keine erfasst.</span>'}</div></div>
+      <div class="card" style="margin-top:12px"><h3>Rechtsakte</h3><div class="rel">${ras||'<span style="font-size:0.8125rem;color:var(--ink-3)">Keine direkte Zuständigkeit erfasst.</span>'}</div></div>
+    </aside></div>`;
+}
+
+/* ---------- Regulierung ---------- */
+function allEvents(){ return RECHTSAKTE.flatMap(r=>r.fristen.map(f=>({...f,ra:r.id,jur:r.jur}))).sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0); }
+function pageRegulierung(p){
+  const jur=p.get("jur")||"";
+  const ev = allEvents().filter(e=>!jur||e.jur===jur);
+  const link = v=>"#/regulierung"+(v?"?jur="+v:"");
+  const chips = [["","Alle"],["EU","EU"],["DE","Deutschland"],["Markt","Marktstandard"]].map(([v,l])=>`<a class="chip${jur===v?" on":""}" href="${link(v)}">${l}</a>`).join("");
+  let out="", yr="", todayDone=false;
+  ev.forEach(e=>{
+    if(!todayDone && e.d>STAND){ out+=`<div class="ev today"><span class="d">${fd(STAND)}</span><span class="t">Heute</span><span></span></div>`; todayDone=true; }
+    const y=e.d.slice(0,4); if(y!==yr){ out+=`<div class="yr">${y}</div>`; yr=y; }
+    const cls = e.s==="kommend"||e.d>STAND&&e.s!=="verfahren"?"kommend":e.s;
+    out+=`<div class="ev ${cls}"><span class="d">${fd(e.d)}</span><span class="t"><a href="#/regulierung/${e.ra}">${esc(R[e.ra].n)}</a> — <span>${esc(e.t)}</span></span><span class="pill d">${esc(e.jur)}</span></div>`;
+  });
+  if(!todayDone) out+=`<div class="ev today"><span class="d">${fd(STAND)}</span><span class="t">Heute</span><span></span></div>`;
+  const cards = RECHTSAKTE.filter(r=>!jur||r.jur===jur).map(r=>`<a class="tile" href="#/regulierung/${r.id}"><span class="foot" style="margin:0 0 4px">${pill("d",r.jur)}${pill(r.status==="in Kraft"?"ok":"abg",r.status)}</span><span class="lbl" style="font-weight:500;color:var(--ink);font-size:0.875rem">${esc(r.n)}</span><span class="lbl">${esc(r.amt)}</span></a>`).join("");
+  return `<div class="pagehead"><div><h1>Regulierung</h1><p>Rechtsakte und Marktstandards mit Fristen, Betroffenenkreis und Versicherungsrelevanz.</p></div><span class="stamp">${RECHTSAKTE.length} Rechtsakte</span></div>
+    <div class="filters">${chips}<span class="count">${ev.length} Termine</span></div>
+    <div class="grid g2"><div class="card"><h3>Zeitachse</h3><div class="legend"><span class="inkraft">in Kraft / Geltung</span><span class="frist">Frist</span><span class="kommend">kommend</span><span class="verfahren">Verfahren</span></div><div class="tl">${out}</div></div>
+      <div><div class="grid" style="grid-template-columns:1fr">${cards}</div></div></div>`
+    + newsBlock("Meldungen Regulierung","Verkündungen, Fristen, Aufsicht",m=>m.dom==="D5","#/meldungen?dom=D5");
+}
+function pageRechtsakt(id){
+  const r=R[id]; if(!r) return notFound();
+  const fr = r.fristen.map(f=>`<div class="ev ${f.d>STAND&&f.s!=="verfahren"?"kommend":f.s}"><span class="d">${fd(f.d)}</span><span class="t"><span>${esc(f.t)}</span></span><span></span></div>`).join("");
+  const news = MELDUNGEN.filter(m=>m.ra.includes(id)).sort((x,y)=>y.d<x.d?-1:1).map(m=>meldung(m,false)).join("");
+  return `<a class="back" href="#/regulierung">← Regulierung</a>
+    <div class="detail"><div>
+      <div class="pagehead"><div><span class="eyebrow">${esc(r.art)} · ${esc(r.jur)}</span><h1>${esc(r.n)}</h1><p>${esc(r.amt)}</p></div>${pill(r.status==="in Kraft"?"ok":"abg",r.status)}</div>
+      <div class="card"><p style="font-size:0.9375rem">${esc(r.b)}</p>
+        <div class="einordnung"><b>Versicherungsrelevanz</b>${esc(r.rel)}</div>
+        <div class="srcfoot">Fundstelle: ${srcList(r.q)} · geprüft ${fd(r.pr)}</div></div>
+      <div class="sect card"><h3>Fristenkette</h3><div class="tl">${fr}</div></div>
+      <div class="sect card"><h3>Meldungen</h3><div class="list">${news||'<div class="empty">Noch keine Meldung verknüpft.</div>'}</div></div>
+    </div><aside>
+      <div class="card"><dl class="facts"><div><dt>Betroffene</dt><dd>${esc(r.betr)}</dd></div><div><dt>Sanktionen</dt><dd>${esc(r.sank)}</dd></div><div><dt>Status</dt><dd>${esc(r.status)}</dd></div></dl></div>
+      <div class="card" style="margin-top:12px"><h3>Zuständig / betroffen</h3><div class="rel">${r.akteure.map(a=>A[a]?`<a href="#/akteure/${a}"><span class="k">${esc(A[a].rollen[0])}</span>${esc(A[a].n)}</a>`:"").join("")||'<span style="font-size:0.8125rem;color:var(--ink-3)">—</span>'}</div></div>
+    </aside></div>`;
+}
+
+/* ---------- Meldungen ---------- */
+function pageMeldungen(p){
+  const dom=p.get("dom")||"", typ=p.get("typ")||"";
+  const link=(k,v)=>{ const n=new URLSearchParams(p); if(v) n.set(k,v); else n.delete(k); return "#/meldungen?"+n.toString(); };
+  const chips=[["","Alle"],...Object.values(DOM).map(d=>[d.k,d.k+" "+d.n])].map(([v,l])=>`<a class="chip${dom===v?" on":""}" href="${link("dom",v)}">${esc(l)}</a>`).join("");
+  const rows=MELDUNGEN.filter(m=>(!dom||m.dom===dom)&&(!typ||m.typ===typ)).sort((a,b)=>b.d<a.d?-1:1);
+  return `<div class="pagehead"><div><h1>Alle Meldungen</h1><p>Kuratiert und eingeordnet. Jede Meldung ist mit mindestens einem Akteur oder Rechtsakt verknüpft.</p></div><span class="stamp">RSS · ${MELDUNGEN.length} Einträge</span></div>
+    <div class="filters">${chips}<span class="sep"></span><a class="chip${typ==="Transaktion"?" on":""}" href="${link("typ",typ==="Transaktion"?"":"Transaktion")}">Nur Transaktionen</a><span class="count">${rows.length}</span></div>
+    <div class="card"><div class="list">${rows.map(m=>meldung(m,true)).join("")||'<div class="empty">Keine Meldungen für diese Filter.</div>'}</div></div>`;
+}
+function pageMeldung(id){
+  const m=MELDUNGEN.find(x=>x.id===id); if(!m) return notFound();
+  return `<a class="back" href="#/meldungen">← Meldungen</a>
+    <div class="detail"><div>
+      <div class="pagehead"><div><span class="eyebrow">${esc(m.typ)}${m.tt?" · "+esc(m.tt):""} · ${esc(DOM[m.dom].n)}</span><h1>${esc(m.t)}</h1><div class="byline"><span>veröffentlicht <b>${fd(m.d)}</b></span>${m.u?`<span>aktualisiert <b>${fd(m.u)}</b></span>`:""}<span>von <b>${esc(HERAUSGEBER.name)}</b></span></div></div></div>
+      <div class="card"><p style="font-size:0.9688rem">${esc(m.s)}</p><div class="einordnung"><b>Einordnung des Herausgebers</b>${esc(m.e)}</div><div class="srcfoot">Quelle: ${srcList(m.q)}</div></div>
+    </div><aside>
+      <div class="card"><dl class="facts">${m.vol?`<div><dt>Volumen</dt><dd>${esc(m.vol)}</dd></div>`:""}<div><dt>Domäne</dt><dd>${dpill(m.dom)} ${esc(DOM[m.dom].n)}</dd></div><div><dt>Datum</dt><dd>${fd(m.d)}</dd></div></dl></div>
+      <div class="card" style="margin-top:12px"><h3>Verknüpft</h3><div class="rel">${m.akt.map(a=>`<a href="#/akteure/${a}"><span class="k">Akteur</span>${esc(A[a].n)}</a>`).join("")}${m.ra.map(r=>`<a href="#/regulierung/${r}"><span class="k">Rechtsakt</span>${esc(R[r].n)}</a>`).join("")}</div></div>
+    </aside></div>`;
+}
+
+/* ---------- Themen ---------- */
+function pageThemen(){
+  return `<div class="pagehead"><div><h1>Themen</h1><p>Dossiers des Herausgebers zu den Kernfragen des Marktes — bewusst als Einordnung gekennzeichnet, mit verknüpften Akteuren, Rechtsakten und Kennzahlen.</p></div><span class="stamp">${THEMEN.length} Dossiers</span></div>
+    <div class="feat">${THEMEN.map(featCard).join("")}</div>
+    <div class="sect">${pubBox()}</div>`;
+}
+function pageThema(id){
+  const t=THEMEN.find(x=>x.id===id); if(!t) return notFound();
+  const rels = [...t.akt.map(a=>A[a]?`<a href="#/akteure/${a}"><span class="k">Akteur</span>${esc(A[a].n)}</a>`:""),...t.ra.map(r=>R[r]?`<a href="#/regulierung/${r}"><span class="k">Rechtsakt</span>${esc(R[r].n)}</a>`:""),...t.kz.map(k=>K[k]?`<a href="#/markt/kennzahl/${k}"><span class="k">Kennzahl</span>${esc(K[k].n)}</a>`:"")].join("");
+  const news = MELDUNGEN.filter(m=>m.akt.some(a=>t.akt.includes(a))||m.ra.some(r=>t.ra.includes(r))).sort((x,y)=>y.d<x.d?-1:1).slice(0,5).map(m=>meldung(m,false)).join("");
+  return `<a class="back" href="#/themen">← Themen</a>
+    <div class="detail"><div>
+      <div class="pagehead"><div><span class="eyebrow">Dossier · ${esc(t.rub)}</span><h1>${esc(t.t)}</h1><div class="byline"><span>veröffentlicht <b>${fd(t.d)}</b></span><span>aktualisiert <b>${fd(t.u)}</b></span><span>von <b>${esc(HERAUSGEBER.name)}</b></span></div></div>${pill("abg","Einordnung")}</div>
+      <div class="card prose"><p style="font-size:1.1rem;color:var(--ink-2)">${esc(t.teaser)}</p>${t.text.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="srcfoot">Einordnung des Herausgebers. Belege in den verknüpften Akteurs-, Rechtsakt- und Kennzahlenseiten.</div></div>
+      <div class="sect card"><h3>Meldungen zum Thema</h3><div class="list">${news||'<div class="empty">Noch keine Meldung verknüpft.</div>'}</div></div>
+    </div><aside>
+      <div class="card"><h3>Verknüpft</h3><div class="rel">${rels}</div></div>
+      <div class="sect" style="margin-top:12px">${THEMEN.filter(x=>x.id!==id).length?`<div class="card"><h3>Weitere Dossiers</h3><div class="rel">${THEMEN.filter(x=>x.id!==id).map(x=>`<a href="#/themen/${x.id}"><span class="k">${esc(x.rub)}</span>${esc(x.t)}</a>`).join("")}</div></div>`:""}</div>
+    </aside></div>`;
+}
+
+/* ---------- Referenz ---------- */
+function pageReferenz(){
+  const src = Object.entries(QUELLEN).map(([k,s])=>`<li>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)} — ${esc(s.h)}<br><span class="mono">${esc(k)} · ${esc(s.typ)} · Lizenz: ${esc(s.liz)}</span></li>`).join("");
+  return `<div class="pagehead"><div><h1>Referenz</h1><p>Methodik, Quellen, Glossar und Änderungslog — damit jede Angabe nachvollziehbar bleibt.</p></div><span class="stamp">Stand ${fd(STAND)}</span></div>
+    <div class="grid g2">
+      <div class="card" id="methodik"><h3>Methodik</h3>
+        <p>Der Cyber-X-Hub wird von einer Person herausgegeben. Jede Zahl trägt Quelle, Periode und Stichtag; ohne diese Angaben wird sie nicht veröffentlicht.</p>
+        <p><b>Qualitätsstufen.</b> ${qpill("ok")} Primärquelle geprüft · ${qpill("abg")} Sekundärquelle oder Schätzung · ${qpill("ind")} Marktschätzung ohne belastbare Quelle.</p>
+        <p><b>Fakt und Einordnung.</b> Bewertungen erscheinen nur im Feld „Einordnung" und sind typografisch abgesetzt. Keine Kursziele, keine Kauf- oder Verkaufsurteile, keine Produktempfehlung.</p>
+        <p><b>Korrekturen.</b> Veröffentlichte Werte werden nicht still geändert. Korrekturen stehen im Änderungslog.</p>
+        <p><b>Abgrenzung.</b> Angaben zu Prämienvolumina hängen an der Definition „eigenständige Cyber-Police". Reihen werden nie aus mehreren Quellen gemischt.</p>
+        <h3 style="margin-top:18px">Änderungslog</h3><div class="list">${LOG.map(l=>`<div class="item"><span class="date">${fd(l.d)}</span><div class="s" style="margin:0">${esc(l.t)}</div></div>`).join("")}</div>
+      </div>
+      <div class="card" id="quellen"><h3>Quellenverzeichnis</h3><ul class="sources" style="padding-left:18px;margin:0">${src}</ul></div>
+    </div>
+    <div class="sect card" id="glossar"><h3>Glossar</h3><dl class="gl" style="margin:0">${GLOSSAR.map(g=>`<dt>${esc(g.t)} <em style="font-weight:400;font-size:0.75rem;color:var(--ink-3)">${esc(g.en)}</em></dt><dd>${esc(g.d)}</dd>`).join("")}</dl></div>`;
+}
+
+/* ---------- Suche ---------- */
+function pageSuche(p){
+  const q=(p.get("q")||"").trim().toLowerCase();
+  if(!q) return `<div class="pagehead"><h1>Suche</h1></div><div class="empty">Suchbegriff eingeben.</div>`;
+  const hit=s=>String(s||"").toLowerCase().includes(q);
+  const ak=AKTEURE.filter(a=>hit(a.n)||hit(a.b)||a.rollen.some(hit));
+  const ra=RECHTSAKTE.filter(r=>hit(r.n)||hit(r.amt)||hit(r.b));
+  const me=MELDUNGEN.filter(m=>hit(m.t)||hit(m.s));
+  const kz=KENNZAHLEN.filter(k=>hit(k.n)||hit(k.def));
+  const gl=GLOSSAR.filter(g=>hit(g.t)||hit(g.d));
+  const th=THEMEN.filter(t=>hit(t.t)||hit(t.teaser)||t.text.some(hit));
+  const vf=VORFAELLE.filter(v=>hit(v.t)||hit(v.org)||hit(v.ort));
+  const n=ak.length+ra.length+me.length+kz.length+gl.length+th.length+vf.length;
+  const sec=(t,arr,f)=>arr.length?`<div class="srch-res"><h3>${t} · ${arr.length}</h3><div class="rel">${arr.map(f).join("")}</div></div>`:"";
+  return `<div class="pagehead"><div><h1>Suche</h1><p>„${esc(p.get("q"))}" — ${n} Treffer</p></div></div><div class="card">
+    ${sec("Themen",th,t=>`<a href="#/themen/${t.id}"><span class="k">${esc(t.rub)}</span>${esc(t.t)}</a>`)}
+    ${sec("Akteure",ak,a=>`<a href="#/akteure/${a.id}"><span class="k">${a.dom.join(" ")}</span>${esc(a.n)}</a>`)}
+    ${sec("Rechtsakte",ra,r=>`<a href="#/regulierung/${r.id}"><span class="k">${esc(r.jur)}</span>${esc(r.n)}</a>`)}
+    ${sec("Kennzahlen",kz,k=>`<a href="#/markt/kennzahl/${k.id}"><span class="k">${esc(k.reg)}</span>${esc(k.n)}</a>`)}
+    ${sec("Meldungen",me,m=>`<a href="#/meldungen/${m.id}"><span class="k">${fd(m.d)}</span>${esc(m.t)}</a>`)}
+    ${sec("Vorfälle",vf,v=>`<a href="${esc(v.q)}" target="_blank" rel="noopener"><span class="k">${fd(v.d)}</span>${esc(v.ort)}: ${esc(v.t)}</a>`)}
+    ${sec("Glossar",gl,g=>`<a href="#/referenz#glossar"><span class="k">Begriff</span>${esc(g.t)}</a>`)}
+    ${n?"":'<div class="empty">Nichts gefunden.</div>'}</div>`;
+}
+function notFound(){ return `<div class="empty">Eintrag nicht gefunden. <a href="#/radar">Zum Radar</a></div>`; }
+
+/* ---------- Router ---------- */
+function route(){
+  const h=location.hash.replace(/^#\/?/,"")||"radar";
+  const [pathPart,qs]=h.split("?"); const parts=pathPart.split("/").filter(Boolean); const p=new URLSearchParams(qs||"");
+  const r=parts[0]||"radar"; let html="";
+  if(r==="radar") html=pageRadar();
+  else if(r==="markt") html=parts[1]==="kennzahl"?pageKennzahl(parts[2]):pageMarkt();
+  else if(r==="akteure") html=parts[1]?pageAkteur(parts[1]):pageAkteure(p);
+  else if(r==="regulierung") html=parts[1]?pageRechtsakt(parts[1]):pageRegulierung(p);
+  else if(r==="meldungen") html=parts[1]?pageMeldung(parts[1]):pageMeldungen(p);
+  else if(r==="themen") html=parts[1]?pageThema(parts[1]):pageThemen();
+  else if(r==="referenz") html=pageReferenz();
+  else if(r==="suche") html=pageSuche(p);
+  else html=notFound();
+  $("#app").innerHTML=html+`<footer class="site"><span>Cyber-X-Hub · Prototyp</span><span>Herausgeber: ${esc(HERAUSGEBER.name)}</span><span>Keine Anlage- oder Versicherungsberatung</span><span>Stand ${fd(STAND)}</span></footer>`;
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===r||(r==="suche"&&false)));
+  document.title = "Cyber-X-Hub";
+  wireCharts(); wireMap(); wireBoerse();
+  document.querySelectorAll("tr.rowlink").forEach(tr=>tr.addEventListener("click",e=>{ if(e.target.closest("a")) return; location.hash=tr.dataset.href; }));
+  document.querySelectorAll("th[data-sort]").forEach(th=>th.addEventListener("click",()=>{ const k=th.dataset.sort; if(AK.sort===k) AK.asc=!AK.asc; else {AK.sort=k;AK.asc=true;} route(); }));
+  const fl=$("#f-land"); if(fl) fl.addEventListener("change",()=>{ p.set("land",fl.value); if(!fl.value) p.delete("land"); location.hash="#/akteure?"+p.toString(); });
+  const fq=$("#f-q"); if(fq){ let t; fq.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(()=>{ if(fq.value) p.set("q",fq.value); else p.delete("q"); const pos=fq.selectionStart; location.hash="#/akteure?"+p.toString(); const n=$("#f-q"); if(n){ n.focus(); n.setSelectionRange(pos,pos);} },250); }); }
+  if(!parts[1] || r==="suche") window.scrollTo({top:0});
+  else window.scrollTo({top:0});
+}
+/* ---------- Farbschema ---------- */
+(function(){
+  const KEY="cxh-theme", btn=$("#themebtn"), lbl=$("#themelbl"), order=["auto","light","dark"], names={auto:"Auto",light:"Hell",dark:"Dunkel"};
+  let cur="auto"; try{ cur=localStorage.getItem(KEY)||"auto"; }catch(e){}
+  function apply(t){ const root=document.documentElement; if(t==="light"||t==="dark") root.setAttribute("data-theme",t); else root.removeAttribute("data-theme"); lbl.textContent=names[t]; btn.setAttribute("aria-label","Farbschema: "+names[t]+" — wechseln"); }
+  apply(cur);
+  btn.addEventListener("click",()=>{ cur=order[(order.indexOf(cur)+1)%order.length]; try{ localStorage.setItem(KEY,cur); }catch(e){} apply(cur); });
+})();
+document.addEventListener("click",e=>{ const a=e.target.closest('a[href^="#g-"]'); if(!a) return; e.preventDefault(); const t=document.getElementById(a.getAttribute("href").slice(1)); if(t) t.scrollIntoView({behavior:"smooth",block:"start"}); });
+window.addEventListener("hashchange",route);
+$("#searchform").addEventListener("submit",e=>{ e.preventDefault(); location.hash="#/suche?q="+encodeURIComponent($("#q").value); });
+document.addEventListener("keydown",e=>{ if(e.key==="/" && !/input|textarea|select/i.test(document.activeElement.tagName)){ e.preventDefault(); $("#q").focus(); } });
+route();
+</script>

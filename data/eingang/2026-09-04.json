@@ -1,0 +1,925 @@
+[
+ {
+  "t": "Nur 1,8 Prozent der Webseitenbetreiber nutzen security.txt &#8211; BSI und ACS raten zur Umsetzung",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260806_security_txt.html",
+  "d": "2026-08-06",
+  "s": "Nur 1,8 Prozent der Webseitenbetreiber in Deutschland stellen bislang eine security.txt bereit. Das zeigen Messungen des Bundesamt f&#252;r Sicherheit in der Informationstechnik (BSI) im Rahmen des Cyberdome-Projekts.&#160;",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "bsi",
+    "bacs"
+   ],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Sichere Ladeinfrastruktur: BSI ver&#246;ffentlicht Eckpunktepapier und startet mit beteiligten Ressorts die Ma&#223;nahmenumsetzung",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260728_Sichere_Ladeinfrastruktur.html",
+  "d": "2026-07-28",
+  "s": "Die Elektromobilit&#228;t in Deutschland entwickelt sich immer dynamischer. Damit steigen auch die Anforderungen an Cybersicherheit und Resilienz. Das BSI hat aufbauend auf einer Studie ein Eckpunktepapier mit konkreten Ma&#223;nahmen f&#252;r eine resiliente und vertrauensw&#252;rdige Ladeinfrastruktur erarbeitet.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Bundeskabinett st&#228;rkt mit &#8222;CyberGovSecure\" die Cybersicherheit der Bundesverwaltung",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260722_Bundeskabinett_staerkt_CGS.html",
+  "d": "2026-07-22",
+  "s": "Das Programm &#8222;CyberGovSecure&#8220; setzt einen verbindlichen politischen und organisatorischen Rahmen. Das Programm setzt sich zum Ziel, die Cybersicherheit und Cyberresilienz der Bundesverwaltung ressort&#252;bergreifend, wirksam und messbar zu st&#228;rken.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "ergo"
+   ],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cyberangriffe auf Praxen: BSI unterst&#252;tzt bei der Umsetzung neuer IT-Sicherheitsvorgaben",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260714_Cyberangriffe_auf_Praxen.html",
+  "d": "2026-07-14",
+  "s": "Viele Praxen untersch&#228;tzen das Risiko von Cyberangriffen. Das BSI unterst&#252;tzt Arzt-, Zahnarzt- und Psychotherapiepraxen mit konkreten Handlungsempfehlungen und Checklisten dabei, die durch die neue IT-Sicherheitsrichtlinie entstehenden Anforderungen an die Cybersicherheit umzusetzen und dauerhaft zu verankern.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cybersicherheit in Bund und L&#228;ndern: BSI und Berlin schlie&#223;en Kooperation",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260708_Kooperationsvereinbarung_BSI-Berlin.html",
+  "d": "2026-07-08",
+  "s": "Das BSI und das Land Berlin haben sich auf gemeinsame Kooperationsma&#223;nahmen im Bereich Cyber- und Informationssicherheit verst&#228;ndigt.&#160;",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cybersicherheit in Bund und L&#228;ndern: BSI und Schleswig-Holstein vereinbaren Kooperation",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260616_BSI_Schleswig-Holstein_Kooperation.html",
+  "d": "2026-06-16",
+  "s": "Das BSI und das Land Schleswig-Holstein intensivieren ihre Zusammenarbeit im Bereich Cybersicherheit. Daf&#252;r unterzeichneten BSI-Pr&#228;sidentin Claudia Plattner und Dirk Schr&#246;dter, Chef der Staatskanzlei des Landes Schleswig-Holstein, eine entsprechende Vereinbarung.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cybersicherheit in Bund und L&#228;ndern: BSI und Mecklenburg-Vorpommern schlie&#223;en Kooperation",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260513_Kooperation_Mecklenburg-Vorpommern.html",
+  "d": "2026-05-13",
+  "s": "Das BSI und das Land Mecklenburg-Vorpommern arbeiten im Bereich der Cybersicherheit k&#252;nftig enger zusammen. Ziel ist, die Zusammenarbeit zwischen Bund und Land mit Blick auf Cybersicherheit zu st&#228;rken, um so einen entscheidenden Beitrag zur digitalen Resilienz Deutschlands zu leisten.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "BSI ver&#246;ffentlicht G7-Richtlinie zu Software Bill of Materials for AI",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260512_G7_Richtlinie_SBOM_for_AI.html",
+  "d": "2026-05-12",
+  "s": "Unter Federf&#252;hrung des BSI und der italienischen Cybersicherheitsbeh&#246;rde ACN wurde von KI-Expertinnen und Experten der G7-Cybersicherheitsbeh&#246;rden und der EU-Kommission eine Richtlinie mit Minimalanforderungen an eine SBOM for AI erarbeitet.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cyberkriminalit&#228;t im Alltag: Jede zehnte Person in Deutschland allein im Vorjahr betroffen",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260511_Cyberkriminalitaet_im_Alltag.html",
+  "d": "2026-05-11",
+  "s": "Viele Menschen informieren sich &#252;ber ihre pers&#246;nliche IT-Sicherheit erst im Ernstfall &#8211; so das Ergebnis des Cybersicherheitsmonitors 2026. Die repr&#228;sentative Befragung des BSI und des ProPK beleuchtet das Schutzverhalten der Bev&#246;lkerung und ihre Betroffenheit von Cyberkriminalit&#228;t.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "CyberGovSecure gestartet: Bund st&#228;rkt Cybersicherheit koordiniert und ressort&#252;bergreifend",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260504_CyberGovSecure_gestartet.html",
+  "d": "2026-05-04",
+  "s": "Mit dem Kick-off des Programm CyberGovSecure hat die Bundesverwaltung den operativen Start f&#252;r eine koordinierte St&#228;rkung der Cybersicherheit vollzogen. Unter der Koordination der CISO Bund, des BMDS und mit fachlicher Begleitung durch das BSI werden gezielt Ma&#223;nahmen zur Erh&#246;hung der Cyberresilienz umgesetzt.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "ergo"
+   ],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cybersicherheit in Bund und L&#228;ndern: BSI und Brandenburg vereinbaren Kooperation",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260429_BSI_Brandenburg_Kooperation.html",
+  "d": "2026-04-29",
+  "s": "Das BSI und das Land Brandenburg intensivieren ihre Zusammenarbeit im Bereich Cybersicherheit. Daf&#252;r unterzeichneten BSI-Pr&#228;sidentin Claudia Plattner und Brandenburgs Digitalstaatssekret&#228;r Ernst B&#252;rger eine entsprechende Vereinbarung.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cyber Resilience Act: BSI &#252;bernimmt den Vorsitz der AdCo CRA",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260319_Vorsitz_AdCo_CRA.html",
+  "d": "2026-03-19",
+  "s": "Im Rahmen der Umsetzung des Cyber Resilience Acts (CRA) wird dem BSI erneut eine besondere Rolle zuteil. Neben der Ernennung zur markt&#252;berwachenden Beh&#246;rde &#252;bernimmt das BSI auf europ&#228;ischer Ebene nun den Vorsitz der Administrative Cooperation Group &#8222;AdCo CRA&#8220;.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Kooperation mit L&#228;ndern und Kommunen: BSI weitet Sensorik in der Cybersicherheit aus",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260318_Sensorik_Cybersicherheit.html",
+  "d": "2026-03-18",
+  "s": "Angesichts der angespannten Cybersicherheitslage baut das BSI die Reaktionsf&#228;higkeit und damit auch die Resilienz Deutschlands gegen IT-Sicherheitsvorf&#228;lle weiter aus. Mit &#246;ffentlichen IT-Dienstleistern von L&#228;ndern und Kommunen wird der Einsatz der Daten-Sensorik erweitert und Echtzeitanalysen ausgebaut.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "BSI-Pr&#228;sidentin wirbt f&#252;r &#8222;360-Grad-Blick&#8220; auf Sicherheit im digitalen Raum",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260307_Sicherheit_digitaler_Raum.html",
+  "d": "2026-03-07",
+  "s": "Mit Blick auf die aktuelle Cybersicherheitslage in Deutschland hat das BSI einen mehrdimensionalen L&#246;sungsansatz vorgestellt. Auf der Cyber Security Conference (CSC) von Schwarz Digits pr&#228;sentierte BSI-Pr&#228;sidentin Claudia Plattner das &#8222;Wheel of Motion&#8220; &#8211; eine Konzeptskizze f&#252;r L&#246;sungsstrategien im Umgang mit Cyberaggression.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "BSI-Pr&#228;sidentin auf der MSC: &#8222;Wer souver&#228;n sein will, muss Technologie beherrschen&#8220;",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260215_MSC.html",
+  "d": "2026-02-15",
+  "s": "Ein verschobenes Machtgleichgewicht, digitale Souver&#228;nit&#228;t und der Cyberdome f&#252;r Deutschland: Das waren die thematischen Schwerpunkte f&#252;r das Bundesamt f&#252;r Sicherheit in der Informationstechnik (BSI) auf der M&#252;nchner Sicherheitskonferenz.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "bsi",
+    "bacs",
+    "geneva-association"
+   ],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cyber-Direktorentreffen und Cyber Security Conference in M&#252;nchen: Steigender Bedarf nach automatisierter Verteidigung",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260213_CSDM_MCSC.html",
+  "d": "2026-02-13",
+  "s": "Die Spitzen der europ&#228;ischen Cybersicherheitsbeh&#246;rden haben sich zum Cyber Security Directors&#8216; Meeting im Rahmen der Munich Cyber Security Conference getroffen. Sie tauschten sich u.a. zu digitaler Souver&#228;nit&#228;t und der Umsetzung der europ&#228;ischen Regulierungen NIS-2 und CRA sowie der automatisierten Detektion und Abwehr von Cyberangriffen aus.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "munich-re"
+   ],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Zweiter Schritt zur NIS-2-Registrierung: BSI-Portal ab sofort freigeschaltet",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260601_NIS2_BSI-Portal.html",
+  "d": "2026-01-06",
+  "s": "F&#252;r rund 29.500 Unternehmen in Deutschland und Institutionen der Bundesverwaltung gelten seit Inkrafttreten des NIS-2-Umsetzungsgesetzes neue gesetzliche Pflichten in der IT-Sicherheit. Das neu entwickelte BSI-Portal steht ab sofort zur Verf&#252;gung.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "E-Mail-Sicherheit: BSI untersucht E-Mail-Programme",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2025/251215_E-Mailsicherheit_E-Mailprogramme.html",
+  "d": "2025-12-15",
+  "s": "In unserem E-Mail-Programm lesen, schreiben und verwalten wir all unsere E-Mails. Entsprechend gut m&#252;ssen sie vor Risiken durch Dritte gesch&#252;tzt werden. Das BSI hat untersucht, inwiefern E-Mail-Programme relevante Eigenschaften, wie Transport- und Inhaltsverschl&#252;sselung oder SPAM-, Phishing- und Tracking-Schutz umsetzen.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Cybersicherheitsrecht: NIS-2-Umsetzungsgesetz ab morgen in Kraft",
+  "link": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2025/251205_NIS-2-Umsetzungsgesetz_in_Kraft.html",
+  "d": "2025-12-05",
+  "s": "Mit der heutigen Verk&#252;ndung des Gesetzes zur Umsetzung der NIS-2-Richtlinie und zur Regelung wesentlicher Grundz&#252;ge des Informationssicherheitsmanagements in der Bundesverwaltung tritt ab morgen eine umfassende Modernisierung des Cybersicherheitsrechts in Kraft.",
+  "quelle": "BSI Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: SonicWall SMA1000 - Schwachstellen werden aktiv ausgenutzt",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-288433-1032_bits.html",
+  "d": "2026-09-02",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.2: SonicWall SMA1000 - Zero-Day Schwachstellen aktiv ausgenutzt",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-271845-1032_bits.html",
+  "d": "2026-07-22",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Microsoft SharePoint - Zero-Day und kritische Schwachstellen geschlossen",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-271713-1032_bits.html",
+  "d": "2026-07-14",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Check Point Remote Access VPN und Mobile Access - Aktiv ausgenutzte Schwachstelle erm&#246;glicht Aufbau von VPN-Sessions ohne Authentifizierung",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-263373-1032_bits.html",
+  "d": "2026-06-09",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: cPanel und WHM - Aktiv ausgenutzte Schwachstelle erm&#246;glicht Umgehen der Authentifizierung",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-246817-1032_bits.html",
+  "d": "2026-04-30",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Microsoft Windows IKE - Kritische Schwachstelle gef&#228;hrdet Windows VPN-Server",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-246628-1032_bits.html",
+  "d": "2026-04-15",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Microsoft SharePoint - Angreifer nutzen kritische Schwachstelle aktiv aus",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-238220-1032_bits.html",
+  "d": "2026-03-25",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: MongoDB - Aktiv ausgenutzte Schwachstelle erlaubt Offenlegung sensibler Daten",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-305052-1032_bits.html",
+  "d": "2025-12-29",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.3 React Server Components - Kritische Schwachstelle bedroht zahlreiche Webanwendungen",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-304569-1032_bits.html",
+  "d": "2025-12-15",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.1: Microsoft WSUS - Notfallupdate schlie&#223;t kritische Schwachstelle mit Proof-of-Concept",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-288009-1032_bits.html",
+  "d": "2025-10-27",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Redis - Kritische Schwachstelle gef&#228;hrdet Redis-Server",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-287813-1032_bits.html",
+  "d": "2025-10-07",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.1: SonicWall Gen 7 Firewalls - Ransomware-Angriffe beobachtet",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-271036-1032_bits.html",
+  "d": "2025-08-07",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.1: Citrix NetScaler ADC & NetScaler Gateway - Kritische Sicherheitsl&#252;cken geschlossen und teils aktiv ausgenutzt",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-254480-1032_bits.html",
+  "d": "2025-07-08",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.1: Ivanti EPMM - Zero-Day Schwachstellen werden aktiv ausgenutzt",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-245980-1032_bits.html",
+  "d": "2025-06-13",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.1: Ivanti Connect Secure - Kritische Schwachstelle in End-of-Support und ungepatchten Systemen ausgenutzt",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-238620-1032_csw.html",
+  "d": "2025-04-09",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Kubernetes - Kritische Schwachstelle im Ingress NGINX Controller erm&#246;glicht Cluster&#252;bernahme",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-230373-1032_csw.html",
+  "d": "2025-03-25",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Microsoft Windows - Kritische Schwachstelle in Windows OLE",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-213561-1032_csw.html",
+  "d": "2025-01-14",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Zyxel Firewalls zur Verbreitung von Ransomware missbraucht",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2024/2024-290907-1032_csw.html",
+  "d": "2024-11-22",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: Ivanti Cloud Services Appliance &#8211; Schwachstellen werden aktiv ausgenutzt",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2024/2024-274385-1032_csw.html",
+  "d": "2024-09-20",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Version 1.0: SonicWall SonicOS - Kritische Schwachstelle erlaubt unauthentifizierten Zugriff auf sensible Ressourcen",
+  "link": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2024/2024-274200-1032_csw.html",
+  "d": "2024-09-06",
+  "s": "",
+  "quelle": "BSI Cyber-Sicherheitswarnungen",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Bochumer Versicherungsverein auf Gegenseitigkeit: Bafin widerruft Erlaubnis zum Betrieb des Versicherungsgesch&#228;fts",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Massnahmen/VAG/meldung_260722_bochumer_versicherungsverein.html",
+  "d": "2026-07-22",
+  "s": "Der Bochumer Versicherungsverein auf Gegenseitigkeit darf kein Versicherungsgesch&#228;ft mehr betreiben. Die Erlaubnis dazu hat die&#160;Finanzaufsicht Bafin&#160;am 23. Juni 2026 widerrufen.",
+  "quelle": "BaFin Aufsicht",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "bafin"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Die Zahl der Beschwerden steigt",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Fachartikel/2026/fa_bj_260904_pfefferminzia_wiens.html",
+  "d": "2026-09-04",
+  "s": "Wie zufrieden sind Verbraucherinnen und Verbraucher mit ihren Versicherungen? Welche Rolle spielt KI? Und was unternimmt die Bafin, damit Versicherungsprodukte den Kundinnen und Kunden tats&#228;chlich einen angemessenen Nutzen bieten?",
+  "quelle": "BaFin Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "bafin"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "tide-anlagecenter(.)com: Bafin warnt vor Angeboten auf Website",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Verbrauchermitteilung/unerlaubte/2026/meldung_2026_09_01_tide-anlagecenter.html",
+  "d": "2026-09-01",
+  "s": "Die Finanzaufsicht Bafin warnt vor der Website tide-anlagecenter(.)com sowie E-Mails von den Adressen geldanlage@tide-tagesgeld(.)de und support@tide-tagesgeld(.)de sowie weiteren &#228;hnlichen E-Mail-Adressen. Nach Erkenntnissen der Bafin bieten die Betreiber der Website bzw. Versender der E-Mails ohne Erlaubnis Tages- und Festgeldanlagen an.",
+  "quelle": "BaFin Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [
+    "bafin"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "S&#252;ddeutsche Krankenversicherung a.G.",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Bekanntmachungen/15_Uebertragung_Versicherungsbestand/2028_08_26_sueddeutsche_kv_va.html",
+  "d": "2026-08-28",
+  "s": "&#220;bertragung eines Versicherungsbestandes",
+  "quelle": "BaFin Presse",
+  "vorschlag": {
+   "dom": "D4",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Rundschreiben 01/2026 (VA): Hinweise der Bafin zum Betrieb von L&#246;segeldversicherungen",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Rundschreiben/2026/rs_01_26_rundschreiben_va.html",
+  "d": "2026-04-01",
+  "s": "Hinweise der Bafin zum Betrieb von L&#246;segeldversicherungen",
+  "quelle": "BaFin Rundschreiben",
+  "vorschlag": {
+   "dom": "D5",
+   "akt": [
+    "bafin"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Rundschreiben 09/2025 (VA) - Aufsichtsrechtliche Mindestanforderungen an die Gesch&#228;ftsorganisation von Versicherungsunternehmen unter Solvabilit&#228;t II (MaGo f&#252;r SII-VU)\n&#160;",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Rundschreiben/2025/rs_rundschreiben_09_25_va.html",
+  "d": "2025-07-14",
+  "s": "Aufsichtsrechtliche Mindestanforderungen an die Gesch&#228;ftsorganisation von Versicherungsunternehmen unter Solvabilit&#228;t II (MaGo f&#252;r SII-VU)",
+  "quelle": "BaFin Rundschreiben",
+  "vorschlag": {
+   "dom": "D5",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Rundschreiben 05/2025 (VA) - PPP-Rundschreiben 05/2025 (VA) - Grundsatz der unternehmerischen Vorsicht (Prudent Person Principle - PPP) von Versicherungsunternehmen unter Solvabilit&#228;t II",
+  "link": "https://www.bafin.de/SharedDocs/Downloads/DE/Rundschreiben/dl_rs_05_2025_ppp_va.html",
+  "d": "2025-03-06",
+  "s": "PPP-Rundschreiben 05/2025 (VA) - Grundsatz der unternehmerischen Vorsicht (Prudent Person Principle - PPP) von Versicherungsunternehmen unter Solvabilit&#228;t II",
+  "quelle": "BaFin Rundschreiben",
+  "vorschlag": {
+   "dom": "D5",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Rundschreiben 04/2025 (VA)",
+  "link": "https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Rundschreiben/2025/rs_rundschreiben_04_25_va.html",
+  "d": "2025-02-11",
+  "s": "Solvabilit&#228;ts-Rundschreiben f&#252;r Nicht-Solvabilit&#228;ts II-Versicherungsunternehmen - Solvabilit&#228;t von kleinen Versicherungsunternehmen, Sterbekassen, Pensionskassen und Pensionsfonds",
+  "quelle": "BaFin Rundschreiben",
+  "vorschlag": {
+   "dom": "D5",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Fitch keeps deteriorating outlook on reinsurance despite sector’s very strong capital position",
+  "link": "https://www.artemis.bm/news/fitch-keeps-deteriorating-outlook-on-reinsurance-despite-sectors-very-strong-capital-position/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=fitch-keeps-deteriorating-outlook-on-reinsurance-despite-sectors-very-strong-capital-position",
+  "d": "2026-09-04",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nFitch Ratings has maintained its deteriorating outlook for the global reinsurance sector for 2027, which the agency says reflects operating conditions that are gradually weakening from still-sound levels. The agency also highlighted that while abundant capacity and rising claims costs ",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Traditional reinsurance capacity the key driver of price competition: Moody&#8217;s survey",
+  "link": "https://www.artemis.bm/news/traditional-reinsurance-capacity-the-key-driver-of-price-competition-moodys-survey/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=traditional-reinsurance-capacity-the-key-driver-of-price-competition-moodys-survey",
+  "d": "2026-09-04",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nA recent survey of protection buyers shows that the largest share of respondents agree that traditional reinsurance capacity is the key driver of price competition in the property marketplace, while the availability of alternative and insurance-linked securities capital is seen as a mu",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Reinsurance capital grows, ILS investor base broadens = more savings to come for clients: Aon",
+  "link": "https://www.artemis.bm/news/reinsurance-capital-grows-ils-investor-base-broadens-more-savings-to-come-for-clients-aon/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=reinsurance-capital-grows-ils-investor-base-broadens-more-savings-to-come-for-clients-aon",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nWith record levels of capital in the reinsurance sector and a growing insurance-linked securities market with a broadening investor base, executives at Aon said today that there are more savings to come for clients, with property rates likely to fall in the region of 10% at the January",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Swiss Re names Wiget to take over leadership of Alternative Capital Partners",
+  "link": "https://www.artemis.bm/news/swiss-re-names-wiget-to-take-over-leadership-of-alternative-capital-partners/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=swiss-re-names-wiget-to-take-over-leadership-of-alternative-capital-partners",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nSwiss Re, the global reinsurer, has named long-standing senior employee Mirjam Wiget as the new leader for its Alternative Capital Partners (ACP) division, as incumbent Martin Zingg moves into the Group Chief Investment Officer role. Alternative Capital Partners (ACP) was established b",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "swiss-re",
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "New capital sources and risk dynamics create significant opportunities for growth: Oak Global CEO",
+  "link": "https://www.artemis.bm/news/new-capital-sources-and-risk-dynamics-create-significant-opportunities-for-growth-oak-global-ceo/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=new-capital-sources-and-risk-dynamics-create-significant-opportunities-for-growth-oak-global-ceo",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nAs the insurance-linked securities (ILS) and reinsurance markets adapt to an evolving risk landscape spanning geopolitics, climate, and artificial intelligence (AI), new capital structures are emerging to meet growing demand, and Oak Global plans to leverage investor diversification to",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Howden Re urges reinsurance and retro cedents to preserve capital flexibility and optionality",
+  "link": "https://www.artemis.bm/news/howden-re-urges-reinsurance-and-retro-cedents-to-preserve-capital-flexibility-and-optionality/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=howden-re-urges-reinsurance-and-retro-cedents-to-preserve-capital-flexibility-and-optionality",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nIn a reinsurance and retrocession market environment where prices have softened considerably but underwriters can still find attractive returns, broker Howden Re urges cedents to ensure their resilience by looking across the full-range of capital solutions and forms, to maintain flexib",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "howden",
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Descartes and Generali renew parametric insurance partnership",
+  "link": "https://www.artemis.bm/news/descartes-and-generali-renew-parametric-insurance-partnership/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=descartes-and-generali-renew-parametric-insurance-partnership",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nParametric specialist Descartes Underwriting and Generali Global Corporate &#38; Commercial (GC&#38;C), the business of Generali Group that provides solutions and services to medium-large companies, have renewed their strategic partnership that sees the two firms develop parametric ins",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Challenger Life’s cat bond investments meet benchmark. Calix Re adds new dimension",
+  "link": "https://www.artemis.bm/news/challenger-lifes-cat-bond-investments-meet-benchmark-calix-re-adds-new-dimension/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=challenger-lifes-cat-bond-investments-meet-benchmark-calix-re-adds-new-dimension",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nChallenger Life reported that its insurance-linked securities (ILS) investments, predominantly catastrophe bonds, performed in-line with their benchmark over the last year, while the company also launched a new Bermuda life and annuity reinsurance entity named Calix Re, adding a new in",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Bermuda’s life &#038; annuity sidecar market hits $375bn amid rising private-market strategies: Morningstar DBRS",
+  "link": "https://www.artemis.bm/news/bermudas-life-annuity-sidecar-market-hits-375bn-amid-rising-private-market-strategies-morningstar-dbrs/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=bermudas-life-annuity-sidecar-market-hits-375bn-amid-rising-private-market-strategies-morningstar-dbrs",
+  "d": "2026-09-03",
+  "s": "This content is copyright to www.artemis.bm and should not appear anywhere else, or an infringement has occurred.\nThe life and annuity sidecar market in Bermuda has experienced rapid growth over the last several years, as insurers continue to scale up and expand beyond legacy blocks. However, Morningstar DBRS suggests that this momentum can also be viewed alongside the growth of rated feeder funds",
+  "quelle": "Artemis (ILS)",
+  "vorschlag": {
+   "dom": "D6",
+   "akt": [
+    "geneva-association"
+   ],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Jetzt patchen! Es laufen derzeit Schadcode-Attacken auf Chrome",
+  "link": "https://www.heise.de/news/Jetzt-patchen-Angreifer-fuehren-Schadcode-in-der-Sandbox-von-Chrome-aus-11441030.html",
+  "d": "2026-09-04",
+  "s": "Google hat mehrere Sicherheitslücken im Webbrowser Chrome geschlossen. Eine Schwachstelle nutzen Angreifer bereits aus.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Kehrtwende bei Cybersicherheit: Bund gibt Plan für BSI-Grundgesetzänderung auf",
+  "link": "https://www.heise.de/news/Kehrtwende-bei-Cybersicherheit-Bund-gibt-Plan-fuer-BSI-Grundgesetzaenderung-auf-11440646.html",
+  "d": "2026-09-03",
+  "s": "Trotz der verschärften Bedrohungslage und verstärkter IT-Angriffe verzichtet die Bundesregierung überraschend auf eine Verfassungsänderung zur Stärkung des BSI.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "„Viele unterschätzen den Aufwand“: Cybersecurity bei Medizinprodukten",
+  "link": "https://www.heise.de/hintergrund/Viele-unterschaetzen-den-Aufwand-Cybersecurity-bei-vernetzten-Medizinprodukten-11439089.html",
+  "d": "2026-09-03",
+  "s": "Software-Lieferketten, Altgeräte und Co. erhöhen die IT-Risiken in der Medizintechnik. Was bei der Entwicklung wichtig ist, erklärt ein Experte im Interview.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Gemini 3.8 Flash und Flash Cyber: Googles neue KI-Modelle im Überblick",
+  "link": "https://www.heise.de/news/Gemini-3-8-Flash-und-Flash-Cyber-Googles-neue-KI-Modelle-im-Ueberblick-11439421.html",
+  "d": "2026-09-03",
+  "s": "Gemini 3.8 Flash ist leistungsfähiger, kann pro Aufgabe aber mehr kosten. Flash Cyber startet im Rahmen einer neuen Google-Sicherheitsinitiative.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Jetzt patchen! Angreifer attackieren JFrog Artifactory und machen sich zu Admins",
+  "link": "https://www.heise.de/news/Jetzt-patchen-Angreifer-attackieren-JFrog-Artifactory-und-machen-sich-zu-Admins-11439271.html",
+  "d": "2026-09-03",
+  "s": "JFrog Artifactory ist über zahlreiche Sicherheitslücken angreifbar. Eine Schwachstelle nutzen Angreifer bereits aus.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "WhatsApp-Schwachstelle: Zugriff auf Fotos bei gesperrtem Android-Handy",
+  "link": "https://www.heise.de/news/WhatsApp-Sicherheitsluecke-Zugriff-auf-Fotos-bei-gesperrtem-Android-Handy-11439291.html",
+  "d": "2026-09-03",
+  "s": "Eine Schwachstelle in WhatsApp für Android ermöglicht es, bei einem eingehenden Videoanruf auf private Fotos zuzugreifen, ohne das Gerät zu entsperren.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Claude Fable 5.1 setzt sich in Benchmarks an die Spitze, bleibt aber teuer",
+  "link": "https://www.heise.de/news/Anthropic-legt-bei-Claude-nach-Fable-5-1-uebernimmt-Benchmark-Fuehrung-11437935.html",
+  "d": "2026-09-02",
+  "s": "Fable 5.1 setzt sich in externen Benchmarks an die Spitze, während Mythos 5.1 mit gelockerten Schutzmechanismen mehr Cyberaufgaben bewältigen soll.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": [
+    "cra"
+   ]
+  },
+  "status": "offen"
+ },
+ {
+  "t": "Jetzt patchen! Angreifer attackieren Langflow-Instanzen mit Schadcode",
+  "link": "https://www.heise.de/news/Jetzt-patchen-Angreifer-attackieren-Langflow-Instanzen-mit-Schadcode-11437701.html",
+  "d": "2026-09-02",
+  "s": "Angreifer nutzen derzeit eine kritische Sicherheitslücke im KI-Tool Langflow aus. Ein Sicherheitspatch ist schon länger verfügbar.",
+  "quelle": "heise Security",
+  "vorschlag": {
+   "dom": "D3",
+   "akt": [],
+   "ra": []
+  },
+  "status": "offen"
+ }
+]

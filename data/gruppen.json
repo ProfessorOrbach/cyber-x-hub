@@ -1,0 +1,123 @@
+{
+ "gruppen": [
+  {
+   "id": "erst",
+   "n": "Erstversicherer",
+   "s": "Tragen das Cyber-Risiko in der eigenen Bilanz und zeichnen es gegenüber Unternehmen.",
+   "ids": [
+    "allianz-commercial",
+    "axa-xl",
+    "chubb",
+    "hdi-global",
+    "zurich",
+    "hiscox",
+    "beazley",
+    "aig",
+    "r-v",
+    "ergo",
+    "helvetia",
+    "travelers"
+   ]
+  },
+  {
+   "id": "rueck",
+   "n": "Rückversicherer, Lloyd's & Kapital",
+   "s": "Nehmen Erstversicherern Spitzenrisiken ab und verbinden den Markt mit dem Kapitalmarkt.",
+   "ids": [
+    "munich-re",
+    "swiss-re",
+    "hannover-rueck",
+    "scor",
+    "lloyds",
+    "allianz-x"
+   ]
+  },
+  {
+   "id": "vertrieb",
+   "n": "Vertrieb: Makler, Assekuradeure, Plattformen",
+   "s": "Vermitteln, platzieren und zeichnen im Auftrag — die Schicht zwischen Risiko und Kapazität.",
+   "ids": [
+    "marsh",
+    "aon",
+    "wtw",
+    "funk",
+    "ecclesia",
+    "howden",
+    "mrh-trowe",
+    "finlex",
+    "cyberdirekt",
+    "coalition",
+    "at-bay"
+   ]
+  },
+  {
+   "id": "oeko",
+   "n": "Sicherheitsökosystem",
+   "s": "Bewerten Risiko vor der Zeichnung und arbeiten Schäden im Ernstfall ab.",
+   "ids": [
+    "crowdstrike",
+    "mandiant",
+    "hisolutions",
+    "cybercube",
+    "bitsight"
+   ]
+  },
+  {
+   "id": "inst",
+   "n": "Institutionen & Aufsicht",
+   "s": "Beaufsichtigen, normieren und liefern die Statistik.",
+   "ids": [
+    "bsi",
+    "bafin",
+    "gdv",
+    "eiopa",
+    "enisa",
+    "bacs",
+    "geneva-association"
+   ]
+  }
+ ],
+ "bedeutung": {
+  "allianz-commercial": "Größter deutscher Industrieversicherer; Kapazitätsgeber für Cyber-Programme und MGAs",
+  "axa-xl": "Führender internationaler Cyber-Zeichner im Großkundengeschäft",
+  "chubb": "Global einer der größten Cyber-Erstversicherer",
+  "hdi-global": "Größter deutscher Industrieversicherer nach Allianz, starke Mittelstandsbasis",
+  "zurich": "Globale Cyber-Kapazität, breite DACH-Präsenz",
+  "hiscox": "Früher Standardsetzer im KMU-Cyber-Geschäft in Deutschland",
+  "beazley": "Cyber als größte Sparte, Innovationsführer bei Cyber-ILS",
+  "aig": "Historisch einer der ersten Cyber-Zeichner, international breit aufgestellt",
+  "r-v": "Mittelstandszugang über den genossenschaftlichen Bankvertrieb",
+  "ergo": "Gewerbekunden-Cyber im Munich-Re-Konzern",
+  "helvetia": "Fusionierter Schweizer Marktführer mit KMU-Cyber in CH, AT, DE",
+  "munich-re": "Marktführer in der Cyber-Rückversicherung, Referenzquelle für Marktschätzungen",
+  "swiss-re": "Zweitgrößter Rückversicherer, Kapazitätspartner mehrerer MGAs",
+  "hannover-rueck": "Drittgrößter Rückversicherer, wachsendes Cyber-Buch",
+  "scor": "Viertgrößter europäischer Rückversicherer mit Cyber-Kapazität",
+  "lloyds": "Marktplatz für einen wesentlichen Teil der globalen Cyber-Kapazität, Standardsetzer bei Ausschlüssen",
+  "allianz-x": "Wichtigster Konzern-Investor in Cyber-Insurtechs (u. a. Coalition)",
+  "marsh": "Größter Makler weltweit, Ratenindex als Marktbarometer",
+  "aon": "Nummer zwei weltweit, Cyber-Research und Rückversicherungsmakler",
+  "wtw": "Nummer drei weltweit, Stärke in Risikoquantifizierung",
+  "funk": "Größter inhabergeführter Industriemakler Deutschlands",
+  "ecclesia": "Größter deutscher Makler nach Prämie, Schwerpunkt Gesundheitswesen",
+  "howden": "Schnellster Aufsteiger, Zukäufe in DACH",
+  "mrh-trowe": "Führende Konsolidierungsplattform im deutschen Maklermarkt",
+  "finlex": "Wichtigste digitale Platzierungsplattform für Cyber in Deutschland",
+  "cyberdirekt": "Spezialmakler mit Reichweite im KMU-Segment",
+  "coalition": "Größter Cyber-MGA weltweit, DACH-Bedeutung noch begrenzt",
+  "at-bay": "Zweiter großer US-Cyber-MGA, in DACH kaum präsent",
+  "crowdstrike": "Größter börsennotierter Endpoint-Anbieter, Systemrisiko-Referenzfall",
+  "mandiant": "Führender Incident-Response-Anbieter auf Versicherer-Panels",
+  "hisolutions": "Wichtigster deutscher IR- und Beratungsdienstleister für den Mittelstand",
+  "cybercube": "Marktführer bei Cyber-Kumulmodellen",
+  "bitsight": "Verbreitetstes Außenperspektiven-Rating im Underwriting",
+  "bsi": "Zentrale Cybersicherheitsbehörde, NIS2-Aufsicht und Lagebild",
+  "bafin": "Versicherungs- und DORA-Aufsicht",
+  "gdv": "Einzige Verbandsstatistik zur deutschen Cyberversicherung",
+  "eiopa": "EU-Versicherungsaufsicht, Cyber-Underwriting-Leitlinien",
+  "enisa": "EU-Cybersicherheitsagentur, Bedrohungslandschaft",
+  "bacs": "Schweizer Cybersicherheitsbehörde und Meldestelle",
+  "geneva-association": "Forschung zu Versicherbarkeit und Risikotransfer",
+  "travelers": "US-Referenzfall für die Integration eines Cyber-MGA (Corvus); in DACH ohne Zeichnung"
+ }
+}

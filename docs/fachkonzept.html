@@ -1,0 +1,557 @@
+<title>Fachkonzept Cyber-X-Hub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+:root{
+  --ground:#F5F7F8; --surface:#FFFFFF; --surface-2:#EAEEF1; --surface-3:#DFE5EA;
+  --ink:#131A20; --ink-2:#3F4C57; --ink-3:#6C7985;
+  --rule:#D3DBE1; --rule-soft:#E4E9ED;
+  --accent:#0F5A6B; --accent-2:#14798E; --accent-soft:#DFEDF0;
+  --signal:#9C5C08; --signal-soft:#F5EADA;
+  --ok:#2C6B4F; --ok-soft:#DEEDE5;
+  --crit:#973030; --crit-soft:#F3E0E0;
+  --shadow:0 1px 2px rgba(19,26,32,.05), 0 8px 24px -16px rgba(19,26,32,.25);
+  --serif:"Source Serif 4",Charter,Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1216; --surface:#141B21; --surface-2:#1B242B; --surface-3:#243039;
+    --ink:#E6ECF1; --ink-2:#B0BCC7; --ink-3:#83919D;
+    --rule:#28333C; --rule-soft:#1F2932;
+    --accent:#63BFD1; --accent-2:#8FD5E2; --accent-soft:#0F2C34;
+    --signal:#D79A45; --signal-soft:#2E2417;
+    --ok:#63B98C; --ok-soft:#16281F;
+    --crit:#DE8080; --crit-soft:#2B1A1A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1216; --surface:#141B21; --surface-2:#1B242B; --surface-3:#243039;
+  --ink:#E6ECF1; --ink-2:#B0BCC7; --ink-3:#83919D;
+  --rule:#28333C; --rule-soft:#1F2932;
+  --accent:#63BFD1; --accent-2:#8FD5E2; --accent-soft:#0F2C34;
+  --signal:#D79A45; --signal-soft:#2E2417;
+  --ok:#63B98C; --ok-soft:#16281F;
+  --crit:#DE8080; --crit-soft:#2B1A1A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px}
+a:hover{color:var(--accent-2)}
+:focus-visible{outline:2px solid var(--accent-2); outline-offset:3px; border-radius:2px}
+
+/* ---------- Rahmen ---------- */
+.shell{max-width:1240px; margin:0 auto; padding:0 28px 96px}
+.masthead{
+  border-bottom:1px solid var(--rule); padding:44px 0 26px; margin-bottom:34px;
+}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+}
+.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+h1{
+  font-family:var(--serif); font-weight:700; font-size:clamp(30px,4.4vw,46px);
+  line-height:1.1; letter-spacing:-.015em; margin:14px 0 10px; text-wrap:balance; max-width:20ch;
+}
+.standfirst{
+  font-family:var(--serif); font-size:clamp(17px,2vw,20px); line-height:1.5;
+  color:var(--ink-2); max-width:62ch; margin:0;
+}
+.docmeta{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px; background:var(--rule); border:1px solid var(--rule);
+  margin-top:30px; border-radius:3px; overflow:hidden;
+}
+.docmeta div{background:var(--surface); padding:11px 14px}
+.docmeta dt{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 3px;
+}
+.docmeta dd{margin:0; font-size:14px; font-weight:500; font-variant-numeric:tabular-nums}
+
+/* ---------- Layout ---------- */
+.layout{display:grid; grid-template-columns:236px minmax(0,1fr); gap:56px; align-items:start}
+@media (max-width:940px){ .layout{grid-template-columns:1fr; gap:0} }
+
+nav.toc{position:sticky; top:20px; max-height:calc(100vh - 40px); overflow-y:auto; padding-right:6px}
+nav.toc h2{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 12px; font-weight:500;
+}
+nav.toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1px}
+nav.toc a{
+  display:grid; grid-template-columns:26px 1fr; gap:4px; align-items:baseline;
+  text-decoration:none; color:var(--ink-2); font-size:13.5px; line-height:1.35;
+  padding:5px 8px 5px 0; border-left:2px solid transparent; padding-left:10px;
+}
+nav.toc a span{font-family:var(--mono); font-size:11px; color:var(--ink-3)}
+nav.toc a:hover{color:var(--ink); background:var(--surface-2); border-radius:0 3px 3px 0}
+nav.toc a.is-current{color:var(--accent); border-left-color:var(--accent); font-weight:500}
+nav.toc a.is-current span{color:var(--accent)}
+@media (max-width:940px){
+  nav.toc{position:static; max-height:none; margin:0 0 34px; padding:16px; background:var(--surface); border:1px solid var(--rule); border-radius:4px}
+}
+
+main{max-width:80ch; min-width:0}
+
+/* ---------- Typografie ---------- */
+section.chapter{padding-top:8px; margin-bottom:58px; scroll-margin-top:20px}
+section.chapter > h2{
+  font-family:var(--serif); font-size:clamp(22px,2.6vw,28px); font-weight:600; line-height:1.2;
+  letter-spacing:-.01em; margin:0 0 6px; display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:baseline;
+  padding-bottom:10px; border-bottom:1px solid var(--rule); text-wrap:balance;
+}
+section.chapter > h2 .num{
+  font-family:var(--mono); font-size:12px; font-weight:500; color:var(--accent);
+  letter-spacing:.04em; transform:translateY(-2px);
+}
+h3{
+  font-family:var(--sans); font-size:15.5px; font-weight:600; letter-spacing:.005em;
+  margin:30px 0 8px; color:var(--ink);
+}
+h3 .sub{font-family:var(--mono); font-size:11.5px; color:var(--ink-3); font-weight:400; margin-right:8px}
+p{margin:0 0 14px; max-width:68ch}
+ul,ol.plain{margin:0 0 16px; padding-left:20px; max-width:68ch}
+li{margin-bottom:6px}
+li::marker{color:var(--ink-3)}
+strong{font-weight:600}
+code{font-family:var(--mono); font-size:.88em; background:var(--surface-2); padding:1px 5px; border-radius:3px}
+.lede{color:var(--ink-2); font-size:16.5px; max-width:66ch; margin-bottom:20px}
+
+/* ---------- Bausteine ---------- */
+.card{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:18px 20px; box-shadow:var(--shadow)}
+.grid{display:grid; gap:14px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+
+.domain{position:relative; background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:16px 18px 18px}
+.domain .tag{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); display:block; margin-bottom:6px;
+}
+.domain h4{font-family:var(--serif); font-size:18px; font-weight:600; margin:0 0 8px; line-height:1.25}
+.domain p{font-size:14px; color:var(--ink-2); margin:0 0 10px; max-width:none}
+.domain ul{font-size:13.5px; margin:0; padding-left:17px; color:var(--ink-2); max-width:none}
+.domain li{margin-bottom:3px}
+
+.persona{background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--accent); border-radius:0 4px 4px 0; padding:15px 18px}
+.persona h4{margin:0 0 2px; font-size:15.5px; font-weight:600}
+.persona .role{font-family:var(--mono); font-size:11px; color:var(--ink-3); letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:9px}
+.persona p{font-size:14px; margin:0 0 8px; color:var(--ink-2); max-width:none}
+.persona .job{font-size:13.5px; color:var(--ink-2); border-top:1px dashed var(--rule); padding-top:8px; margin:0}
+.persona .job b{font-weight:600; color:var(--ink)}
+
+.tablewrap{overflow-x:auto; margin:0 0 18px; border:1px solid var(--rule); border-radius:4px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:13.7px; min-width:520px}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:500; background:var(--surface-2); border-bottom:1px solid var(--rule); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+td.id, td.num{font-family:var(--mono); font-size:12.5px; white-space:nowrap; color:var(--ink-2); font-variant-numeric:tabular-nums}
+
+.pill{
+  display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:.07em;
+  text-transform:uppercase; padding:2px 7px; border-radius:2px; white-space:nowrap; font-weight:500;
+}
+.pill.must{background:var(--crit-soft); color:var(--crit)}
+.pill.should{background:var(--signal-soft); color:var(--signal)}
+.pill.could{background:var(--surface-3); color:var(--ink-2)}
+.pill.ok{background:var(--ok-soft); color:var(--ok)}
+.pill.acc{background:var(--accent-soft); color:var(--accent)}
+
+.tree{
+  font-family:var(--mono); font-size:12.6px; line-height:1.85; background:var(--surface);
+  border:1px solid var(--rule); border-radius:4px; padding:16px 18px; overflow-x:auto;
+  white-space:pre; color:var(--ink-2); margin:0 0 18px;
+}
+.tree b{color:var(--ink); font-weight:500}
+.tree i{color:var(--ink-3); font-style:normal}
+
+.note{
+  background:var(--signal-soft); border:1px solid color-mix(in srgb, var(--signal) 28%, transparent);
+  border-radius:4px; padding:13px 16px; font-size:14px; color:var(--ink-2); margin:0 0 18px;
+}
+.note b{color:var(--ink)}
+.note .lbl{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--signal); display:block; margin-bottom:4px}
+
+.phase{display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:start; padding:16px 0; border-bottom:1px solid var(--rule-soft)}
+.phase:last-child{border-bottom:none}
+.phase .marker{
+  font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ground); background:var(--accent); padding:4px 9px; border-radius:2px; white-space:nowrap; margin-top:2px;
+}
+.phase h4{margin:0 0 4px; font-size:15.5px; font-weight:600}
+.phase .dur{font-family:var(--mono); font-size:11.5px; color:var(--ink-3); margin-left:8px; font-weight:400}
+.phase p{font-size:14px; color:var(--ink-2); margin:0 0 6px; max-width:none}
+.phase ul{font-size:13.7px; margin:0; padding-left:18px; color:var(--ink-2); max-width:none}
+
+footer.doc{border-top:1px solid var(--rule); margin-top:64px; padding-top:22px; font-size:13px; color:var(--ink-3); max-width:70ch}
+footer.doc p{max-width:none; margin-bottom:8px}
+@media print{ nav.toc{display:none} .layout{grid-template-columns:1fr} }
+@media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important} }
+</style>
+
+<div class="shell">
+
+<header class="masthead">
+  <div class="eyebrow">
+    <span><span class="dot"></span> Fachkonzept</span>
+    <span>Version 1.0 — vereinfachte Fassung</span>
+    <span>02.09.2026</span>
+  </div>
+  <h1>Cyber-X-Hub</h1>
+  <p class="standfirst">Ein von einer Person herausgegebenes Fachportal, das den Cyberversicherungsmarkt DACH als zusammenhängendes System abbildet: wer Risiko trägt, wer vermittelt, wer reguliert, wo Kapital hinfließt — jede Zahl mit Quelle und Stand.</p>
+
+  <dl class="docmeta">
+    <div><dt>Arbeitstitel</dt><dd>Cyber-X-Hub</dd></div>
+    <div><dt>Herausgeber</dt><dd>Eine Person, keine Redaktion</dd></div>
+    <div><dt>Marktfokus</dt><dd>DACH + globaler Kontext</dd></div>
+    <div><dt>Leser</dt><dd>Versicherung &amp; Investoren</dd></div>
+    <div><dt>Pflege</dt><dd>Kuratiert + Feed-Vorschläge</dd></div>
+    <div><dt>Prototyp</dt><dd>Erster Entwurf liegt vor</dd></div>
+  </dl>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="Kapitelübersicht">
+  <h2>Inhalt</h2>
+  <ol>
+    <li><a href="#k1"><span>01</span> Ziel und Leitidee</a></li>
+    <li><a href="#k2"><span>02</span> Leser und Leitfragen</a></li>
+    <li><a href="#k3"><span>03</span> Umfang und Abgrenzung</a></li>
+    <li><a href="#k4"><span>04</span> Sechs Domänen</a></li>
+    <li><a href="#k5"><span>05</span> Seitenstruktur</a></li>
+    <li><a href="#k6"><span>06</span> Datenmodell</a></li>
+    <li><a href="#k7"><span>07</span> Quellen und Pflege</a></li>
+    <li><a href="#k8"><span>08</span> Anforderungen</a></li>
+    <li><a href="#k9"><span>09</span> Rechtlicher Rahmen</a></li>
+    <li><a href="#k10"><span>10</span> Technik</a></li>
+    <li><a href="#k11"><span>11</span> Umsetzung</a></li>
+    <li><a href="#k12"><span>12</span> Offene Punkte</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section class="chapter" id="k1">
+  <h2><span class="num">01</span> Ziel und Leitidee</h2>
+  <p>Informationen zum Cyberversicherungsmarkt liegen verstreut vor — Prämien- und Schadendaten beim Verband und bei Rückversicherern, Bedrohungslage bei Behörden und Incident-Response-Anbietern, Regulierung in EU-Richtlinien und Umsetzungsgesetzen, Kapitalmarktbewegungen in ILS-Fachmedien. Wer den Markt als Ganzes verstehen will, muss das selbst zusammenführen.</p>
+  <p>Der <b>Cyber-X-Hub</b> führt es zusammen. Er ist kein Nachrichtenportal und kein Vergleichsrechner, sondern ein <b>gepflegtes Bezugssystem</b>: Akteure, Kennzahlen, Rechtsakte und Meldungen, untereinander verknüpft, jede Angabe mit Quelle und Stichtag.</p>
+  <ul>
+    <li><b>Vollständigkeit vor Aktualität</b> bei Stammdaten — eine belastbare Landkarte schlägt einen lückenhaften Ticker.</li>
+    <li><b>Aktualität vor Tiefe</b> bei Meldungen — Datum, Quelle, ein Satz Einordnung.</li>
+    <li><b>Nachvollziehbarkeit vor Meinung</b> — Fakten und Einordnung des Herausgebers sind sichtbar getrennt.</li>
+  </ul>
+  <p>Erfolg heißt nach zwölf Monaten: rund 150 gepflegte Akteure, 100 % der Kennzahlen mit Quelle und Stichtag, Rechtsakte innerhalb einer Woche nach Verkündung erfasst, und Zitationen der Seite in Präsentationen und Fachbeiträgen.</p>
+</section>
+
+<section class="chapter" id="k2">
+  <h2><span class="num">02</span> Leser und Leitfragen</h2>
+  <p class="lede">Zwei Lesergruppen, beide mit Vorwissen. Die Seite erklärt keine Grundbegriffe, sie liefert Struktur, Zahlen und Belege.</p>
+  <div class="grid two">
+    <div class="persona">
+      <h4>Versicherungsfachleute</h4>
+      <span class="role">Underwriting, Produkt, Makler</span>
+      <p>Zeichnen, platzieren oder steuern Cyber-Risiko und beobachten Wettbewerb, Bedingungen und Schadenlage.</p>
+      <p class="job"><b>Leitfrage:</b> Wer zeichnet was in welcher Größenordnung, wie entwickeln sich Ausschlüsse und Schadenquoten, welche Pflicht aus NIS2 oder DORA erzeugt gerade Nachfrage?</p>
+    </div>
+    <div class="persona">
+      <h4>Investoren und Analysten</h4>
+      <span class="role">Investmenthäuser, PE/VC, Research</span>
+      <p>Bewerten Spezialversicherer, MGA-Plattformen, Security-Anbieter und ILS-Strukturen.</p>
+      <p class="job"><b>Leitfrage:</b> Wo steht der Markt im Zyklus, wer gewinnt Anteile, welche Übernahmen, Finanzierungen und Kapazitätspartnerschaften deuten auf Konsolidierung?</p>
+    </div>
+  </div>
+
+  <h3><span class="sub">2.1</span> Leitszenarien</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>ID</th><th>Leser will</th><th>Seite liefert</th></tr></thead>
+      <tbody>
+        <tr><td class="id">S-1</td><td>in zehn Minuten ein Bild des DACH-Markts</td><td>Radar-Startseite: Leitkennzahlen, Zyklus, Top-Meldungen, nächste Frist</td></tr>
+        <tr><td class="id">S-2</td><td>die größten Cyber-Risikoträger und ihr Geschäft sehen</td><td>Akteursverzeichnis, gefiltert nach Rolle, sortiert nach Kennzahl</td></tr>
+        <tr><td class="id">S-3</td><td>wissen, was regulatorisch in zwölf Monaten kommt</td><td>Regulierungs-Zeitachse mit Fristen und Betroffenenkreis</td></tr>
+        <tr><td class="id">S-4</td><td>alle Kapitalmarkttransaktionen im Cyber-Segment</td><td>Kapital-Tracker: M&amp;A, Runden, ILS-Emissionen, Export</td></tr>
+        <tr><td class="id">S-5</td><td>eine belegbare Zahl für eine Präsentation</td><td>Kennzahl mit Wert, Stichtag, Erhebungsbasis, Quelle, Zitiervorschlag</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="chapter" id="k3">
+  <h2><span class="num">03</span> Umfang und Abgrenzung</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th style="width:50%">Im Umfang</th><th>Nicht im Umfang</th></tr></thead>
+      <tbody>
+        <tr><td>Akteursverzeichnis über sechs Domänen</td><td>Tarifrechner, Angebotsvergleich, Vermittlung</td></tr>
+        <tr><td>Marktkennzahlen mit Zeitreihe und Quelle</td><td>Anlageberatung, Kursziele, Kauf-/Verkaufsurteile</td></tr>
+        <tr><td>Regulierungs-Zeitachse mit Versicherungsrelevanz</td><td>Rechtsberatung im Einzelfall</td></tr>
+        <tr><td>Kapital-Tracker: M&amp;A, Funding, Cyber-ILS</td><td>Ungefilterter automatischer Newsfeed</td></tr>
+        <tr><td>Kuratierte Meldungen mit Einordnung</td><td>Bedingungsvergleich einzelner Policen</td></tr>
+        <tr><td>Glossar, Methodik, Quellenverzeichnis</td><td>Nutzerkonten, Kommentare, Foren</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <span class="lbl">Grundentscheidung</span>
+    Die rechte Spalte hält die Seite außerhalb der Vermittlungserlaubnis (§ 34d GewO) und außerhalb der Regeln für Anlageempfehlungen. Siehe Kapitel 9.
+  </div>
+</section>
+
+<section class="chapter" id="k4">
+  <h2><span class="num">04</span> Sechs Domänen</h2>
+  <p class="lede">Jeder Inhalt gehört zu einer Domäne. Ein Akteur kann mehrere Rollen tragen — ein Rückversicherer ist Risikoträger und Datenlieferant zugleich —, deshalb sind Rollen Beziehungen, keine Ordner.</p>
+  <div class="grid two">
+    <div class="domain"><span class="tag">D1 — Risikoträger</span><h4>Wer trägt das Risiko</h4><ul><li>Erstversicherer mit Cyber-Portfolio</li><li>Rückversicherer, Retrozession</li><li>Lloyd's-Syndikate, Captives</li></ul></div>
+    <div class="domain"><span class="tag">D2 — Intermediäre</span><h4>Wer vermittelt und zeichnet im Auftrag</h4><ul><li>Industrie- und Spezialmakler</li><li>Assekuradeure und MGAs</li><li>Digitale Plattformen</li></ul></div>
+    <div class="domain"><span class="tag">D3 — Sicherheitsökosystem</span><h4>Wer Risiko bewertet und Schäden bearbeitet</h4><ul><li>Incident Response, Forensik, Krisenkommunikation</li><li>Security-Rating für das Underwriting</li><li>Kumulmodellierung</li></ul></div>
+    <div class="domain"><span class="tag">D4 — Institutionen</span><h4>Wer beaufsichtigt und erhebt</h4><ul><li>Cybersicherheitsbehörden DACH</li><li>Versicherungsaufsicht national und EU</li><li>Verbände, Forschung</li></ul></div>
+    <div class="domain"><span class="tag">D5 — Regulierung</span><h4>Welche Regeln den Markt treiben</h4><ul><li>NIS2 und Umsetzungsgesetze, KRITIS-Dachgesetz</li><li>DORA, Cyber Resilience Act, DSGVO</li><li>Sanktionsrecht bei Lösegeld, Kriegsausschlüsse</li></ul></div>
+    <div class="domain"><span class="tag">D6 — Markt &amp; Kapital</span><h4>Wie viel Geld sich wie bewegt</h4><ul><li>Prämien, Wachstum, Schadenquoten, Zyklus</li><li>Cyber-ILS und Katastrophenanleihen</li><li>M&amp;A, Finanzierungsrunden, Kapazitätspartnerschaften</li></ul></div>
+  </div>
+</section>
+
+<section class="chapter" id="k5">
+  <h2><span class="num">05</span> Seitenstruktur</h2>
+  <p>Die Navigation folgt den Einstiegsfragen: <i>Wie steht der Markt?</i> — <i>Wer ist wer?</i> — <i>Was ändert sich?</i> — <i>Woher stammt das?</i></p>
+  <div class="tree"><b>/</b>                     <i>Radar — Lagebild auf einer Bildschirmhöhe</i>
+├─ <b>/markt</b>            <i>Kennzahlen mit Zeitreihen, Kapital-Tracker</i>
+├─ <b>/akteure</b>          <i>Filterbares Verzeichnis, Profil je Akteur</i>
+├─ <b>/regulierung</b>      <i>Zeitachse der Rechtsakte und Fristen</i>
+├─ <b>/meldungen</b>        <i>Kuratierter Strom, nach Domäne filterbar</i>
+└─ <b>/referenz</b>         <i>Methodik, Quellen, Glossar, Änderungslog</i></div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Seite</th><th>Kernmodule</th></tr></thead>
+      <tbody>
+        <tr><td><b>Radar</b></td><td>Sechs Leitkennzahlen mit Trend und Stichtag, Zyklusanzeige, drei Top-Meldungen, nächste Frist, Einstieg in die Domänen</td></tr>
+        <tr><td><b>Markt</b></td><td>Zeitreihendiagramm, Kennzahlentabelle mit Quelle und Qualitätsstufe, Transaktionstabelle mit Quartalssumme, CSV-Export</td></tr>
+        <tr><td><b>Akteure</b></td><td>Filter nach Domäne, Rolle, Land, Börsennotierung; Tabelle; Profil mit Steckbrief, Beziehungen, Meldungen, Quellen</td></tr>
+        <tr><td><b>Regulierung</b></td><td>Zeitachse mit Status (in Kraft, Frist, im Verfahren); Profil je Rechtsakt mit Betroffenenkreis, Fristenkette, Versicherungsrelevanz</td></tr>
+        <tr><td><b>Meldungen</b></td><td>Datum, Domäne, Einordnung in einem Satz, Primärquelle, verknüpfte Akteure oder Rechtsakte; RSS</td></tr>
+        <tr><td><b>Referenz</b></td><td>Methodik, Quellenverzeichnis mit Lizenzstatus, Glossar, Änderungslog</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Jede Detailseite zeigt ihre Nachbarschaft: ein Akteur seine Kennzahlen, Partner und Meldungen; ein Rechtsakt seine Fristen und betroffenen Akteure; eine Kennzahl ihre Quelle und Definition. Meldungen ohne Verknüpfung zu einem Akteur oder Rechtsakt werden nicht veröffentlicht.</p>
+</section>
+
+<section class="chapter" id="k6">
+  <h2><span class="num">06</span> Datenmodell</h2>
+  <p class="lede">Fünf Entitäten, gespeichert als strukturierte Datensätze. Fließtext ist ein Feld, nicht das Speicherformat.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Entität</th><th>Kernfelder</th><th>Verknüpft mit</th></tr></thead>
+      <tbody>
+        <tr><td><b>Akteur</b></td><td>Name, Sitzland, Konzern, Börsennotierung, Domänen, Rollen, Segmente, Status (aktiv / übernommen / eingestellt), Kurzbeschreibung, letzte Prüfung</td><td>Kennzahlen, andere Akteure (Kapazität, Beteiligung, Partnerschaft), Rechtsakte, Meldungen</td></tr>
+        <tr><td><b>Kennzahl</b></td><td>Bezeichnung, Definition, Wert, Einheit, Periode, Stichtag, Region, Bezug (Markt oder Akteur), Erhebungsbasis, Qualitätsstufe</td><td>Quelle, Glossar</td></tr>
+        <tr><td><b>Rechtsakt</b></td><td>Kurzname, Jurisdiktion, Status, Verkündung, Inkrafttreten, Fristen, Betroffenenkreis, Sanktionsrahmen, Versicherungsrelevanz, Fundstelle</td><td>Institutionen, Akteure, Meldungen</td></tr>
+        <tr><td><b>Meldung</b></td><td>Titel, Datum, Domäne, Typ (Nachricht, Transaktion, Regulierungsschritt), Zusammenfassung, Einordnung, Volumen und Beteiligte bei Transaktionen</td><td>mindestens ein Akteur oder Rechtsakt, Quelle</td></tr>
+        <tr><td><b>Quelle</b></td><td>Titel, Herausgeber, Typ (Primär, Sekundär, Eigenerhebung), URL, Abrufdatum, Lizenzstatus</td><td>belegt alle anderen Entitäten</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Transaktionen sind Meldungen vom Typ „Transaktion" mit Zusatzfeldern — das spart eine eigene Entität und hält den Kapital-Tracker trotzdem filterbar.</p>
+</section>
+
+<section class="chapter" id="k7">
+  <h2><span class="num">07</span> Quellen und Pflege</h2>
+  <p class="lede">Der Herausgeber pflegt allein. Der Prozess ist deshalb auf wenige, harte Regeln reduziert, die die Datenqualität auch ohne zweites Augenpaar sichern.</p>
+
+  <h3><span class="sub">7.1</span> Regeln</h3>
+  <ul>
+    <li><b>Quellenpflicht</b> — jede Zahl und jede Tatsachenbehauptung trägt eine Quelle; das Schema lässt nichts anderes zu.</li>
+    <li><b>Stichtagspflicht</b> — jede Kennzahl nennt Periode und Stichtag. „Aktuell" ist kein Wert.</li>
+    <li><b>Qualitätsstufe</b> — <span class="pill ok">geprüft</span> Primärquelle · <span class="pill should">abgeleitet</span> Sekundärquelle oder Schätzung · <span class="pill could">indikativ</span> ohne belastbare Quelle.</li>
+    <li><b>Fakt und Einordnung getrennt</b> — Meinung nur im Feld „Einordnung", sichtbar als solche ausgezeichnet.</li>
+    <li><b>Korrekturen sichtbar</b> — publizierte Zahlen werden nicht still geändert, sondern mit Korrekturvermerk im Änderungslog.</li>
+    <li><b>Nichts automatisch veröffentlichen</b> — Feeds erzeugen Vorschläge, der Herausgeber gibt frei.</li>
+  </ul>
+
+  <h3><span class="sub">7.2</span> Quellenklassen</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Klasse</th><th>Speist</th><th>Bezug</th><th>Rhythmus</th></tr></thead>
+      <tbody>
+        <tr><td>Verbandsstatistik (GDV, Verbände AT/CH)</td><td>Kennzahlen DACH</td><td>manuell</td><td>jährlich</td></tr>
+        <tr><td>Rückversicherer-Research (Cyber-Reports, Surveys)</td><td>Kennzahlen global, Prognosen</td><td>manuell</td><td>halbjährlich</td></tr>
+        <tr><td>Behörden und Aufsicht (BSI, BaFin, EIOPA, ENISA)</td><td>Rechtsakte, Lagebilder</td><td>Feed + manuell</td><td>laufend</td></tr>
+        <tr><td>Amtsblätter (EU, BGBl., AT, CH)</td><td>Rechtsakte, Fristen</td><td>Feed + manuell</td><td>laufend</td></tr>
+        <tr><td>Geschäftsberichte, Ad-hoc-Meldungen</td><td>Akteurs-Kennzahlen</td><td>manuell</td><td>quartalsweise</td></tr>
+        <tr><td>ILS- und Versicherungsfachmedien</td><td>Transaktionen, Meldungen</td><td>Feed</td><td>täglich</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span class="sub">7.3</span> Wochenrhythmus des Herausgebers</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Takt</th><th>Aufgabe</th><th>Aufwand</th></tr></thead>
+      <tbody>
+        <tr><td>Täglich</td><td>Feed-Eingang sichten, 0–3 Meldungen freigeben und verknüpfen</td><td>15–30 Min.</td></tr>
+        <tr><td>Wöchentlich</td><td>Kapital-Tracker nachführen, Fristen prüfen, Änderungslog schreiben</td><td>1–2 Std.</td></tr>
+        <tr><td>Monatlich</td><td>Zehn Akteursprofile prüfen (rollierend), Quellenlinks testen</td><td>3–4 Std.</td></tr>
+        <tr><td>Bei Veröffentlichung</td><td>Neue Verbands- oder Rückversicherungsstatistik einpflegen</td><td>halber Tag</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <span class="lbl">Feed-Strecke</span>
+    Ein Skript ruft RSS-Quellen und Newsroom-Seiten ab, entdoppelt und schlägt Domäne und Akteure vor. Das Ergebnis ist eine Eingangsliste — nichts davon erscheint ohne Freigabe. Kennzahlen werden nie aus Fließtext extrahiert.
+  </div>
+</section>
+
+<section class="chapter" id="k8">
+  <h2><span class="num">08</span> Anforderungen</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>ID</th><th>Anforderung</th><th>Prio</th></tr></thead>
+      <tbody>
+        <tr><td class="id">A-01</td><td>Suche über alle Entitäten mit Typkennzeichnung</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">A-02</td><td>Facettenfilter im Akteursverzeichnis, Zustand in der URL teilbar</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">A-03</td><td>Kennzahl mit Zeitreihe, Quelle, Stichtag, Qualitätsstufe, Zitiervorschlag</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">A-04</td><td>Regulierungs-Zeitachse mit Statusfarben und Filter nach Jurisdiktion</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">A-05</td><td>Querverweise auf jeder Detailseite</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">A-06</td><td>Änderungslog und RSS</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">A-07</td><td>CSV-Export der sichtbaren Tabelle inklusive Quellenspalte</td><td><span class="pill should">soll</span></td></tr>
+        <tr><td class="id">A-08</td><td>Wöchentlicher Marktbrief per E-Mail</td><td><span class="pill should">soll</span></td></tr>
+        <tr><td class="id">A-09</td><td>Englische Fassung der Kernseiten</td><td><span class="pill could">kann</span></td></tr>
+        <tr><td class="id">N-01</td><td>Ladezeit unter 2 s mobil; statische Auslieferung; Inhalte ohne JavaScript lesbar</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">N-02</td><td>WCAG 2.2 AA, Tastaturbedienung, Tabellenalternative zu Diagrammen, helles und dunkles Schema</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">N-03</td><td>Stabile URLs, Versionsstand je Seite, Datenbestand versioniert und rekonstruierbar</td><td><span class="pill must">muss</span></td></tr>
+        <tr><td class="id">N-04</td><td>Keine einwilligungspflichtigen Drittdienste, EU-Hosting, datensparsame Reichweitenmessung</td><td><span class="pill must">muss</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="chapter" id="k9">
+  <h2><span class="num">09</span> Rechtlicher Rahmen</h2>
+  <p class="lede">Prüfpunkte für die rechtliche Begleitung, keine Rechtsberatung. Das Konzept ist so gebaut, dass es die kritischen Schwellen nicht überschreitet.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Feld</th><th>Antwort des Konzepts</th></tr></thead>
+      <tbody>
+        <tr><td><b>Versicherungsvermittlung</b></td><td>Keine Produktempfehlung, kein Anfrageprozess, keine Weiterleitung an Vermittler</td></tr>
+        <tr><td><b>Anlageempfehlungen</b></td><td>Nur beschreibende Darstellung börsennotierter Akteure; keine Kursziele oder Kauf-/Verkaufsurteile; Interessenkonflikte des Herausgebers werden offengelegt</td></tr>
+        <tr><td><b>Urheber- und Datenbankrecht</b></td><td>Einzelwerte mit Quellenangabe; für tabellarische Übernahmen Lizenz einholen oder eigene Berechnung; Lizenzstatus je Quelle dokumentiert</td></tr>
+        <tr><td><b>Marken, Wettbewerb</b></td><td>Firmennamen beschreibend, keine Logos; einheitliche Kriterien für alle Akteure; Korrekturverfahren veröffentlicht</td></tr>
+        <tr><td><b>Impressum, Datenschutz</b></td><td>Vollständiges Impressum mit Herausgeber als Verantwortlichem; Newsletter mit Double-Opt-in; keine Personenprofile</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="chapter" id="k10">
+  <h2><span class="num">10</span> Technik</h2>
+  <p class="lede">So wenig Betrieb wie möglich: kein Server, keine Datenbank, kein Login. Die Datenbasis liegt als Dateien in einem Git-Repository, die Seite wird daraus statisch gebaut.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Schicht</th><th>Lösung</th><th>Warum</th></tr></thead>
+      <tbody>
+        <tr><td>Daten</td><td>Eine JSON- oder YAML-Datei je Entität im Repository, mit Schemaprüfung beim Build</td><td>Versionierung, Diff und Rekonstruktion jedes Standes ohne zusätzliche Software; erzwingt Quellen- und Stichtagspflicht</td></tr>
+        <tr><td>Seite</td><td>Statischer Generator, Build bei jedem Commit, Auslieferung über EU-CDN</td><td>Schnell, ausfallsicher, nahezu kostenlos; keine Wartung im Betrieb</td></tr>
+        <tr><td>Interaktivität</td><td>Filter, Suche und Diagramme als kleine Inseln im Browser; Suchindex zur Buildzeit</td><td>Inhalte bleiben ohne JavaScript lesbar und indexierbar</td></tr>
+        <tr><td>Pflege</td><td>Bearbeitung der Dateien im Editor oder über eine Git-gestützte Oberfläche</td><td>Für eine Person ausreichend; kein CMS-Betrieb</td></tr>
+        <tr><td>Feeds</td><td>Geplantes Skript, mehrmals täglich, schreibt Vorschläge in eine Eingangsdatei</td><td>Trennt Einsammeln von Veröffentlichen</td></tr>
+        <tr><td>Newsletter</td><td>EU-Versanddienst, gespeist aus dem Meldungsarchiv</td><td>Datenschutzanforderung N-04</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="chapter" id="k11">
+  <h2><span class="num">11</span> Umsetzung</h2>
+  <div class="card">
+    <div class="phase">
+      <span class="marker">Jetzt</span>
+      <div>
+        <h4>Prototyp mit Beispieldaten</h4>
+        <p>Liegt als erster Entwurf vor: alle sechs Seiten, Filter, Zeitreihe, Zeitachse, Akteursprofile — mit Beispieldaten, die vor Übernahme zu verifizieren sind.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <span class="marker">Phase 1</span>
+      <div>
+        <h4>Belastbare Datenbasis <span class="dur">6–8 Wochen</span></h4>
+        <ul>
+          <li>Lizenz- und Rechtsfragen aus Kapitel 9 klären, bevor Zahlen übernommen werden</li>
+          <li>60–80 Akteure der Domänen D1 und D2 mit Quelle und Prüfdatum</li>
+          <li>Zehn Rechtsakte mit Fristenkette; Kennzahlenreihen aus Verbands- und Rückversicherungsstatistik</li>
+          <li>Feed-Skript und Domain in Betrieb, Veröffentlichung</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <span class="marker">Phase 2</span>
+      <div>
+        <h4>Investorensicht und Reichweite <span class="dur">danach, fortlaufend</span></h4>
+        <ul>
+          <li>Kapital-Tracker rückwirkend ab 2023 füllen</li>
+          <li>Marktbrief, CSV-Export, englische Kernseiten</li>
+          <li>Domänen D3 bis D6 auf Zielumfang bringen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h3><span class="sub">11.1</span> Größtes Risiko</h3>
+  <p>Eine Person pflegt: Der Bestand veraltet schneller als er wächst, wenn der Umfang zu groß gewählt wird. Gegenmittel ist der Wochenrhythmus aus Kapitel 7.3 und die Regel, lieber 80 gepflegte als 300 verwaiste Profile zu führen. Der sichtbare Prüfstand auf jeder Seite macht Veralterung früh unangenehm — und damit steuerbar.</p>
+</section>
+
+<section class="chapter" id="k12">
+  <h2><span class="num">12</span> Offene Punkte</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>ID</th><th>Frage</th><th>Wirkung</th></tr></thead>
+      <tbody>
+        <tr><td class="id">O-1</td><td>Finanzierung: unabhängig, oder Teil eines eigenen Beratungs- oder Maklerauftritts?</td><td>Bei kommerzieller Nähe sind Transparenzhinweise und Kapitel 3 und 9 neu zu bewerten</td></tr>
+        <tr><td class="id">O-2</td><td>Domain und Markenprüfung für „Cyber-X-Hub"</td><td>Vor Veröffentlichung</td></tr>
+        <tr><td class="id">O-3</td><td>Lizenz für Verbands- und Rückversicherungsstatistiken anfragen oder auf Eigenberechnung setzen?</td><td>Bestimmt Aussagekraft und Aufwand der Kennzahlen</td></tr>
+        <tr><td class="id">O-4</td><td>Österreich und Schweiz gleichwertig oder als Beobachtungsmärkte?</td><td>Quellenaufwand in drei Jurisdiktionen</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="doc">
+  <p><b>Fachkonzept Cyber-X-Hub</b> — Version 1.0, vereinfachte Fassung, Stand 2. September 2026.</p>
+  <p>Kapitel 9 benennt rechtliche Prüfpunkte und ersetzt keine Rechtsberatung.</p>
+</footer>
+
+</main>
+</div>
+</div>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.chapter'));
+  if(!('IntersectionObserver' in window) || !sections.length) return;
+  var visible = new Set();
+  function paint(){
+    var active = null;
+    for(var i=0;i<sections.length;i++){ if(visible.has(sections[i].id)){ active = sections[i].id; break; } }
+    links.forEach(function(a){ a.classList.remove('is-current'); });
+    if(active && map[active]) map[active].classList.add('is-current');
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id); });
+    paint();
+  }, { rootMargin: '-8% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s){ io.observe(s); });
+})();
+</script>

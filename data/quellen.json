@@ -1,0 +1,100 @@
+{
+ "mre26": {
+  "t": "Cyber Insurance: Risks and Trends 2026",
+  "h": "Munich Re",
+  "u": "https://www.munichre.com/en/insights/cyber/cyber-insurance-risks-and-trends-2026.html",
+  "typ": "Sekundär (Rückversicherer-Research)",
+  "liz": "Zitat einzelner Werte"
+ },
+ "mresurv": {
+  "t": "Global Cyber Risk and Insurance Survey 2026",
+  "h": "Munich Re",
+  "u": "https://www.munichre.com/en/insights/cyber/global-cyber-risk-and-insurance-survey-2026.html",
+  "typ": "Sekundär",
+  "liz": "Zitat einzelner Werte"
+ },
+ "gdvcyber": {
+  "t": "Geschäftsentwicklung in der Cyberrisikoversicherung",
+  "h": "GDV",
+  "u": "https://www.gdv.de/gdv/statistik/statistiken-zur-deutschen-versicherungswirtschaft-uebersicht/schaden-und-unfallversicherung/geschaeftsentwicklung-in-der-cyberrisikoversicherung-181896",
+  "typ": "Primär (Verbandsstatistik)",
+  "liz": "offen — Lizenzanfrage (O-3)"
+ },
+ "gdvpm": {
+  "t": "Cyberversicherer kehren in die Gewinnzone zurück",
+  "h": "GDV Medieninformation",
+  "u": "https://www.gdv.de/gdv/medien/medieninformationen/cyberversicherer-kehren-in-die-gewinnzone-zurueck-markt-waechst-weiter--147652",
+  "typ": "Primär (Pressemitteilung)",
+  "liz": "Zitat"
+ },
+ "openkritis": {
+  "t": "NIS2-Umsetzungsgesetz in Deutschland",
+  "h": "OpenKRITIS",
+  "u": "https://www.openkritis.de/it-sicherheitsgesetz/nis2-umsetzung-gesetz-cybersicherheit.html",
+  "typ": "Sekundär (Fachportal)",
+  "liz": "Zitat"
+ },
+ "btkritis": {
+  "t": "Bundestag beschließt Gesetz zur Stärkung kritischer Anlagen",
+  "h": "Deutscher Bundestag",
+  "u": "https://www.bundestag.de/dokumente/textarchiv/2026/kw05-de-kritische-infrastruktur-1137002",
+  "typ": "Primär (Parlament)",
+  "liz": "amtlich"
+ },
+ "artemis": {
+  "t": "Cyber ILS — Themenseite",
+  "h": "Artemis.bm",
+  "u": "https://www.artemis.bm/news/topic/cyber-ils/",
+  "typ": "Sekundär (ILS-Fachmedium)",
+  "liz": "Zitat"
+ },
+ "geneva": {
+  "t": "Catalysing Cyber Risk Transfer to Capital Markets",
+  "h": "The Geneva Association",
+  "u": "https://www.genevaassociation.org/publication/cyber/catalysing-cyber-risk-transfer-capital-markets-catastrophe-bonds-and-beyond-0",
+  "typ": "Sekundär (Forschung)",
+  "liz": "Zitat"
+ },
+ "ctacq": {
+  "t": "Specialty Insurance MGA Report 2026",
+  "h": "CT Acquisitions",
+  "u": "https://ctacquisitions.com/guides/specialty-insurance-mga-2026/",
+  "typ": "Sekundär",
+  "liz": "Zitat"
+ },
+ "coalclaims": {
+  "t": "Cyber Claims Report 2026",
+  "h": "Coalition",
+  "u": "",
+  "typ": "Sekundär (Unternehmenspublikation)",
+  "liz": "Zitat"
+ },
+ "eurlex": {
+  "t": "EUR-Lex — Amtsblatt der EU",
+  "h": "Europäische Union",
+  "u": "https://eur-lex.europa.eu/",
+  "typ": "Primär (Amtsblatt)",
+  "liz": "amtlich"
+ },
+ "bgbl": {
+  "t": "Bundesgesetzblatt",
+  "h": "Bundesanzeiger Verlag",
+  "u": "https://www.recht.bund.de/",
+  "typ": "Primär (Amtsblatt)",
+  "liz": "amtlich"
+ },
+ "ambest26": {
+  "t": "Munich Re, Lloyd's Top List of 50 Largest Global Reinsurers: AM Best",
+  "h": "Insurance Journal",
+  "u": "https://www.insurancejournal.com/news/international/2026/08/18/881981.htm",
+  "typ": "Sekundär (Fachmedium)",
+  "liz": "Zitat"
+ },
+ "gb": {
+  "t": "Geschäftsberichte und Unternehmensangaben",
+  "h": "jeweiliger Akteur",
+  "u": "",
+  "typ": "Primär (Unternehmen)",
+  "liz": "Zitat"
+ }
+}

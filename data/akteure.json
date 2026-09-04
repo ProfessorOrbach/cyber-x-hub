@@ -1,0 +1,984 @@
+[
+ {
+  "id": "allianz-commercial",
+  "n": "Allianz Commercial",
+  "land": "DE",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Großkunden",
+  "konz": "Allianz SE",
+  "boerse": "ALV (Xetra)",
+  "status": "aktiv",
+  "b": "Industrie- und Großkundensparte der Allianz. Zeichnet Cyber-Deckungen für mittlere und große Unternehmen; Kapazitätsgeber für MGA-Programme.",
+  "rel": [
+   {
+    "k": "Kapazität für",
+    "z": "coalition"
+   },
+   {
+    "k": "Konzern",
+    "z": "allianz-x"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "munich-re",
+  "n": "Munich Re",
+  "land": "DE",
+  "dom": [
+   "D1",
+   "D6"
+  ],
+  "rollen": [
+   "Rückversicherer",
+   "Erstversicherer",
+   "Datenlieferant"
+  ],
+  "seg": "Rückversicherung, Spezialgeschäft",
+  "konz": "Münchener Rück AG",
+  "boerse": "MUV2 (Xetra)",
+  "status": "aktiv",
+  "b": "Weltweit einer der größten Cyber-Rückversicherer. Veröffentlicht jährlich Marktschätzungen und Trendberichte, die als Referenz für das globale Prämienvolumen dienen.",
+  "rel": [
+   {
+    "k": "Beteiligung",
+    "z": "ergo"
+   },
+   {
+    "k": "Kapazität für",
+    "z": "beazley"
+   }
+  ],
+  "q": [
+   "mre26",
+   "gb"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "hannover-rueck",
+  "n": "Hannover Rück",
+  "land": "DE",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Rückversicherer"
+  ],
+  "seg": "Rückversicherung",
+  "konz": "Talanx / HDI",
+  "boerse": "HNR1 (Xetra)",
+  "status": "aktiv",
+  "b": "Drittgrößter Rückversicherer weltweit; Cyber als wachsendes Segment innerhalb der Schaden-Rückversicherung.",
+  "rel": [
+   {
+    "k": "Konzern",
+    "z": "hdi-global"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "swiss-re",
+  "n": "Swiss Re",
+  "land": "CH",
+  "dom": [
+   "D1",
+   "D6"
+  ],
+  "rollen": [
+   "Rückversicherer",
+   "Datenlieferant"
+  ],
+  "seg": "Rückversicherung, Corporate Solutions",
+  "konz": "Swiss Re AG",
+  "boerse": "SREN (SIX)",
+  "status": "aktiv",
+  "b": "Rückversicherer mit eigenem Research-Institut (sigma); Kapazitätspartner mehrerer Cyber-MGAs.",
+  "rel": [
+   {
+    "k": "Kapazität für",
+    "z": "coalition"
+   }
+  ],
+  "q": [
+   "ctacq",
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "hdi-global",
+  "n": "HDI Global",
+  "land": "DE",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Mittelstand",
+  "konz": "Talanx AG",
+  "boerse": "TLX (Xetra)",
+  "status": "aktiv",
+  "b": "Industrieversicherer der Talanx-Gruppe; Cyber-Deckungen für Industrie und gehobenen Mittelstand in DACH und international.",
+  "rel": [
+   {
+    "k": "Konzern",
+    "z": "hannover-rueck"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "axa-xl",
+  "n": "AXA XL",
+  "land": "FR",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Großkunden",
+  "konz": "AXA S.A.",
+  "boerse": "CS (Euronext)",
+  "status": "aktiv",
+  "b": "Industrie- und Spezialversicherungssparte der AXA; internationaler Cyber-Zeichner mit DACH-Niederlassungen.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "zurich",
+  "n": "Zurich Insurance",
+  "land": "CH",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Mittelstand",
+  "konz": "Zurich Insurance Group",
+  "boerse": "ZURN (SIX)",
+  "status": "aktiv",
+  "b": "Schweizer Erstversicherer mit globalem Cyber-Geschäft; im DACH-Markt über Zurich Deutschland und Zurich Schweiz aktiv.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "chubb",
+  "n": "Chubb",
+  "land": "CH",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Mittelstand",
+  "konz": "Chubb Ltd.",
+  "boerse": "CB (NYSE)",
+  "status": "aktiv",
+  "b": "Einer der größten Cyber-Erstversicherer weltweit; in DACH über Chubb European Group.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "beazley",
+  "n": "Beazley",
+  "land": "UK",
+  "dom": [
+   "D1",
+   "D6"
+  ],
+  "rollen": [
+   "Lloyd's-Syndikat",
+   "Erstversicherer",
+   "ILS-Sponsor"
+  ],
+  "seg": "Spezialversicherung, Cyber",
+  "konz": "Beazley plc",
+  "boerse": "BEZ (LSE)",
+  "status": "aktiv",
+  "b": "Lloyd's-Spezialversicherer mit Cyber als größter Sparte; Sponsor der ersten öffentlich platzierten Cyber-Katastrophenanleihe (PoleStar Re).",
+  "rel": [
+   {
+    "k": "Markt",
+    "z": "lloyds"
+   },
+   {
+    "k": "Rückdeckung",
+    "z": "munich-re"
+   }
+  ],
+  "q": [
+   "artemis",
+   "gb"
+  ],
+  "pr": "2026-08-10"
+ },
+ {
+  "id": "hiscox",
+  "n": "Hiscox",
+  "land": "UK",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer",
+   "Lloyd's-Syndikat"
+  ],
+  "seg": "KMU, Freiberufler",
+  "konz": "Hiscox Ltd.",
+  "boerse": "HSX (LSE)",
+  "status": "aktiv",
+  "b": "Spezialversicherer mit starkem KMU-Cyber-Geschäft; in Deutschland früh mit standardisierten Cyber-Policen am Markt.",
+  "rel": [
+   {
+    "k": "Markt",
+    "z": "lloyds"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "r-v",
+  "n": "R+V Versicherung",
+  "land": "DE",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "KMU, Mittelstand",
+  "konz": "DZ BANK Gruppe",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Genossenschaftlicher Versicherer; Cyber-Deckungen für Mittelstand über den Bankvertrieb der Volks- und Raiffeisenbanken.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "ergo",
+  "n": "ERGO",
+  "land": "DE",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "KMU, Gewerbe",
+  "konz": "Munich Re",
+  "boerse": "über MUV2",
+  "status": "aktiv",
+  "b": "Erstversicherer der Munich-Re-Gruppe; Cyber im Gewerbekundengeschäft.",
+  "rel": [
+   {
+    "k": "Konzern",
+    "z": "munich-re"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "helvetia",
+  "n": "Helvetia Baloise",
+  "land": "CH",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "KMU, Mittelstand",
+  "konz": "Helvetia Baloise Holding",
+  "boerse": "SIX",
+  "status": "aktiv",
+  "b": "Aus der Fusion von Helvetia und Baloise hervorgegangener Schweizer Allbranchenversicherer mit Cyber-Angebot für KMU in CH, AT und DE.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "aig",
+  "n": "AIG",
+  "land": "US",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Großkunden",
+  "konz": "American International Group",
+  "boerse": "AIG (NYSE)",
+  "status": "aktiv",
+  "b": "Einer der ersten Cyber-Zeichner weltweit; in DACH über AIG Europe im Industrie- und Großkundengeschäft aktiv.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-02"
+ },
+ {
+  "id": "scor",
+  "n": "SCOR",
+  "land": "FR",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Rückversicherer"
+  ],
+  "seg": "Rückversicherung",
+  "konz": "SCOR SE",
+  "boerse": "SCR (Euronext)",
+  "status": "aktiv",
+  "b": "Viertgrößter europäischer Rückversicherer; Cyber-Kapazität mit selektiver Zeichnungspolitik.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-02"
+ },
+ {
+  "id": "lloyds",
+  "n": "Lloyd's of London",
+  "land": "UK",
+  "dom": [
+   "D1",
+   "D4"
+  ],
+  "rollen": [
+   "Versicherungsmarkt",
+   "Standardsetzer"
+  ],
+  "seg": "Spezialversicherung",
+  "konz": "—",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Versicherungsmarkt, über den ein wesentlicher Teil der globalen Cyber-Kapazität gezeichnet wird. Setzt mit Marktbulletins Standards, etwa zu Kriegsausschlüssen.",
+  "rel": [
+   {
+    "k": "Syndikat",
+    "z": "beazley"
+   },
+   {
+    "k": "Syndikat",
+    "z": "hiscox"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-08-10"
+ },
+ {
+  "id": "aon",
+  "n": "Aon",
+  "land": "IE",
+  "dom": [
+   "D2",
+   "D6"
+  ],
+  "rollen": [
+   "Makler",
+   "Rückversicherungsmakler",
+   "Datenlieferant"
+  ],
+  "seg": "Industrie, Großkunden",
+  "konz": "Aon plc",
+  "boerse": "AON (NYSE)",
+  "status": "aktiv",
+  "b": "Globaler Makler mit Cyber-Spezialteams und eigenem Marktreporting; Rückversicherungsmakler über Aon Reinsurance Solutions.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "marsh",
+  "n": "Marsh",
+  "land": "US",
+  "dom": [
+   "D2",
+   "D6"
+  ],
+  "rollen": [
+   "Makler",
+   "Datenlieferant"
+  ],
+  "seg": "Industrie, Großkunden",
+  "konz": "Marsh McLennan",
+  "boerse": "MMC (NYSE)",
+  "status": "aktiv",
+  "b": "Größter Versicherungsmakler weltweit; veröffentlicht regelmäßig Ratenindizes, die als Zyklusindikator dienen.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-07-30"
+ },
+ {
+  "id": "wtw",
+  "n": "WTW",
+  "land": "UK",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Makler"
+  ],
+  "seg": "Industrie",
+  "konz": "Willis Towers Watson",
+  "boerse": "WTW (Nasdaq)",
+  "status": "aktiv",
+  "b": "Globaler Makler und Beratungshaus; Cyber-Placement und Risikoquantifizierung.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "howden",
+  "n": "Howden",
+  "land": "UK",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Makler"
+  ],
+  "seg": "Industrie, Mittelstand",
+  "konz": "Howden Group (privat)",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Schnell wachsender Makler mit Zukäufen in DACH; eigenes Cyber-Team und Marktberichte.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "funk",
+  "n": "Funk Gruppe",
+  "land": "DE",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Makler"
+  ],
+  "seg": "Industrie, Mittelstand",
+  "konz": "familiengeführt",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Größter inhabergeführter Industriemakler Deutschlands mit Cyber-Kompetenzzentrum.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "ecclesia",
+  "n": "Ecclesia Gruppe",
+  "land": "DE",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Makler"
+  ],
+  "seg": "Industrie, Gesundheitswesen, Kirche",
+  "konz": "Ecclesia Holding",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Einer der größten deutschen Makler; Cyber-Schwerpunkt unter anderem im Gesundheitswesen.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "mrh-trowe",
+  "n": "MRH Trowe",
+  "land": "DE",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Makler"
+  ],
+  "seg": "Mittelstand",
+  "konz": "PE-finanziert",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Konsolidierungsplattform im deutschen Maklermarkt mit zahlreichen Zukäufen; Cyber als Wachstumssparte.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "coalition",
+  "n": "Coalition",
+  "land": "US",
+  "dom": [
+   "D2",
+   "D3",
+   "D6"
+  ],
+  "rollen": [
+   "MGA",
+   "Technologieanbieter",
+   "Datenlieferant"
+  ],
+  "seg": "KMU, Mittelstand",
+  "konz": "privat (VC-finanziert)",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Größter Cyber-MGA; verbindet Zeichnung mit laufendem Sicherheits-Monitoring. Kapazität von mehreren Rück- und Erstversicherern; veröffentlicht jährlich einen Claims Report.",
+  "rel": [
+   {
+    "k": "Kapazität von",
+    "z": "allianz-commercial"
+   },
+   {
+    "k": "Kapazität von",
+    "z": "swiss-re"
+   },
+   {
+    "k": "Investor",
+    "z": "allianz-x"
+   }
+  ],
+  "q": [
+   "ctacq",
+   "coalclaims"
+  ],
+  "pr": "2026-08-10"
+ },
+ {
+  "id": "at-bay",
+  "n": "At-Bay",
+  "land": "US",
+  "dom": [
+   "D2",
+   "D3"
+  ],
+  "rollen": [
+   "MGA",
+   "Technologieanbieter"
+  ],
+  "seg": "KMU, Mittelstand",
+  "konz": "privat (VC-finanziert)",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Cyber-MGA mit eigener Sicherheitsplattform; Kapazität über private Trägerarrangements.",
+  "rel": [],
+  "q": [
+   "ctacq"
+  ],
+  "pr": "2026-08-10"
+ },
+ {
+  "id": "finlex",
+  "n": "Finlex",
+  "land": "DE",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Plattform",
+   "Assekuradeur"
+  ],
+  "seg": "Makler (B2B2B)",
+  "konz": "privat",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Digitale Plattform für Financial Lines und Cyber, über die Makler Deckungen mehrerer Versicherer ausschreiben und platzieren.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "cyberdirekt",
+  "n": "CyberDirekt",
+  "land": "DE",
+  "dom": [
+   "D2"
+  ],
+  "rollen": [
+   "Spezialmakler",
+   "Plattform"
+  ],
+  "seg": "KMU",
+  "konz": "privat",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Spezialmakler und Vergleichsplattform für Cyber-Deckungen im KMU-Segment.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-06-15"
+ },
+ {
+  "id": "allianz-x",
+  "n": "Allianz X",
+  "land": "DE",
+  "dom": [
+   "D6"
+  ],
+  "rollen": [
+   "Investor"
+  ],
+  "seg": "Wagniskapital",
+  "konz": "Allianz SE",
+  "boerse": "über ALV",
+  "status": "aktiv",
+  "b": "Beteiligungsarm der Allianz; investiert in Insurtechs und Cyber-Plattformen.",
+  "rel": [
+   {
+    "k": "Beteiligung",
+    "z": "coalition"
+   },
+   {
+    "k": "Konzern",
+    "z": "allianz-commercial"
+   }
+  ],
+  "q": [
+   "ctacq"
+  ],
+  "pr": "2026-08-10"
+ },
+ {
+  "id": "hisolutions",
+  "n": "HiSolutions",
+  "land": "DE",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Incident Response",
+   "Beratung"
+  ],
+  "seg": "Mittelstand, öffentliche Hand",
+  "konz": "privat",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Deutsches Sicherheitsberatungshaus mit Incident-Response-Team; von Versicherern als Schadendienstleister eingesetzt.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "cybercube",
+  "n": "CyberCube",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Kumulmodellierer"
+  ],
+  "seg": "Versicherer, Rückversicherer",
+  "konz": "privat",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Anbieter von Cyber-Kumulmodellen für Portfoliosteuerung und Rückversicherungseinkauf.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "bitsight",
+  "n": "Bitsight",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Security-Rating"
+  ],
+  "seg": "Versicherer, Unternehmen",
+  "konz": "privat",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Außenperspektiven-Rating der Sicherheitslage von Unternehmen; im Underwriting als Triage-Instrument verbreitet.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "crowdstrike",
+  "n": "CrowdStrike",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Endpoint-Sicherheit",
+   "Incident Response"
+  ],
+  "seg": "Unternehmen",
+  "konz": "CrowdStrike Holdings",
+  "boerse": "CRWD (Nasdaq)",
+  "status": "aktiv",
+  "b": "Endpoint-Sicherheitsplattform und IR-Dienstleister; Referenzfall für Systemrisiko aus Softwareabhängigkeit (Ausfall Juli 2024).",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "mandiant",
+  "n": "Mandiant (Google Cloud)",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Incident Response",
+   "Threat Intelligence"
+  ],
+  "seg": "Großunternehmen",
+  "konz": "Alphabet",
+  "boerse": "GOOGL (Nasdaq)",
+  "status": "aktiv",
+  "b": "Incident-Response- und Threat-Intelligence-Anbieter; Panel-Dienstleister vieler Cyber-Versicherer.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "bsi",
+  "n": "Bundesamt für Sicherheit in der Informationstechnik (BSI)",
+  "land": "DE",
+  "dom": [
+   "D4"
+  ],
+  "rollen": [
+   "Behörde",
+   "Aufsicht NIS2"
+  ],
+  "seg": "—",
+  "konz": "BMI",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Nationale Cybersicherheitsbehörde; zuständige Stelle für Registrierung und Aufsicht nach dem NIS2-Umsetzungsgesetz, Herausgeber des jährlichen Lageberichts.",
+  "rel": [],
+  "q": [
+   "openkritis"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "bafin",
+  "n": "BaFin",
+  "land": "DE",
+  "dom": [
+   "D4"
+  ],
+  "rollen": [
+   "Versicherungsaufsicht",
+   "Aufsicht DORA"
+  ],
+  "seg": "—",
+  "konz": "BMF",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Aufsicht über Versicherer und Finanzunternehmen; zuständig für DORA-Aufsicht und aufsichtliche Erwartungen an die Cyber-Zeichnung.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "eiopa",
+  "n": "EIOPA",
+  "land": "EU",
+  "dom": [
+   "D4"
+  ],
+  "rollen": [
+   "EU-Versicherungsaufsicht"
+  ],
+  "seg": "—",
+  "konz": "EU",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Europäische Versicherungsaufsicht; Arbeiten zu Cyber-Underwriting, Systemrisiko und Datenerhebung im Cyber-Segment.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "enisa",
+  "n": "ENISA",
+  "land": "EU",
+  "dom": [
+   "D4"
+  ],
+  "rollen": [
+   "EU-Cybersicherheitsagentur"
+  ],
+  "seg": "—",
+  "konz": "EU",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "EU-Agentur für Cybersicherheit; Bedrohungslandschaft, Leitlinien zur NIS2-Umsetzung.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "gdv",
+  "n": "GDV",
+  "land": "DE",
+  "dom": [
+   "D4",
+   "D6"
+  ],
+  "rollen": [
+   "Verband",
+   "Statistikstelle"
+  ],
+  "seg": "—",
+  "konz": "—",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Gesamtverband der Versicherer; erhebt die Verbandsstatistik zur Cyberrisikoversicherung und veröffentlicht Musterbedingungen.",
+  "rel": [],
+  "q": [
+   "gdvcyber",
+   "gdvpm"
+  ],
+  "pr": "2026-08-20"
+ },
+ {
+  "id": "bacs",
+  "n": "Bundesamt für Cybersicherheit (BACS)",
+  "land": "CH",
+  "dom": [
+   "D4"
+  ],
+  "rollen": [
+   "Behörde"
+  ],
+  "seg": "—",
+  "konz": "VBS",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Schweizer Cybersicherheitsbehörde; Meldestelle für Cyberangriffe auf kritische Infrastrukturen.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "geneva-association",
+  "n": "The Geneva Association",
+  "land": "CH",
+  "dom": [
+   "D4",
+   "D6"
+  ],
+  "rollen": [
+   "Forschung"
+  ],
+  "seg": "—",
+  "konz": "—",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Think Tank der Versicherungswirtschaft; Studien zu Cyber-Risikotransfer und Versicherbarkeitsgrenzen.",
+  "rel": [],
+  "q": [
+   "geneva"
+  ],
+  "pr": "2026-05-20"
+ },
+ {
+  "id": "travelers",
+  "n": "Travelers",
+  "land": "US",
+  "dom": [
+   "D1"
+  ],
+  "rollen": [
+   "Erstversicherer"
+  ],
+  "seg": "Industrie, Mittelstand (USA)",
+  "konz": "The Travelers Companies",
+  "boerse": "TRV (NYSE)",
+  "status": "aktiv",
+  "b": "Großer US-Erstversicherer; hat 2023 mit der Übernahme des Cyber-MGA Corvus dessen Zeichnungsplattform integriert. In DACH nicht aktiv, als Referenzfall für MGA-Bewertungen relevant.",
+  "rel": [],
+  "q": [
+   "ctacq",
+   "gb"
+  ],
+  "pr": "2026-09-04"
+ }
+]

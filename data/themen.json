@@ -1,0 +1,77 @@
+[
+ {
+  "id": "kumulrisiko",
+  "rub": "Cyber-Versicherung",
+  "t": "Kumulrisiko: Wo die Versicherbarkeit endet",
+  "teaser": "Cloud-Konzentration, Software-Monokulturen und staatliche Angriffe stellen die Kernfrage des Marktes: Wie viel Cyber-Risiko passt in Bilanzen und Kapitalmärkte?",
+  "d": "2026-07-14",
+  "u": "2026-08-30",
+  "text": [
+   "Cyber-Risiko ist nicht wie Feuer. Ein Brand trifft ein Gebäude, eine Schwachstelle trifft alle, die dieselbe Software nutzen. Der Ausfall einer Endpoint-Plattform im Juli 2024 hat gezeigt, wie schnell aus einem technischen Fehler ein weltweites Kumulereignis wird — ganz ohne Angreifer.",
+   "Der Markt antwortet auf drei Ebenen: Kumulmodelle sollen die Abhängigkeiten im Portfolio sichtbar machen, Ausschlussklauseln begrenzen das Tail-Risiko bei staatlichen Angriffen, und Katastrophenanleihen tragen den Rest an Investoren weiter. Jede dieser Antworten verschiebt Risiko — keine beseitigt es.",
+   "Für Leser aus der Versicherung heißt das: Die Frage nach der eigenen Kumulgrenze ist wichtiger als die nach dem nächsten Prämienziel. Für Investoren: Die Bewertung eines Cyber-Buchs hängt an der Qualität seines Kumulmanagements, nicht an seinem Wachstum."
+  ],
+  "akt": [
+   "cybercube",
+   "lloyds",
+   "crowdstrike",
+   "beazley"
+  ],
+  "ra": [
+   "lloyds-war"
+  ],
+  "kz": [
+   "ils-cyber",
+   "gwp-global"
+  ]
+ },
+ {
+  "id": "ki",
+  "rub": "Künstliche Intelligenz",
+  "t": "KI im Cyber-Markt: Angriffswerkzeug, Underwriting-Instrument, Haftungsfrage",
+  "teaser": "Dieselbe Technik, die Phishing industrialisiert, sortiert auf der anderen Seite Anträge und bewertet Sicherheitslagen. Wer beides versteht, versteht die nächste Marktphase.",
+  "d": "2026-06-02",
+  "u": "2026-08-12",
+  "text": [
+   "Auf der Angriffsseite senkt generative KI die Kosten für überzeugende Täuschung auf nahezu null. Auf der Verteidigungsseite automatisiert sie Erkennung und Reaktion. Beides zusammen erhöht die Frequenz der Vorfälle und verkürzt gleichzeitig die Zeit bis zur Eindämmung — mit noch offenem Saldo für die Schadenquote.",
+   "Im Underwriting ersetzen automatisierte Außenperspektiven-Scans und Portfolioanalytik die klassische Fragebogen-Zeichnung. Cyber-MGAs haben dieses Modell vorgeprägt; die großen Erstversicherer ziehen nach.",
+   "Offen ist die Haftungsfrage: Wer trägt den Schaden, wenn ein KI-System in der Lieferkette versagt? Der Cyber Resilience Act verschiebt Verantwortung Richtung Hersteller — die Deckungsfrage zwischen Cyber-, Produkt- und Haftpflichtpolice ist noch nicht ausgehandelt."
+  ],
+  "akt": [
+   "coalition",
+   "bitsight",
+   "at-bay"
+  ],
+  "ra": [
+   "cra"
+  ],
+  "kz": [
+   "ransom-demand"
+  ]
+ },
+ {
+  "id": "cx-schadenfall",
+  "rub": "Customer Experience",
+  "t": "Kundenerlebnis im Schadenfall: Warum die Reaktion in den ersten 48 Stunden die Police verkauft",
+  "teaser": "Cyber-Versicherung wird nicht am Wording entschieden, sondern daran, wer nachts um drei ans Telefon geht. Die Schadenerfahrung ist das eigentliche Produkt.",
+  "d": "2026-05-20",
+  "u": "2026-07-28",
+  "text": [
+   "Bei Sach- und Haftpflichtschäden zählt am Ende die Auszahlung. Bei Cyber zählt, ob der Betrieb in Tagen oder Wochen wieder läuft. Damit wird der Incident-Response-Dienstleister, den der Versicherer stellt, zum sichtbarsten Teil der Police.",
+   "Anbieter, die Zeichnung und Krisenreaktion aus einer Hand steuern, gewinnen an dieser Stelle. Klassische Versicherer arbeiten mit Panels — die Qualität der Steuerung entscheidet, ob das Panel als Sicherheitsnetz oder als Hotline-Warteschleife erlebt wird.",
+   "Für Makler folgt daraus ein Beratungsargument jenseits der Prämie; für Investoren ein Bewertungsmaßstab: Kundenbindung im Cyber-Geschäft entsteht im Schadenfall, nicht beim Abschluss."
+  ],
+  "akt": [
+   "hisolutions",
+   "mandiant",
+   "coalition",
+   "hiscox"
+  ],
+  "ra": [
+   "dsgvo"
+  ],
+  "kz": [
+   "ransom-refuse"
+  ]
+ }
+]

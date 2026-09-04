@@ -1,0 +1,272 @@
+[
+ {
+  "id": "m-2026-08-ambest",
+  "d": "2026-08-18",
+  "dom": "D6",
+  "typ": "Nachricht",
+  "t": "AM Best: Munich Re und Lloyd's führen die Rangliste der 50 größten Rückversicherer an",
+  "s": "Die jährliche Rangliste der Ratingagentur bestätigt Munich Re an der Spitze, gefolgt vom Lloyd's-Markt; Swiss Re und Hannover Rück folgen auf den nächsten Plätzen.",
+  "e": "Für Cyber zählt weniger die Gesamtprämie als der Anteil, den die Top-Rückversicherer dem Segment einräumen — hier bleibt die Kapazität auf wenige Häuser konzentriert.",
+  "akt": [
+   "munich-re",
+   "lloyds",
+   "swiss-re",
+   "hannover-rueck"
+  ],
+  "ra": [],
+  "q": [
+   "ambest26"
+  ]
+ },
+ {
+  "id": "m-2025-12-helvetia",
+  "d": "2025-12-05",
+  "dom": "D1",
+  "typ": "Transaktion",
+  "tt": "M&A",
+  "t": "Helvetia und Baloise schließen Fusion zur Helvetia Baloise Holding ab",
+  "s": "Aus zwei Schweizer Allbranchenversicherern entsteht der größte Schweizer Versicherer; das KMU-Cyber-Geschäft beider Häuser wird zusammengeführt. Vollzug im Dezember 2025 — Datum vor Übernahme zu verifizieren.",
+  "e": "Konsolidierung erreicht auch das DACH-Erstversicherungsgeschäft; für Makler verringert sich die Zahl unabhängiger KMU-Cyber-Kapazitäten in der Schweiz.",
+  "vol": "Fusion unter Gleichen",
+  "akt": [
+   "helvetia"
+  ],
+  "ra": [],
+  "q": [
+   "gb"
+  ]
+ },
+ {
+  "id": "m-2026-09-cra",
+  "d": "2026-09-11",
+  "dom": "D5",
+  "typ": "Regulierungsschritt",
+  "t": "CRA: Meldepflichten für aktiv ausgenutzte Schwachstellen beginnen",
+  "s": "Ab diesem Datum müssen Hersteller vernetzter Produkte aktiv ausgenutzte Schwachstellen und schwere Vorfälle an die ENISA-Plattform melden.",
+  "e": "Erste harte Pflicht des CRA. Für Produkthaftpflicht- und Cyber-Zeichner entsteht eine neue, strukturierte Datenquelle zu Schwachstellen.",
+  "akt": [
+   "enisa"
+  ],
+  "ra": [
+   "cra"
+  ],
+  "q": [
+   "eurlex"
+  ]
+ },
+ {
+  "id": "m-2026-08-mre",
+  "d": "2026-08-18",
+  "dom": "D6",
+  "typ": "Nachricht",
+  "t": "Munich Re: Cyber-Markt wächst 2025 um 7 %, Prognose 2030 bei rund 28 Mrd. USD",
+  "s": "Der Rückversicherer beziffert das globale Prämienvolumen 2025 auf gut 15 Mrd. USD und erwartet bis 2030 ein Wachstum von über 10 % pro Jahr.",
+  "e": "Wachstum bleibt zweistellig, aber deutlich unter den Raten des harten Marktes. Die Prognose hängt an der Durchdringung im Mittelstand — dort wirkt NIS2.",
+  "akt": [
+   "munich-re"
+  ],
+  "ra": [],
+  "q": [
+   "mre26"
+  ]
+ },
+ {
+  "id": "m-2026-06-nis2",
+  "d": "2026-06-30",
+  "u": "2026-08-20",
+  "dom": "D5",
+  "typ": "Regulierungsschritt",
+  "t": "NIS2: Frist für den ersten Compliance-Nachweis abgelaufen",
+  "s": "Die vom 31.12.2025 auf den 30.06.2026 verschobene Nachweisfrist ist verstrichen; das BSI beginnt mit der Auswertung.",
+  "e": "Der Nachweis wird zum belastbaren Underwriting-Merkmal — Versicherer können ihn abfragen, statt Selbstauskünfte zu bewerten.",
+  "akt": [
+   "bsi"
+  ],
+  "ra": [
+   "nis2umsucg"
+  ],
+  "q": [
+   "openkritis"
+  ]
+ },
+ {
+  "id": "m-2026-05-ils",
+  "d": "2026-05-12",
+  "u": "2026-08-30",
+  "dom": "D6",
+  "typ": "Transaktion",
+  "tt": "ILS-Emission",
+  "t": "Cyber-Katastrophenanleihen: Emissionsvolumen 2026 auf Kurs über 1,5 Mrd. USD",
+  "s": "Nach mehreren Neuemissionen im ersten Halbjahr liegt das Jahresvolumen für Cyber-Cat-Bonds bereits über dem Gesamtjahr 2025; Loss-Multiples sinken weiter.",
+  "e": "Der Neuheitsaufschlag schmilzt, ist aber nicht verschwunden. Für Investoren: Cyber-ILS wird zur regulären Allokation, für Zeichner: Retro-Kapazität wird günstiger.",
+  "vol": "≈ 1,5 Mrd. USD (Jahr)",
+  "akt": [
+   "beazley"
+  ],
+  "ra": [],
+  "q": [
+   "artemis"
+  ]
+ },
+ {
+  "id": "m-2026-04-coal",
+  "d": "2026-04-22",
+  "dom": "D3",
+  "typ": "Nachricht",
+  "t": "Coalition Claims Report: Erstforderung bei Ransomware steigt um 47 %, 86 % zahlen nicht",
+  "s": "Der Claims Report des MGA für das Jahr 2025 zeigt gegenläufige Signale: Rekordquote verweigerter Zahlungen bei gleichzeitig deutlich höheren Forderungen.",
+  "e": "Verhandlungsmacht verschiebt sich zu den Versicherten — aber die Betriebsunterbrechungs-Komponente wird teurer, nicht das Lösegeld.",
+  "akt": [
+   "coalition"
+  ],
+  "ra": [],
+  "q": [
+   "coalclaims"
+  ]
+ },
+ {
+  "id": "m-2026-03-kritis",
+  "d": "2026-03-17",
+  "dom": "D5",
+  "typ": "Regulierungsschritt",
+  "t": "KRITIS-Dachgesetz tritt in Kraft",
+  "s": "Das Gesetz zur Stärkung der Resilienz kritischer Anlagen gilt; Betreiber müssen physische Resilienzmaßnahmen nachweisen — parallel zu NIS2.",
+  "e": "Für Industrieversicherer relevant an der Schnittstelle Sach/Cyber: Sabotage und hybride Bedrohungen berühren Betriebsunterbrechungsdeckungen beider Sparten.",
+  "akt": [
+   "bsi"
+  ],
+  "ra": [
+   "kritisdachg"
+  ],
+  "q": [
+   "btkritis"
+  ]
+ },
+ {
+  "id": "m-2026-03-reg",
+  "d": "2026-03-06",
+  "dom": "D5",
+  "typ": "Regulierungsschritt",
+  "t": "NIS2: Registrierungsfrist beim BSI endet",
+  "s": "Die dreimonatige Frist zur Registrierung ist abgelaufen; eine nachträgliche Registrierung bleibt möglich.",
+  "e": "Die Registrierungsquote wird zum Frühindikator für die Nachfrage nach Cyber-Deckungen im Mittelstand.",
+  "akt": [
+   "bsi"
+  ],
+  "ra": [
+   "nis2umsucg"
+  ],
+  "q": [
+   "openkritis"
+  ]
+ },
+ {
+  "id": "m-2026-03-surv",
+  "d": "2026-03-03",
+  "dom": "D6",
+  "typ": "Nachricht",
+  "t": "Munich Re Global Cyber Risk and Insurance Survey 2026 erschienen",
+  "s": "Befragung von Entscheidern weltweit zu Risikowahrnehmung, Versicherungsdurchdringung und Kaufabsichten.",
+  "e": "Wiederkehrende Kernaussage: Die Lücke zwischen wahrgenommenem Risiko und tatsächlicher Absicherung bleibt groß — vor allem bei kleineren Unternehmen.",
+  "akt": [
+   "munich-re"
+  ],
+  "ra": [],
+  "q": [
+   "mresurv"
+  ]
+ },
+ {
+  "id": "m-2026-01-mga",
+  "d": "2026-01-20",
+  "dom": "D2",
+  "typ": "Nachricht",
+  "t": "MGA-Segment: Konsolidierung nach der Weichmarktphase",
+  "s": "Die in der harten Marktphase 2021–2023 gewachsenen Cyber-MGAs stehen unter Konsolidierungsdruck; Anbieter mit mehreren Kapazitätspartnern gelten als robuster.",
+  "e": "Kapazitätsdiversifikation ist das Überlebensmerkmal. Für Investoren: Bewertungen richten sich nach Trägerbindung, nicht nach Prämienwachstum allein.",
+  "akt": [
+   "coalition",
+   "at-bay"
+  ],
+  "ra": [],
+  "q": [
+   "ctacq"
+  ]
+ },
+ {
+  "id": "m-2025-12-nis2",
+  "d": "2025-12-05",
+  "dom": "D5",
+  "typ": "Regulierungsschritt",
+  "t": "NIS2-Umsetzungsgesetz im Bundesgesetzblatt verkündet",
+  "s": "Nach mehr als einem Jahr Verzug gegenüber der EU-Frist ist die deutsche Umsetzung in Kraft. Rund 29.500 Unternehmen sind registrierungspflichtig.",
+  "e": "Der wichtigste nachfrageseitige Impuls für den deutschen Cyber-Markt seit der DSGVO.",
+  "akt": [
+   "bsi"
+  ],
+  "ra": [
+   "nis2umsucg",
+   "nis2"
+  ],
+  "q": [
+   "openkritis",
+   "bgbl"
+  ]
+ },
+ {
+  "id": "m-2025-01-dora",
+  "d": "2025-01-17",
+  "dom": "D5",
+  "typ": "Regulierungsschritt",
+  "t": "DORA gilt ab heute für den gesamten Finanzsektor",
+  "s": "Versicherer, Banken und ihre IKT-Dienstleister unterliegen einheitlichen Anforderungen an IKT-Risikomanagement und Vorfallmeldung.",
+  "e": "Versicherer sind zugleich Regulierte und Zeichner — die eigenen Register über IKT-Dienstleister werden zur Datenquelle für Konzentrationsrisiken im Portfolio.",
+  "akt": [
+   "bafin",
+   "eiopa"
+  ],
+  "ra": [
+   "dora"
+  ],
+  "q": [
+   "eurlex"
+  ]
+ },
+ {
+  "id": "m-2024-01-polestar",
+  "d": "2024-01-10",
+  "dom": "D6",
+  "typ": "Transaktion",
+  "tt": "ILS-Emission",
+  "t": "Beazley platziert mit PoleStar Re die erste 144A-Cyber-Katastrophenanleihe",
+  "s": "Volumen 140 Mio. USD; erstmals wird Cyber-Risiko über eine regulär platzierte Cat-Bond-Struktur an Kapitalmarktinvestoren transferiert.",
+  "e": "Der Startpunkt der Anlageklasse. Alle späteren Emissionen beziehen sich auf diese Struktur.",
+  "vol": "140 Mio. USD",
+  "akt": [
+   "beazley"
+  ],
+  "ra": [],
+  "q": [
+   "artemis",
+   "geneva"
+  ]
+ },
+ {
+  "id": "m-2023-11-corvus",
+  "d": "2023-11-02",
+  "dom": "D6",
+  "typ": "Transaktion",
+  "tt": "M&A",
+  "t": "Travelers übernimmt Cyber-MGA Corvus für rund 435 Mio. USD",
+  "s": "Ein etablierter US-Erstversicherer kauft einen technologiegetriebenen Cyber-MGA und integriert dessen Zeichnungsplattform.",
+  "e": "Referenztransaktion für die MGA-Bewertung: Der Käufer zahlt für Daten und Distribution, nicht für Kapazität.",
+  "vol": "≈ 435 Mio. USD",
+  "akt": [
+   "travelers"
+  ],
+  "ra": [],
+  "q": [
+   "ctacq"
+  ]
+ }
+]
