@@ -406,6 +406,19 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .sch .fl.p{fill:#8FD5E2}
 .sch .fl.c{fill:#F0C77A}
 .sch .go{font-family:var(--mono); font-size:11px; fill:var(--navy-accent)}
+.sch .edge{stroke:#5CC4C6; stroke-width:16; stroke-linecap:round; opacity:.28; fill:none}
+.sch .edgel{stroke:#5CC4C6; stroke-width:1.2; opacity:.9; fill:none}
+.sch .lab{fill:#0F1B2D; stroke:rgba(92,196,198,.7); stroke-width:1}
+.sch .labt{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; fill:var(--navy-ink)}
+.sch .sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; fill:#8FD5E2}
+.sch .subn{font-family:var(--sans); font-size:12.5px; fill:var(--navy-ink-2)}
+.sch a:hover .subn{fill:var(--navy-ink)}
+.sch .threat{fill:rgba(224,122,122,.10); stroke:rgba(224,122,122,.45); stroke-width:1}
+.sch a:hover .threat{fill:rgba(224,122,122,.22)}
+.sch .tk{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; fill:#E28A8A}
+.sch .tarrow{stroke:#E28A8A; stroke-width:1.4; opacity:.7; fill:none}
+.sch .tarrowh{fill:#E28A8A; opacity:.8}
+.sch .frame{fill:none; stroke:rgba(255,255,255,.12); stroke-width:1; stroke-dasharray:3 6}
 .sch a{cursor:pointer; text-decoration:none}
 .sch a:hover .t{fill:var(--navy-accent)}
 .sch .mobile{display:none}
@@ -677,44 +690,52 @@ function pageAkteure(p){
   const G = Object.fromEntries(GRUPPEN.map(g=>[g.id,g]));
   const top = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i).join(" · ");
   const G3 = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i);
-  const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("The Geneva Association","Geneva Association").replace("Bundesamt für Cybersicherheit","BACS");
-  const chips = (g, y, dir) => { let x = 40; const out=[]; for(const id of g.ids){ const a=A[id]; if(!a) continue; const label=short(a.n); const w=Math.round(label.length*7.2+26); if(x+w>1000) break; out.push(`<a href="#/akteure/${id}"><rect class="chip" x="${x}" y="${y-15}" width="${w}" height="30" rx="15"/><text class="ct" x="${x+w/2}" y="${y+4}" text-anchor="middle">${esc(label)}</text></a>`); x+=w+8; } return out.join(""); };
-  const NW=200, NH=196, NY=176, X=[150,450,750,1050];
-  const node = (x,id,k,title,count,names) => `<a href="#g-${id}"><rect class="panel" x="${x-NW/2}" y="${NY}" width="${NW}" height="${NH}" rx="16"/>
-      <text class="k" x="${x-NW/2+20}" y="${NY+30}">${k}</text><text class="t" x="${x-NW/2+20}" y="${NY+62}">${esc(title)}</text>
-      <text class="num" x="${x-NW/2+20}" y="${NY+112}">${count}</text><text class="unit" x="${x-NW/2+20+String(count).length*24+6}" y="${NY+112}">Akteure</text>
-      <text class="n" x="${x-NW/2+20}" y="${NY+146}">${esc(short(names[0]||""))}</text><text class="n" x="${x-NW/2+20}" y="${NY+166}">${esc(names.slice(1,3).map(short).join(" · "))}</text></a>`;
-  const rib = (y,h,cls,left,right) => `<path class="${cls}" d="M${left} ${y-h/2} L${right-18} ${y-h/2} L${right} ${y} L${right-18} ${y+h/2} L${left} ${y+h/2} Z"/>`;
-  const ribL = (y,h,cls,left,right) => `<path class="${cls}" d="M${right} ${y-h/2} L${left+18} ${y-h/2} L${left} ${y} L${left+18} ${y+h/2} L${right} ${y+h/2} Z"/>`;
-  const svg = `<svg viewBox="0 0 1200 560" role="img" aria-label="Schaubild der Marktstruktur">
-    <defs><linearGradient id="rib1" x1="0" x2="1"><stop offset="0" stop-color="#1B7C7E" stop-opacity=".25"/><stop offset="1" stop-color="#5CC4C6" stop-opacity=".55"/></linearGradient>
-      <linearGradient id="rib2" x1="1" x2="0"><stop offset="0" stop-color="#E9B25B" stop-opacity=".18"/><stop offset="1" stop-color="#E9B25B" stop-opacity=".5"/></linearGradient></defs>
-    <text class="k dim" x="40" y="42">${esc(G.inst.n)}</text><text class="n" x="40" y="60">Regulierung, Aufsicht und Statistik wirken auf alle Ebenen</text>
-    <a href="#g-inst"><text class="go" x="1160" y="42" text-anchor="end">${G.inst.ids.length} Akteure →</text></a>
-    ${chips(G.inst, 96, 1)}
-    <line class="band" x1="40" y1="130" x2="1160" y2="130"/>
-    ${rib(NY+72, 24, "rib1", 36, 1168)}
-    ${ribL(NY+128, 24, "rib2", 32, 1164)}
-    <rect x="40" y="${NY+NH+22}" width="26" height="6" rx="3" fill="#5CC4C6" opacity=".8"/><text class="fl p" x="74" y="${NY+NH+29}">Prämie und Risiko fließen nach rechts</text>
-    <rect x="400" y="${NY+NH+22}" width="26" height="6" rx="3" fill="#E9B25B" opacity=".8"/><text class="fl c" x="434" y="${NY+NH+29}">Kapazität und Deckung fließen nach links</text>
-    <a href="#g-vertrieb"><rect class="panel risk" x="${X[0]-NW/2}" y="${NY}" width="${NW}" height="${NH}" rx="16"/>
-      <text class="k dim" x="${X[0]-NW/2+20}" y="${NY+30}">Ausgangspunkt</text><text class="t sm" x="${X[0]-NW/2+20}" y="${NY+60}">Unternehmen</text>
-      <text class="n" x="${X[0]-NW/2+20}" y="${NY+96}">Versicherungsnehmer,</text><text class="n" x="${X[0]-NW/2+20}" y="${NY+114}">vom Konzern bis zum</text><text class="n" x="${X[0]-NW/2+20}" y="${NY+132}">Handwerksbetrieb.</text>
-      <text class="n" x="${X[0]-NW/2+20}" y="${NY+158}">NIS2 und DORA</text><text class="n" x="${X[0]-NW/2+20}" y="${NY+176}">erzeugen Nachfrage.</text></a>
-    ${node(X[1],"vertrieb","Platzierung","Vertrieb",G.vertrieb.ids.length,G3(G.vertrieb))}
-    ${node(X[2],"erst","Risikoträger","Erstversicherer",G.erst.ids.length,G3(G.erst))}
-    ${node(X[3],"rueck","Spitzenrisiko &amp; Kapital","Rückversicherer",G.rueck.ids.length,G3(G.rueck))}
-    <line class="band" x1="40" y1="436" x2="1160" y2="436"/>
-    <text class="k dim" x="40" y="464">${esc(G.oeko.n)}</text><text class="n" x="40" y="482">Prävention und Rating vor der Zeichnung, Incident Response im Schadenfall</text>
-    <a href="#g-oeko"><text class="go" x="1160" y="464" text-anchor="end">${G.oeko.ids.length} Akteure →</text></a>
-    ${chips(G.oeko, 518, -1)}
+  const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("The Geneva Association","Geneva Association").replace("Bundesamt für Cybersicherheit","BACS").replace("Amazon Web Services","AWS").replace("Allianz Commercial","Allianz");
+  const chips = (items, y, x0=40, cls="chip", tcls="ct") => { let x=x0; const out=[]; for(const it of items){ const label=it.n; const w=Math.round(label.length*7.2+26); if(x+w>1160) break; out.push(`<a href="${it.h}"><rect class="${cls}" x="${x}" y="${y-15}" width="${w}" height="30" rx="15"/><text class="${tcls}" x="${x+w/2}" y="${y+4}" text-anchor="middle">${esc(label)}</text></a>`); x+=w+8; } return out.join(""); };
+  const names = (gid,n=3) => G[gid].ids.slice(0,n).map(i=>A[i]?short(A[i].n):i).join(" · ");
+  const row = (x,y,sub,gid,label) => `<a href="#g-${gid}"><text class="sub" x="${x}" y="${y}">${sub} · ${esc(label)}</text><text class="subn" x="${x}" y="${y+17}">${esc(names(gid))}</text></a>`;
+  const label = (cx,cy,t) => { const w=Math.round(t.length*7.4+28); return `<rect class="lab" x="${cx-w/2}" y="${cy-13}" width="${w}" height="26" rx="13"/><text class="labt" x="${cx}" y="${cy+4}" text-anchor="middle">${esc(t)}</text>`; };
+  // Eckpunkte des Dreiecks
+  const U={x:600,y:150,w:300,h:104}, S={x:70,y:395,w:390,h:150}, V={x:740,y:395,w:390,h:206};
+  const svg = `<svg viewBox="0 0 1200 785" role="img" aria-label="Zusammenspiel der Marktteilnehmer">
+    <rect class="frame" x="28" y="24" width="1144" height="745" rx="22"/>
+    <text class="k dim" x="52" y="54">Handlungsrahmen · Institutionen &amp; Aufsicht</text>
+    <a href="#g-inst"><text class="go" x="1148" y="54" text-anchor="end">${G.inst.ids.length} Akteure →</text></a>
+    ${chips(G.inst.ids.map(i=>({n:short(A[i].n),h:"#/akteure/"+i})), 90, 52)}
+    <path class="edge" d="M${U.x-40} ${U.y+U.h} L${S.x+S.w/2+60} ${S.y}"/><path class="edgel" d="M${U.x-40} ${U.y+U.h} L${S.x+S.w/2+60} ${S.y}"/>
+    <path class="edge" d="M${U.x+40} ${U.y+U.h} L${V.x+V.w/2-60} ${V.y}"/><path class="edgel" d="M${U.x+40} ${U.y+U.h} L${V.x+V.w/2-60} ${V.y}"/>
+    <path class="edge" d="M${S.x+S.w} ${S.y+S.h/2} L${V.x} ${S.y+S.h/2}"/><path class="edgel" d="M${S.x+S.w} ${S.y+S.h/2} L${V.x} ${S.y+S.h/2}"/>
+    ${label((U.x-40+S.x+S.w/2+60)/2-70,(U.y+U.h+S.y)/2,"Schutz · Monitoring · Incident Response")}
+    ${label((U.x+40+V.x+V.w/2-60)/2+70,(U.y+U.h+V.y)/2,"Prämie ↔ Deckung · Schadenhilfe")}
+    ${label((S.x+S.w+V.x)/2,S.y+S.h/2,"Daten · Panels · Prävention")}
+    <a href="#/akteure?q=Unternehmen"><rect class="panel risk" x="${U.x-U.w/2}" y="${U.y}" width="${U.w}" height="${U.h}" rx="16"/>
+      <text class="k dim" x="${U.x}" y="${U.y+30}" text-anchor="middle">1 · Ausgangspunkt</text><text class="t" x="${U.x}" y="${U.y+62}" text-anchor="middle">Unternehmen</text>
+      <text class="n" x="${U.x}" y="${U.y+86}" text-anchor="middle">Versicherungsnehmer — vom Konzern bis zum Handwerksbetrieb</text></a>
+    <a href="#g-sec"><rect class="panel" x="${S.x}" y="${S.y}" width="${S.w}" height="${S.h}" rx="16"/>
+      <text class="k" x="${S.x+22}" y="${S.y+30}">2 · Schutz</text><text class="t" x="${S.x+22}" y="${S.y+60}">Sicherheitsanbieter</text>
+      <text class="num" x="${S.x+S.w-22}" y="${S.y+62}" text-anchor="end" style="font-size:30px">${G.sec.ids.length+G.cloud.ids.length}</text></a>
+    ${row(S.x+22,S.y+92,"2a",  "sec","Reine Sicherheitsanbieter")}
+    ${row(S.x+22,S.y+128,"2b","cloud","Cloud- und Plattformanbieter")}
+    <a href="#g-erst"><rect class="panel" x="${V.x}" y="${V.y}" width="${V.w}" height="${V.h}" rx="16"/>
+      <text class="k" x="${V.x+22}" y="${V.y+30}">3 · Risikotransfer</text><text class="t" x="${V.x+22}" y="${V.y+60}">Cyber-Versicherung</text>
+      <text class="num" x="${V.x+V.w-22}" y="${V.y+62}" text-anchor="end" style="font-size:30px">${G.erst.ids.length+G.vertrieb.ids.length+G.mga.ids.length+G.rueck.ids.length}</text></a>
+    ${row(V.x+22,V.y+92,"3a","erst","Versicherer")}
+    ${row(V.x+22+190,V.y+92,"3b","vertrieb","Vertrieb")}
+    ${row(V.x+22,V.y+150,"3c","mga","MGAs")}
+    ${row(V.x+22+190,V.y+150,"3d","rueck","Rückversicherer")}
+    ${[220,600,980].map(x=>`<path class="tarrow" d="M${x} 690 L${x} 632"/><path class="tarrowh" d="M${x-5} 636 L${x} 626 L${x+5} 636 Z"/>`).join("")}
+    <text class="tk" x="52" y="712">Handlungsrahmen · Hacker &amp; KI</text>
+    <a href="#/themen/ki"><text class="go" x="1148" y="712" text-anchor="end" style="fill:#E28A8A">Dossier KI →</text></a>
+    ${chips([{n:"Ransomware-Gruppen: Qilin, Akira, SafePay",h:"#/radar"},{n:"Staatliche Akteure",h:"#/regulierung/lloyds-war"},{n:"KI-gestütztes Phishing & Deepfakes",h:"#/themen/ki"},{n:"KI in der Abwehr",h:"#/themen/ki"},{n:"Lieferketten-Angriffe",h:"#/themen/kumulrisiko"}], 745, 52, "threat", "ct")}
   </svg>`;
   const mobile = `<div class="mobile">
-    <a class="risk" href="#g-vertrieb"><span class="k">Ausgangspunkt</span><b>Unternehmen</b><span class="c">Nachfrage</span></a><div class="arrow">↓</div>
-    ${GRUPPEN.filter(g=>["vertrieb","erst","rueck"].includes(g.id)).map((g,i)=>`<a href="#g-${g.id}"><span class="k">${["Platzierung","Risikoträger","Spitzenrisiko"][i]}</span><b>${esc(g.n)}</b><span class="c">${g.ids.length}</span></a>${i<2?'<div class="arrow">↓</div>':''}`).join("")}
     <a href="#g-inst"><span class="k">Rahmen</span><b>${esc(G.inst.n)}</b><span class="c">${G.inst.ids.length}</span></a>
-    <a href="#g-oeko"><span class="k">Unterbau</span><b>${esc(G.oeko.n)}</b><span class="c">${G.oeko.ids.length}</span></a></div>`;
-  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Marktstruktur · Cyberversicherung DACH</span><span class="hint">Panel anklicken → Gruppe</span></div>${svg}${mobile}</div></section>`;
+    <a class="risk" href="#/akteure?q=Unternehmen"><span class="k">1 · Ausgangspunkt</span><b>Unternehmen</b><span class="c">—</span></a><div class="arrow">↕</div>
+    <a href="#g-sec"><span class="k">2a · Schutz</span><b>Sicherheitsanbieter</b><span class="c">${G.sec.ids.length}</span></a>
+    <a href="#g-cloud"><span class="k">2b · Schutz</span><b>${esc(G.cloud.n)}</b><span class="c">${G.cloud.ids.length}</span></a><div class="arrow">↕</div>
+    ${["erst","vertrieb","mga","rueck"].map((g,i)=>`<a href="#g-${g}"><span class="k">3${"abcd"[i]} · Risikotransfer</span><b>${esc(G[g].n)}</b><span class="c">${G[g].ids.length}</span></a>`).join("")}
+    <a href="#/themen/ki" style="border-color:rgba(224,122,122,.5)"><span class="k" style="color:#E28A8A">Rahmen</span><b>Hacker &amp; KI</b><span class="c">→</span></a></div>`;
+  const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Zusammenspiel · Cyberversicherung DACH</span><span class="hint">Panels und Zeilen anklicken → Gruppe oder Profil</span></div>${svg}${mobile}</div></section>`;
   const anchors = `<div class="anchors">${GRUPPEN.map(g=>`<a class="chip" href="#g-${g.id}">${esc(g.n)}</a>`).join("")}</div>`;
   const hit = a => !q || (a.n+" "+a.b+" "+a.rollen.join(" ")+" "+(BED[a.id]||"")).toLowerCase().includes(q);
   const groups = GRUPPEN.map(g=>{

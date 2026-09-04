@@ -980,5 +980,120 @@
    "gb"
   ],
   "pr": "2026-09-04"
+ },
+ {
+  "id": "perseus",
+  "n": "Perseus",
+  "land": "DE",
+  "dom": [
+   "D3",
+   "D2"
+  ],
+  "rollen": [
+   "Sicherheitsanbieter",
+   "Assekuradeur"
+  ],
+  "seg": "KMU",
+  "konz": "privat",
+  "boerse": null,
+  "status": "aktiv",
+  "b": "Berliner Anbieter, der Cyber-Prävention, Schulung und Schadenhilfe für kleine und mittlere Unternehmen mit einer Versicherungsdeckung verbindet.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-04"
+ },
+ {
+  "id": "google-cloud",
+  "n": "Google Cloud",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Cloud-Anbieter",
+   "Plattform"
+  ],
+  "seg": "Unternehmen aller Größen",
+  "konz": "Alphabet",
+  "boerse": "GOOGL (Nasdaq)",
+  "status": "aktiv",
+  "b": "Cloud- und Plattformanbieter; mit Mandiant zugleich Incident-Response-Dienstleister. Konzentration auf wenige Cloud-Anbieter ist eine zentrale Kumulquelle für Cyber-Versicherer.",
+  "rel": [
+   {
+    "k": "Konzern",
+    "z": "mandiant"
+   }
+  ],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-04"
+ },
+ {
+  "id": "microsoft",
+  "n": "Microsoft",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Cloud-Anbieter",
+   "Sicherheitsanbieter"
+  ],
+  "seg": "Unternehmen aller Größen",
+  "konz": "Microsoft Corp.",
+  "boerse": "MSFT (Nasdaq)",
+  "status": "aktiv",
+  "b": "Größter Anbieter von Unternehmenssoftware und Cloud-Diensten; Schwachstellen in Microsoft-Produkten sind der häufigste Ausgangspunkt von Großschadenereignissen im Cyber-Portfolio.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-04"
+ },
+ {
+  "id": "aws",
+  "n": "Amazon Web Services",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Cloud-Anbieter"
+  ],
+  "seg": "Unternehmen aller Größen",
+  "konz": "Amazon",
+  "boerse": "AMZN (Nasdaq)",
+  "status": "aktiv",
+  "b": "Größter Cloud-Infrastrukturanbieter; ein regionaler Ausfall gilt in Kumulmodellen als eines der maßgeblichen Szenarien.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-04"
+ },
+ {
+  "id": "apple",
+  "n": "Apple",
+  "land": "US",
+  "dom": [
+   "D3"
+  ],
+  "rollen": [
+   "Plattform",
+   "Gerätehersteller"
+  ],
+  "seg": "Endgeräte, Unternehmen",
+  "konz": "Apple Inc.",
+  "boerse": "AAPL (Nasdaq)",
+  "status": "aktiv",
+  "b": "Geräte- und Plattformanbieter; Sicherheitsarchitektur der Endgeräte und App-Ökosystem prägen die Angriffsfläche im Unternehmen.",
+  "rel": [],
+  "q": [
+   "gb"
+  ],
+  "pr": "2026-09-04"
  }
 ]

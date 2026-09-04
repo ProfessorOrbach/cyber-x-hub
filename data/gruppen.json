@@ -2,7 +2,7 @@
  "gruppen": [
   {
    "id": "erst",
-   "n": "Erstversicherer",
+   "n": "Cyber-Versicherer",
    "s": "Tragen das Cyber-Risiko in der eigenen Bilanz und zeichnen es gegenüber Unternehmen.",
    "ids": [
     "allianz-commercial",
@@ -20,6 +20,32 @@
    ]
   },
   {
+   "id": "vertrieb",
+   "n": "Cyberversicherungs-Vertrieb",
+   "s": "Makler und Plattformen, die Deckungen vermitteln und platzieren.",
+   "ids": [
+    "marsh",
+    "aon",
+    "wtw",
+    "funk",
+    "ecclesia",
+    "howden",
+    "mrh-trowe",
+    "finlex",
+    "cyberdirekt"
+   ]
+  },
+  {
+   "id": "mga",
+   "n": "MGAs und Assekuradeure",
+   "s": "Zeichnen im Auftrag von Risikoträgern, oft verbunden mit laufendem Sicherheits-Monitoring.",
+   "ids": [
+    "coalition",
+    "at-bay",
+    "perseus"
+   ]
+  },
+  {
    "id": "rueck",
    "n": "Rückversicherer, Lloyd's & Kapital",
    "s": "Nehmen Erstversicherern Spitzenrisiken ab und verbinden den Markt mit dem Kapitalmarkt.",
@@ -33,33 +59,27 @@
    ]
   },
   {
-   "id": "vertrieb",
-   "n": "Vertrieb: Makler, Assekuradeure, Plattformen",
-   "s": "Vermitteln, platzieren und zeichnen im Auftrag — die Schicht zwischen Risiko und Kapazität.",
-   "ids": [
-    "marsh",
-    "aon",
-    "wtw",
-    "funk",
-    "ecclesia",
-    "howden",
-    "mrh-trowe",
-    "finlex",
-    "cyberdirekt",
-    "coalition",
-    "at-bay"
-   ]
-  },
-  {
-   "id": "oeko",
-   "n": "Sicherheitsökosystem",
-   "s": "Bewerten Risiko vor der Zeichnung und arbeiten Schäden im Ernstfall ab.",
+   "id": "sec",
+   "n": "Sicherheitsanbieter",
+   "s": "Schützen Unternehmen, bewerten Risiko vor der Zeichnung und arbeiten Schäden im Ernstfall ab.",
    "ids": [
     "crowdstrike",
     "mandiant",
     "hisolutions",
+    "perseus",
     "cybercube",
     "bitsight"
+   ]
+  },
+  {
+   "id": "cloud",
+   "n": "Cloud- und Plattformanbieter",
+   "s": "Betreiben die Infrastruktur, von der Unternehmen abhängen — und damit die größte Kumulquelle des Marktes.",
+   "ids": [
+    "microsoft",
+    "aws",
+    "google-cloud",
+    "apple"
    ]
   },
   {
@@ -118,6 +138,11 @@
   "enisa": "EU-Cybersicherheitsagentur, Bedrohungslandschaft",
   "bacs": "Schweizer Cybersicherheitsbehörde und Meldestelle",
   "geneva-association": "Forschung zu Versicherbarkeit und Risikotransfer",
-  "travelers": "US-Referenzfall für die Integration eines Cyber-MGA (Corvus); in DACH ohne Zeichnung"
+  "travelers": "US-Referenzfall für die Integration eines Cyber-MGA (Corvus); in DACH ohne Zeichnung",
+  "perseus": "Verbindet Prävention und Deckung für KMU in einem Produkt; Referenz für das Modell „Sicherheit plus Versicherung“",
+  "microsoft": "Häufigster Ausgangspunkt von Großschadenereignissen (Schwachstellen, Cloud-Abhängigkeit)",
+  "aws": "Größter Cloud-Anbieter; Ausfallszenario in jedem Kumulmodell",
+  "google-cloud": "Cloud-Anbieter und mit Mandiant zugleich IR-Dienstleister",
+  "apple": "Prägt Endgeräte-Sicherheit und Angriffsfläche mobiler Arbeit"
  }
 }
