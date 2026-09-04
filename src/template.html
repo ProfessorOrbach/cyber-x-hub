@@ -2,12 +2,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --ground:#F5F4F1; --surface:#FFFFFF; --surface-2:#EDEBE6; --surface-3:#E0DDD6;
-  --ink:#141A22; --ink-2:#3E4854; --ink-3:#5F6A76;
-  --rule:#D8D4CC; --rule-soft:#E7E4DE;
+  --ground:#E4EDF1; --surface:#FFFFFF; --surface-2:#DCE7EC; --surface-3:#CBDAE2;
+  --ink:#141A22; --ink-2:#3E4854; --ink-3:#5A6672;
+  --rule:#C9D8DF; --rule-soft:#DAE5EA;
   --accent:#1B7C7E; --accent-2:#156366; --accent-soft:#DDEFEF; --accent-fill:rgba(27,124,126,.12); --accent-solid:#1B7C7E; --on-accent:#FFFFFF;
   --navy:#0F1B2D; --navy-2:#16253C; --navy-ink:#EEF2F7; --navy-ink-2:#B7C2D1; --navy-rule:rgba(255,255,255,.10); --navy-accent:#5CC4C6;
-  --map-bg:#0F1B2D; --map-land:#243650; --map-line:rgba(255,255,255,.16); --map-dot:#5CC4C6; --map-neu:#E9B25B;
+  --map-bg:transparent; --map-land:#1C2B42; --map-line:rgba(255,255,255,.22); --map-dot:#5CC4C6; --map-neu:#E9B25B;
   --signal:#8F5306; --signal-soft:#F6EBDA;
   --ok:#25634A; --ok-soft:#DEEEE5;
   --crit:#963030; --crit-soft:#F4E1E1;
@@ -23,7 +23,7 @@
     --rule:#27364B; --rule-soft:#1E2B3D;
     --accent:#5CC4C6; --accent-2:#86D6D7; --accent-soft:#0F3436; --accent-fill:rgba(92,196,198,.14); --accent-solid:#1B7C7E; --on-accent:#FFFFFF;
     --navy:#0B1320; --navy-2:#111C2C; --navy-ink:#E8ECF1; --navy-ink-2:#B6BFCB; --navy-rule:rgba(255,255,255,.10); --navy-accent:#5CC4C6;
-    --map-bg:#070D17; --map-land:#1E2D44; --map-line:rgba(255,255,255,.14); --map-dot:#5CC4C6; --map-neu:#E9B25B;
+    --map-bg:transparent; --map-land:#2A3E5A; --map-line:rgba(255,255,255,.18); --map-dot:#5CC4C6; --map-neu:#E9B25B;
     --signal:#DBA04E; --signal-soft:#2E2417;
     --ok:#6BC094; --ok-soft:#16281F;
     --crit:#E28A8A; --crit-soft:#2B1A1A;
@@ -36,7 +36,7 @@
   --rule:#27364B; --rule-soft:#1E2B3D;
   --accent:#5CC4C6; --accent-2:#86D6D7; --accent-soft:#0F3436; --accent-fill:rgba(92,196,198,.14); --accent-solid:#1B7C7E; --on-accent:#FFFFFF;
   --navy:#0B1320; --navy-2:#111C2C; --navy-ink:#E8ECF1; --navy-ink-2:#B6BFCB; --navy-rule:rgba(255,255,255,.10); --navy-accent:#5CC4C6;
-  --map-bg:#070D17; --map-land:#1E2D44; --map-line:rgba(255,255,255,.14); --map-dot:#5CC4C6; --map-neu:#E9B25B;
+  --map-bg:transparent; --map-land:#2A3E5A; --map-line:rgba(255,255,255,.18); --map-dot:#5CC4C6; --map-neu:#E9B25B;
   --signal:#DBA04E; --signal-soft:#2E2417;
   --ok:#6BC094; --ok-soft:#16281F;
   --crit:#E28A8A; --crit-soft:#2B1A1A;
@@ -80,11 +80,11 @@ p{margin:0 0 12px; max-width:70ch}
 
 /* ---------- Hero (Bild, Markenaussage) ---------- */
 .hero{position:relative; margin:-26px -22px 0; padding:0 22px; min-height:440px; display:flex; align-items:stretch; color:#0F1B2D; overflow:hidden; border-bottom:1px solid var(--rule);
-  background:#DCE7F1 url("/*__HERO__*/") center right / cover no-repeat}
-.hero::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(244,247,250,.94) 0%, rgba(244,247,250,.86) 34%, rgba(244,247,250,.35) 58%, rgba(244,247,250,0) 78%); pointer-events:none}
+  background:#E4EDF1 url("/*__HERO__*/") center right / cover no-repeat}
+.hero::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(228,237,241,.96) 0%, rgba(228,237,241,.88) 34%, rgba(228,237,241,.35) 58%, rgba(228,237,241,0) 78%); pointer-events:none}
 .hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:rgba(15,27,45,.12)}
 .hero .in{position:relative; max-width:1200px; width:100%; margin:0 auto; padding:46px 0 40px; display:grid; grid-template-columns:minmax(0,58%) 1fr; gap:24px; align-items:center}
-@media (max-width:860px){ .hero{min-height:0; background-position:72% center} .hero::before{background:linear-gradient(180deg, rgba(244,247,250,.94) 0%, rgba(244,247,250,.88) 70%, rgba(244,247,250,.55) 100%)} .hero .in{grid-template-columns:1fr; padding:30px 0 26px} }
+@media (max-width:860px){ .hero{min-height:0; background-position:72% center} .hero::before{background:linear-gradient(180deg, rgba(228,237,241,.94) 0%, rgba(228,237,241,.88) 70%, rgba(228,237,241,.55) 100%)} .hero .in{grid-template-columns:1fr; padding:30px 0 26px} }
 .hero .tag{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#156366; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
 .hero .tag .sep{width:24px; height:1px; background:#156366; display:inline-block}
 .hero h1{font-family:var(--display); font-weight:700; font-size:clamp(2rem,4.2vw,3.3rem); line-height:1.06; letter-spacing:-.015em; color:#0F1B2D; margin:14px 0 0; max-width:16ch}
@@ -93,7 +93,7 @@ p{margin:0 0 12px; max-width:70ch}
 .hero .meta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
 .hero .cta{display:inline-flex; align-items:center; gap:8px; background:#1B7C7E; color:#fff; font-weight:500; font-size:.875rem; padding:10px 15px; border-radius:3px; text-decoration:none}
 .hero .cta:hover{background:#156366; color:#fff}
-.hero .cta.ghost{background:rgba(255,255,255,.55); border:1px solid rgba(15,27,45,.25); color:#0F1B2D; backdrop-filter:blur(2px)}
+.hero .cta.ghost{background:rgba(255,255,255,.7); border:1px solid rgba(15,27,45,.25); color:#0F1B2D; backdrop-filter:blur(2px)}
 .hero .cta.ghost:hover{border-color:#1B7C7E; color:#156366}
 .hero .kns{display:flex; gap:0; margin-top:26px; border-top:1px solid rgba(15,27,45,.15); padding-top:14px; flex-wrap:wrap}
 .hero .kn{display:flex; flex-direction:column; gap:2px; text-decoration:none; color:#0F1B2D; padding:0 22px 0 0; margin-right:22px; border-right:1px solid rgba(15,27,45,.15)}
@@ -309,13 +309,13 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 /* ---------- Vorfallkarte ---------- */
 .karte{display:grid; grid-template-columns:minmax(280px,440px) minmax(0,1fr); gap:22px; align-items:start}
 @media (max-width:860px){ .karte{grid-template-columns:1fr} }
-.mapwrap{position:relative; background:var(--map-bg); border-radius:4px; padding:8px 10px 6px; background-image:linear-gradient(var(--map-line) 1px, transparent 1px), linear-gradient(90deg, var(--map-line) 1px, transparent 1px); background-size:40px 40px; background-position:center}
+.mapwrap{position:relative; padding:4px 6px 2px}
 .mapwrap svg{width:100%; height:auto; display:block; overflow:visible}
 .mapwrap .land{fill:var(--map-land); stroke:var(--map-line); stroke-width:.9; stroke-linejoin:round}
-.mapwrap .dot{fill:var(--map-dot); stroke:var(--map-bg); stroke-width:1.5; cursor:pointer; transition:r .15s}
-.mapwrap .dot.unb{fill:var(--map-bg); stroke:var(--map-dot); stroke-width:2}
+.mapwrap .dot{fill:var(--map-dot); stroke:var(--surface); stroke-width:1.5; cursor:pointer; transition:r .15s}
+.mapwrap .dot.unb{fill:var(--surface); stroke:var(--map-dot); stroke-width:2}
 .mapwrap .dot:hover, .mapwrap .dot.hl{r:8}
-.mapwrap .dot.neu{fill:var(--map-neu); stroke:var(--map-bg)}
+.mapwrap .dot.neu{fill:var(--map-neu); stroke:var(--surface)}
 .mapwrap .pulse{fill:none; stroke:var(--map-neu); stroke-width:1.5; opacity:.9; transform-box:fill-box; transform-origin:center; animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(3.2);opacity:0}}
 @media (prefers-reduced-motion: reduce){ .mapwrap .pulse{animation:none; transform:scale(1.8); opacity:.5} }
@@ -328,8 +328,8 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 .maptip b{display:block; font-weight:600}
 .maptip i{display:block; font-style:normal; font-family:var(--mono); font-size:.64rem; opacity:.75; margin-top:3px}
 .maplegend{display:flex; gap:14px; flex-wrap:wrap; font-size:.72rem; color:var(--ink-2); margin-top:8px; align-items:center}
-.maplegend span::before{content:""; display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:-1px; background:var(--map-dot); border:1px solid var(--map-bg)}
-.maplegend .unb::before{background:var(--map-bg); border:2px solid var(--map-dot); width:7px; height:7px}
+.maplegend span::before{content:""; display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:-1px; background:var(--map-dot); border:1px solid var(--map-land)}
+.maplegend .unb::before{background:var(--surface); border:2px solid var(--map-dot); width:7px; height:7px}
 .maplegend .neu::before{background:var(--map-neu)}
 .maplegend .src{margin-left:auto; font-family:var(--mono); font-size:.64rem; color:var(--ink-3)}
 .vlist{display:flex; flex-direction:column; max-height:560px; overflow:auto; padding-right:4px}
@@ -425,7 +425,7 @@ footer.site{border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;
 <a class="skip" href="#app">Zum Inhalt springen</a>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="#/radar">Cyber<span class="x" aria-hidden="true">X</span>Hub <small>DACH · Prototyp</small></a>
+    <a class="brand" href="#/radar">Cyber-X-Hub <small>DACH · Prototyp</small></a>
     <nav class="nav" id="nav" aria-label="Rubriken">
       <a href="#/radar" data-r="radar">Radar</a>
       <a href="#/markt" data-r="markt">Markt &amp; Kapital</a>
@@ -600,7 +600,6 @@ function pageRadar(){
       <h1>Cyber-X-Hub. <em>Fokus Versicherung.</em></h1>
       <p class="dek">Der Cyberversicherungsmarkt in Deutschland, Österreich und der Schweiz auf einer Seite: Wer trägt das Risiko, wer vermittelt, wer reguliert, wohin fließt Kapital. Für Versicherer, Makler und Investoren — jede Zahl mit Quelle und Stand.</p>
       <div class="meta"><a class="cta" href="#/akteure">Zur Marktstruktur →</a><a class="cta ghost" href="#/markt">Kennzahlen &amp; Kapital</a></div>
-      <div class="kns">${L.kennzahlen.map(heroKn).join("")}</div>
     </div><div aria-hidden="true"></div></div><span class="credit">Bild: Cyber-X-Hub</span></section>
     <div class="leit"><span class="k">${esc(L.tag)}</span><div><div class="t"><a href="${L.links[0].h}">${esc(L.t)}</a></div><div class="d">${esc(L.dek)}</div></div><div class="m">${fd(L.d)} · akt. ${fd(L.u)}<br><a href="${L.links[0].h}">${esc(L.links[0].t)} →</a> · <a href="${L.links[1].h}">${esc(L.links[1].t)}</a></div></div>`;
   const tiles = ["gwp-global","cagr-global","ils-cyber","ransom-demand","nis2-betr","zyklus"].map(i=>tile(K[i])).join("");
