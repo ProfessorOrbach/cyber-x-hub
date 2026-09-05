@@ -1,0 +1,1190 @@
+{
+ "stand": "2026-09-04",
+ "akteure": 46,
+ "kennzahlen": [
+  {
+   "id": "gwp-global",
+   "gl": [
+    "Bruttoprämie (GWP)",
+    "Harter / weicher Markt"
+   ],
+   "n": "Globales Cyber-Prämienvolumen",
+   "v": 16.6,
+   "e": "Mrd. USD",
+   "per": "2026 (Schätzung)",
+   "st": "2026-01-31",
+   "reg": "Global",
+   "qual": "abg",
+   "q": [
+    "mre26"
+   ],
+   "def": "Gebuchte Bruttoprämie aller eigenständigen Cyber-Deckungen weltweit, Schätzung des Rückversicherers.",
+   "basis": "Rückversicherer-Schätzung; Abgrenzung zu Paket- und Silent-Cyber-Deckungen uneinheitlich",
+   "delta": "+8 % ggü. 2025",
+   "dir": "up",
+   "reihe": [
+    [
+     "2020",
+     7
+    ],
+    [
+     "2021",
+     9.2
+    ],
+    [
+     "2022",
+     11.9
+    ],
+    [
+     "2023",
+     14
+    ],
+    [
+     "2024",
+     15.3
+    ],
+    [
+     "2025",
+     15.3
+    ],
+    [
+     "2026e",
+     16.6
+    ],
+    [
+     "2028e",
+     22
+    ],
+    [
+     "2030e",
+     28
+    ]
+   ]
+  },
+  {
+   "id": "cagr-global",
+   "gl": [
+    "Bruttoprämie (GWP)"
+   ],
+   "n": "Erwartetes Wachstum p. a. bis 2030",
+   "v": "10–15",
+   "e": "%",
+   "per": "2025–2030",
+   "st": "2026-01-31",
+   "reg": "Global",
+   "qual": "abg",
+   "q": [
+    "mre26"
+   ],
+   "def": "Durchschnittliche jährliche Wachstumsrate des globalen Prämienvolumens laut Rückversicherer-Prognose.",
+   "basis": "Prognosewert; Bandbreite je nach Bericht",
+   "delta": "Zielwert 2030: ≈ 28 Mrd. USD",
+   "dir": ""
+  },
+  {
+   "id": "gwp-de",
+   "gl": [
+    "Bruttoprämie (GWP)"
+   ],
+   "n": "Beitragseinnahmen Cyber Deutschland",
+   "v": 330,
+   "e": "Mio. EUR",
+   "per": "2024",
+   "st": "2025-09-17",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvtb25"
+   ],
+   "def": "Gebuchte Bruttobeiträge der GDV-Mitgliedsunternehmen in der Cyberrisikoversicherung.",
+   "basis": "GDV-Verbandsstatistik, Tabelle 85 (inländisches Direktgeschäft); 52 meldende Unternehmen",
+   "delta": "+8,7 % ggü. 2023, nach +24,5 % im Vorjahr",
+   "dir": "up",
+   "reihe": [
+    [
+     "2020",
+     106
+    ],
+    [
+     "2021",
+     178
+    ],
+    [
+     "2022",
+     249
+    ],
+    [
+     "2023",
+     309
+    ],
+    [
+     "2024",
+     330
+    ]
+   ]
+  },
+  {
+   "id": "cr-de",
+   "gl": [
+    "Schaden-Kosten-Quote"
+   ],
+   "n": "Schaden-Kosten-Quote Cyber Deutschland",
+   "v": 80.7,
+   "e": "%",
+   "per": "2024",
+   "st": "2025-09-17",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvtb25"
+   ],
+   "def": "Kombinierte Quote aus Schäden und Kosten im Verhältnis zu den verdienten Beiträgen.",
+   "basis": "GDV-Verbandsstatistik, Tabelle 85; 2021 mit 123,7 % erstes Verlustjahr",
+   "delta": "nach 97,0 % (2023)",
+   "dir": "down",
+   "reihe": [
+    [
+     "2020",
+     64.7
+    ],
+    [
+     "2021",
+     123.7
+    ],
+    [
+     "2022",
+     77.7
+    ],
+    [
+     "2023",
+     97
+    ],
+    [
+     "2024",
+     80.7
+    ]
+   ]
+  },
+  {
+   "id": "ils-cyber",
+   "gl": [
+    "Cyber-ILS / Katastrophenanleihe",
+    "Retrozession"
+   ],
+   "n": "Cyber-ILS-Emissionsvolumen",
+   "v": 1.5,
+   "e": "Mrd. USD",
+   "per": "2026 (Prognose)",
+   "st": "2026-06-30",
+   "reg": "Global",
+   "qual": "abg",
+   "q": [
+    "artemis",
+    "geneva"
+   ],
+   "def": "Jährliches Emissionsvolumen von Cyber-Katastrophenanleihen und privaten Cyber-ILS-Transaktionen.",
+   "basis": "Fachmedien-Aggregation; 2023 ≈ 0,4 Mrd. USD",
+   "delta": "vs. ≈ 0,4 Mrd. USD 2023",
+   "dir": "up",
+   "reihe": [
+    [
+     "2023",
+     0.415
+    ],
+    [
+     "2024",
+     0.8
+    ],
+    [
+     "2025",
+     1.1
+    ],
+    [
+     "2026e",
+     1.5
+    ]
+   ]
+  },
+  {
+   "id": "ransom-demand",
+   "gl": [
+    "Incident Response"
+   ],
+   "n": "Durchschnittliche Erst-Lösegeldforderung",
+   "v": "> 1,0",
+   "e": "Mio. USD",
+   "per": "2025",
+   "st": "2026-04-30",
+   "reg": "Global (MGA-Portfolio)",
+   "qual": "abg",
+   "q": [
+    "coalclaims"
+   ],
+   "def": "Mittlere erste Forderung bei Ransomware-Vorfällen im Portfolio eines großen Cyber-MGA.",
+   "basis": "Portfolio eines Anbieters, nicht marktrepräsentativ",
+   "delta": "+47 % ggü. Vorjahr",
+   "dir": "up"
+  },
+  {
+   "id": "ransom-refuse",
+   "gl": [
+    "Incident Response"
+   ],
+   "n": "Anteil verweigerter Lösegeldzahlungen",
+   "v": 86,
+   "e": "%",
+   "per": "2025",
+   "st": "2026-04-30",
+   "reg": "Global (MGA-Portfolio)",
+   "qual": "abg",
+   "q": [
+    "coalclaims"
+   ],
+   "def": "Anteil der betroffenen Versicherungsnehmer, die kein Lösegeld zahlten.",
+   "basis": "Portfolio eines Anbieters; Rekordwert",
+   "delta": "Höchststand",
+   "dir": "up"
+  },
+  {
+   "id": "nis2-betr",
+   "gl": [],
+   "n": "NIS2-betroffene Unternehmen Deutschland",
+   "v": "≈ 29.500",
+   "e": "",
+   "per": "2026",
+   "st": "2026-03-06",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "openkritis"
+   ],
+   "def": "Geschätzte Zahl der registrierungspflichtigen Einrichtungen nach dem NIS2-Umsetzungsgesetz.",
+   "basis": "Schätzung aus Fachportal, Behördenschätzung liegt in ähnlicher Größenordnung",
+   "delta": "18 Sektoren",
+   "dir": ""
+  },
+  {
+   "id": "zyklus",
+   "gl": [
+    "Harter / weicher Markt",
+    "MGA / Assekuradeur"
+   ],
+   "n": "Ratenzyklus Cyber",
+   "v": "weich",
+   "e": "",
+   "per": "Q2 2026",
+   "st": "2026-06-30",
+   "reg": "Global / DACH",
+   "qual": "abg",
+   "q": [
+    "mre26",
+    "ctacq"
+   ],
+   "def": "Qualitative Einordnung der Ratenentwicklung: hart (steigend, knappe Kapazität) bis weich (fallend, reichlich Kapazität).",
+   "basis": "Redaktionelle Einordnung aus Makler- und Rückversichererberichten",
+   "delta": "Raten seit 2024 rückläufig, Kapazität reichlich",
+   "dir": "down",
+   "pos": 74
+  },
+  {
+   "id": "angriffe-gdv",
+   "n": "Gemeldete Hackerangriffe bei Cyberversicherern (DE)",
+   "v": "≈ 4.000",
+   "e": "",
+   "per": "2023",
+   "st": "2024-09-30",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvschaden"
+   ],
+   "def": "Zahl der von GDV-Mitgliedsunternehmen im Jahr gemeldeten Cyberangriffe auf versicherte Unternehmen.",
+   "basis": "Verbandsangabe in Pressemitteilung; Vorjahresvergleich +18,7 %",
+   "delta": "+18,7 % ggü. 2022",
+   "dir": "up"
+  },
+  {
+   "id": "schaden-bitkom",
+   "n": "Gesamtschaden der deutschen Wirtschaft durch Cyberangriffe",
+   "v": 289,
+   "e": "Mrd. EUR",
+   "per": "2025 (12 Monate)",
+   "st": "2025-08-31",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "bitkom25"
+   ],
+   "def": "Vom Verband geschätzter jährlicher Gesamtschaden durch Datendiebstahl, Spionage und Sabotage, digital und analog.",
+   "basis": "Befragung von rund 1.000 Unternehmen, Hochrechnung; nicht auf versicherte Schäden beschränkt",
+   "delta": "vs. ≈ 267 Mrd. EUR Vorjahr",
+   "dir": "up"
+  },
+  {
+   "id": "gdv-beitraege",
+   "n": "Beitragseinnahmen Cyberversicherung Deutschland",
+   "v": 330,
+   "e": "Mio. EUR",
+   "per": "2024",
+   "st": "2025-09-17",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvtb25",
+    "gdvschaden"
+   ],
+   "def": "Gebuchte Bruttobeiträge des inländischen Direktgeschäfts der Cyberrisikoversicherung (GDV-Mitglieder).",
+   "basis": "GDV-Verbandsstatistik (Tabelle 85, inländisches Direktgeschäft, gebuchte Bruttobeiträge ohne Versicherungsteuer); Einzelwerte zitiert",
+   "delta": "+8,7 % ggü. 2023",
+   "dir": "up",
+   "reihe": [
+    [
+     "2020",
+     106
+    ],
+    [
+     "2021",
+     178
+    ],
+    [
+     "2022",
+     249
+    ],
+    [
+     "2023",
+     309
+    ],
+    [
+     "2024",
+     330
+    ]
+   ]
+  },
+  {
+   "id": "gdv-leistungen",
+   "n": "Schadenaufwand Cyberversicherung Deutschland",
+   "v": 150,
+   "e": "Mio. EUR",
+   "per": "2024",
+   "st": "2025-09-17",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvtb25",
+    "gdvschaden"
+   ],
+   "def": "Leistungen (Schadenaufwand) des inländischen Direktgeschäfts der Cyberrisikoversicherung.",
+   "basis": "GDV-Verbandsstatistik (Tabelle 85): Brutto-Aufwendungen für im Geschäftsjahr gemeldete Versicherungsfälle; Einzelwerte zitiert",
+   "delta": "−15,9 % ggü. 2023",
+   "dir": "down",
+   "reihe": [
+    [
+     "2020",
+     37
+    ],
+    [
+     "2021",
+     137
+    ],
+    [
+     "2022",
+     121
+    ],
+    [
+     "2023",
+     180
+    ],
+    [
+     "2024",
+     150
+    ]
+   ]
+  },
+  {
+   "id": "gdv-cr",
+   "n": "Schaden-Kosten-Quote Cyberversicherung Deutschland",
+   "v": 80.7,
+   "e": "%",
+   "per": "2024",
+   "st": "2025-09-17",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvtb25",
+    "gdvschaden"
+   ],
+   "def": "Combined Ratio: Schaden- und Kostenaufwand im Verhältnis zu den verdienten Beiträgen; über 100 % bedeutet versicherungstechnischen Verlust.",
+   "basis": "GDV-Verbandsstatistik (Tabelle 85); Schadenquote 2024: 45,5 %",
+   "delta": "nach 97,0 % im Jahr 2023",
+   "dir": "down",
+   "reihe": [
+    [
+     "2020",
+     64.7
+    ],
+    [
+     "2021",
+     123.7
+    ],
+    [
+     "2022",
+     77.7
+    ],
+    [
+     "2023",
+     97
+    ],
+    [
+     "2024",
+     80.7
+    ]
+   ]
+  },
+  {
+   "id": "gdv-schadenhoehe",
+   "n": "Durchschnittlicher Cyberschaden Deutschland",
+   "v": 45370,
+   "e": "EUR",
+   "per": "2023",
+   "st": "2024-09-05",
+   "reg": "DE",
+   "qual": "abg",
+   "q": [
+    "gdvschaden",
+    "gdv23"
+   ],
+   "def": "Durchschnittlicher Schadenaufwand je gemeldetem Schadenfall.",
+   "basis": "GDV-Pressemitteilungen 2023/2024",
+   "delta": "+8,3 % ggü. 2022",
+   "dir": "up",
+   "reihe": [
+    [
+     "2021",
+     37000
+    ],
+    [
+     "2022",
+     41900
+    ],
+    [
+     "2023",
+     45370
+    ]
+   ]
+  },
+  {
+   "id": "ransom-zahlungen",
+   "n": "Ransomware-Zahlungen weltweit (on-chain)",
+   "v": 0.82,
+   "e": "Mrd. USD",
+   "per": "2025 (vorläufig)",
+   "st": "2026-02-26",
+   "reg": "Global",
+   "qual": "abg",
+   "q": [
+    "chain26",
+    "chain25"
+   ],
+   "def": "Auf der Blockchain nachvollziehbare Lösegeldzahlungen an Ransomware-Gruppen je Kalenderjahr.",
+   "basis": "Chainalysis; Werte werden nachträglich nach oben revidiert (2024 zunächst 0,81, später 0,89 Mrd. USD); Jahre vor 2023 aus früheren Berichten",
+   "delta": "−8 % ggü. 2024, 2023 Rekord 1,25 Mrd.",
+   "dir": "down",
+   "reihe": [
+    [
+     "2020",
+     0.91
+    ],
+    [
+     "2021",
+     0.98
+    ],
+    [
+     "2022",
+     0.57
+    ],
+    [
+     "2023",
+     1.25
+    ],
+    [
+     "2024",
+     0.89
+    ],
+    [
+     "2025",
+     0.82
+    ]
+   ]
+  },
+  {
+   "id": "ransom-quote",
+   "n": "Zahlungsquote bei Ransomware-Fällen",
+   "v": 20,
+   "e": "%",
+   "per": "Q4 2025",
+   "st": "2026-01-31",
+   "reg": "Global (IR-Fälle)",
+   "qual": "abg",
+   "q": [
+    "coveware",
+    "chain26"
+   ],
+   "def": "Anteil der von einem Incident-Response-Anbieter begleiteten Opfer, die Lösegeld zahlten; jeweils Wert des vierten Quartals.",
+   "basis": "Coveware-Quartalsberichte; Fälle mit Schwerpunkt größere Unternehmen, nicht marktrepräsentativ; Chainalysis nennt für 2025 eine Quote von 28 %",
+   "delta": "von rund 76 % (2019) auf 20 %",
+   "dir": "down",
+   "reihe": [
+    [
+     "2019",
+     76
+    ],
+    [
+     "2020",
+     70
+    ],
+    [
+     "2021",
+     46
+    ],
+    [
+     "2022",
+     37
+    ],
+    [
+     "2023",
+     29
+    ],
+    [
+     "2024",
+     25
+    ],
+    [
+     "2025",
+     20
+    ]
+   ]
+  },
+  {
+   "id": "ransom-recovery",
+   "n": "Durchschnittliche Wiederherstellungskosten nach Ransomware",
+   "v": 1.7,
+   "e": "Mio. USD",
+   "per": "Berichtsjahr 2026",
+   "st": "2026-06-30",
+   "reg": "Global (Befragung)",
+   "qual": "abg",
+   "q": [
+    "sophos26"
+   ],
+   "def": "Mittlere Kosten der Wiederherstellung ohne Lösegeld (Ausfall, Personal, Geräte, Netzwerk, entgangene Geschäfte) laut jährlicher Befragung von IT-Verantwortlichen.",
+   "basis": "Sophos State of Ransomware, Befragung; Berichtsjahr bezieht sich auf das Vorjahr",
+   "delta": "+11 % ggü. Vorjahr",
+   "dir": "up",
+   "reihe": [
+    [
+     "2021",
+     1.85
+    ],
+    [
+     "2022",
+     1.4
+    ],
+    [
+     "2023",
+     1.82
+    ],
+    [
+     "2024",
+     2.73
+    ],
+    [
+     "2025",
+     1.53
+    ],
+    [
+     "2026",
+     1.7
+    ]
+   ]
+  }
+ ],
+ "rechtsakte": [
+  {
+   "id": "nis2",
+   "n": "NIS2-Richtlinie",
+   "amt": "Richtlinie (EU) 2022/2555",
+   "jur": "EU",
+   "art": "Richtlinie",
+   "status": "in Kraft",
+   "fristen": [
+    {
+     "d": "2023-01-16",
+     "t": "Inkrafttreten",
+     "s": "inkraft"
+    },
+    {
+     "d": "2024-10-17",
+     "t": "Umsetzungsfrist der Mitgliedstaaten",
+     "s": "frist"
+    }
+   ],
+   "betr": "Wesentliche und wichtige Einrichtungen in 18 Sektoren",
+   "sank": "bis 10 Mio. EUR oder 2 % Umsatz (wesentliche Einrichtungen)",
+   "rel": "Treibt Nachfrage nach Cyber-Deckungen im Mittelstand; Nachweispflichten liefern Underwriting-Daten. Geschäftsleiterhaftung erhöht D&O-Berührung.",
+   "b": "Zweite EU-Richtlinie zur Netz- und Informationssicherheit. Erweitert den Kreis regulierter Unternehmen erheblich und führt Registrierungs-, Risikomanagement- und Meldepflichten ein.",
+   "q": [
+    "eurlex"
+   ],
+   "akteure": [
+    "enisa",
+    "bsi"
+   ],
+   "pr": "2026-08-20"
+  },
+  {
+   "id": "nis2umsucg",
+   "n": "NIS2-Umsetzungsgesetz (DE)",
+   "amt": "NIS-2-Umsetzungs- und Cybersicherheitsstärkungsgesetz",
+   "jur": "DE",
+   "art": "Gesetz",
+   "status": "in Kraft",
+   "fristen": [
+    {
+     "d": "2025-12-05",
+     "t": "Verkündung im Bundesgesetzblatt",
+     "s": "inkraft"
+    },
+    {
+     "d": "2026-03-06",
+     "t": "Ende der Registrierungsfrist beim BSI",
+     "s": "frist"
+    },
+    {
+     "d": "2026-06-30",
+     "t": "Erster Compliance-Nachweis (verschoben von 31.12.2025)",
+     "s": "frist"
+    }
+   ],
+   "betr": "rund 29.500 Unternehmen in 18 Sektoren (Schätzung)",
+   "sank": "gestaffelt bis 10 Mio. EUR / 2 % Umsatz",
+   "rel": "Konkretisiert Betroffenenkreis und Nachweise für den deutschen Markt. Registrierung beim BSI wird zum Underwriting-Merkmal; verspätete Registrierung bleibt möglich.",
+   "b": "Nationale Umsetzung der NIS2-Richtlinie, deutlich nach der EU-Frist. Betrifft einen Großteil der deutschen Wirtschaft mit Pflichten zu Risikomanagement, Vorfallmeldung und Registrierung.",
+   "q": [
+    "openkritis",
+    "bgbl"
+   ],
+   "akteure": [
+    "bsi"
+   ],
+   "pr": "2026-08-20"
+  },
+  {
+   "id": "kritisdachg",
+   "n": "KRITIS-Dachgesetz",
+   "amt": "Gesetz zur Stärkung der Resilienz kritischer Anlagen",
+   "jur": "DE",
+   "art": "Gesetz",
+   "status": "in Kraft",
+   "fristen": [
+    {
+     "d": "2026-01-29",
+     "t": "Beschluss im Bundestag",
+     "s": "verfahren"
+    },
+    {
+     "d": "2026-03-17",
+     "t": "Inkrafttreten",
+     "s": "inkraft"
+    }
+   ],
+   "betr": "Betreiber kritischer Anlagen (physische Resilienz)",
+   "sank": "Bußgeldrahmen gemäß Gesetz",
+   "rel": "Ergänzt NIS2 um physische Resilienz (Naturgefahren, Sabotage, hybride Bedrohungen). Für Betreiber gilt beides nebeneinander — relevant für Sach-Cyber-Schnittstellen und Betriebsunterbrechung.",
+   "b": "Umsetzung der EU-CER-Richtlinie. Reguliert Resilienz kritischer Infrastrukturen gegen nicht-digitale Gefahren, parallel zum Cybersicherheitsregime der NIS2.",
+   "q": [
+    "btkritis",
+    "openkritis"
+   ],
+   "akteure": [
+    "bsi"
+   ],
+   "pr": "2026-08-20"
+  },
+  {
+   "id": "dora",
+   "n": "DORA",
+   "amt": "Verordnung (EU) 2022/2554",
+   "jur": "EU",
+   "art": "Verordnung",
+   "status": "in Kraft",
+   "fristen": [
+    {
+     "d": "2023-01-16",
+     "t": "Inkrafttreten",
+     "s": "inkraft"
+    },
+    {
+     "d": "2025-01-17",
+     "t": "Geltungsbeginn",
+     "s": "inkraft"
+    }
+   ],
+   "betr": "Finanzunternehmen inkl. Versicherer, IKT-Drittdienstleister",
+   "sank": "aufsichtliche Maßnahmen, Zwangsgelder für kritische IKT-Dienstleister",
+   "rel": "Trifft Versicherer doppelt: als regulierte Finanzunternehmen (eigene IKT-Resilienz) und als Zeichner von Risiken bei Finanzkunden. Auslagerungs- und Registerpflichten erzeugen Daten über Konzentrationsrisiken.",
+   "b": "Digital Operational Resilience Act. Einheitlicher Rahmen für IKT-Risikomanagement, Vorfallmeldung, Resilienztests und Drittparteienrisiko im Finanzsektor.",
+   "q": [
+    "eurlex"
+   ],
+   "akteure": [
+    "bafin",
+    "eiopa"
+   ],
+   "pr": "2026-08-20"
+  },
+  {
+   "id": "cra",
+   "n": "Cyber Resilience Act",
+   "amt": "Verordnung (EU) 2024/2847",
+   "jur": "EU",
+   "art": "Verordnung",
+   "status": "Übergangsfrist",
+   "fristen": [
+    {
+     "d": "2024-12-10",
+     "t": "Inkrafttreten",
+     "s": "inkraft"
+    },
+    {
+     "d": "2026-09-11",
+     "t": "Meldepflichten für aktiv ausgenutzte Schwachstellen",
+     "s": "kommend"
+    },
+    {
+     "d": "2027-12-11",
+     "t": "Volle Anwendung",
+     "s": "kommend"
+    }
+   ],
+   "betr": "Hersteller, Importeure und Händler von Produkten mit digitalen Elementen",
+   "sank": "bis 15 Mio. EUR oder 2,5 % Umsatz",
+   "rel": "Verschiebt Haftung in Richtung Hersteller — Bedeutung für Produkthaftpflicht und Rückrufdeckungen; Schwachstellenmeldungen als neue Datenquelle.",
+   "b": "Sicherheitsanforderungen über den gesamten Lebenszyklus vernetzter Produkte und Software, inklusive Meldepflichten für Schwachstellen.",
+   "q": [
+    "eurlex"
+   ],
+   "akteure": [
+    "enisa"
+   ],
+   "pr": "2026-08-20"
+  },
+  {
+   "id": "dsgvo",
+   "n": "DSGVO",
+   "amt": "Verordnung (EU) 2016/679",
+   "jur": "EU",
+   "art": "Verordnung",
+   "status": "in Kraft",
+   "fristen": [
+    {
+     "d": "2018-05-25",
+     "t": "Geltungsbeginn",
+     "s": "inkraft"
+    }
+   ],
+   "betr": "Alle Verantwortlichen und Auftragsverarbeiter",
+   "sank": "bis 20 Mio. EUR oder 4 % Umsatz",
+   "rel": "Meldepflicht binnen 72 Stunden prägt die Schadenabwicklung; Bußgelder sind je nach Wording und Jurisdiktion nur eingeschränkt versicherbar.",
+   "b": "Datenschutz-Grundverordnung; Grundlage für Benachrichtigungspflichten und Bußgeldrisiken nach Datenpannen.",
+   "q": [
+    "eurlex"
+   ],
+   "akteure": [],
+   "pr": "2026-05-20"
+  },
+  {
+   "id": "lloyds-war",
+   "n": "Lloyd's Kriegsausschluss-Anforderung",
+   "amt": "Market Bulletin Y5381",
+   "jur": "Markt",
+   "art": "Marktstandard",
+   "status": "in Kraft",
+   "fristen": [
+    {
+     "d": "2022-08-16",
+     "t": "Bulletin veröffentlicht",
+     "s": "inkraft"
+    },
+    {
+     "d": "2023-03-31",
+     "t": "Verbindlich für neue und verlängerte Cyber-Policen",
+     "s": "frist"
+    }
+   ],
+   "betr": "Alle Lloyd's-Syndikate mit eigenständigen Cyber-Deckungen",
+   "sank": "—",
+   "rel": "Verpflichtet zu Ausschlüssen für staatlich zurechenbare Angriffe; prägt seither die Wording-Landschaft weit über Lloyd's hinaus und ist Kern der Debatte um Deckungssicherheit.",
+   "b": "Anforderung des Lloyd's-Marktes, dass Cyber-Policen Kriegs- und staatlich zurechenbare Cyberoperationen ausschließen; Referenzklauseln der Lloyd's Market Association.",
+   "q": [
+    "gb"
+   ],
+   "akteure": [
+    "lloyds",
+    "beazley",
+    "hiscox"
+   ],
+   "pr": "2026-05-20"
+  },
+  {
+   "id": "ai-act",
+   "n": "AI Act",
+   "amt": "Verordnung (EU) 2024/1689",
+   "jur": "EU",
+   "art": "Verordnung",
+   "status": "Übergangsfrist",
+   "fristen": [
+    {
+     "d": "2024-08-01",
+     "t": "Inkrafttreten",
+     "s": "inkraft"
+    },
+    {
+     "d": "2025-02-02",
+     "t": "Verbot bestimmter KI-Praktiken, KI-Kompetenzpflicht",
+     "s": "inkraft"
+    },
+    {
+     "d": "2025-08-02",
+     "t": "Pflichten für Anbieter von KI-Modellen mit allgemeinem Verwendungszweck",
+     "s": "inkraft"
+    },
+    {
+     "d": "2026-08-02",
+     "t": "Pflichten für Hochrisiko-KI (Verschiebung im Gesetzgebungsverfahren diskutiert)",
+     "s": "verfahren"
+    }
+   ],
+   "betr": "Anbieter und Betreiber von KI-Systemen, darunter Versicherer bei Risikoprüfung und Preisbildung in Lebens- und Krankenversicherung",
+   "sank": "bis 35 Mio. EUR oder 7 % Umsatz",
+   "rel": "Betrifft Versicherer als Betreiber von KI im Underwriting und in der Schadenbearbeitung; für Cyber-Deckungen entsteht die Frage, wer für Schäden durch fehlerhafte KI-Systeme haftet.",
+   "b": "Erste umfassende KI-Regulierung weltweit mit risikobasiertem Ansatz: verbotene Praktiken, Hochrisiko-Pflichten, Transparenzregeln und Vorgaben für große KI-Modelle.",
+   "q": [
+    "eurlex"
+   ],
+   "akteure": [
+    "enisa"
+   ],
+   "pr": "2026-09-04"
+  }
+ ],
+ "meldungen": [
+  {
+   "id": "m-2026-08-ambest",
+   "d": "2026-08-18",
+   "dom": "D6",
+   "typ": "Nachricht",
+   "t": "AM Best: Munich Re und Lloyd's führen die Rangliste der 50 größten Rückversicherer an",
+   "s": "Die jährliche Rangliste der Ratingagentur bestätigt Munich Re an der Spitze, gefolgt vom Lloyd's-Markt; Swiss Re und Hannover Rück folgen auf den nächsten Plätzen.",
+   "e": "Für Cyber zählt weniger die Gesamtprämie als der Anteil, den die Top-Rückversicherer dem Segment einräumen — hier bleibt die Kapazität auf wenige Häuser konzentriert.",
+   "akt": [
+    "munich-re",
+    "lloyds",
+    "swiss-re",
+    "hannover-rueck"
+   ],
+   "ra": [],
+   "q": [
+    "ambest26"
+   ]
+  },
+  {
+   "id": "m-2025-12-helvetia",
+   "d": "2025-12-05",
+   "dom": "D1",
+   "typ": "Transaktion",
+   "tt": "M&A",
+   "t": "Helvetia und Baloise schließen Fusion zur Helvetia Baloise Holding ab",
+   "s": "Aus zwei Schweizer Allbranchenversicherern entsteht der größte Schweizer Versicherer; das KMU-Cyber-Geschäft beider Häuser wird zusammengeführt. Vollzug im Dezember 2025 — Datum vor Übernahme zu verifizieren.",
+   "e": "Konsolidierung erreicht auch das DACH-Erstversicherungsgeschäft; für Makler verringert sich die Zahl unabhängiger KMU-Cyber-Kapazitäten in der Schweiz.",
+   "vol": "Fusion unter Gleichen",
+   "akt": [
+    "helvetia"
+   ],
+   "ra": [],
+   "q": [
+    "gb"
+   ]
+  },
+  {
+   "id": "m-2026-09-cra",
+   "d": "2026-09-11",
+   "dom": "D5",
+   "typ": "Regulierungsschritt",
+   "t": "CRA: Meldepflichten für aktiv ausgenutzte Schwachstellen beginnen",
+   "s": "Ab diesem Datum müssen Hersteller vernetzter Produkte aktiv ausgenutzte Schwachstellen und schwere Vorfälle an die ENISA-Plattform melden.",
+   "e": "Erste harte Pflicht des CRA. Für Produkthaftpflicht- und Cyber-Zeichner entsteht eine neue, strukturierte Datenquelle zu Schwachstellen.",
+   "akt": [
+    "enisa"
+   ],
+   "ra": [
+    "cra"
+   ],
+   "q": [
+    "eurlex"
+   ]
+  },
+  {
+   "id": "m-2026-08-mre",
+   "d": "2026-08-18",
+   "dom": "D6",
+   "typ": "Nachricht",
+   "t": "Munich Re: Cyber-Markt wächst 2025 um 7 %, Prognose 2030 bei rund 28 Mrd. USD",
+   "s": "Der Rückversicherer beziffert das globale Prämienvolumen 2025 auf gut 15 Mrd. USD und erwartet bis 2030 ein Wachstum von über 10 % pro Jahr.",
+   "e": "Wachstum bleibt zweistellig, aber deutlich unter den Raten des harten Marktes. Die Prognose hängt an der Durchdringung im Mittelstand — dort wirkt NIS2.",
+   "akt": [
+    "munich-re"
+   ],
+   "ra": [],
+   "q": [
+    "mre26"
+   ]
+  },
+  {
+   "id": "m-2026-06-nis2",
+   "d": "2026-06-30",
+   "u": "2026-08-20",
+   "dom": "D5",
+   "typ": "Regulierungsschritt",
+   "t": "NIS2: Frist für den ersten Compliance-Nachweis abgelaufen",
+   "s": "Die vom 31.12.2025 auf den 30.06.2026 verschobene Nachweisfrist ist verstrichen; das BSI beginnt mit der Auswertung.",
+   "e": "Der Nachweis wird zum belastbaren Underwriting-Merkmal — Versicherer können ihn abfragen, statt Selbstauskünfte zu bewerten.",
+   "akt": [
+    "bsi"
+   ],
+   "ra": [
+    "nis2umsucg"
+   ],
+   "q": [
+    "openkritis"
+   ]
+  },
+  {
+   "id": "m-2026-05-ils",
+   "d": "2026-05-12",
+   "u": "2026-08-30",
+   "dom": "D6",
+   "typ": "Transaktion",
+   "tt": "ILS-Emission",
+   "t": "Cyber-Katastrophenanleihen: Emissionsvolumen 2026 auf Kurs über 1,5 Mrd. USD",
+   "s": "Nach mehreren Neuemissionen im ersten Halbjahr liegt das Jahresvolumen für Cyber-Cat-Bonds bereits über dem Gesamtjahr 2025; Loss-Multiples sinken weiter.",
+   "e": "Der Neuheitsaufschlag schmilzt, ist aber nicht verschwunden. Für Investoren: Cyber-ILS wird zur regulären Allokation, für Zeichner: Retro-Kapazität wird günstiger.",
+   "vol": "≈ 1,5 Mrd. USD (Jahr)",
+   "akt": [
+    "beazley"
+   ],
+   "ra": [],
+   "q": [
+    "artemis"
+   ]
+  },
+  {
+   "id": "m-2026-04-coal",
+   "d": "2026-04-22",
+   "dom": "D3",
+   "typ": "Nachricht",
+   "t": "Coalition Claims Report: Erstforderung bei Ransomware steigt um 47 %, 86 % zahlen nicht",
+   "s": "Der Claims Report des MGA für das Jahr 2025 zeigt gegenläufige Signale: Rekordquote verweigerter Zahlungen bei gleichzeitig deutlich höheren Forderungen.",
+   "e": "Verhandlungsmacht verschiebt sich zu den Versicherten — aber die Betriebsunterbrechungs-Komponente wird teurer, nicht das Lösegeld.",
+   "akt": [
+    "coalition"
+   ],
+   "ra": [],
+   "q": [
+    "coalclaims"
+   ]
+  },
+  {
+   "id": "m-2026-03-kritis",
+   "d": "2026-03-17",
+   "dom": "D5",
+   "typ": "Regulierungsschritt",
+   "t": "KRITIS-Dachgesetz tritt in Kraft",
+   "s": "Das Gesetz zur Stärkung der Resilienz kritischer Anlagen gilt; Betreiber müssen physische Resilienzmaßnahmen nachweisen — parallel zu NIS2.",
+   "e": "Für Industrieversicherer relevant an der Schnittstelle Sach/Cyber: Sabotage und hybride Bedrohungen berühren Betriebsunterbrechungsdeckungen beider Sparten.",
+   "akt": [
+    "bsi"
+   ],
+   "ra": [
+    "kritisdachg"
+   ],
+   "q": [
+    "btkritis"
+   ]
+  },
+  {
+   "id": "m-2026-03-reg",
+   "d": "2026-03-06",
+   "dom": "D5",
+   "typ": "Regulierungsschritt",
+   "t": "NIS2: Registrierungsfrist beim BSI endet",
+   "s": "Die dreimonatige Frist zur Registrierung ist abgelaufen; eine nachträgliche Registrierung bleibt möglich.",
+   "e": "Die Registrierungsquote wird zum Frühindikator für die Nachfrage nach Cyber-Deckungen im Mittelstand.",
+   "akt": [
+    "bsi"
+   ],
+   "ra": [
+    "nis2umsucg"
+   ],
+   "q": [
+    "openkritis"
+   ]
+  },
+  {
+   "id": "m-2026-03-surv",
+   "d": "2026-03-03",
+   "dom": "D6",
+   "typ": "Nachricht",
+   "t": "Munich Re Global Cyber Risk and Insurance Survey 2026 erschienen",
+   "s": "Befragung von Entscheidern weltweit zu Risikowahrnehmung, Versicherungsdurchdringung und Kaufabsichten.",
+   "e": "Wiederkehrende Kernaussage: Die Lücke zwischen wahrgenommenem Risiko und tatsächlicher Absicherung bleibt groß — vor allem bei kleineren Unternehmen.",
+   "akt": [
+    "munich-re"
+   ],
+   "ra": [],
+   "q": [
+    "mresurv"
+   ]
+  },
+  {
+   "id": "m-2026-01-mga",
+   "d": "2026-01-20",
+   "dom": "D2",
+   "typ": "Nachricht",
+   "t": "MGA-Segment: Konsolidierung nach der Weichmarktphase",
+   "s": "Die in der harten Marktphase 2021–2023 gewachsenen Cyber-MGAs stehen unter Konsolidierungsdruck; Anbieter mit mehreren Kapazitätspartnern gelten als robuster.",
+   "e": "Kapazitätsdiversifikation ist das Überlebensmerkmal. Für Investoren: Bewertungen richten sich nach Trägerbindung, nicht nach Prämienwachstum allein.",
+   "akt": [
+    "coalition",
+    "at-bay"
+   ],
+   "ra": [],
+   "q": [
+    "ctacq"
+   ]
+  },
+  {
+   "id": "m-2025-12-nis2",
+   "d": "2025-12-05",
+   "dom": "D5",
+   "typ": "Regulierungsschritt",
+   "t": "NIS2-Umsetzungsgesetz im Bundesgesetzblatt verkündet",
+   "s": "Nach mehr als einem Jahr Verzug gegenüber der EU-Frist ist die deutsche Umsetzung in Kraft. Rund 29.500 Unternehmen sind registrierungspflichtig.",
+   "e": "Der wichtigste nachfrageseitige Impuls für den deutschen Cyber-Markt seit der DSGVO.",
+   "akt": [
+    "bsi"
+   ],
+   "ra": [
+    "nis2umsucg",
+    "nis2"
+   ],
+   "q": [
+    "openkritis",
+    "bgbl"
+   ]
+  },
+  {
+   "id": "m-2025-01-dora",
+   "d": "2025-01-17",
+   "dom": "D5",
+   "typ": "Regulierungsschritt",
+   "t": "DORA gilt ab heute für den gesamten Finanzsektor",
+   "s": "Versicherer, Banken und ihre IKT-Dienstleister unterliegen einheitlichen Anforderungen an IKT-Risikomanagement und Vorfallmeldung.",
+   "e": "Versicherer sind zugleich Regulierte und Zeichner — die eigenen Register über IKT-Dienstleister werden zur Datenquelle für Konzentrationsrisiken im Portfolio.",
+   "akt": [
+    "bafin",
+    "eiopa"
+   ],
+   "ra": [
+    "dora"
+   ],
+   "q": [
+    "eurlex"
+   ]
+  },
+  {
+   "id": "m-2024-01-polestar",
+   "d": "2024-01-10",
+   "dom": "D6",
+   "typ": "Transaktion",
+   "tt": "ILS-Emission",
+   "t": "Beazley platziert mit PoleStar Re die erste 144A-Cyber-Katastrophenanleihe",
+   "s": "Volumen 140 Mio. USD; erstmals wird Cyber-Risiko über eine regulär platzierte Cat-Bond-Struktur an Kapitalmarktinvestoren transferiert.",
+   "e": "Der Startpunkt der Anlageklasse. Alle späteren Emissionen beziehen sich auf diese Struktur.",
+   "vol": "140 Mio. USD",
+   "akt": [
+    "beazley"
+   ],
+   "ra": [],
+   "q": [
+    "artemis",
+    "geneva"
+   ]
+  },
+  {
+   "id": "m-2023-11-corvus",
+   "d": "2023-11-02",
+   "dom": "D6",
+   "typ": "Transaktion",
+   "tt": "M&A",
+   "t": "Travelers übernimmt Cyber-MGA Corvus für rund 435 Mio. USD",
+   "s": "Ein etablierter US-Erstversicherer kauft einen technologiegetriebenen Cyber-MGA und integriert dessen Zeichnungsplattform.",
+   "e": "Referenztransaktion für die MGA-Bewertung: Der Käufer zahlt für Daten und Distribution, nicht für Kapazität.",
+   "vol": "≈ 435 Mio. USD",
+   "akt": [
+    "travelers"
+   ],
+   "ra": [],
+   "q": [
+    "ctacq"
+   ]
+  }
+ ],
+ "aenderungslog": [
+  {
+   "d": "2026-09-04",
+   "t": "Startseite als Dashboard: Radar-Status, „Neu im Cyber-X-Hub“, Markt in Zahlen, Top-5-Meldungen, Akteursgrafik, Regulierungsblock; AI Act als Rechtsakt aufgenommen; drei wiederkehrende Formate angelegt."
+  },
+  {
+   "d": "2026-09-04",
+   "t": "GDV-Werte 2024 aus Tabelle 85 des Statistik-Taschenbuchs ergänzt (Beiträge 330 Mio., Schadenaufwand 150 Mio., Combined Ratio 80,7 %); die bisher leeren Kennzahlen „Beitragseinnahmen Cyber Deutschland“ und „Schaden-Kosten-Quote Cyber Deutschland“ sind damit gefüllt."
+  },
+  {
+   "d": "2026-09-04",
+   "t": "Schadenfälle: Zeitreihen ergänzt (GDV Beiträge, Schadenaufwand, Combined Ratio, Ø Schaden 2020–2023; Chainalysis Ransomware-Zahlungen 2020–2025; Coveware Zahlungsquote 2019–2025; Sophos Wiederherstellungskosten 2021–2026)."
+  },
+  {
+   "d": "2026-09-04",
+   "t": "Rubrik „Schadenfälle“ angelegt: sechs Schadenarten, sechs Kostenarten, neun konstruierte Beispiele mit illustrativen Beträgen; Kennzahlen GDV-Angriffsmeldungen und Bitkom-Gesamtschaden ergänzt."
+  },
+  {
+   "d": "2026-09-04",
+   "t": "Hero mit Bild (Kölner Skyline, Schutzschild) und Markenaussage „Cyber-X-Hub. Fokus Versicherung.“; Leitthema als Leiste unter dem Hero; Meldungsblöcke je Rubrik; Schaubild Marktstruktur als Liniengrafik."
+  },
+  {
+   "d": "2026-09-04",
+   "t": "Vorfallkarte Deutschland (19 Vorfälle, 60 Tage), Akteursgruppen mit Schaubild, Börsenübersicht (19 Titel) ergänzt; Helvetia → Helvetia Baloise; AIG und SCOR aufgenommen."
+  },
+  {
+   "d": "2026-09-02",
+   "t": "Prototyp mit Beispieldaten angelegt: 38 Akteure, 7 Rechtsakte, 9 Kennzahlen, 13 Meldungen, 10 Glossarbegriffe."
+  },
+  {
+   "d": "2026-09-02",
+   "t": "Kennzahlen gwp-de und cr-de ohne Wert angelegt — Lizenzanfrage GDV offen (O-3)."
+  },
+  {
+   "d": "2026-09-02",
+   "t": "Regel eingeführt: Meldungen ohne Verknüpfung zu Akteur oder Rechtsakt werden nicht angezeigt."
+  }
+ ]
+}
