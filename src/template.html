@@ -87,7 +87,7 @@ p{margin:0 0 12px; max-width:70ch}
 @media (max-width:860px){ .hero{min-height:0; background-position:72% center} .hero::before{background:linear-gradient(180deg, rgba(228,237,241,.94) 0%, rgba(228,237,241,.88) 70%, rgba(228,237,241,.55) 100%)} .hero .in{grid-template-columns:1fr; padding:30px 0 26px} }
 .hero .tag{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#156366; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
 .hero .tag .sep{width:24px; height:1px; background:#156366; display:inline-block}
-.hero h1{font-family:var(--display); font-weight:700; font-size:clamp(1.7rem,3.4vw,2.7rem); line-height:1.12; letter-spacing:-.015em; color:#0F1B2D; margin:14px 0 0; max-width:22ch}
+.hero h1{font-family:var(--display); font-weight:700; font-size:clamp(1.55rem,3.4vw,2.7rem); line-height:1.12; letter-spacing:-.015em; color:#0F1B2D; margin:14px 0 0; max-width:22ch; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere}
 .hero h1 em{font-style:normal; color:#1B7C7E}
 .hero .dek{font-size:1.08rem; color:#2E3A47; margin:16px 0 20px; max-width:52ch; line-height:1.55}
 .hero .meta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
@@ -637,7 +637,7 @@ function pageRadar(){
   const L=LEITTHEMA;
   const hero = `<section class="hero" aria-label="Cyber-X-Hub"><div class="in"><div>
       <div class="tag"><span>Informationsportal · Fokus Versicherung</span><span class="sep"></span><span>DACH · kuratiert</span></div>
-      <h1>Cyber-X-Hub –<br><em>Die Landkarte des Cyberversicherungsmarktes</em></h1>
+      <h1 lang="de">Cyber-X-Hub –<br><em>Die Landkarte des Cyber&shy;versicherungs&shy;marktes</em></h1>
       <p class="dek">Der Cyberversicherungsmarkt in Deutschland, Österreich und der Schweiz auf einer Seite: Wer trägt das Risiko, wer vermittelt, wer reguliert, wohin fließt Kapital. Für Versicherer, Makler und Investoren — jede Zahl mit Quelle und Stand.</p>
       <div class="meta"><a class="cta" href="#/akteure">Zur Marktstruktur →</a><a class="cta ghost" href="#/markt">Kennzahlen &amp; Kapital</a></div>
     </div><div aria-hidden="true"></div></div><span class="credit">Bild: Cyber-X-Hub</span></section>
