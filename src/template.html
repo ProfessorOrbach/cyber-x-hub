@@ -734,8 +734,7 @@ function pageRadar(){
     <div class="dsect">${dsHead("scale","orange","Regulierung","was den Markt gerade treibt","#/regulierung","Zeitachse")}<div class="rcards">${reg}</div></div>
     <div class="dsect">${dsHead("radar","red","Vorfälle in Deutschland","Presse- und Leak-Meldungen","#/schaeden","Schadenfälle")}${karte().replace('<div class="sect" style="margin-top:0"><h2>Vorfälle in Deutschland <span class="eyebrow">Presse- und Leak-Meldungen, letzte '+MAP.tage+' Tage</span>','<div class="sect" style="margin-top:0"><h2><span class="eyebrow">letzte '+MAP.tage+' Tage</span>')}</div>
     <div class="dsect">${dsHead("ai","violet","Formate","wiederkehrend",null)}<div class="fcards">${formate}</div></div>
-    <div class="dsect">${dsHead("index","teal","Analysen","Dossiers des Herausgebers","#/themen","Alle Themen")}<div class="feat">${THEMEN.map(featCard).join("")}</div></div>
-    <div class="sect"><h2>Wer hinter dem Hub steht</h2>${pubBox()}</div>`;
+    <div class="dsect">${dsHead("index","teal","Analysen","Dossiers des Herausgebers","#/themen","Alle Themen")}<div class="feat">${THEMEN.map(featCard).join("")}</div></div>`;
 }
 function meldung(m, full){
   const fut = m.d>STAND;
