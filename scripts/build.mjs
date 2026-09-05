@@ -73,7 +73,7 @@ const dist = path.join(ROOT, "dist");
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(path.join(dist, "assets"), { recursive: true });
 // Für das Hosting eine vollständige HTML-Seite; die Artifact-Variante (--inline-assets) bleibt ein Fragment
-const full = inline ? html : `<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="description" content="Cyber-X-Hub – kuratiertes Informationsportal zum Cyberversicherungsmarkt DACH">\n</head>\n<body style="margin:0">\n${html}\n</body>\n</html>\n`;
+const full = inline ? html : `<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="description" content="Cyber-X-Hub – Die Landkarte des Cyberversicherungsmarktes. Kuratiertes Informationsportal für DACH: Akteure, Regulierung, Schadenfälle, Kennzahlen.">\n</head>\n<body style="margin:0">\n${html}\n</body>\n</html>\n`;
 fs.writeFileSync(path.join(dist, "index.html"), full);
 if (!inline) fs.copyFileSync(heroFile, path.join(dist, "assets/hero.jpg"));
 fs.writeFileSync(path.join(dist, "data.json"), JSON.stringify({ stand, akteure: D.AKTEURE.length, kennzahlen: D.KENNZAHLEN, rechtsakte: D.RECHTSAKTE, meldungen: D.MELDUNGEN, aenderungslog: D.LOG }, null, 1));
