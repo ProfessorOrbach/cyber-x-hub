@@ -79,7 +79,7 @@ p{margin:0 0 12px; max-width:70ch}
 .banner b{font-family:var(--mono); font-size:.66rem; letter-spacing:.11em; text-transform:uppercase; color:var(--signal); font-weight:500}
 
 /* ---------- Hero (Bild, Markenaussage) ---------- */
-.hero{position:relative; margin:-26px -22px 0; padding:0 22px; min-height:440px; display:flex; align-items:stretch; color:#0F1B2D; overflow:hidden; border-bottom:1px solid var(--rule);
+.hero{position:relative; margin:-26px -22px 0; padding:0 22px; min-height:380px; display:flex; align-items:stretch; color:#0F1B2D; overflow:hidden; border-bottom:1px solid var(--rule);
   background:#E4EDF1 url("/*__HERO__*/") center right / cover no-repeat}
 .hero::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(228,237,241,.96) 0%, rgba(228,237,241,.88) 34%, rgba(228,237,241,.35) 58%, rgba(228,237,241,0) 78%); pointer-events:none}
 .hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:rgba(15,27,45,.12)}
@@ -87,7 +87,8 @@ p{margin:0 0 12px; max-width:70ch}
 @media (max-width:860px){ .hero{min-height:0; background-position:72% center} .hero::before{background:linear-gradient(180deg, rgba(228,237,241,.94) 0%, rgba(228,237,241,.88) 70%, rgba(228,237,241,.55) 100%)} .hero .in{grid-template-columns:1fr; padding:30px 0 26px} }
 .hero .tag{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#156366; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
 .hero .tag .sep{width:24px; height:1px; background:#156366; display:inline-block}
-.hero h1{font-family:var(--display); font-weight:700; font-size:clamp(1.55rem,3.4vw,2.7rem); line-height:1.12; letter-spacing:-.015em; color:#0F1B2D; margin:14px 0 0; max-width:22ch; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere}
+.hero h1{font-family:var(--display); font-weight:700; font-size:clamp(1.55rem,3.4vw,2.7rem); line-height:1.12; letter-spacing:-.015em; color:#0F1B2D; margin:14px 0 0; max-width:24ch; hyphens:manual}
+@media (max-width:600px){ .hero h1{hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere} }
 .hero h1 em{font-style:normal; color:#1B7C7E}
 .hero .dek{font-size:1.08rem; color:#2E3A47; margin:16px 0 20px; max-width:52ch; line-height:1.55}
 .hero .meta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
@@ -427,6 +428,64 @@ a.seg:hover{filter:brightness(1.12)}
 .fall .v{font-family:var(--mono); font-size:.8rem; grid-column:2; grid-row:1/3; align-self:center; font-variant-numeric:tabular-nums}
 .fall:hover b{color:var(--accent-2)}
 
+/* ---------- Dashboard (Radar) ---------- */
+:root{ --c-blue:#2F6DB5; --c-teal:#1B7C7E; --c-violet:#6C5DA8; --c-orange:#E08A2E; --c-green:#2E9E6B; --c-red:#D46A6A; }
+.radarbar{display:grid; grid-template-columns:auto repeat(4,minmax(0,1fr)); gap:10px; align-items:stretch; margin:22px 0 6px}
+@media (max-width:900px){ .radarbar{grid-template-columns:1fr 1fr} .radarbar .rt{grid-column:1/-1} }
+.radarbar .rt{display:flex; flex-direction:column; justify-content:center; padding:0 16px 0 2px}
+.radarbar .rt b{font-family:var(--display); font-size:1.35rem; font-weight:700; line-height:1.1}
+.radarbar .rt span{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-top:4px}
+.rs{display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start; background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:12px 14px; text-decoration:none; color:var(--ink); box-shadow:var(--shadow)}
+.rs:hover{border-color:var(--accent)}
+.rs .dot{width:12px; height:12px; border-radius:50%; margin-top:5px; box-shadow:0 0 0 4px color-mix(in srgb, currentColor 18%, transparent)}
+.rs .n{font-weight:600; font-size:.9rem}
+.rs .t{font-size:.78rem; color:var(--ink-2); line-height:1.35; margin-top:2px}
+.rs.green .dot{background:var(--c-green); color:var(--c-green)} .rs.orange .dot{background:var(--c-orange); color:var(--c-orange)} .rs.red .dot{background:var(--c-red); color:var(--c-red)} .rs.blue .dot{background:var(--c-blue); color:var(--c-blue)}
+.dsect{margin-top:34px}
+.dsect > h2{display:flex; align-items:center; gap:10px; font-family:var(--display); font-size:1.3rem; font-weight:600; margin-bottom:12px; flex-wrap:wrap}
+.dsect > h2 .ic{width:34px; height:34px; border-radius:9px; display:grid; place-items:center; color:#fff; flex:none}
+.dsect > h2 .ic svg{width:18px; height:18px}
+.dsect > h2 .sub{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:400}
+.dsect > h2 a.more{font-family:var(--sans); font-size:.8rem; font-weight:400; margin-left:auto}
+.ic.blue{background:var(--c-blue)} .ic.teal{background:var(--c-teal)} .ic.violet{background:var(--c-violet)} .ic.orange{background:var(--c-orange)} .ic.green{background:var(--c-green)} .ic.red{background:var(--c-red)}
+.newbox{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:760px){ .newbox{grid-template-columns:1fr} }
+.newcol{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:14px 16px; box-shadow:var(--shadow)}
+.newcol h3{font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-bottom:10px; display:flex; align-items:center; gap:8px}
+.newcol h3 i{width:8px; height:8px; border-radius:50%; background:var(--c-red); display:inline-block}
+.newcol .cnt{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
+.newcol .cnt a{display:inline-flex; align-items:baseline; gap:6px; background:var(--surface-2); border-radius:999px; padding:4px 11px; text-decoration:none; color:var(--ink); font-size:.8rem}
+.newcol .cnt a b{font-family:var(--mono); font-weight:500; font-size:.9rem}
+.newcol ul{margin:0; padding:0; list-style:none; max-width:none}
+.newcol li{font-size:.85rem; color:var(--ink-2); padding:6px 0; border-top:1px solid var(--rule-soft); display:grid; grid-template-columns:auto 1fr; gap:10px}
+.newcol li span.d{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); padding-top:2px}
+.newcol .empty{padding:10px 0; text-align:left}
+.mcards{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px}
+.mcard{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:14px 16px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:6px; text-decoration:none; color:var(--ink); min-width:0}
+.mcard:hover{border-color:var(--accent)}
+.mcard .k{display:flex; gap:8px; align-items:center; font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+.mcard .k i{width:8px; height:8px; border-radius:50%; display:inline-block}
+.mcard b{font-weight:600; font-size:.95rem; line-height:1.3}
+.mcard p{font-size:.82rem; color:var(--ink-2); margin:0; max-width:none}
+.mcard .f{font-family:var(--mono); font-size:.66rem; color:var(--ink-3); margin-top:auto; padding-top:6px}
+.rcards{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px}
+.rcard{background:var(--surface); border:1px solid var(--rule); border-top:4px solid var(--c-orange); border-radius:10px; padding:14px 16px; box-shadow:var(--shadow); text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:6px}
+.rcard:hover{border-color:var(--accent); border-top-color:var(--c-orange)}
+.rcard b{font-family:var(--display); font-size:1.1rem; font-weight:600}
+.rcard .st{display:flex; gap:6px; flex-wrap:wrap; align-items:center}
+.rcard p{font-size:.82rem; color:var(--ink-2); margin:0; max-width:none}
+.rcard .nx{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-top:auto; padding-top:6px}
+.fcards{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px}
+.fcard{position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:18px 18px 16px 18px; box-shadow:var(--shadow); text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:8px}
+.fcard::before{content:""; position:absolute; right:-40px; top:-40px; width:140px; height:140px; border-radius:50%; opacity:.12}
+.fcard.blue::before{background:var(--c-blue)} .fcard.orange::before{background:var(--c-orange)} .fcard.violet::before{background:var(--c-violet)}
+.fcard .ic{width:38px; height:38px; border-radius:10px; display:grid; place-items:center; color:#fff}
+.fcard .ic svg{width:20px; height:20px}
+.fcard b{font-family:var(--display); font-size:1.15rem; font-weight:600}
+.fcard p{font-size:.85rem; color:var(--ink-2); margin:0; max-width:none}
+.fcard .st{font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin-top:auto}
+.fcard:hover{border-color:var(--accent)}
+
 /* ---------- Börse ---------- */
 .bcards{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px}
 .bcard{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:13px 15px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:5px; min-width:0}
@@ -633,27 +692,49 @@ function wireZsp(){ const z=$("#zsp"); if(!z) return; z.querySelectorAll("a[data
 function heroKn(id){ const k=K[id]; return `<a class="kn" href="#/markt/kennzahl/${id}"><span class="v">${k.v==null?"n. v.":esc(fmtNum(k.v))}${k.e?`<small>${esc(k.e)}</small>`:""}</span><span class="l">${esc(k.n)} · ${esc(k.per)}</span></a>`; }
 function featCard(t){ return `<a href="#/themen/${t.id}"><span class="rub">${esc(t.rub)}</span><h3>${esc(t.t)}</h3><p>${esc(t.teaser)}</p><span class="m">aktualisiert ${fd(t.u)}</span></a>`; }
 function pubBox(){ const h=HERAUSGEBER; return `<div class="card pub"><div class="av" aria-hidden="true">${esc(h.name.split(" ").map(w=>w[0]).join(""))}</div><div><h3>${esc(h.name)}</h3><div class="r">${esc(h.rolle)} · Praxis &amp; Wissenschaft</div><p>${esc(h.kurz)}</p><p style="color:var(--ink-3);font-size:.8rem">${esc(h.grundsatz)}</p><div class="t">${h.themen.map(t=>pill("acc",t)).join("")}</div></div></div>`; }
+const ICONS={
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 4 3 5-7"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>',
+  map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>',
+  scale:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M12 6l7 3-3 6H8L5 9z"/></svg>',
+  radar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v9l6 3"/></svg>',
+  index:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg>',
+  pulse:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-7 4 14 3-7h6"/></svg>',
+  ai:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9l-4.7 1.8L12 15.5l-1.8-4.7L5.5 9l4.7-1.3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>',
+  sparkle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg>'
+};
+function dsHead(icon, col, title, sub, href, more){ return `<h2><span class="ic ${col}">${ICONS[icon]}</span>${esc(title)}${sub?`<span class="sub">${esc(sub)}</span>`:""}${href?`<a class="more" href="${href}">${esc(more||"Mehr")} →</a>`:""}</h2>`; }
+function daysBetween(a,b){ return Math.round((new Date(a)-new Date(b))/864e5); }
+function neuBox(){
+  const within=(d,n)=>d&&daysBetween(STAND,d)>=0&&daysBetween(STAND,d)<=n;
+  const col=(title,n)=>{
+    const log=LOG.filter(l=>within(l.d,n)&&(n===0||daysBetween(STAND,l.d)>0)).slice(0,4);
+    const me=MELDUNGEN.filter(m=>within(m.d,n)||within(m.u,n)).length, vf=VORFAELLE.filter(v=>within(v.d,n)).length, ak=AKTEURE.filter(a=>within(a.pr,n)).length, th=THEMEN.filter(t=>within(t.u,n)).length, ra=RECHTSAKTE.filter(r=>within(r.pr,n)).length;
+    const cnt=[[me,"Meldungen","#/meldungen"],[vf,"Vorfälle","#/radar"],[ak,"Akteure geprüft","#/akteure"],[ra,"Rechtsakte","#/regulierung"],[th,"Analysen","#/themen"]].filter(c=>c[0]>0).map(c=>`<a href="${c[2]}"><b>${c[0]}</b>${c[1]}</a>`).join("");
+    return `<div class="newcol"><h3><i></i>${title}</h3><div class="cnt">${cnt||'<span style="font-size:.8rem;color:var(--ink-3)">Keine neuen Einträge</span>'}</div>${log.length?`<ul>${log.map(l=>`<li><span class="d">${fd(l.d)}</span><span>${esc(l.t)}</span></li>`).join("")}</ul>`:""}</div>`; };
+  return `<div class="newbox">${col("Heute",0)}${col("Diese Woche",7)}</div>`;
+}
 function pageRadar(){
   const L=LEITTHEMA;
   const hero = `<section class="hero" aria-label="Cyber-X-Hub"><div class="in"><div>
-      <div class="tag"><span>Informationsportal · Fokus Versicherung</span><span class="sep"></span><span>DACH · kuratiert</span></div>
       <h1 lang="de">Cyber-X-Hub –<br><em>Die Landkarte des Cyber&shy;versicherungs&shy;marktes</em></h1>
-      <p class="dek">Der Cyberversicherungsmarkt in Deutschland, Österreich und der Schweiz auf einer Seite: Wer trägt das Risiko, wer vermittelt, wer reguliert, wohin fließt Kapital. Für Versicherer, Makler und Investoren — jede Zahl mit Quelle und Stand.</p>
-      <div class="meta"><a class="cta" href="#/akteure">Zur Marktstruktur →</a><a class="cta ghost" href="#/markt">Kennzahlen &amp; Kapital</a></div>
+      <div class="meta" style="margin-top:22px"><a class="cta" href="#/akteure">Zur Marktstruktur →</a><a class="cta ghost" href="#/markt">Kennzahlen &amp; Kapital</a></div>
     </div><div aria-hidden="true"></div></div><span class="credit">Bild: Cyber-X-Hub</span></section>
     <div class="leit"><span class="k">${esc(L.tag)}</span><div><div class="t"><a href="${L.links[0].h}">${esc(L.t)}</a></div><div class="d">${esc(L.dek)}</div></div><div class="m">${fd(L.d)} · akt. ${fd(L.u)}<br><a href="${L.links[0].h}">${esc(L.links[0].t)} →</a> · <a href="${L.links[1].h}">${esc(L.links[1].t)}</a></div></div>`;
-  const tiles = ["gwp-global","cagr-global","ils-cyber","ransom-demand","nis2-betr","zyklus"].map(i=>tile(K[i])).join("");
-  const news = MELDUNGEN.filter(m=>m.d<=STAND).sort((a,b)=>b.d<a.d?-1:1).slice(0,4).map(m=>meldung(m,false)).join("");
-  const ev = allEvents().filter(e=>e.d>=STAND).slice(0,4).map(e=>`<div class="item"><span class="date">${fd(e.d)}</span><div><div class="t">${rlink(e.ra)}</div><div class="s">${esc(e.t)}</div></div></div>`).join("");
-  const doms = Object.values(DOM).map(d=>{ const c = d.k==="D5"?RECHTSAKTE.length:AKTEURE.filter(a=>a.dom.includes(d.k)).length; const href = d.k==="D5"?"#/regulierung":(d.k==="D6"?"#/markt":`#/akteure?dom=${d.k}`); return `<a class="domlink" href="${href}"><span class="k">${d.k}</span><span><span class="n">${esc(d.n)}</span><br><span style="font-size:.78rem;color:var(--ink-3)">${esc(d.s)}</span></span><span class="c">${c} ${d.k==="D5"?"Rechtsakte":d.k==="D6"?"Tracker":"Akteure"}</span></a>`; }).join("");
-  return hero+karte()+`
-    <div class="sect"><h2>Lage in Zahlen <span class="eyebrow">Stand ${fd(STAND)}</span><a class="more" href="#/markt">Alle Kennzahlen →</a></h2><div class="grid g6">${tiles}</div></div>
-    <div class="sect"><h2>Redaktionsempfehlung <span class="eyebrow">Kernthemen des Herausgebers</span><a class="more" href="#/themen">Alle Themen →</a></h2><div class="feat">${THEMEN.map(featCard).join("")}</div></div>
-    <div class="grid g3 sect">
-      <div class="card"><h3>Aktuelle Meldungen <a class="more" href="#/meldungen" style="font-weight:400;font-size:.78rem;margin-left:8px">alle →</a></h3><div class="list">${news}</div></div>
-      <div class="card"><h3>Nächste Fristen <a class="more" href="#/regulierung" style="font-weight:400;font-size:.78rem;margin-left:8px">Zeitachse →</a></h3><div class="list">${ev||'<div class="empty">Keine anstehenden Fristen erfasst.</div>'}</div></div>
-      <div class="card"><h3>Sechs Domänen</h3>${doms}</div>
-    </div>
+  const bar = `<div class="radarbar"><div class="rt"><b>Cyber-X Radar</b><span>Lage am ${fd(STAND)}</span></div>${RADAR.status.map(r=>`<a class="rs ${r.c}" href="${r.href}"><span class="dot"></span><span><span class="n">${esc(r.n)}</span><div class="t">${esc(r.t)}</div></span></a>`).join("")}</div>`;
+  const tiles = ["gwp-de","gdv-cr","gwp-global","ils-cyber","zyklus","ransom-refuse"].filter(i=>K[i]).map(i=>tile(K[i])).join("");
+  const top5 = MELDUNGEN.filter(m=>m.d<=STAND).sort((a,b)=>b.d<a.d?-1:1).slice(0,5).map(m=>{ const c={D1:"blue",D2:"blue",D3:"teal",D4:"orange",D5:"orange",D6:"violet"}[m.dom]||"teal"; return `<a class="mcard" href="#/meldungen/${m.id}"><span class="k"><i style="background:var(--c-${c})"></i>${esc(DOM[m.dom].n)} · ${fd(m.d)}</span><b>${esc(m.t)}</b><p>${esc(m.e)}</p><span class="f">${esc(m.typ)}${m.tt?" · "+esc(m.tt):""}</span></a>`; }).join("");
+  const reg = RADAR.regulierung.map(id=>R[id]).filter(Boolean).map(r=>{ const next=r.fristen.filter(f=>f.d>=STAND).sort((a,b)=>a.d<b.d?-1:1)[0]; const last=r.fristen.filter(f=>f.d<STAND).sort((a,b)=>a.d<b.d?1:-1)[0]; return `<a class="rcard" href="#/regulierung/${r.id}"><b>${esc(r.n)}</b><span class="st">${pill(r.status==="in Kraft"?"ok":"abg",r.status)}${pill("d",r.jur)}</span><p>${esc(r.rel)}</p><span class="nx">${next?`Nächste Frist ${fd(next.d)}: ${esc(next.t)}`:last?`Zuletzt ${fd(last.d)}: ${esc(last.t)}`:""}</span></a>`; }).join("");
+  const formate = RADAR.formate.map(f=>`<a class="fcard ${f.c}" href="${f.href}"><span class="ic ${f.c}">${ICONS[f.icon]}</span><b>${esc(f.n)}</b><p>${esc(f.s)}</p><span class="st">${esc(f.status)}</span></a>`).join("");
+  return hero+bar+`
+    <div class="dsect">${dsHead("sparkle","red","Neu im Cyber-X-Hub","aus dem Änderungslog","#/referenz","Änderungslog")}${neuBox()}</div>
+    <div class="dsect">${dsHead("chart","blue","Markt in Zahlen","Prämien, Schadenquote, Kapazität","#/markt","Alle Kennzahlen")}<div class="grid g6">${tiles}</div></div>
+    <div class="dsect">${dsHead("bolt","orange","Aktuelle Entwicklungen","die fünf wichtigsten Meldungen","#/meldungen","Alle Meldungen")}<div class="mcards">${top5}</div></div>
+    <div class="dsect">${dsHead("map","teal","Cyberversicherung im Überblick","Zusammenspiel der Akteure","#/akteure","Akteure und Gruppen")}${zspSchema()}</div>
+    <div class="dsect">${dsHead("scale","orange","Regulierung","was den Markt gerade treibt","#/regulierung","Zeitachse")}<div class="rcards">${reg}</div></div>
+    <div class="dsect">${dsHead("radar","red","Vorfälle in Deutschland","Presse- und Leak-Meldungen","#/schaeden","Schadenfälle")}${karte().replace('<div class="sect" style="margin-top:0"><h2>Vorfälle in Deutschland <span class="eyebrow">Presse- und Leak-Meldungen, letzte '+MAP.tage+' Tage</span>','<div class="sect" style="margin-top:0"><h2><span class="eyebrow">letzte '+MAP.tage+' Tage</span>')}</div>
+    <div class="dsect">${dsHead("ai","violet","Formate","wiederkehrend",null)}<div class="fcards">${formate}</div></div>
+    <div class="dsect">${dsHead("index","teal","Analysen","Dossiers des Herausgebers","#/themen","Alle Themen")}<div class="feat">${THEMEN.map(featCard).join("")}</div></div>
     <div class="sect"><h2>Wer hinter dem Hub steht</h2>${pubBox()}</div>`;
 }
 function meldung(m, full){
@@ -707,8 +788,7 @@ function pageKennzahl(id){
 
 /* ---------- Akteure ---------- */
 const AK = {sort:"n",asc:true};
-function pageAkteure(p){
-  const q=(p.get("q")||"").toLowerCase();
+function zspSchema(){
   const G = Object.fromEntries(GRUPPEN.map(g=>[g.id,g]));
   const top = g => g.ids.slice(0,3).map(i=>A[i]?A[i].n:i).join(" · ");
   const short = n => n.replace(/ \(.*\)/,"").replace("Bundesamt für Sicherheit in der Informationstechnik","BSI").replace("Amazon Web Services","AWS").replace("Allianz Commercial","Allianz").replace("Google Cloud","Google");
@@ -790,6 +870,11 @@ function pageAkteure(p){
     ${["erst","vertrieb","mga","rueck"].map((g,i)=>`<a href="#g-${g}"><span class="k">Risikotransfer</span><b>${esc(G[g].n)}</b><span class="c">${G[g].ids.length}</span></a>`).join("")}
     <a href="#/themen/ki" style="border-color:rgba(224,122,122,.5)"><span class="k" style="color:#E28A8A">Rahmen</span><b>Hacker &amp; KI</b><span class="c">→</span></a></div>`;
   const schema = `<section class="sch" aria-label="Marktstruktur"><div class="in"><div class="head"><span class="tag">Zusammenspiel · Cyberversicherung DACH</span><span class="hint">Knoten und Kästen anklicken → Gruppe · Überfahren hebt Verbindungen hervor</span></div>${svg}${mobile}</div></section>`;
+  return schema;
+}
+function pageAkteure(p){
+  const q=(p.get("q")||"").toLowerCase();
+  const schema = zspSchema();
   const anchors = `<div class="anchors">${GRUPPEN.map(g=>`<a class="chip" href="#g-${g.id}">${esc(g.n)}</a>`).join("")}</div>`;
   const hit = a => !q || (a.n+" "+a.b+" "+a.rollen.join(" ")+" "+(BED[a.id]||"")).toLowerCase().includes(q);
   const groups = GRUPPEN.map(g=>{

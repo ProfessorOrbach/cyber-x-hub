@@ -1,0 +1,67 @@
+{
+ "status": [
+  {
+   "id": "markt",
+   "n": "Markt",
+   "c": "green",
+   "t": "Weicher Markt, Beiträge in DE +8,7 %, Schadenaufwand 2024 erstmals rückläufig",
+   "href": "#/markt"
+  },
+  {
+   "id": "regulierung",
+   "n": "Regulierung",
+   "c": "orange",
+   "t": "NIS2-Nachweisfrist verstrichen; CRA-Meldepflicht ab 11.09.; Hochrisiko-Pflichten des AI Act im Verfahren",
+   "href": "#/regulierung"
+  },
+  {
+   "id": "schaeden",
+   "n": "Schadenfälle",
+   "c": "red",
+   "t": "Kommunen und Mittelstand im Fokus; Zahlungsquote bei Ransomware auf Tiefstand",
+   "href": "#/schaeden"
+  },
+  {
+   "id": "tech",
+   "n": "Technologie & KI",
+   "c": "blue",
+   "t": "KI-gestütztes Phishing und Deepfakes; Cloud-Konzentration als Kumulquelle",
+   "href": "#/themen/ki"
+  }
+ ],
+ "regulierung": [
+  "nis2umsucg",
+  "dora",
+  "dsgvo",
+  "ai-act"
+ ],
+ "formate": [
+  {
+   "id": "risk-index",
+   "n": "Cyber Risk Index DACH",
+   "icon": "index",
+   "c": "blue",
+   "s": "Monatlicher Indikator aus Vorfallzahl, Leak-Listungen, Zahlungsquote und Regulierungsdruck. Methodik in Arbeit, erste Ausgabe geplant.",
+   "status": "in Vorbereitung",
+   "href": "#/referenz"
+  },
+  {
+   "id": "pulse",
+   "n": "Cyber Insurance Pulse",
+   "icon": "pulse",
+   "c": "orange",
+   "s": "Wöchentlicher Marktbrief: die fünf Meldungen der Woche, neue Akteure, Fristen. Erscheint mit dem Feed-Skript im Betrieb.",
+   "status": "wöchentlich, ab Go-live",
+   "href": "#/meldungen"
+  },
+  {
+   "id": "ai-watch",
+   "n": "AI & Cyber Watch",
+   "icon": "ai",
+   "c": "violet",
+   "s": "KI als Angriffswerkzeug, im Underwriting und als Haftungsfrage. Dossier plus laufend markierte Meldungen.",
+   "status": "Dossier online",
+   "href": "#/themen/ki"
+  }
+ ]
+}

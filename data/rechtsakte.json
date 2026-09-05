@@ -224,5 +224,46 @@
    "hiscox"
   ],
   "pr": "2026-05-20"
+ },
+ {
+  "id": "ai-act",
+  "n": "AI Act",
+  "amt": "Verordnung (EU) 2024/1689",
+  "jur": "EU",
+  "art": "Verordnung",
+  "status": "Übergangsfrist",
+  "fristen": [
+   {
+    "d": "2024-08-01",
+    "t": "Inkrafttreten",
+    "s": "inkraft"
+   },
+   {
+    "d": "2025-02-02",
+    "t": "Verbot bestimmter KI-Praktiken, KI-Kompetenzpflicht",
+    "s": "inkraft"
+   },
+   {
+    "d": "2025-08-02",
+    "t": "Pflichten für Anbieter von KI-Modellen mit allgemeinem Verwendungszweck",
+    "s": "inkraft"
+   },
+   {
+    "d": "2026-08-02",
+    "t": "Pflichten für Hochrisiko-KI (Verschiebung im Gesetzgebungsverfahren diskutiert)",
+    "s": "verfahren"
+   }
+  ],
+  "betr": "Anbieter und Betreiber von KI-Systemen, darunter Versicherer bei Risikoprüfung und Preisbildung in Lebens- und Krankenversicherung",
+  "sank": "bis 35 Mio. EUR oder 7 % Umsatz",
+  "rel": "Betrifft Versicherer als Betreiber von KI im Underwriting und in der Schadenbearbeitung; für Cyber-Deckungen entsteht die Frage, wer für Schäden durch fehlerhafte KI-Systeme haftet.",
+  "b": "Erste umfassende KI-Regulierung weltweit mit risikobasiertem Ansatz: verbotene Praktiken, Hochrisiko-Pflichten, Transparenzregeln und Vorgaben für große KI-Modelle.",
+  "q": [
+   "eurlex"
+  ],
+  "akteure": [
+   "enisa"
+  ],
+  "pr": "2026-09-04"
  }
 ]
